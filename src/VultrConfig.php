@@ -8,12 +8,14 @@ class VultrConfig
 {
 	public const VERSION = '0.1';
 
+	public const API_VERSION = '2';
+
 	/**
 	 * Default timeout in seconds.
 	 */
 	private const DEFAULT_TIMEOUT = 10;
 
-	private const USERAGENT = 'VultrPhp/'.self::VERSION;
+	private const USERAGENT = 'VultrPhp/'.self::VERSION. '(API_VERSION: '.self::API_VERSION.')';
 
 	public const MANDATORY_HEADERS = [
 		'Content-Type'                  => 'application/json',
