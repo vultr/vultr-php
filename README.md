@@ -1,2 +1,2 @@
 # vultr-php
-Vultr API PHP Wrapper
+Vultr API PHP Wrapper.
