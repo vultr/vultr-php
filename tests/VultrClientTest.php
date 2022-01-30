@@ -21,7 +21,8 @@ class VultrClientTest extends TestCase
 	public function testGenerateGuzzleConfig()
 	{
 		$auth = new VultrAuth('Test1234');
-		$config = VultrConfig::generateGuzzleConfig($auth);
+		$guzzle_options = VultrConfig::IGNORE_OPTIONS;
+		$config = VultrConfig::generateGuzzleConfig($auth, $guzzle_options);
 
 		$this->assertArrayHasKey(RequestOptions::HEADERS, $config);
 		foreach (VultrConfig::MANDATORY_HEADERS as $option => $value)
@@ -34,5 +35,10 @@ class VultrClientTest extends TestCase
 
 		$this->assertArrayHasKey(VultrAuth::AUTHORIZATION_HEADER, $config[RequestOptions::HEADERS]);
 		$this->assertEquals($auth->getBearerTokenHead(), $config[RequestOptions::HEADERS][VultrAuth::AUTHORIZATION_HEADER]);
+
+		foreach (VultrConfig::IGNORE_OPTIONS as $option => $value)
+		{
+			$this->assertArrayNotHasKey($option, $config);
+		}
 	}
 }
