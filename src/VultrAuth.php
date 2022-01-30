@@ -7,6 +7,8 @@ namespace Vultr\VultrPhp;
  */
 class VultrAuth
 {
+	public const AUTHORIZATION_HEADER = 'Authorization';
+
 	private string $secret;
 
 	public function __construct(string $secret)
