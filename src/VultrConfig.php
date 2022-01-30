@@ -27,21 +27,21 @@ class VultrConfig
 	 * @see GuzzleHttp\RequestOptions
 	 */
 	public const ACCEPTABLE_OPTIONS = [
-		RequestOptions::ALLOW_REDIRECTS,
-		RequestOptions::CONNECT_TIMEOUT,
-		RequestOptions::COOKIES,
-		RequestOptions::DEBUG,
-		RequestOptions::DELAY,
-		RequestOptions::EXPECT,
-		RequestOptions::FORCE_IP_RESOLVE,
-		RequestOptions::HEADERS,
-		RequestOptions::IDN_CONVERSION,
-		RequestOptions::PROXY,
-		RequestOptions::READ_TIMEOUT,
-		RequestOptions::TIMEOUT,
-		RequestOptions::QUERY,
-		RequestOptions::VERIFY,
-		RequestOptions::VERSION,
+		RequestOptions::ALLOW_REDIRECTS  => 0,
+		RequestOptions::CONNECT_TIMEOUT  => 1,
+		RequestOptions::COOKIES          => 2,
+		RequestOptions::DEBUG            => 3,
+		RequestOptions::DELAY            => 4,
+		RequestOptions::EXPECT           => 5,
+		RequestOptions::FORCE_IP_RESOLVE => 6,
+		RequestOptions::HEADERS          => 7,
+		RequestOptions::IDN_CONVERSION   => 8,
+		RequestOptions::PROXY            => 9,
+		RequestOptions::READ_TIMEOUT     => 10,
+		RequestOptions::TIMEOUT          => 11,
+		RequestOptions::QUERY            => 12,
+		RequestOptions::VERIFY           => 13,
+		RequestOptions::VERSION          => 14,
 	];
 
 	/**
@@ -58,7 +58,10 @@ class VultrConfig
 		$config = [];
 		foreach ($guzzle_options as $option => $value)
 		{
-			if (!isset(self::ACCEPTABLE_OPTIONS[$option])) continue;
+			if (!isset(self::ACCEPTABLE_OPTIONS[$option]))
+			{
+				throw new VultrException('Invalid acceptable guzzle option for VultrPhp - see VultrConfig::ACCEPTABLE_OPTIONS, OPTION: '.$option);
+			}
 
 			$config[$option] = $value;
 		}
