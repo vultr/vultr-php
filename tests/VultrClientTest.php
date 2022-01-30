@@ -74,5 +74,7 @@ class VultrClientTest extends TestCase
 		{
 			$this->assertInstanceOf($class, $client->$prop);
 		}
+
+		$this->assertNull($client->randomstuff);
 	}
 }
