@@ -23,16 +23,25 @@ class VultrConfig
 	];
 
 	/**
-	 * These are guzzle options no one will ever need and shouldn't be set.
+	 * These are guzzle options that users will ever need when using the lib.
+	 * @see GuzzleHttp\RequestOptions
 	 */
-	public const IGNORE_OPTIONS = [
-		RequestOptions::SINK, // No, why would you need this?
-		RequestOptions::MULTIPART, // Nothing in the Vultr API Supports Multipart requests.
-		RequestOptions::FORM_PARAMS, // Ehh, its all sent as JSON.
-		RequestOptions::BODY, // This doesn't need to be manipulated by users. Leave this to Guzzle.
-		RequestOptions::AUTH, // We don't support HTTP Based Authentication. So no need to set.
-		RequestOptions::JSON, // We handle the header's ourselves.
-		RequestOptions::HTTP_ERRORS, // Messes with the purpose of this library. Aka throwing exceptions on errors etc.
+	public const ACCEPTABLE_OPTIONS = [
+		RequestOptions::ALLOW_REDIRECTS,
+		RequestOptions::CONNECT_TIMEOUT,
+		RequestOptions::COOKIES,
+		RequestOptions::DEBUG,
+		RequestOptions::DELAY,
+		RequestOptions::EXPECT,
+		RequestOptions::FORCE_IP_RESOLVE,
+		RequestOptions::HEADERS,
+		RequestOptions::IDN_CONVERSION,
+		RequestOptions::PROXY,
+		RequestOptions::READ_TIMEOUT,
+		RequestOptions::TIMEOUT,
+		RequestOptions::QUERY,
+		RequestOptions::VERIFY,
+		RequestOptions::VERSION,
 	];
 
 	/**
@@ -49,7 +58,7 @@ class VultrConfig
 		$config = [];
 		foreach ($guzzle_options as $option => $value)
 		{
-			if (isset(self::IGNORE_OPTIONS[$option])) continue;
+			if (!isset(self::ACCEPTABLE_OPTIONS[$option])) continue;
 
 			$config[$option] = $value;
 		}
