@@ -8,7 +8,9 @@ class VultrConfig
 {
 	public const VERSION = '0.1';
 
-	public const API_VERSION = '2';
+	public const API_VERSION = 'v2';
+
+	public const API_URI = 'https://api.vultr.com/';
 
 	/**
 	 * Default timeout in seconds.
@@ -37,7 +39,7 @@ class VultrConfig
 		RequestOptions::EXPECT           => 5,
 		RequestOptions::FORCE_IP_RESOLVE => 6,
 		RequestOptions::HEADERS          => 7,
-		RequestOptions::IDN_CONVERSION   => 8,
+		RequestOptions::IDN_CONVERSION   => 8, // May be useful if we add support for multiple languages in API responses.
 		RequestOptions::PROXY            => 9,
 		RequestOptions::READ_TIMEOUT     => 10,
 		RequestOptions::TIMEOUT          => 11,
@@ -80,6 +82,7 @@ class VultrConfig
 			$config[RequestOptions::HEADERS][$option] = $value;
 		}
 		$config[RequestOptions::HEADERS][VultrAuth::AUTHORIZATION_HEADER] = $auth->getBearerTokenHead();
+		$config['base_uri'] = self::API_URI.self::API_VERSION.'/';
 
 		return $config;
 	}
