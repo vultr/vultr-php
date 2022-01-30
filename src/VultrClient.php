@@ -48,7 +48,7 @@ class VultrClient
 	 * @param $guzzle_options
 	 * @see VultrConfig::generateGuzzleConfig
 	 */
-	public function __construct(VultrAuth $auth, array $guzzle_options = [])
+	private function __construct(VultrAuth $auth, array $guzzle_options = [])
 	{
 		$this->auth = $auth;
 		$this->client = new Client(VultrConfig::generateGuzzleConfig($auth, $guzzle_options));
@@ -66,9 +66,9 @@ class VultrClient
 		return null;
 	}
 
-	public static function create(string $API_KEY)
+	public static function create(string $API_KEY, array $guzzle_options = [])
 	{
-		return new VultrClient(new VultrAuth($API_KEY));
+		return new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
 	}
 
 	public function get(string $uri, ?array $params = null) : string

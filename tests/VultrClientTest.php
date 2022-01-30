@@ -66,9 +66,7 @@ class VultrClientTest extends TestCase
 
 	public function testServiceHandle()
 	{
-		$auth = new VultrAuth('Test1234');
-
-		$client = new VultrClient($auth);
+		$client = VultrClient::create('Test1234');
 
 		foreach (VultrClient::MAP as $prop => $class)
 		{
