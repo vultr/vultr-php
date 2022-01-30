@@ -29,7 +29,7 @@ class VultrConfig
 	{
 		$defaults = [
 			RequestOptions::TIMEOUT         => self::DEFAULT_TIMEOUT,
-			RequestOptions::CONNECT_TIMEOUT => self::DEFAULT_TIMEOUT, // Do you even have internet man?
+			RequestOptions::CONNECT_TIMEOUT => self::DEFAULT_TIMEOUT, // Do you even have internet?
 			RequestOptions::HEADERS         => [],
 		];
 
