@@ -16,6 +16,7 @@ class VultrExceptionTest extends TestCase
 		catch (VultrException $e)
 		{
 			$this->assertEquals(VultrException::DEFAULT_CODE, $e->getCode());
+			$this->assertEquals(null, $e->getHTTPCode());
 		}
 	}
 }
