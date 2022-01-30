@@ -66,6 +66,11 @@ class VultrClient
 		return null;
 	}
 
+	public static function create(string $API_KEY)
+	{
+		return new VultrClient(new VultrAuth($API_KEY));
+	}
+
 	public function get(string $uri, ?array $params = null) : string
 	{
 		$options = [];
