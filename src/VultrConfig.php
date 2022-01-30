@@ -32,6 +32,7 @@ class VultrConfig
 		RequestOptions::BODY, // This doesn't need to be manipulated by users. Leave this to Guzzle.
 		RequestOptions::AUTH, // We don't support HTTP Based Authentication. So no need to set.
 		RequestOptions::JSON, // We handle the header's ourselves.
+		RequestOptions::HTTP_ERRORS, // Messes with the purpose of this library. Aka throwing exceptions on errors etc.
 	];
 
 	/**
