@@ -9,6 +9,13 @@
         "vultr-api-version-2",
         "vultr-php"
     ],
+    "authors": [
+        {
+            "name": "The Constant Company, LLC.",
+            "email": "developers@vultr.com"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
         "guzzlehttp/guzzle": "^7.4",
         "php": "^8.0",
@@ -23,11 +30,9 @@
             "Vultr\\VultrPhp\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "The Constant Company, LLC.",
-            "email": "developers@vultr.com"
+    "autoload-dev": {
+        "psr-4": {
+            "Vultr\\VultrPhp\\": "tests/"
         }
-    ],
-    "minimum-stability": "stable"
+    }
 }
