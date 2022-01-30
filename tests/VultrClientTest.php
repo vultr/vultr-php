@@ -63,4 +63,16 @@ class VultrClientTest extends TestCase
 		$this->expectException(VultrException::class);
 		$config = VultrConfig::generateGuzzleConfig($auth, $ignore_test);
 	}
+
+	public function testServiceHandle()
+	{
+		$auth = new VultrAuth('Test1234');
+
+		$client = new VultrClient($auth);
+
+		foreach (VultrClient::MAP as $prop => $class)
+		{
+			$this->assertInstanceOf($class, $client->$prop);
+		}
+	}
 }
