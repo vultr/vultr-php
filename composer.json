@@ -1,0 +1,32 @@
+{
+    "name": "vultr/vultr-php",
+    "description": "The Official Vultr API PHP Wrapper.",
+    "type": "library",
+    "homepage": "https://www.vultr.com",
+    "keywords": [
+        "vultr",
+        "vultr-api",
+        "vultr-api-version-2",
+        "vultr-php"
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vultr\\VultrPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "The COnstant Company, LLC.",
+            "email": "developers@vultr.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
