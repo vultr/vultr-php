@@ -6,4 +6,4 @@ use Vultr\VultrPhp\VultrClient;
 
 $client = VultrClient::create(API_KEY);
 
-var_dump($client->account->getAccount());
+var_dump($client->account->getAccount()->toArray());
