@@ -17,6 +17,12 @@ class VultrUtil
 
 		$stdclass = json_decode($response->getBody()->getContents());
 
-		return $map->mapObject($stdclass->$prop, $model);
+		$object = $stdclass;
+		if ($prop !== null)
+		{
+			$object = $stdclass->$prop;
+		}
+
+		return $map->mapObject($object, $model);
 	}
 }
