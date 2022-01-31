@@ -11,6 +11,7 @@ use GuzzleHttp\Exception\RequestException;
 // Service Handlers
 use Vultr\VultrPhp\Account\AccountService;
 use Vultr\VultrPhp\Applications\ApplicationService;
+use Vultr\VultrPhp\Backups\BackupService;
 
 class VultrClient
 {
@@ -20,8 +21,8 @@ class VultrClient
 	public const MAP = [
 		'account'          => AccountService::class,
 		'applications'     => ApplicationService::class,
+		'backups'          => BackupService::class,
 		/**
-		'backups'          => BackupsService::class,
 		'baremetal'        => BareMetalService::class,
 		'billing'          => BillingService::class,
 		'blockstorage'     => BlockStorageService::class,
