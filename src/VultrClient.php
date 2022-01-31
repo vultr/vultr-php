@@ -69,7 +69,7 @@ class VultrClient
 		return null;
 	}
 
-	public static function create(string $API_KEY, array $guzzle_options = [])
+	public static function create(string $API_KEY, array $guzzle_options = []) : VultrClient
 	{
 		return new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
 	}
