@@ -5,6 +5,7 @@ namespace Vultr\VultrPhp;
 // Dependancies.
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use GuzzleHttp\Exception\RequestException;
 
 
 // Service Handlers
@@ -71,7 +72,7 @@ class VultrClient
 		return new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
 	}
 
-	public function get(string $uri, ?array $params = null) : string
+	public function get(string $uri, ?array $params = null)
 	{
 		$options = [];
 		if ($params !== null)
