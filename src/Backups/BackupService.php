@@ -37,6 +37,27 @@ class BackupService extends VultrService
 
 	public function getBackup(string $backup_id) : Backup
 	{
+		$client = $this->getClient();
+		try
+		{
+			$response = $client->get('backups/'.$backup_id);
+		}
+		catch (VultrException $e)
+		{
+			throw new BackupException('Failed to get backup: '.$e->getMessage());
+		}
 
+		$backup = new Backup();
+		try
+		{
+			$stdclass = json_decode($response->getBody());
+			$backup = VultrUtil::mapObject($stdclass, $backup, 'backup');
+		}
+		catch (Exception $e)
+		{
+			throw new BackupException('Failed to deserialize backup object: '.$e->getMessage());
+		}
+
+		return $backup;
 	}
 }
