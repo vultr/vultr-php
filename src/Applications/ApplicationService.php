@@ -20,47 +20,18 @@ class ApplicationService extends VultrService
 	 */
 	public function getApplications(string $filter = self::FILTER_ALL, ?ListOptions &$options = null) : array
 	{
-		$client = $this->getClient();
-
-		if ($options === null)
-		{
-			$options = new ListOptions(150);
-		}
-
-		try
-		{
-			$pagination = [
-				'type'     => $filter,
-				'per_page' => $options->getPerPage()
-			];
-
-			if ($options->getCurrentCursor() != '')
-			{
-				$pagination['cursor'] = $options->getCurrentCursor();
-			}
-
-			$response = $client->get('applications', $pagination);
-		}
-		catch (VultrException $e)
-		{
-			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode());
-		}
-
 		$applications = [];
 		try
 		{
-			$stdclass = json_decode($response->getBody()->getContents());
-			$options->setTotal($stdclass->meta->total);
-			$options->setNextCursor($stdclass->meta->links->next);
-			$options->setPrevCursor($stdclass->meta->links->prev);
-			foreach ($stdclass->applications as $object)
+			if ($options === null)
 			{
-				$applications[] = VultrUtil::mapObject($object, new Application());
+				$options = new ListOptions(150);
 			}
+			$applications = $this->getClient()->list('applications', new Application(), $options, ['type' => $filter]);
 		}
-		catch (Exception $e)
+		catch (VultrClientException $e)
 		{
-			throw new ApplicationException('Failed to deserialize applications: '. $e->getMessage());
+			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode());
 		}
 
 		return $applications;
