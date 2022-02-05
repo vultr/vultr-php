@@ -57,7 +57,7 @@ class Region extends Model
     return $this->options;
   }
   
-  public function setOptions(array $option) : void 
+  public function setOptions(array $options) : void 
   {
     $this->options = $options;
   }
