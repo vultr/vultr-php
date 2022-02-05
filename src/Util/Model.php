@@ -45,4 +45,18 @@ abstract class Model implements ModelInterface
 
 		return $array;
 	}
+
+	/**
+	 * Reset properties of the object to uninitialized state.
+	 */
+	public function resetObject() : void
+	{
+		$reflection = new ReflectionClass($this);
+		foreach ($reflection->getProperties() as $property)
+		{
+			$name = $property->getName();
+
+			unset($this->$name);
+		}
+	}
 }

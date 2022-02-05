@@ -10,6 +10,15 @@ use stdClass;
 
 class VultrUtil
 {
+	/**
+	 * @param $stdClass - Raw class that comes from json_decode. This is what JsonMapper accepts.
+	 * @param $model - A model that will be used to map the json response to the object.
+	 * Model is passed in via reference, the model will immediately be reset before its mapped and cloned.
+	 * @param $prop - The arching prop that has the contents that we will map the object to.
+	 * Ex a Backup object will have "backup" : { 'id', etc etc}
+	 * So in $prop we would specifiy "backup"
+	 * @return ModelInterface
+	 */
 	public static function mapObject(stdClass $stdclass, ModelInterface $model, ?string $prop = null) : ModelInterface
 	{
 		$map = (new JsonMapperFactory())->bestFit();
@@ -21,6 +30,8 @@ class VultrUtil
 			$object = $stdclass->$prop;
 		}
 
-		return $map->mapObject($object, $model);
+		$model->resetObject();
+
+		return $map->mapObject($object, clone $model);
 	}
 }

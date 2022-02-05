@@ -47,11 +47,10 @@ class BackupService extends VultrService
 			throw new BackupException('Failed to get backup: '.$e->getMessage());
 		}
 
-		$backup = new Backup();
 		try
 		{
 			$stdclass = json_decode($response->getBody());
-			$backup = VultrUtil::mapObject($stdclass, $backup, 'backup');
+			$backup = VultrUtil::mapObject($stdclass, new Backup(), 'backup');
 		}
 		catch (Exception $e)
 		{
