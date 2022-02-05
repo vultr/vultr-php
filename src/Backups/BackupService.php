@@ -29,7 +29,7 @@ class BackupService extends VultrService
 		}
 		catch (VultrClientException $e)
 		{
-			throw new BackupException('Failed to get backups: '.$e->getMessage());
+			throw new BackupException('Failed to get backups: '.$e->getMessage(), $e->getHTTPCode());
 		}
 
 		return $backups;
@@ -44,7 +44,7 @@ class BackupService extends VultrService
 		}
 		catch (VultrException $e)
 		{
-			throw new BackupException('Failed to get backup: '.$e->getMessage());
+			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode());
 		}
 
 		try
