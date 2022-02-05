@@ -29,7 +29,6 @@ class VultrException extends Exception
 	public const STARTUP_CODE = 319;
 	public const USER_CODE = 320;
 	public const CLIENT_CODE = 400;
-	public const REGION_CODE = 304;
 
 	protected ?int $http_code = null;
 
