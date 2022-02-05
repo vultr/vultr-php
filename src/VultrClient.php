@@ -90,7 +90,15 @@ class VultrClient
 		{
 			if ($e->hasResponse())
 			{
-				throw new VultrException('GET failed : '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e->getResponse()->getStatusCode());
+				$response = $e->getResponse();
+				$error = json_decode($response->getBody(), true);
+				$message = $e->getMessage();
+				if (isset($error['error']))
+				{
+					$message = $error['error'];
+				}
+
+				throw new VultrException('GET failed : '.$message, VultrException::DEFAULT_CODE, null, $response->getStatusCode());
 			}
 			throw new VultrException('GET failed : '. $e->getMessage());
 		}
