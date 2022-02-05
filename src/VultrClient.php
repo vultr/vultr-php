@@ -147,7 +147,7 @@ class VultrClient
 			$list_name = $model->getResponseListName();
 			foreach ($stdclass->$list_name as $object)
 			{
-				$objects[] = VultrUtil::mapObject($object, $model);
+				$objects[] = VultrUtil::mapObject($object, new $model());
 			}
 		}
 		catch (Exception $e)
