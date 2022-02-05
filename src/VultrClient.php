@@ -13,6 +13,10 @@ use Vultr\VultrPhp\Account\AccountService;
 use Vultr\VultrPhp\Applications\ApplicationService;
 use Vultr\VultrPhp\Backups\BackupService;
 
+use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\Util\ModelInterface;
+use Vultr\VultrPhp\Util\ListOptions;
+
 class VultrClient
 {
 	private VultrAuth $auth;
@@ -108,5 +112,48 @@ class VultrClient
 		}
 
 		return $response;
+	}
+
+	public function list(string $uri, ModelInterface $model, ListOptions $options, ?array $params = null) : array
+	{
+		try
+		{
+			if ($params === null)
+			{
+				$params = [];
+			}
+			$params['per_page'] = $options->getPerPage();
+
+			if ($options->getCurrentCursor() != '')
+			{
+				$params['cursor'] = $options->getCurrentCursor();
+			}
+
+			$response = $this->get($uri, $params);
+		}
+		catch (VultrException $e)
+		{
+			throw new VultrClientException('Failed to list: '.$e->getMessage(), $e->getHTTPCode());
+		}
+
+		$objects = [];
+		try
+		{
+			$stdclass = json_decode($response->getBody());
+			$options->setTotal($stdclass->meta->total);
+			$options->setNextCursor($stdclass->meta->links->next);
+			$options->setPrevCursor($stdclass->meta->links->prev);
+			$list_name = $model->getResponseListName();
+			foreach ($stdclass->$list_name as $object)
+			{
+				$objects[] = VultrUtil::mapObject($object, $model);
+			}
+		}
+		catch (Exception $e)
+		{
+			throw new VultrClientException('Failed to deserialize list: '. $e->getMessage());
+		}
+
+		return $objects;
 	}
 }
