@@ -3,6 +3,7 @@
 namespace Vultr\VultrPhp;
 
 // Dependancies.
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\RequestException;
