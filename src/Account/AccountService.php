@@ -24,7 +24,7 @@ class AccountService extends VultrService
 		$account = new Account();
 		try
 		{
-			$stdclass = json_decode($response->getBody()->getContents());
+			$stdclass = json_decode($response->getBody());
 			$account = VultrUtil::mapObject($stdclass, $account, 'account');
 		}
 		catch (Exception $e)
