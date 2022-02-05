@@ -30,8 +30,7 @@ class ApplicationService extends VultrService
 
 		if ($options === null)
 		{
-			$options = new ListOptions();
-			$options->setPerPage(150);
+			$options = new ListOptions(150);
 		}
 
 		try

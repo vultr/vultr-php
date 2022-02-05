@@ -11,6 +11,11 @@ class ListOptions
 	protected string $prevCursor = '';
 	protected string $currentCursor = '';
 
+	public function __construct(int $perPage = 50)
+	{
+		$this->setPerPage($perPage);
+	}
+
 	public function getPerPage() : int
 	{
 		return $this->perPage;
