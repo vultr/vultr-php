@@ -11,11 +11,13 @@ $client = VultrClient::create(API_KEY);
 $backups = [];
 $options = new ListOptions(2);
 echo "======================\n";
-echo "No Filter\n";
+echo "List\n";
 echo "======================\n";
 while (true)
 {
-	foreach ($client->backups->getBackups(null, $options) as $backup)
+	//$id = 'YOUR UUID INSTANCE ID';
+	$id = null;
+	foreach ($client->backups->getBackups($id, $options) as $backup)
 	{
 		$backups[] = $backup;
 	}
@@ -33,21 +35,9 @@ var_dump($backups);
 $backups = [];
 $options = new ListOptions(2);
 echo "======================\n";
-echo "Filtering based on ID\n";
+echo "Get Backup\n";
 echo "======================\n";
-while (true)
-{
-	$id = 'YOUR UUID';
-	foreach ($client->backups->getBackups($id, $options) as $backup)
-	{
-		$backups[] = $backup;
-	}
 
-	if ($options->getNextCursor() == '')
-	{
-		break;
-	}
-	$options->setCurrentCursor($options->getNextCursor());
-}
-var_dump($options);
-var_dump($backups);
+$backup = $client->backups->getBackup('YOUR BACKUP UUID');
+var_dump($backup);
+

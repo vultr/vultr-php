@@ -6,4 +6,5 @@ interface ModelInterface
 {
 	public function getResponseListName() : string;
 	public function toArray() : array;
+	public function resetObject() : void;
 }

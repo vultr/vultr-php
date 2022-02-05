@@ -21,11 +21,10 @@ class AccountService extends VultrService
 			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode());
 		}
 
-		$account = new Account();
 		try
 		{
-			$stdclass = json_decode($response->getBody()->getContents());
-			$account = VultrUtil::mapObject($stdclass, $account, 'account');
+			$stdclass = json_decode($response->getBody());
+			$account = VultrUtil::mapObject($stdclass, new Account(), 'account');
 		}
 		catch (Exception $e)
 		{

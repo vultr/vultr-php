@@ -6,18 +6,18 @@ use Vultr\VultrPhp\Util\Model;
 
 class Backup extends Model
 {
-	protected int $id;
+	protected string $id;
 	protected string $dateCreated;
 	protected string $description;
 	protected int $size;
 	protected string $status;
 
-	public function getId() : int
+	public function getId() : string
 	{
 		return $this->id;
 	}
 
-	public function setId(int $id) : void
+	public function setId(string $id) : void
 	{
 		$this->id = $id;
 	}
