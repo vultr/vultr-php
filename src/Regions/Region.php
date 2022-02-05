@@ -6,18 +6,18 @@ use Vultr\VultrPhp\Util\Model;
 
 class Region extends Model 
 {
-  protected int $id;
+  protected string $id;
   protected string $city;
   protected string $country;
   protected string $continent;
   protected array $options = array();
 
-  public function getId() : int
+  public function getId() : string
   {
     return $this->id;
   }
 
-  public function setId(int $id) : void
+  public function setId(string $id) : void
   {
     $this->id = $id;
   }
@@ -57,9 +57,9 @@ class Region extends Model
     return $this->options;
   }
   
-  public function setOptions($option) : void 
+  public function setOptions(array $option) : void 
   {
-    $this->options[] = $option;
+    $this->options = $options;
   }
 
 }
