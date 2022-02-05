@@ -37,10 +37,9 @@ class BackupService extends VultrService
 
 	public function getBackup(string $backup_id) : Backup
 	{
-		$client = $this->getClient();
 		try
 		{
-			$response = $client->get('backups/'.$backup_id);
+			$response = $this->getClient()->get('backups/'.$backup_id);
 		}
 		catch (VultrException $e)
 		{
