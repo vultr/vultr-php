@@ -1,13 +1,12 @@
 <?php 
 
-namespace Vultr\VultrPhp\Applications;
+namespace Vultr\VultrPhp\Regions;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrService;
-use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
-class RegionServices extends VultrService 
+class RegionService extends VultrService 
 {
   /**
    * @param $per_page
@@ -28,6 +27,7 @@ class RegionServices extends VultrService
     {
       throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode());
     }
+
     return $regions;
   }
 }
