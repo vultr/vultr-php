@@ -13,7 +13,6 @@ class ApplicationService extends VultrService
 	public const FILTER_MARKETPLACE = 'marketplace';
 	public const FILTER_ONE_CLICK = 'one-click';
 
-	public const TYPES = [self::FILTER_ALL, self::FILTER_MARKETPLACE, self::FILTER_ONE_CLICK];
 	/**
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
 	 * @param $per_page - MAX 500
@@ -22,11 +21,6 @@ class ApplicationService extends VultrService
 	public function getApplications(string $filter = self::FILTER_ALL, ?ListOptions &$options = null) : array
 	{
 		$client = $this->getClient();
-
-		if (!in_array($filter, self::TYPES))
-		{
-			throw new ApplicationException('Invalid filter type. Valid types are : '.implode(", ", self::TYPES));
-		}
 
 		if ($options === null)
 		{
