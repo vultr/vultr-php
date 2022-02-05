@@ -13,6 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 use Vultr\VultrPhp\Account\AccountService;
 use Vultr\VultrPhp\Applications\ApplicationService;
 use Vultr\VultrPhp\Backups\BackupService;
+use Vultr\VultrPhp\Regions\RegionService;
 
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
@@ -27,6 +28,7 @@ class VultrClient
 		'account'          => AccountService::class,
 		'applications'     => ApplicationService::class,
 		'backups'          => BackupService::class,
+		'regions'          => RegionService::class,
 		/**
 		'baremetal'        => BareMetalService::class,
 		'billing'          => BillingService::class,
