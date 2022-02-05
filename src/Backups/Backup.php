@@ -51,4 +51,14 @@ class Backup extends Model
 	{
 		$this->size = $size;
 	}
+
+	public function getStatus() : string
+	{
+		return $this->status;
+	}
+
+	public function setStatus(string $status) : void
+	{
+		$this->status = $status;
+	}
 }
