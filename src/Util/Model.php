@@ -12,6 +12,21 @@ use ReflectionClass;
 abstract class Model implements ModelInterface
 {
 	/**
+	 * Get the list name of a model.
+	 * For instance during a list api call, objects will be wrapped in a parent json.
+	 * This allows us to conform with the api and target the specific element without statically defining them.
+	 */
+	public function getResponseListName() : string
+	{
+		$classname = get_class($this);
+		if ($pos = strrpos($classname, '\\'))
+		{
+			$classname = substr($classname, $pos + 1);
+		}
+		return rtrim(strtolower($classname), 's').'s';
+	}
+
+	/**
 	 * Will output an array to match the json that we had received originally from the response which is in object form.
 	 */
 	public function toArray() : array
