@@ -13,7 +13,6 @@ $regions = [];
 $options = new ListOptions(10);
 while (true)
 {
-
 	foreach ($client->regions->getRegions($options) as $region)
 	{
 		$regions[] = $region;
