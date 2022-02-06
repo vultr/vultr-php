@@ -1,9 +1,9 @@
 <?php
 
-namespace Vultr\VultrPhp\Applications;
+namespace Vultr\VultrPhp\Services\Applications;
 
-use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\VultrService;
+use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
@@ -27,9 +27,9 @@ class ApplicationService extends VultrService
 			{
 				$options = new ListOptions(150);
 			}
-			$applications = $this->getClient()->list('applications', new Application(), $options, ['type' => $filter]);
+			$applications = $this->list('applications', new Application(), $options, ['type' => $filter]);
 		}
-		catch (VultrClientException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode());
 		}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Account;
+namespace Vultr\VultrPhp\Services\Account;
 
 use Vultr\VultrPhp\Util\Model;
 

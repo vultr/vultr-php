@@ -1,16 +1,19 @@
 <?php
 
-namespace Vultr\VultrPhp\Backups;
+namespace Vultr\VultrPhp\Services\Snapshots;
 
 use Vultr\VultrPhp\Util\Model;
 
-class Backup extends Model
+class Snapshot extends Model
 {
 	protected string $id;
 	protected string $dateCreated;
 	protected string $description;
 	protected int $size;
+	protected int $compressedSize;
 	protected string $status;
+	protected int $osId;
+	protected int $appId;
 
 	public function getId() : string
 	{
@@ -52,6 +55,16 @@ class Backup extends Model
 		$this->size = $size;
 	}
 
+	public function getCompressedSize() : int
+	{
+		return $this->compressedSize;
+	}
+
+	public function setCompressedSize(int $compressed_size) : void
+	{
+		$this->compressedSize = $compressed_size;
+	}
+
 	public function getStatus() : string
 	{
 		return $this->status;
@@ -60,5 +73,25 @@ class Backup extends Model
 	public function setStatus(string $status) : void
 	{
 		$this->status = $status;
+	}
+
+	public function getOsId() : int
+	{
+		return $this->osId;
+	}
+
+	public function setOsId(int $os_id) : void
+	{
+		$this->osId = $os_id;
+	}
+
+	public function getAppId() : int
+	{
+		return $this->appId;
+	}
+
+	public function setAppId(int $app_id) : void
+	{
+		$this->appId = $app_id;
 	}
 }

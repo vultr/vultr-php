@@ -23,7 +23,7 @@ class VultrExceptionTest extends TestCase
 		$test_http = 500;
 		try
 		{
-			throw new VultrException('Test Default 2', $test_code, null, $test_http);
+			throw new VultrException('Test Default 2', $test_code, $test_http, null);
 		}
 		catch (VultrException $e)
 		{

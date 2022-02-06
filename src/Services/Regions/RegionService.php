@@ -1,9 +1,9 @@
 <?php
 
-namespace Vultr\VultrPhp\Regions;
+namespace Vultr\VultrPhp\Services\Regions;
 
-use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\VultrService;
+use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
 class RegionService extends VultrService
@@ -21,9 +21,9 @@ class RegionService extends VultrService
 			{
 				$options = new ListOptions(50);
 			}
-			$regions = $this->getClient()->list('regions', new Region(), $options);
+			$regions = $this->list('regions', new Region(), $options);
 		}
-		catch (VultrClientException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode());
 		}

@@ -5,7 +5,7 @@ require (__DIR__.'/../vendor/autoload.php');
 
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Util\ListOptions;
-use Vultr\VultrPhp\Applications\ApplicationService;
+use Vultr\VultrPhp\Services\Applications\ApplicationService;
 
 $client = VultrClient::create(API_KEY);
 

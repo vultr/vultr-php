@@ -1,9 +1,9 @@
 <?php
 
-namespace Vultr\VultrPhp\Snapshots;
+namespace Vultr\VultrPhp\Services\Snapshots;
 
-use Vultr\VultrPhp\VultrClientException;
-use Vultr\VultrPhp\VultrService;
+use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
@@ -26,9 +26,9 @@ class SnapshotService extends VultrService
 				$params['description'] = $description;
 			}
 
-			$snapshots = $this->getClient()->list('snapshots', new Snapshot(), $options, $params);
+			$snapshots = $this->list('snapshots', new Snapshot(), $options, $params);
 		}
-		catch (VultrClientException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new SnapshotException('Failed to get snapshots: '.$e->getMessage());
 		}

@@ -1,22 +1,21 @@
 <?php
 
-namespace Vultr\VultrPhp\Account;
+namespace Vultr\VultrPhp\Services\Account;
 
-use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\VultrService;
+use Exception;
+use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
 
 class AccountService extends VultrService
 {
 	public function getAccount() : Account
 	{
-		$client = $this->getClient();
-
 		try
 		{
-			$response = $client->get('account');
+			$response = $this->get('account');
 		}
-		catch (VultrException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode());
 		}

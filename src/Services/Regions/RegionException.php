@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Regions;
+namespace Vultr\VultrPhp\Services\Regions;
 
 use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;

@@ -1,9 +1,10 @@
 <?php
 
-namespace Vultr\VultrPhp\Backups;
+namespace Vultr\VultrPhp\Services\Backups;
 
-use Vultr\VultrPhp\VultrClientException;
-use Vultr\VultrPhp\VultrService;
+use Exception;
+use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
@@ -25,9 +26,9 @@ class BackupService extends VultrService
 				$params['instance_id'] = $instance_id;
 			}
 
-			$backups = $this->getClient()->list('backups', new Backup(), $options, $params);
+			$backups = $this->list('backups', new Backup(), $options, $params);
 		}
-		catch (VultrClientException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new BackupException('Failed to get backups: '.$e->getMessage(), $e->getHTTPCode());
 		}
@@ -39,9 +40,9 @@ class BackupService extends VultrService
 	{
 		try
 		{
-			$response = $this->getClient()->get('backups/'.$backup_id);
+			$response = $this->get('backups/'.$backup_id);
 		}
-		catch (VultrException $e)
+		catch (VultrServiceException $e)
 		{
 			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode());
 		}

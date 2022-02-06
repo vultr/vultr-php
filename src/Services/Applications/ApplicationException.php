@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Applications;
+namespace Vultr\VultrPhp\Services\Applications;
 
 use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;

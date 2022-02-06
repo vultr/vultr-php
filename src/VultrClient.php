@@ -2,24 +2,14 @@
 
 namespace Vultr\VultrPhp;
 
-// Dependancies.
-use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
-use GuzzleHttp\Exception\RequestException;
-
 
 // Service Handlers
-use Vultr\VultrPhp\Account\AccountService;
-use Vultr\VultrPhp\Applications\ApplicationService;
-use Vultr\VultrPhp\Backups\BackupService;
-use Vultr\VultrPhp\Regions\RegionService;
-use Vultr\VultrPhp\Snapshots\SnapshotService;
-
-// Utils
-use Vultr\VultrPhp\Util\VultrUtil;
-use Vultr\VultrPhp\Util\ModelInterface;
-use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\Services\Account\AccountService;
+use Vultr\VultrPhp\Services\Applications\ApplicationService;
+use Vultr\VultrPhp\Services\Backups\BackupService;
+use Vultr\VultrPhp\Services\Regions\RegionService;
+use Vultr\VultrPhp\Services\Snapshots\SnapshotService;
 
 class VultrClient
 {
@@ -69,7 +59,7 @@ class VultrClient
 
 		if ($class !== null)
 		{
-			return new $class($this);
+			return new $class($this->auth, $this->client);
 		}
 
 		return null;
@@ -78,84 +68,5 @@ class VultrClient
 	public static function create(string $API_KEY, array $guzzle_options = []) : VultrClient
 	{
 		return new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
-	}
-
-	public function get(string $uri, ?array $params = null)
-	{
-		$options = [];
-		if ($params !== null)
-		{
-			$options[RequestOptions::QUERY] = $params;
-		}
-
-		try
-		{
-			$response = $this->client->request('GET', $uri, $options);
-		}
-		catch (RequestException $e)
-		{
-			if ($e->hasResponse())
-			{
-				$response = $e->getResponse();
-				$error = json_decode($response->getBody(), true);
-				$message = $e->getMessage();
-				if (isset($error['error']))
-				{
-					$message = $error['error'];
-				}
-
-				throw new VultrException('GET failed : '.$message, VultrException::DEFAULT_CODE, null, $response->getStatusCode());
-			}
-			throw new VultrException('GET failed : '. $e->getMessage());
-		}
-		catch (Exception $e)
-		{
-			throw new VultrException('GET failed : '.$e->getMessage());
-		}
-
-		return $response;
-	}
-
-	public function list(string $uri, ModelInterface $model, ListOptions $options, ?array $params = null) : array
-	{
-		try
-		{
-			if ($params === null)
-			{
-				$params = [];
-			}
-			$params['per_page'] = $options->getPerPage();
-
-			if ($options->getCurrentCursor() != '')
-			{
-				$params['cursor'] = $options->getCurrentCursor();
-			}
-
-			$response = $this->get($uri, $params);
-		}
-		catch (VultrException $e)
-		{
-			throw new VultrClientException('Failed to list: '.$e->getMessage(), $e->getHTTPCode());
-		}
-
-		$objects = [];
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$options->setTotal($stdclass->meta->total);
-			$options->setNextCursor($stdclass->meta->links->next);
-			$options->setPrevCursor($stdclass->meta->links->prev);
-			$list_name = $model->getResponseListName();
-			foreach ($stdclass->$list_name as $object)
-			{
-				$objects[] = VultrUtil::mapObject($object, $model);
-			}
-		}
-		catch (Exception $e)
-		{
-			throw new VultrClientException('Failed to deserialize list: '. $e->getMessage());
-		}
-
-		return $objects;
 	}
 }
