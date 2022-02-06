@@ -25,7 +25,7 @@ class RegionService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode());
+			throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $regions;
