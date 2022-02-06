@@ -14,7 +14,9 @@ use Vultr\VultrPhp\Account\AccountService;
 use Vultr\VultrPhp\Applications\ApplicationService;
 use Vultr\VultrPhp\Backups\BackupService;
 use Vultr\VultrPhp\Regions\RegionService;
+use Vultr\VultrPhp\Snapshots\SnapshotService;
 
+// Utils
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
@@ -28,28 +30,25 @@ class VultrClient
 		'account'          => AccountService::class,
 		'applications'     => ApplicationService::class,
 		'backups'          => BackupService::class,
-		'regions'          => RegionService::class,
-		/**
-		'baremetal'        => BareMetalService::class,
-		'billing'          => BillingService::class,
-		'blockstorage'     => BlockStorageService::class,
-		'dns'              => DNSService::class,
-		'firewall'         => FirewallService::class,
-		'instances'        => InstancesService::class,
-		'iso'              => ISOService::class,
-		'kubernetes'       => KubernetesService::class,
-		'loadbalancers'    => LoadBalancersService::class,
-		'objectstorage'    => ObjectStorageService::class,
-		'operating_system' => OperatingSystemService::class,
-		'plans'            => PlansService::class,
-		'private_networks' => PrivateNetworksService::class,
-		'reserved_ips'     => ReservedIPSService::class,
-		'regions'          => RegionsService::class,
-		'snapshots'        => SnapshotsService::class,
-		'ssh_keys'         => SSHKeysService::class,
-		'startup_scripts'  => StartupScriptsService::class,
-		'users'            => UsersService::class
-		*/
+		//'baremetal'        => BareMetalService::class, // TODO
+		//'billing'          => BillingService::class, // TODO
+		//'blockstorage'     => BlockStorageService::class, // TODO
+		//'dns'              => DNSService::class, // TODO
+		//'firewall'         => FirewallService::class, // TODO
+		//'instances'        => InstanceService::class, // TODO
+		//'iso'              => ISOService::class, // TODO
+		//'kubernetes'       => KubernetesService::class, // TODO
+		//'loadbalancers'    => LoadBalancerService::class, // TODO
+		//'objectstorage'    => ObjectStorageService::class, // TODO
+		//'operating_system' => OperatingSystemService::class, // TODO
+		//'plans'            => PlanService::class, // TODO
+		//'reserved_ips'     => ReservedIPSService::class, // TODO
+		'regions'          => RegionService::class, // TODO
+		'snapshots'        => SnapshotService::class, // TODO
+		//'ssh_keys'         => SSHKeyService::class, // TODO
+		//'startup_scripts'  => StartupScriptService::class, // TODO
+		//'users'            => UserService::class, // TODO
+		//'vpc'              => VPCService::class, // TODO
 	];
 
 	/**
