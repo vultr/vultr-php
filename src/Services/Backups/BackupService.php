@@ -30,7 +30,7 @@ class BackupService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new BackupException('Failed to get backups: '.$e->getMessage(), $e->getHTTPCode());
+			throw new BackupException('Failed to get backups: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $backups;
@@ -44,7 +44,7 @@ class BackupService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode());
+			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		try
@@ -54,7 +54,7 @@ class BackupService extends VultrService
 		}
 		catch (Exception $e)
 		{
-			throw new BackupException('Failed to deserialize backup object: '.$e->getMessage());
+			throw new BackupException('Failed to deserialize backup object: '.$e->getMessage(), null, $e);
 		}
 
 		return $backup;
