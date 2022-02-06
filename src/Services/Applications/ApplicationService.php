@@ -31,7 +31,7 @@ class ApplicationService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode());
+			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $applications;
