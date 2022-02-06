@@ -9,20 +9,25 @@ use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\VultrAuth;
+use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
 
 abstract class VultrService
 {
-	private VultrAuth $auth;
+	protected VultrClient $vultr;
 	private Client $client;
 
-	public function __construct(VultrAuth $auth, Client $client)
+	public function __construct(VultrClient $vultr, Client $client)
 	{
-		$this->auth = $auth;
+		$this->vultr = $vultr;
 		$this->client = $client;
+	}
+
+	protected function getVultrClient() : VultrClient
+	{
+		return $this->vultr;
 	}
 
 	protected function getClient() : Client

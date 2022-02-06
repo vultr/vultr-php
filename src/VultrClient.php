@@ -4,41 +4,35 @@ namespace Vultr\VultrPhp;
 
 use GuzzleHttp\Client;
 
-// Service Handlers
-use Vultr\VultrPhp\Services\Account\AccountService;
-use Vultr\VultrPhp\Services\Applications\ApplicationService;
-use Vultr\VultrPhp\Services\Backups\BackupService;
-use Vultr\VultrPhp\Services\Regions\RegionService;
-use Vultr\VultrPhp\Services\Snapshots\SnapshotService;
-
+use Vultr\VultrPhp\Services;
 class VultrClient
 {
 	private VultrAuth $auth;
 	private Client $client;
 
 	public const MAP = [
-		'account'          => AccountService::class,
-		'applications'     => ApplicationService::class,
-		'backups'          => BackupService::class,
-		//'baremetal'        => BareMetalService::class, // TODO
-		//'billing'          => BillingService::class, // TODO
-		//'blockstorage'     => BlockStorageService::class, // TODO
-		//'dns'              => DNSService::class, // TODO
-		//'firewall'         => FirewallService::class, // TODO
-		//'instances'        => InstanceService::class, // TODO
-		//'iso'              => ISOService::class, // TODO
-		//'kubernetes'       => KubernetesService::class, // TODO
-		//'loadbalancers'    => LoadBalancerService::class, // TODO
-		//'objectstorage'    => ObjectStorageService::class, // TODO
-		//'operating_system' => OperatingSystemService::class, // TODO
-		//'plans'            => PlanService::class, // TODO
-		//'reserved_ips'     => ReservedIPSService::class, // TODO
-		'regions'          => RegionService::class, // TODO
-		'snapshots'        => SnapshotService::class, // TODO
-		//'ssh_keys'         => SSHKeyService::class, // TODO
-		//'startup_scripts'  => StartupScriptService::class, // TODO
-		//'users'            => UserService::class, // TODO
-		//'vpc'              => VPCService::class, // TODO
+		'account'          => Services\Account\AccountService::class,
+		'applications'     => Services\Applications\ApplicationService::class,
+		'backups'          => Services\Backups\BackupService::class,
+		//'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
+		//'billing'          => Services\Billing\BillingService::class, // TODO
+		//'blockstorage'     => Services\BlockStorage\BlockStorageService::class, // TODO
+		//'dns'              => Services\DNS\DNSService::class, // TODO
+		//'firewall'         => Services\Firewall\FirewallService::class, // TODO
+		//'instances'        => Services\Instances\InstanceService::class, // TODO
+		//'iso'              => Services\ISO\ISOService::class, // TODO
+		//'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO
+		//'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO
+		//'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
+		//'operating_system' => Services\OperatingSystems\OperatingSystemService::class, // TODO
+		'plans'            => Services\Plans\PlanService::class, // TODO
+		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
+		'regions'          => Services\Regions\RegionService::class, // TODO
+		'snapshots'        => Services\Snapshots\SnapshotService::class, // TODO
+		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
+		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
+		//'users'            => Services\Users\UserService::class, // TODO
+		//'vpc'              => Services\PrivateNetworks\VPCService::class, // TODO
 	];
 
 	/**
@@ -59,7 +53,7 @@ class VultrClient
 
 		if ($class !== null)
 		{
-			return new $class($this->auth, $this->client);
+			return new $class($this, $this->client);
 		}
 
 		return null;
