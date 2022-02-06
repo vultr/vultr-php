@@ -19,7 +19,7 @@ class RegionService extends VultrService
 		{
 			if ($options === null)
 			{
-				$options = new ListOptions(50);
+				$options = new ListOptions(100);
 			}
 			$regions = $this->list('regions', new Region(), $options);
 		}
