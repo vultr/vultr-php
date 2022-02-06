@@ -3,6 +3,7 @@
 namespace Vultr\VultrPhp\Services\Account;
 
 use Exception;
+use Error;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -25,7 +26,7 @@ class AccountService extends VultrService
 			$stdclass = json_decode($response->getBody());
 			$account = VultrUtil::mapObject($stdclass, new Account(), 'account');
 		}
-		catch (Exception $e)
+		catch (Exception | Error $e)
 		{
 			throw new AccountException('Failed to deserialize account object: '.$e->getMessage(), null, $e);
 		}
