@@ -77,7 +77,11 @@ class PlanService extends VultrService
 			$regions = [];
 			foreach ($plan->getLocations() as $id)
 			{
-				$regions[] = $region_service->getRegion($id);
+				$region = $region_service->getRegion($id);
+
+				if ($region === null) continue; // Cache failure?
+
+				$regions[] = $region;
 			}
 			$plan->setLocations($regions);
 		}
