@@ -32,8 +32,6 @@ while (true)
 var_dump($options);
 var_dump($backups);
 
-$backups = [];
-$options = new ListOptions(2);
 echo "======================\n";
 echo "Get Backup\n";
 echo "======================\n";

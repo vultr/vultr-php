@@ -2,6 +2,7 @@
 
 namespace Vultr\VultrPhp\Services\Snapshots;
 
+use Exception;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -30,7 +31,7 @@ class SnapshotService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new SnapshotException('Failed to get snapshots: '.$e->getMessage());
+			throw new SnapshotException('Failed to get snapshots: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $snapshots;
@@ -38,6 +39,25 @@ class SnapshotService extends VultrService
 
 	public function getSnapshot(string $id) : Snapshot
 	{
+		try
+		{
+			$response = $this->get('snapshots/'.$id);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new SnapshotException('Failed to get snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		try
+		{
+			$stdclass = json_decode($response->getBody());
+			$snapshot = VultrUtil::mapObject($stdclass, new Snapshot(), 'snapshot');
+		}
+		catch (Exception $e)
+		{
+			throw new SnapshotException('Failed to deserialize snapshot object: '.$e->getMessage(), null, $e);
+		}
+
+		return $snapshot;
 	}
 }
