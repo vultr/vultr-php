@@ -5,7 +5,6 @@ require (__DIR__.'/../vendor/autoload.php');
 
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Util\ListOptions;
-use Vultr\VultrPhp\Regions\RegionService;
 
 $client = VultrClient::create(API_KEY);
 
