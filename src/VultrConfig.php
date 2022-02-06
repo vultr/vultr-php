@@ -65,7 +65,7 @@ class VultrConfig
 		{
 			if (!isset(self::ACCEPTABLE_OPTIONS[$option]))
 			{
-				throw new VultrException('Invalid acceptable guzzle option for VultrPhp - see VultrConfig::ACCEPTABLE_OPTIONS, OPTION: '.$option);
+				throw new VultrClientException('Invalid acceptable guzzle option for VultrPhp - see VultrConfig::ACCEPTABLE_OPTIONS, OPTION: '.$option, null);
 			}
 
 			$config[$option] = $value;

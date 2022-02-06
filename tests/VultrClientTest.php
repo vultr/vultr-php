@@ -5,8 +5,10 @@ namespace Vultr\VultrPhp\Tests;
 use Vultr\VultrPhp\VultrAuth;
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\VultrConfig;
-use Vultr\VultrPhp\VultrException;
+use Vultr\VultrPhp\VultrClientException;
 
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\RequestOptions;
 use PHPUnit\Framework\TestCase;
 
@@ -30,6 +32,10 @@ class VultrClientTest extends TestCase
 			// Ignore has a valid check later.
 			if ($option === RequestOptions::HEADERS) continue;
 			$acceptable[$option] = 0;
+			if ($option === 'handler')
+			{
+				$acceptable[$option] = HandlerStack::create(new MockHandler());
+			}
 		}
 
 		$config = VultrConfig::generateGuzzleConfig($auth, $acceptable);
@@ -49,6 +55,10 @@ class VultrClientTest extends TestCase
 		foreach (VultrConfig::ACCEPTABLE_OPTIONS as $option => $value)
 		{
 			$this->assertArrayHasKey($option, $config);
+			if ($option === 'handler')
+			{
+				$this->assertIsCallable($config[$option]);
+			}
 		}
 	}
 
@@ -60,7 +70,7 @@ class VultrClientTest extends TestCase
 		];
 		$auth = new VultrAuth('Test1234');
 
-		$this->expectException(VultrException::class);
+		$this->expectException(VultrClientException::class);
 		$config = VultrConfig::generateGuzzleConfig($auth, $ignore_test);
 	}
 
