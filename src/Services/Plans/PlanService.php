@@ -39,17 +39,7 @@ class PlanService extends VultrService
 			}
 
 			$plans = $this->list('plans', new VPSPlan(), $options, $params);
-			$region_service = $this->getVultrClient()->regions;
-			$region_service->cacheRegions();
-			foreach ($plans as $plan)
-			{
-				$regions = [];
-				foreach ($plan->getLocations() as $id)
-				{
-					$regions[] = $region_service->getRegion($id);
-				}
-				$plan->setLocations($regions);
-			}
+			$this->setPlanLocations($plans);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -69,22 +59,27 @@ class PlanService extends VultrService
 				$options = new ListOptions(100);
 			}
 			$plans = $this->list('plans-metal', new BMPlan(), $options);
-			$region_service = $this->getVultrClient()->regions;
-			$region_service->cacheRegions();
-			foreach ($plans as $plan)
-			{
-				$regions = [];
-				foreach ($plan->getLocations() as $id)
-				{
-					$regions[] = $region_service->getRegion($id);
-				}
-				$plan->setLocations($regions);
-			}
+			$this->setPlanLocations($plans);
 		}
 		catch (VultrServiceException $e)
 		{
 			throw new PlanException('Failed to get baremetal plans: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 		return $plans;
+	}
+
+	private function setPlanLocations(array &$plans) : void
+	{
+		$region_service = $this->getVultrClient()->regions;
+		$region_service->cacheRegions();
+		foreach ($plans as $plan)
+		{
+			$regions = [];
+			foreach ($plan->getLocations() as $id)
+			{
+				$regions[] = $region_service->getRegion($id);
+			}
+			$plan->setLocations($regions);
+		}
 	}
 }
