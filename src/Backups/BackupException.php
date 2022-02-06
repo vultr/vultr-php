@@ -2,12 +2,13 @@
 
 namespace Vultr\VultrPhp\Backups;
 
-use Vultr\VultrPhp\VultrException;
+use Throwable;
+use Vultr\VultrPhp\Services\VultrServiceException;
 
-class BackupException extends VultrException
+class BackupException extends VultrServiceException
 {
 	public function __construct(string $message, ?int $http_code = null, ?Throwable $previous = null)
 	{
-		parent::__construct($message, VultrException::BACKUP_CODE, $previous, $http_code);
+		parent::__construct($message, VultrServiceException::BACKUP_CODE, $http_code, $previous);
 	}
 }

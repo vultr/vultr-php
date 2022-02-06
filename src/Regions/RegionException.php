@@ -2,12 +2,13 @@
 
 namespace Vultr\VultrPhp\Regions;
 
-use Vultr\VultrPhp\VultrException;
+use Throwable;
+use Vultr\VultrPhp\Services\VultrServiceException;
 
-class RegionException extends VultrException
+class RegionException extends VultrServiceException
 {
 	public function __construct(string $message, ?int $http_code = null, ?Throwable $previous = null)
 	{
-		parent::__construct($message, VultrException::REGION_CODE, $previous, $http_code);
+		parent::__construct($message, VultrServiceException::REGION_CODE, $http_code, $previous);
 	}
 }

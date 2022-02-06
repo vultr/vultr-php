@@ -2,6 +2,7 @@
 
 namespace Vultr\VultrPhp\Services;
 
+use Throwable;
 use Vultr\VultrPhp\VultrException;
 
 class VultrServiceException extends VultrException
