@@ -8,6 +8,9 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 $client = VultrClient::create(API_KEY);
 
+echo "======================\n";
+echo "Get Regions\n";
+echo "======================\n";
 $regions = [];
 $options = new ListOptions(10);
 while (true)
@@ -26,3 +29,10 @@ while (true)
 
 var_dump($options);
 var_dump($regions);
+
+echo "======================\n";
+echo "Get Availability\n";
+echo "======================\n";
+
+$availability = $client->regions->getAvailablility('ewr');
+var_dump($availability);

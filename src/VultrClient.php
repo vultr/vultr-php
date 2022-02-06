@@ -27,7 +27,7 @@ class VultrClient
 		//'operating_system' => Services\OperatingSystems\OperatingSystemService::class, // TODO
 		'plans'            => Services\Plans\PlanService::class,
 		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
-		'regions'          => Services\Regions\RegionService::class, // TODO
+		'regions'          => Services\Regions\RegionService::class,
 		'snapshots'        => Services\Snapshots\SnapshotService::class, // TODO
 		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO

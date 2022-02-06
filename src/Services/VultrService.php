@@ -7,6 +7,7 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\RequestException;
+use Psr\Http\Message\ResponseInterface;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrClient;
@@ -35,7 +36,7 @@ abstract class VultrService
 		return $this->client;
 	}
 
-	protected function get(string $uri, ?array $params = null)
+	protected function get(string $uri, ?array $params = null) : ResponseInterface
 	{
 		$options = [];
 		if ($params !== null)

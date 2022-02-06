@@ -13,8 +13,11 @@ class PlanService extends VultrService
 	public const FILTER_VC2 = 'vc2';
 	public const FILTER_VHF = 'vhf';
 	public const FILTER_VDC = 'vdc';
+	public const FILTER_VBM = 'vbm';
 
 	public const FILTER_WINDOWS = 'windows';
+
+	private static ?array $cache_plans = null;
 
 	public function getVPSPlans(?string $type = null, ?string $os = null, ?ListOptions &$options = null) : array
 	{
@@ -66,6 +69,31 @@ class PlanService extends VultrService
 			throw new PlanException('Failed to get baremetal plans: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 		return $plans;
+	}
+
+	public function cachePlans(bool $override = false) : void
+	{
+		if (static::$cache_plans !== null && !$override) return;
+
+		static::$cache_plans = [];
+		$options = new ListOptions(500);
+		$bm_plans = $this->getBMPlans($options);
+		$options = new ListOptions(500);
+		$vps_plans = $this->getVPSPlans(null, null, $options);
+
+		foreach ([$bm_plans, $vps_plans] as $plans)
+		{
+			foreach ($plans as $plan)
+			{
+				static::$cache_plans[$plan->getId()] = $plan;
+			}
+		}
+	}
+
+	public function getPlan(string $id) : VPSPlan|BMPlan|null
+	{
+		$this->cachePlans();
+		return static::$cache_plans[$id] ?? null;
 	}
 
 	private function setPlanLocations(array &$plans) : void
