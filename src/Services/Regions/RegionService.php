@@ -8,6 +8,8 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class RegionService extends VultrService
 {
+	private static ?array $region_cache = null;
+
 	/**
 	* @param $per_page
 	* @param $cursor
@@ -29,5 +31,23 @@ class RegionService extends VultrService
 		}
 
 		return $regions;
+	}
+
+	public function cacheRegions() : void
+	{
+		if (static::$region_cache !== null) return;
+
+		static::$region_cache = [];
+		$options = new ListOptions(500);
+		foreach ($this->getRegions($options) as $region)
+		{
+			static::$region_cache[$region->getId()] = $region;
+		}
+	}
+
+	public function getRegion(string $id) : ?Region
+	{
+		$this->cacheRegions();
+		return static::$region_cache[$id] ?? null;
 	}
 }
