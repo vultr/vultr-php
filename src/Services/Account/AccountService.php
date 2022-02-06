@@ -17,7 +17,7 @@ class AccountService extends VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode());
+			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		try
@@ -27,7 +27,7 @@ class AccountService extends VultrService
 		}
 		catch (Exception $e)
 		{
-			throw new AccountException('Failed to deserialize account object: '.$e->getMessage());
+			throw new AccountException('Failed to deserialize account object: '.$e->getMessage(), null, $e);
 		}
 
 		return $account;
