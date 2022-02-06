@@ -46,6 +46,7 @@ class VultrConfig
 		RequestOptions::QUERY            => 12,
 		RequestOptions::VERIFY           => 13,
 		RequestOptions::VERSION          => 14,
+		'handler'                        => 15, // Can be used for unittests using Guzzles MockHandler
 	];
 
 	/**

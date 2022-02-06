@@ -2,6 +2,7 @@
 
 namespace Vultr\VultrPhp;
 
+use Exception;
 use GuzzleHttp\Client;
 
 use Vultr\VultrPhp\Services;
@@ -61,6 +62,15 @@ class VultrClient
 
 	public static function create(string $API_KEY, array $guzzle_options = []) : VultrClient
 	{
-		return new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
+		try
+		{
+			$client = new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
+		}
+		catch (Exception $e)
+		{
+			throw new VultrClientException('Failed to initialize client: '.$e->getMessage(), null, $e);
+		}
+
+		return $client;
 	}
 }
