@@ -44,18 +44,42 @@ class BackupsTest extends TestCase
 			]
 		];
 
+		$data2 = $data;
+		unset($data2['backups'][1]);
+		$data2['meta']['total'] = 1;
+
 		$mock = new MockHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data2)),
 			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
 		]);
 		$stack = HandlerStack::create($mock);
 		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
 
-		foreach ($client->backups->getBackups() as $backup)
+		$backups = $client->backups->getBackups();
+		$this->assertEquals($data['meta']['total'], count($backups));
+		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
 			// I don't care about optimizations. Array is small anyways.
 			foreach ($data['backups'] as $object)
+			{
+				if ($object['id'] !== $backup->getId()) continue;
+
+				foreach ($backup->toArray() as $prop => $prop_val)
+				{
+					$this->assertEquals($prop_val, $object[$prop]);
+				}
+			}
+		}
+
+		$backups = $client->backups->getBackups('cb676a46-66fd-4dfb-b839-1141515');
+		$this->assertEquals($data2['meta']['total'], count($backups));
+		foreach ($backups as $backup)
+		{
+			$this->assertInstanceOf(Backup::class, $backup);
+			// I don't care about optimizations. Array is small anyways.
+			foreach ($data2['backups'] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
 
