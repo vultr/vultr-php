@@ -3,6 +3,7 @@
 namespace Vultr\VultrPhp\Tests;
 
 use Vultr\VultrPhp\VultrClient;
+use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Services\Applications\Application;
 use Vultr\VultrPhp\Services\Applications\ApplicationService;
 use Vultr\VultrPhp\Services\Applications\ApplicationException;
@@ -43,8 +44,8 @@ class ApplicationsTest extends TestCase
 			'meta' => [
 				'total' => 2,
 				'links' => [
-					'next' => '',
-					'prev' => '',
+					'next' => 'next',
+					'prev' => 'prev',
 				]
 			]
 		];
@@ -68,8 +69,9 @@ class ApplicationsTest extends TestCase
 		$stack = HandlerStack::create($mock);
 		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
 
+		$options = null;
 		foreach ([
-			$client->applications->getApplications(),
+			$client->applications->getApplications(ApplicationService::FILTER_ALL, $options),
 			$client->applications->getApplications(ApplicationService::FILTER_ONE_CLICK),
 			$client->applications->getApplications(ApplicationService::FILTER_MARKETPLACE)
 		] as $apps)
@@ -87,6 +89,12 @@ class ApplicationsTest extends TestCase
 				}
 			}
 		}
+
+		$this->assertInstanceOf(ListOptions::class, $options);
+		$this->assertEquals($options->getPerPage(), 150);
+		$this->assertEquals($options->getTotal(), $data['meta']['total']);
+		$this->assertEquals($options->getNextCursor(), 'next');
+		$this->assertEquals($options->getPrevCursor(), 'prev');
 
 		$this->expectException(ApplicationException::class);
 		$client->applications->getApplications();
