@@ -69,4 +69,35 @@ class BackupsTest extends TestCase
 		$this->expectException(BackupException::class);
 		$client->backups->getBackups();
 	}
+
+	public function testGetBackup()
+	{
+		$id = 'cb676a46-66fd-4dfb-b839-12312414';
+		$data = [
+			'backup' => [
+				'id' => $id,
+				'date_created' => '2020-10-10T01:56:20+00:00',
+				'description' => 'Example automatic backup',
+				'size' => 5000000,
+				'status' => 'complete'
+			]
+		];
+
+		$mock = new MockHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Not Found', new Request('GET', 'backups/wrong-id'), new Response(404, [], json_encode(['error' => 'Not found']))),
+		]);
+		$stack = HandlerStack::create($mock);
+		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
+
+		$backup = $client->backups->getBackup($id);
+		$this->assertInstanceOf(Backup::class, $backup);
+		foreach ($backup->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $data['backup'][$attr]);
+		}
+
+		$this->expectException(BackupException::class);
+		$client->backups->getBackup('wrong-id');
+	}
 }
