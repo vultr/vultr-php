@@ -1,13 +1,13 @@
 <?php
 
-namespace Vultr\VultrPhp\Tests;
+namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\Services\VultrServiceException;
 
-use PHPUnit\Framework\TestCase;
+use Vultr\VultrPhp\Tests\VultrTest;
 
-class VultrExceptionTest extends TestCase
+class VultrExceptionTest extends VultrTest
 {
 	public function testDefaultException()
 	{

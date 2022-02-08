@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Tests;
+namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrAuth;
 use Vultr\VultrPhp\VultrClient;
@@ -10,9 +10,10 @@ use Vultr\VultrPhp\VultrClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\RequestOptions;
-use PHPUnit\Framework\TestCase;
 
-class VultrClientTest extends TestCase
+use Vultr\VultrPhp\Tests\VultrTest;
+
+class VultrClientTest extends VultrTest
 {
 	public function testAuth()
 	{

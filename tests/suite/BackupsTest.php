@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Tests;
+namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Backups\Backup;
@@ -12,9 +12,9 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Exception\RequestException;
 
-use PHPUnit\Framework\TestCase;
+use Vultr\VultrPhp\Tests\VultrTest;
 
-class BackupsTest extends TestCase
+class BackupsTest extends VultrTest
 {
 	public function testGetBackups()
 	{

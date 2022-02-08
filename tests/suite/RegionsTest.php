@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Tests;
+namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrClient;
 
@@ -10,9 +10,9 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Exception\RequestException;
 
-use PHPUnit\Framework\TestCase;
+use Vultr\VultrPhp\Tests\VultrTest;
 
-class SnapshotsTest extends TestCase
+class RegionsTest extends VultrTest
 {
 
 }
