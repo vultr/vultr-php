@@ -2,8 +2,7 @@
 
 namespace Vultr\VultrPhp\Services;
 
-// Dependancies.
-use Exception;
+use Throwable;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\RequestException;
@@ -64,7 +63,7 @@ abstract class VultrService
 			}
 			throw new VultrServiceException('GET failed : '. $e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
 			throw new VultrServiceException('GET failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
@@ -91,7 +90,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new VultrServiceException('Failed to list: '.$e->getMessage(), $e->getHTTPCode());
+			throw new VultrServiceException('Failed to list: '.$e->getMessage(), VultrException::SERVICE_CODE, $e->getHTTPCode(), $e);
 		}
 
 		$objects = [];
@@ -107,9 +106,9 @@ abstract class VultrService
 				$objects[] = VultrUtil::mapObject($object, $model);
 			}
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
-			throw new VultrServiceException('Failed to deserialize list: '. $e->getMessage());
+			throw new VultrServiceException('Failed to deserialize list: '. $e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
 
 		return $objects;
