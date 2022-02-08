@@ -2,7 +2,7 @@
 
 namespace Vultr\VultrPhp\Services\Backups;
 
-use Exception;
+use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -52,7 +52,7 @@ class BackupService extends VultrService
 			$stdclass = json_decode($response->getBody());
 			$backup = VultrUtil::mapObject($stdclass, new Backup(), 'backup');
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
 			throw new BackupException('Failed to deserialize backup object: '.$e->getMessage(), null, $e);
 		}
