@@ -61,7 +61,6 @@ class BackupsTest extends TestCase
 		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
-			// I don't care about optimizations. Array is small anyways.
 			foreach ($data['backups'] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
@@ -78,7 +77,6 @@ class BackupsTest extends TestCase
 		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
-			// I don't care about optimizations. Array is small anyways.
 			foreach ($data2['backups'] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
