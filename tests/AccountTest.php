@@ -37,7 +37,7 @@ class AccountTest extends TestCase
 		$mock = new MockHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(200, [], 'Invalid json'),
-			new RequestException('This is an exception', new Request('GET', 'account')),
+			new RequestException('This is an exception', new Request('GET', 'account'), new Response(400, [], json_encode(['error' => 'Bad request']))),
 		]);
 		$stack = HandlerStack::create($mock);
 		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
