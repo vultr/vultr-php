@@ -53,12 +53,12 @@ class ApplicationsTest extends VultrTest
 		// Filter one-click
 		$data2 = $data;
 		unset($data2['applications'][1]);
-		$dat2['meta']['total'] = 1;
+		$data2['meta']['total'] = 1;
 
 		// Filter marketplace
 		$data3 = $data;
 		unset($data3['applications'][0]);
-		$dat3['meta']['total'] = 1;
+		$data3['meta']['total'] = 1;
 
 		$mock = new MockHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
@@ -98,5 +98,15 @@ class ApplicationsTest extends VultrTest
 
 		$this->expectException(ApplicationException::class);
 		$client->applications->getApplications();
+	}
+
+	public function testGetApplicationsFilterOneClick()
+	{
+		$this->markTestIncomplete('Not implemented');
+	}
+
+	public function testGetApplicationsFilterMarketplace()
+	{
+		$this->markTestIncomplete('Not implemented');
 	}
 }

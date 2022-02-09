@@ -14,5 +14,8 @@ use Vultr\VultrPhp\Tests\VultrTest;
 
 class RegionsTest extends VultrTest
 {
-
+	public function testGetRegions()
+	{
+		$this->markTestIncomplete('Not implemented');
+	}
 }

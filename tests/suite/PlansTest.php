@@ -14,5 +14,8 @@ use Vultr\VultrPhp\Tests\VultrTest;
 
 class PlansTest extends VultrTest
 {
-
+	public function testGetPlans()
+	{
+		$this->markTestIncomplete('Not implemented');
+	}
 }

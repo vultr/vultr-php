@@ -92,6 +92,11 @@ class BackupsTest extends VultrTest
 		$client->backups->getBackups();
 	}
 
+	public function testGetBackupsByInstanceId()
+	{
+		$this->markTestIncomplete('Not implemented');
+	}
+
 	public function testGetBackup()
 	{
 		$id = 'cb676a46-66fd-4dfb-b839-12312414';
