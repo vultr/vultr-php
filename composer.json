@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Vultr\\VultrPhp\\": "tests/"
+            "Vultr\\VultrPhp\\Tests\\": "tests/"
         }
     }
 }
