@@ -18,31 +18,7 @@ class BackupsTest extends VultrTest
 {
 	public function testGetBackups()
 	{
-		$data = [
-			'backups' => [
-				[
-					'id' => 'cb676a46-66fd-4dfb-b839-12312414',
-					'date_created' => '2020-10-10T01:56:20+00:00',
-					'description' => 'Example automatic backup',
-					'size' => 5000000,
-					'status' => 'complete'
-				],
-				[
-					'id' => 'cb676a46-66fd-4dfb-b839-32525262',
-					'date_created' => '2020-10-10T01:56:20+00:00',
-					'description' => 'Example automatic backup',
-					'size' => 0,
-					'status' => 'pending'
-				],
-			],
-			'meta' => [
-				'total' => 2,
-				'links' => [
-					'next' => '',
-					'prev' => ''
-				]
-			]
-		];
+		$data = $this->getDataProvider()->getData();
 
 		$data2 = $data;
 		unset($data2['backups'][1]);
@@ -100,15 +76,7 @@ class BackupsTest extends VultrTest
 	public function testGetBackup()
 	{
 		$id = 'cb676a46-66fd-4dfb-b839-12312414';
-		$data = [
-			'backup' => [
-				'id' => $id,
-				'date_created' => '2020-10-10T01:56:20+00:00',
-				'description' => 'Example automatic backup',
-				'size' => 5000000,
-				'status' => 'complete'
-			]
-		];
+		$data = $this->getDataProvider()->getData($id);
 
 		$mock = new MockHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),

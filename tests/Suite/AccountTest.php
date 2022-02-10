@@ -18,21 +18,7 @@ class AccountTest extends VultrTest
 {
 	public function testGetAccount()
 	{
-		$data = [
-			'account' => [
-				'name' => 'Example Account',
-				'email' => 'admin@example.com',
-				'acls' => [
-					'manage_users', 'subscriptions_view', 'subscriptions', 'billing',
-					'support', 'provisioning', 'dns', 'abuse', 'upgrade',
-					'firewall', 'alerts', 'objstore', 'loadbalancer'
-				],
-				'balance' => -100.55,
-				'pending_charges' => 60.25,
-				'last_payment_date' => '2020-1010T01:56:20+00:00',
-				'last_payment_amount' => -1.25
-			]
-		];
+		$data = $this->getDataProvider()->getData();
 
 		$mock = new MockHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
