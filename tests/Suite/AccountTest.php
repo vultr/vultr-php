@@ -6,10 +6,8 @@ use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Account\Account;
 use Vultr\VultrPhp\Services\Account\AccountException;
 
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
@@ -20,13 +18,11 @@ class AccountTest extends VultrTest
 	{
 		$data = $this->getDataProvider()->getData();
 
-		$mock = new MockHandler([
+		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(200, [], 'Invalid json'),
-			new RequestException('This is an exception', new Request('GET', 'account'), new Response(400, [], json_encode(['error' => 'Bad request']))),
+			new RequestException('This is an exception', new Request('GET', 'account'), new Response(400, [], json_encode(['error' => 'Bad request'])))
 		]);
-		$stack = HandlerStack::create($mock);
-		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
 
 		$account = $client->account->getAccount();
 		$this->assertInstanceOf(Account::class, $account);
