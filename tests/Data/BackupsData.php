@@ -35,6 +35,28 @@ class BackupsData extends DataProvider
 		];
 	}
 
+	protected function dataGetBackupsByInstanceId(string $id) : array
+	{
+		return [
+			'backups' => [
+				[
+					'id' => 'cb676a46-66fd-4dfb-b839-32525262',
+					'date_created' => '2020-10-10T01:56:20+00:00',
+					'description' => 'Example automatic backup',
+					'size' => 0,
+					'status' => 'pending'
+				],
+			],
+			'meta' => [
+				'total' => 1,
+				'links' => [
+					'next' => '',
+					'prev' => ''
+				]
+			]
+		];
+	}
+
 	protected function dataGetBackup(string $id) : array
 	{
 		return [

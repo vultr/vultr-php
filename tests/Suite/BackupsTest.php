@@ -20,17 +20,10 @@ class BackupsTest extends VultrTest
 	{
 		$data = $this->getDataProvider()->getData();
 
-		$data2 = $data;
-		unset($data2['backups'][1]);
-		$data2['meta']['total'] = 1;
-
-		$mock = new MockHandler([
+		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new Response(200, ['Content-Type' => 'application/json'], json_encode($data2)),
 			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
 		]);
-		$stack = HandlerStack::create($mock);
-		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
 
 		$backups = $client->backups->getBackups();
 		$this->assertEquals($data['meta']['total'], count($backups));
@@ -48,12 +41,25 @@ class BackupsTest extends VultrTest
 			}
 		}
 
-		$backups = $client->backups->getBackups('cb676a46-66fd-4dfb-b839-1141515');
-		$this->assertEquals($data2['meta']['total'], count($backups));
+		$this->expectException(BackupException::class);
+		$client->backups->getBackups();
+	}
+
+	public function testGetBackupsByInstanceId()
+	{
+		$id = 'cb676a46-66fd-4dfb-b839-1141515';
+		$data = $this->getDataProvider()->getData($id);
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request'])))
+		]);
+
+		$backups = $client->backups->getBackups($id);
+		$this->assertEquals($data['meta']['total'], count($backups));
 		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
-			foreach ($data2['backups'] as $object)
+			foreach ($data['backups'] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
 
@@ -65,12 +71,7 @@ class BackupsTest extends VultrTest
 		}
 
 		$this->expectException(BackupException::class);
-		$client->backups->getBackups();
-	}
-
-	public function testGetBackupsByInstanceId()
-	{
-		$this->markTestIncomplete('Not implemented');
+		$client->backups->getBackups($id);
 	}
 
 	public function testGetBackup()
