@@ -77,12 +77,10 @@ class BackupsTest extends VultrTest
 		$id = 'cb676a46-66fd-4dfb-b839-12312414';
 		$data = $this->getDataProvider()->getData($id);
 
-		$mock = new MockHandler([
+		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new RequestException('Not Found', new Request('GET', 'backups/wrong-id'), new Response(404, [], json_encode(['error' => 'Not found']))),
 		]);
-		$stack = HandlerStack::create($mock);
-		$client = VultrClient::create('TEST1234', ['handler' => $stack]);
 
 		$backup = $client->backups->getBackup($id);
 		$this->assertInstanceOf(Backup::class, $backup);
