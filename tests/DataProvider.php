@@ -20,7 +20,7 @@ abstract class DataProvider implements DataProviderInterface
 		return $this->$function();
 	}
 
-	public function createClientHandler(array $requests)
+	public function createClientHandler(array $requests) : VultrClient
 	{
 		return VultrClient::create('TEST1234', ['handler' => HandlerStack::create(new MockHandler($requests))]);
 	}
