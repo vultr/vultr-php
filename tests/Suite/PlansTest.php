@@ -14,8 +14,18 @@ use Vultr\VultrPhp\Tests\VultrTest;
 
 class PlansTest extends VultrTest
 {
-	public function testGetPlans()
+	public function testGetPlan()
 	{
-		$this->markTestIncomplete('Not implemented');
+		$this->markTestSkipped('Not implemented');
+	}
+
+	public function testGetVPSPlans()
+	{
+		$this->markTestSkipped('Not implemented');
+	}
+
+	public function testGetBMPlans()
+	{
+		$this->markTestSkipped('Not implemented');
 	}
 }

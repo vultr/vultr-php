@@ -16,6 +16,6 @@ class RegionsTest extends VultrTest
 {
 	public function testGetRegions()
 	{
-		$this->markTestIncomplete('Not implemented');
+		$this->markTestSkipped('Not implemented');
 	}
 }
