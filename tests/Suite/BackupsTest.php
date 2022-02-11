@@ -6,10 +6,8 @@ use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Backups\Backup;
 use Vultr\VultrPhp\Services\Backups\BackupException;
 
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
