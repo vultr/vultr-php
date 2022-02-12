@@ -12,7 +12,7 @@ class VPSPlan extends Model
 	protected int $disk;
 	protected int $diskCount;
 	protected int $bandwidth;
-	protected int $monthlyCost;
+	protected float $monthlyCost;
 	protected string $type;
 	protected array $locations;
 
@@ -76,12 +76,12 @@ class VPSPlan extends Model
 		$this->bandwidth = $bandwidth;
 	}
 
-	public function getMonthlyCost() : int
+	public function getMonthlyCost() : float
 	{
 		return $this->monthlyCost;
 	}
 
-	public function setMonthlyCost(int $monthly_cost) : void
+	public function setMonthlyCost(float $monthly_cost) : void
 	{
 		$this->monthlyCost = $monthly_cost;
 	}
