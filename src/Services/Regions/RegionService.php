@@ -8,12 +8,13 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class RegionService extends VultrService
 {
-	private static ?array $region_cache = null;
+	private static ?array $cache_region = null;
 
 	/**
-	* @param $per_page
-	* @param $cursor
-	*/
+	 * @param $options - ListOptions - Interact via reference.
+	 * @throws RegionException
+	 * @return Region[]
+	 */
 	public function getRegions(?ListOptions &$options = null) : array
 	{
 		$regions = [];
@@ -33,6 +34,12 @@ class RegionService extends VultrService
 		return $regions;
 	}
 
+	/**
+	 * @param $id - string - Ex ewr - Id of the region
+	 * @param $type - string|null - PlanService Filters - FILTER_ALL, FILTER_VC2, FILTER_VHF, FILTER_VDC, FILTER_VBM
+	 * @throws RegionException
+	 * @return array[VPSPlan|BMPlan]
+	 */
 	public function getAvailablility(string $id, ?string $type = null) : array
 	{
 		try
@@ -48,6 +55,7 @@ class RegionService extends VultrService
 		{
 			throw new RegionException('Failed to get available compute in region: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
+
 		$plans = [];
 		try
 		{
@@ -57,7 +65,9 @@ class RegionService extends VultrService
 
 			foreach ($decode['available_plans'] as $plan_id)
 			{
-				$plans[] = $plan_service->getPlan($plan_id);
+				$plan = $plan_service->getPlan($plan_id);
+				if ($plan === null) continue; // Not valid plan.
+				$plans[] = $plan;
 			}
 		}
 		catch (Exception $e)
@@ -67,21 +77,31 @@ class RegionService extends VultrService
 		return $plans;
 	}
 
-	public function cacheRegions() : void
-	{
-		if (static::$region_cache !== null) return;
-
-		static::$region_cache = [];
-		$options = new ListOptions(500);
-		foreach ($this->getRegions($options) as $region)
-		{
-			static::$region_cache[$region->getId()] = $region;
-		}
-	}
-
+	/**
+	 * @param $id - string - Ex ewr - Region id.
+	 * @throws RegionException
+	 * @return Region|null
+	 */
 	public function getRegion(string $id) : ?Region
 	{
 		$this->cacheRegions();
-		return static::$region_cache[$id] ?? null;
+		return static::$cache_region[$id] ?? null;
+	}
+
+	/**
+	 * @param $override - bool - Depending on whether to requery the regions.
+	 * @throws RegionException
+	 * @return void
+	 */
+	public function cacheRegions(bool $override = false) : void
+	{
+		if (static::$cache_region !== null && !$override) return;
+
+		static::$cache_region = [];
+		$options = new ListOptions(500);
+		foreach ($this->getRegions($options) as $region)
+		{
+			static::$cache_region[$region->getId()] = $region;
+		}
 	}
 }

@@ -19,6 +19,13 @@ class PlanService extends VultrService
 
 	private static ?array $cache_plans = null;
 
+	/**
+	 * @param $type - string|null - FILTER_ALL, FILTER_VC2, FILTER_VHF, FILTER_VDC
+	 * @param $os - string|null - FILTER_WINDOWS
+	 * @param $options - ListOptions - Interact via reference.
+	 * @throws PlanException
+	 * @return VPSPlan[]
+	 */
 	public function getVPSPlans(?string $type = null, ?string $os = null, ?ListOptions &$options = null) : array
 	{
 		$plans = [];
@@ -52,6 +59,11 @@ class PlanService extends VultrService
 		return $plans;
 	}
 
+	/**
+	 * @param $options - ListOptions - Interact via reference.
+	 * @throws PlanException
+	 * @return BMPlan[]
+	 */
 	public function getBMPlans(?ListOptions &$options = null) : array
 	{
 		$plans = [];
@@ -71,6 +83,22 @@ class PlanService extends VultrService
 		return $plans;
 	}
 
+	/**
+	 * @param $id - string - Ex vc2-1c-1gb - This can be a vps plan id or a baremetal plan id.
+	 * @throws PlanException
+	 * @return VPSPlan|BMPlan|null
+	 */
+	public function getPlan(string $id) : VPSPlan|BMPlan|null
+	{
+		$this->cachePlans();
+		return static::$cache_plans[$id] ?? null;
+	}
+
+	/**
+	 * @param $override - bool - Depending on whether to requery the plans.
+	 * @throws PlanException
+	 * @return void
+	 */
 	public function cachePlans(bool $override = false) : void
 	{
 		if (static::$cache_plans !== null && !$override) return;
@@ -88,12 +116,6 @@ class PlanService extends VultrService
 				static::$cache_plans[$plan->getId()] = $plan;
 			}
 		}
-	}
-
-	public function getPlan(string $id) : VPSPlan|BMPlan|null
-	{
-		$this->cachePlans();
-		return static::$cache_plans[$id] ?? null;
 	}
 
 	private function setPlanLocations(array &$plans) : void
