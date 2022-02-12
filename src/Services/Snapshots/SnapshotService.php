@@ -2,8 +2,7 @@
 
 namespace Vultr\VultrPhp\Services\Snapshots;
 
-use Exception;
-use Error;
+use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -54,7 +53,7 @@ class SnapshotService extends VultrService
 			$stdclass = json_decode($response->getBody());
 			$snapshot = VultrUtil::mapObject($stdclass, new Snapshot(), 'snapshot');
 		}
-		catch (Exception | Error $e)
+		catch (Throwable $e)
 		{
 			throw new SnapshotException('Failed to deserialize snapshot object: '.$e->getMessage(), null, $e);
 		}
