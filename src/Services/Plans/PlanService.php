@@ -77,9 +77,9 @@ class PlanService extends VultrService
 
 		static::$cache_plans = [];
 		$options = new ListOptions(500);
-		$bm_plans = $this->getBMPlans($options);
-		$options = new ListOptions(500);
 		$vps_plans = $this->getVPSPlans(null, null, $options);
+		$options = new ListOptions(500);
+		$bm_plans = $this->getBMPlans($options);
 
 		foreach ([$bm_plans, $vps_plans] as $plans)
 		{
