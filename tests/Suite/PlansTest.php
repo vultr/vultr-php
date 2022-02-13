@@ -6,6 +6,7 @@ use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Services\Plans\BMPlan;
 use Vultr\VultrPhp\Services\Plans\PlanException;
+use Vultr\VultrPhp\Services\Plans\PlanService;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
@@ -89,17 +90,47 @@ class PlansTest extends VultrTest
 
 	public function testGetVPSPlansFilter_VC2()
 	{
-		$this->markTestSkipped('Not implemented');
+		$provider = $this->getDataProvider();
+		$plans = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
+			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VC2), $plans, PlanService::FILTER_VC2);
+
+		$this->expectException(PlanException::class);
+		$client->plans->getVPSPlans(PlanService::FILTER_VC2);
 	}
 
 	public function testGetVPSPlansFilter_VHF()
 	{
-		$this->markTestSkipped('Not implemented');
+		$provider = $this->getDataProvider();
+		$plans = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
+			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VHF), $plans, PlanService::FILTER_VHF);
+
+		$this->expectException(PlanException::class);
+		$client->plans->getVPSPlans(PlanService::FILTER_VHF);
 	}
 
 	public function testGetVPSPlansFilter_VDC()
 	{
-		$this->markTestSkipped('Not implemented');
+		$provider = $this->getDataProvider();
+		$plans = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
+			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VDC), $plans, PlanService::FILTER_VDC);
+
+		$this->expectException(PlanException::class);
+		$client->plans->getVPSPlans(PlanService::FILTER_VDC);
 	}
 
 	public function testGetBMPlans()
@@ -125,6 +156,22 @@ class PlansTest extends VultrTest
 
 		$this->expectException(PlanException::class);
 		$client->plans->getBMPlans();
+	}
+
+	private function testFilter(array $objects, array $plans, string $filter)
+	{
+		foreach ($objects as $plan)
+		{
+			$this->assertInstanceOf(VPSPlan::class, $plan);
+			$this->assertEquals($plan->getType(), $filter);
+			$found_plan = null;
+			foreach ($plans[$plan->getResponseListName()] as $response)
+			{
+				if ($response['id'] !== $plan->getId()) continue;
+				$found_plan = $response;
+			}
+			$this->compare($plan, $found_plan);
+		}
 	}
 
 	private function mapRegions(array $regions) : array
