@@ -64,7 +64,7 @@ class RegionsTest extends VultrTest
 		$client->plans->cachePlans(true);
 		$map_region = $this->mapRegions($regions['regions']);
 		$map_plan = [];
-		foreach (['plans' => $vps_plans, 'plans_metal' => $bm_plans] as $field => $plans)
+		foreach ([(new VPSPlan())->getResponseListName() => $vps_plans, (new BMPlan())->getResponseListName() => $bm_plans] as $field => $plans)
 		{
 			foreach ($plans[$field] as $plan)
 			{
