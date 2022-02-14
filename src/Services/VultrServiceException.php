@@ -11,6 +11,8 @@ class VultrServiceException extends VultrException
 	public const APPLICATION_CODE = 302;
 	public const BACKUP_CODE = 303;
 	public const BLOCK_CODE = 304;
+	public const BILL_CODE = 321;
+	public const BM_CODE = 322; // Bare Metal
 	public const DNS_CODE = 305;
 	public const FIREWALL_CODE = 306;
 	public const INSTANCE_CODE = 307;
