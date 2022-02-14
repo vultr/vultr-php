@@ -92,5 +92,8 @@ class RegionsTest extends VultrTest
 				}
 			}
 		}
+
+		$this->expectException(RegionException::class);
+		$client->regions->getAvailablility($id);
 	}
 }
