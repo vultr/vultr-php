@@ -36,8 +36,18 @@ class VultrTest extends TestCase
 		}
 	}
 
-	public function getDataProvider() : ?DataProviderInterface
+	protected function getDataProvider() : ?DataProviderInterface
 	{
 		return $this->provider;
+	}
+
+	protected function mapRegions(array $regions) : array
+	{
+		$region_map = [];
+		foreach ($regions as $region)
+		{
+			$region_map[$region['id']] = $region;
+		}
+		return $region_map;
 	}
 }

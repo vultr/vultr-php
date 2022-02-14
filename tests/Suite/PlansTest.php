@@ -174,16 +174,6 @@ class PlansTest extends VultrTest
 		}
 	}
 
-	private function mapRegions(array $regions) : array
-	{
-		$region_map = [];
-		foreach ($regions as $region)
-		{
-			$region_map[$region['id']] = $region;
-		}
-		return $region_map;
-	}
-
 	private function findPlan(string $id, array $plans) : ?array
 	{
 		$found_plan = null;
