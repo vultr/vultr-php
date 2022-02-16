@@ -25,7 +25,7 @@ class VultrClient
 		//'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO
 		//'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO
 		//'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
-		//'operating_system' => Services\OperatingSystems\OperatingSystemService::class, // TODO
+		'operating_system' => Services\OperatingSystems\OperatingSystemService::class, // TODO
 		'plans'            => Services\Plans\PlanService::class,
 		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class,
