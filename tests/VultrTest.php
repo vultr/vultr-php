@@ -16,10 +16,10 @@ class VultrTest extends TestCase
 {
 	private ?DataProviderInterface $provider = null;
 
-	public function __construct()
+	public function __construct(string $name = '', array $data = [], string $dataName = '')
 	{
 		$this->initDataProvider();
-		parent::__construct();
+		parent::__construct($name, $data, $dataName);
 	}
 
 	private function initDataProvider() : void

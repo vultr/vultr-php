@@ -11,7 +11,13 @@
          convertDeprecationsToExceptions="true"
          failOnRisky="true"
          failOnWarning="true"
+         processIsolation="true"
          verbose="true">
+    <!-- if ever needed.
+    <php>
+        <ini name="memory_limit" value="512M" />
+    </php>
+    -->
     <testsuites>
         <testsuite name="default">
             <directory>tests/Suite</directory>
