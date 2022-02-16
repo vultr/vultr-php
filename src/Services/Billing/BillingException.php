@@ -2,6 +2,7 @@
 
 namespace Vultr\VultrPhp\Services\Billing;
 
+use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;
 
 class BillingException extends VultrServiceException
