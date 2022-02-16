@@ -4,7 +4,6 @@ namespace Vultr\VultrPhp\Services\Applications;
 
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
-use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
 class ApplicationService extends VultrService
