@@ -30,11 +30,138 @@ abstract class VultrService
 		return $this->vultr;
 	}
 
+	/**
+	 * Get the Guzzle Client
+	 */
 	protected function getClient() : Client
 	{
 		return $this->client;
 	}
 
+	/**
+	 * @param $uri - string - anything after api.vultr.com/v2/
+	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
+	 * @throws VultrServiceException
+	 * @return ResponseInterface
+	 */
+	protected function delete(string $uri, ?array $params = []) : ResponseInterface
+	{
+		$options = [];
+		if ($params !== null)
+		{
+			$options[RequestOptions::QUERY] = $params;
+		}
+
+		try
+		{
+			$response = $this->getClient()->request('DELETE', $uri, $options);
+		}
+		catch (RequestException $e)
+		{
+			$code = null;
+			$message = $e->getMessage();
+			if ($e->hasResponse())
+			{
+				$response = $e->getResponse();
+				$error = json_decode($response->getBody(), true);
+				$code = $response->getStatusCode();
+				if (isset($error['error']))
+				{
+					$message = $error['error'];
+				}
+			}
+			throw new VultrServiceException('DELETE failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrServiceException('DELETE fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+		}
+
+		return $response;
+	}
+
+	/**
+	 * @param $uri - string - anything after api.vultr.com/v2/
+	 * @param $params - array - form data that will be encoded to a json
+	 * @throws VultrServiceException
+	 * @return ResponseInterface
+	 */
+	protected function post(string $uri, array $params = []) : ResponseInterface
+	{
+		try
+		{
+			$response = $this->getClient()->request('POST', $uri, [
+				RequestOptions::JSON => $params
+			]);
+		}
+		catch (RequestException $e)
+		{
+			$code = null;
+			$message = $e->getMessage();
+			if ($e->hasResponse())
+			{
+				$response = $e->getResponse();
+				$error = json_decode($response->getBody(), true);
+				$code = $response->getStatusCode();
+				if (isset($error['error']))
+				{
+					$message = $error['error'];
+				}
+			}
+			throw new VultrServiceException('PUT failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrServiceException('PUT fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+		}
+
+		return $response;
+	}
+
+	/**
+	 * @param $uri - string - anything after api.vultr.com/v2/
+	 * @param $params - array - form data that will be encoded to a json
+	 * @throws VultrServiceException
+	 * @return ResponseInterface
+	 */
+	protected function put(string $uri, array $params = []) : ResponseInterface
+	{
+		try
+		{
+			$response = $this->getClient()->request('PUT', $uri, [
+				RequestOptions::JSON => $params
+			]);
+		}
+		catch (RequestException $e)
+		{
+			$code = null;
+			$message = $e->getMessage();
+			if ($e->hasResponse())
+			{
+				$response = $e->getResponse();
+				$error = json_decode($response->getBody(), true);
+				$code = $response->getStatusCode();
+				if (isset($error['error']))
+				{
+					$message = $error['error'];
+				}
+			}
+			throw new VultrServiceException('PUT failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrServiceException('PUT fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+		}
+
+		return $response;
+	}
+
+	/**
+	 * @param $uri - string - anything after api.vultr.com/v2/
+	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
+	 * @throws VultrServiceException
+	 * @return ResponseInterface
+	 */
 	protected function get(string $uri, ?array $params = null) : ResponseInterface
 	{
 		$options = [];
@@ -49,23 +176,23 @@ abstract class VultrService
 		}
 		catch (RequestException $e)
 		{
+			$code = null;
+			$message = $e->getMessage();
 			if ($e->hasResponse())
 			{
 				$response = $e->getResponse();
 				$error = json_decode($response->getBody(), true);
-				$message = $e->getMessage();
+				$code = $response->getStatusCode();
 				if (isset($error['error']))
 				{
 					$message = $error['error'];
 				}
-
-				throw new VultrServiceException('GET failed : '.$message, VultrException::SERVICE_CODE, $response->getStatusCode(), $e);
 			}
-			throw new VultrServiceException('GET failed : '. $e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+			throw new VultrServiceException('GET failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrServiceException('GET failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+			throw new VultrServiceException('GET fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
 
 		return $response;
