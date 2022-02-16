@@ -13,6 +13,8 @@ class ApplicationService extends VultrService
 	public const FILTER_MARKETPLACE = 'marketplace';
 	public const FILTER_ONE_CLICK = 'one-click';
 
+	private static ?array $cache_applications = null;
+
 	/**
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
 	 * @param $per_page - MAX 500
@@ -35,5 +37,33 @@ class ApplicationService extends VultrService
 		}
 
 		return $applications;
+	}
+
+	/**
+	 * @param $id - int - Application id, whether one click or marketplace app.
+	 * @throws ApplicationException
+	 * @return Application|null
+	 */
+	public function getApplication(int $id) : ?Application
+	{
+		$this->cacheApplications();
+		return static::$cache_applications[$id] ?? null;
+	}
+
+	/**
+	 * @param $override - bool - Depending on whether to requery the applications.
+	 * @throws ApplicationException
+	 * @return void
+	 */
+	public function cacheApplications(bool $override = false) : void
+	{
+		if (static::$cache_applications !== null && !$override) return;
+
+		static::$cache_applications = [];
+		$options = new ListOptions(500);
+		foreach ($this->getApplications(self::FILTER_ALL) as $app)
+		{
+			static::$cache_applications[$app->getId()] = $app;
+		}
 	}
 }

@@ -86,4 +86,9 @@ class ApplicationsData extends DataProvider
 			]
 		];
 	}
+
+	protected function dataGetApplication() : array
+	{
+		return $this->dataGetApplications();
+	}
 }

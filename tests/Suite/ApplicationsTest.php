@@ -67,6 +67,26 @@ class ApplicationsTest extends VultrTest
 		$client->applications->getApplications(ApplicationService::FILTER_MARKETPLACE);
 	}
 
+	public function testGetApplication()
+	{
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+		]);
+
+		$selected = $data['applications'][0]; // @see ApplicationsData::dataGetApplications
+		$app = $client->applications->getApplication(1);
+		$this->assertInstanceOf(Application::class, $app);
+		foreach ($app->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $selected[$attr]);
+		}
+
+		$app = $client->applications->getApplication(69);
+		$this->assertNull($app);
+	}
+
 	private function testApps(array $response, array $data)
 	{
 		foreach ($response as $app)
