@@ -80,6 +80,7 @@ class PlansTest extends VultrTest
 			{
 				if ($response['id'] !== $plan->getId()) continue;
 				$found_plan = $response;
+				break;
 			}
 			$this->compare($plan, $found_plan);
 		}
@@ -150,6 +151,7 @@ class PlansTest extends VultrTest
 			{
 				if ($response['id'] !== $plan->getId()) continue;
 				$found_plan = $response;
+				break;
 			}
 			$this->compare($plan, $found_plan);
 		}
@@ -169,6 +171,7 @@ class PlansTest extends VultrTest
 			{
 				if ($response['id'] !== $plan->getId()) continue;
 				$found_plan = $response;
+				break;
 			}
 			$this->compare($plan, $found_plan);
 		}
@@ -181,6 +184,7 @@ class PlansTest extends VultrTest
 		{
 			if ($plan['id'] !== $id) continue;
 			$found_plan = $plan;
+			break;
 		}
 		return $found_plan;
 	}
