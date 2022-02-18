@@ -16,7 +16,7 @@ class ApplicationService extends VultrService
 
 	/**
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
-	 * @param $per_page - MAX 500
+	 * @param $options - ListOptions|null - Interact via reference.
 	 * @param $cursor
 	 */
 	public function getApplications(string $filter = self::FILTER_ALL, ?ListOptions &$options = null) : array
