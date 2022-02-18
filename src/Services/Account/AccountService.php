@@ -9,6 +9,9 @@ use Vultr\VultrPhp\Util\VultrUtil;
 
 class AccountService extends VultrService
 {
+	/**
+	 * Get the Account Model with information for the logged in API Key.
+	 */
 	public function getAccount() : Account
 	{
 		try

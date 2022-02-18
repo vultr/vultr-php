@@ -10,6 +10,12 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class BackupService extends VultrService
 {
+	/**
+	 * @param $instance_id - string|null - Get the current backups for the instance.
+	 * @param $options - ListOptions|null - Interact via reference.
+	 * @throws BackupException
+	 * @return Backup[]
+	 */
 	public function getBackups(?string $instance_id = null, ?ListOptions &$options = null) : array
 	{
 		$backups = [];
@@ -36,6 +42,11 @@ class BackupService extends VultrService
 		return $backups;
 	}
 
+	/**
+	 * @param $backup_id - string - UUID of the backup image.
+	 * @throws BackupException
+	 * @return Backup
+	 */
 	public function getBackup(string $backup_id) : Backup
 	{
 		try
