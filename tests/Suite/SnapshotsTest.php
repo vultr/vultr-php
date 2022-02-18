@@ -76,6 +76,7 @@ class SnapshotsTest extends VultrTest
 		]);
 
 		$snapshot = $client->snapshots->getSnapshot($id);
+		$this->assertInstanceOf(Snapshot::class, $snapshot);
 		foreach ($snapshot->toArray() as $attr => $value)
 		{
 			$this->assertEquals($value, $data['snapshot'][$attr]);
@@ -83,5 +84,64 @@ class SnapshotsTest extends VultrTest
 
 		$this->expectException(SnapshotException::class);
 		$client->snapshots->getSnapshot($id);
+	}
+
+	public function testDeleteSnapshot()
+	{
+		$id = 'asfsdgsdaf-sadgf-sadga-sdgasdg';
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new RequestException('Bad Request', new Request('DELETE', 'snapshots/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$client->snapshots->deleteSnapshot($id);
+
+		$this->expectException(SnapshotException::class);
+		$client->snapshots->deleteSnapshot($id);
+	}
+
+	public function testCreateSnapshot()
+	{
+		$id = 'asfsdgsdaf-sadgf-sadga-sdgasdg';
+		$description = 'Example Snapshot';
+		$data = $this->getDataProvider()->getData($id);
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('POST', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$snapshot = $client->snapshots->createSnapshot($id, $description);
+		$this->assertInstanceOf(Snapshot::class, $snapshot);
+		foreach ($snapshot->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $data['snapshot'][$attr]);
+		}
+		$this->assertEquals($id, $snapshot->getId());
+		$this->assertEquals($description, $snapshot->getDescription());
+
+		$this->expectException(SnapshotException::class);
+		$client->snapshots->createSnapshot($id, $description);
+	}
+
+	public function testCreateSnapshotFromURL()
+	{
+		$url = 'https://www.vultr.com/your-awesome-diskimage.raw';
+		$description = 'Example Snapshot';
+		$data = $this->getDataProvider()->getData();
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('POST', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$snapshot = $client->snapshots->createSnapshotFromURL($url, $description);
+		$this->assertInstanceOf(Snapshot::class, $snapshot);
+		foreach ($snapshot->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $data['snapshot'][$attr]);
+		}
+		$this->assertEquals($description, $snapshot->getDescription());
+
+		$this->expectException(SnapshotException::class);
+		$client->snapshots->createSnapshotFromURL($url, $description);
 	}
 }

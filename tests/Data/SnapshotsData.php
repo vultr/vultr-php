@@ -101,4 +101,25 @@ class SnapshotsData extends DataProvider
 			]
 		];
 	}
+
+	protected function dataCreateSnapshot(string $id) : array
+	{
+		return [
+			'snapshot' => [
+				'id'              => $id,
+				'date_created'    => '2020-10-10T01:56:20+00:00',
+				'description'     => 'Example Snapshot',
+				'size'            => 0,
+				'compressed_size' => 0,
+				'status'          => 'pending',
+				'os_id'           => 215,
+				'app_id'          => 0
+			]
+		];
+	}
+
+	protected function dataCreateSnapshotFromURL() : array
+	{
+		return $this->dataCreateSnapshot('cb676a46-66fd-4dfb-b839-443f2e6c0b60');
+	}
 }

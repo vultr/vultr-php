@@ -31,7 +31,7 @@ class VultrClient
 		'plans'            => Services\Plans\PlanService::class, // Comment Models
 		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class, // Comment Model
-		'snapshots'        => Services\Snapshots\SnapshotService::class, // TODO - Write tests. Comment Model
+		'snapshots'        => Services\Snapshots\SnapshotService::class, // Comment Model
 		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
 		//'users'            => Services\Users\UserService::class, // TODO
