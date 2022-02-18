@@ -1,11 +1,11 @@
 <?php
 
-namespace Vultr\VultrPhp\Services\Blockstorage;
+namespace Vultr\VultrPhp\Services\BlockStorage;
 
 use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;
 
-class BlockstorageException extends VultrServiceException
+class BlockStorageException extends VultrServiceException
 {
 	public function __construct(string $message, ?int $http_code = null, ?Throwable $previous = null)
 	{

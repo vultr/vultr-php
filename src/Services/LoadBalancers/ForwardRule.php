@@ -1,6 +1,6 @@
 <?php
 
-namespace Vultr\VultrPhp\Services\LoadBalancer;
+namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
