@@ -108,11 +108,11 @@ abstract class VultrService
 					$message = $error['error'];
 				}
 			}
-			throw new VultrServiceException('PUT failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
+			throw new VultrServiceException('POST failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrServiceException('PUT fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+			throw new VultrServiceException('POST fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
 
 		return $response;

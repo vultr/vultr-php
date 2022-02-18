@@ -37,3 +37,21 @@ echo "======================\n";
 
 $snapshot = $client->snapshots->getSnapshot('UUID-GOES-HERE');
 var_dump($snapshot);
+
+
+echo "======================\n";
+echo "Create Snapshot\n";
+echo "======================\n";
+
+$snapshot = $client->snapshots->createSnapshot('INSTANCE UUID-GOES-HERE', 'test-api');
+
+var_dump($snapshot);
+
+echo "======================\n";
+echo "Create Snapshot from URL\n";
+echo "======================\n";
+
+$snapshot = $client->snapshots->createSnapshotFromURL('https://www.youtube.com/dude-island', 'test-api');
+
+var_dump($snapshot);
+

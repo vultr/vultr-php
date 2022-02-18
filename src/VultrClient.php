@@ -6,6 +6,8 @@ use Exception;
 use GuzzleHttp\Client;
 
 use Vultr\VultrPhp\Services;
+use Vultr\VultrPhp\Util\ModelInterface;
+
 class VultrClient
 {
 	private VultrAuth $auth;
@@ -29,7 +31,7 @@ class VultrClient
 		'plans'            => Services\Plans\PlanService::class,
 		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class,
-		'snapshots'        => Services\Snapshots\SnapshotService::class, // TODO
+		'snapshots'        => Services\Snapshots\SnapshotService::class, // TODO - Write tests.
 		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
 		//'users'            => Services\Users\UserService::class, // TODO
