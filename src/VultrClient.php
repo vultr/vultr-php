@@ -17,7 +17,7 @@ class VultrClient
 		'account'          => Services\Account\AccountService::class,
 		'applications'     => Services\Applications\ApplicationService::class,
 		'backups'          => Services\Backups\BackupService::class,
-		//'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
+		'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
 		'billing'          => Services\Billing\BillingService::class, // TODO
 		'blockstorage'     => Services\Blockstorage\BlockstorageService::class, // TODO
 		'dns'              => Services\DNS\DNSService::class, // TODO
