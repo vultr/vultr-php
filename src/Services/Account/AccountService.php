@@ -11,7 +11,9 @@ class AccountService extends VultrService
 {
 	/**
 	 * Get the Account Model with information for the logged in API Key.
-	 * @throws
+	 * @throws AccountException
+	 * @throws VultrException
+	 * @return Account
 	 */
 	public function getAccount() : Account
 	{
