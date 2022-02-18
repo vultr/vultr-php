@@ -3,6 +3,7 @@
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrClient;
+use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\Services\Account\Account;
 use Vultr\VultrPhp\Services\Account\AccountException;
 
@@ -35,9 +36,9 @@ class AccountTest extends VultrTest
 		{
 			$client->account->getAccount();
 		}
-		catch (AccountException $e)
+		catch (VultrException $e)
 		{
-			$this->assertStringContainsString('Failed to deserialize account object', $e->getMessage());
+			$this->assertStringContainsString('Failed to deserialize json', $e->getMessage());
 		}
 
 		$this->expectException(AccountException::class);

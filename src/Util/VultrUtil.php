@@ -2,6 +2,9 @@
 
 namespace Vultr\VultrPhp\Util;
 
+use Throwable;
+use Vultr\VultrPhp\VultrException;
+
 use JsonMapper\JsonMapper;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
@@ -33,5 +36,26 @@ class VultrUtil
 		$model->resetObject();
 
 		return $map->mapObject($object, clone $model);
+	}
+
+	public static function convertJSONToObject(string $json, ModelInterface $model, ?string $prop = null) : ModelInterface
+	{
+		$class_name = get_class($model);
+		$std_class = json_decode($json);
+		if ($std_class === null)
+		{
+			throw new VultrException('Failed to deserialize json for '.$class_name.' object: '.json_last_error_msg());
+		}
+
+		try
+		{
+			$object = self::mapObject($std_class, $model, $prop);
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrException('Failed to deserialize '.$class_name.' object :'.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
+		}
+
+		return $object;
 	}
 }

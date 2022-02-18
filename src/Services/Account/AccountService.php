@@ -11,6 +11,7 @@ class AccountService extends VultrService
 {
 	/**
 	 * Get the Account Model with information for the logged in API Key.
+	 * @throws
 	 */
 	public function getAccount() : Account
 	{
@@ -23,16 +24,6 @@ class AccountService extends VultrService
 			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$account = VultrUtil::mapObject($stdclass, new Account(), 'account');
-		}
-		catch (Throwable $e)
-		{
-			throw new AccountException('Failed to deserialize account object: '.$e->getMessage(), null, $e);
-		}
-
-		return $account;
+		return VultrUtil::convertJSONToObject($response->getBody(), new Account(), 'account');
 	}
 }
