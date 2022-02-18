@@ -14,11 +14,11 @@ class VultrClient
 	private Client $client;
 
 	public const MAP = [
-		'account'          => Services\Account\AccountService::class, // Comment Model
-		'applications'     => Services\Applications\ApplicationService::class, // Comment Model
-		'backups'          => Services\Backups\BackupService::class, // Comment Model
+		'account'          => Services\Account\AccountService::class,
+		'applications'     => Services\Applications\ApplicationService::class,
+		'backups'          => Services\Backups\BackupService::class,
 		//'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
-		//'billing'          => Services\Billing\BillingService::class, // TODO
+		'billing'          => Services\Billing\BillingService::class, // TODO
 		//'blockstorage'     => Services\BlockStorage\BlockStorageService::class, // TODO
 		//'dns'              => Services\DNS\DNSService::class, // TODO
 		//'firewall'         => Services\Firewall\FirewallService::class, // TODO
@@ -27,11 +27,11 @@ class VultrClient
 		//'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO
 		//'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO
 		//'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
-		'operating_system' => Services\OperatingSystems\OperatingSystemService::class, // Comment Model
-		'plans'            => Services\Plans\PlanService::class, // Comment Models
+		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
+		'plans'            => Services\Plans\PlanService::class,
 		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
-		'regions'          => Services\Regions\RegionService::class, // Comment Model
-		'snapshots'        => Services\Snapshots\SnapshotService::class, // Comment Model
+		'regions'          => Services\Regions\RegionService::class,
+		'snapshots'        => Services\Snapshots\SnapshotService::class,
 		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
 		//'users'            => Services\Users\UserService::class, // TODO
