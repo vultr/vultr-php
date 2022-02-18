@@ -18,12 +18,13 @@ class RegionService extends VultrService
 	public function getRegions(?ListOptions &$options = null) : array
 	{
 		$regions = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
 			$regions = $this->list('regions', new Region(), $options);
 		}
 		catch (VultrServiceException $e)

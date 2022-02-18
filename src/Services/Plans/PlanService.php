@@ -28,25 +28,25 @@ class PlanService extends VultrService
 	public function getVPSPlans(?string $type = null, ?string $os = null, ?ListOptions &$options = null) : array
 	{
 		$plans = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
+		$params = [];
+
+		if ($type !== null)
+		{
+			$params['type'] = $type;
+		}
+
+		if ($os !== null)
+		{
+			$params['os'] = $os;
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
-
-			$params = [];
-
-			if ($type !== null)
-			{
-				$params['type'] = $type;
-			}
-
-			if ($os !== null)
-			{
-				$params['os'] = $os;
-			}
-
 			$plans = $this->list('plans', new VPSPlan(), $options, $params);
 			$this->setPlanLocations($plans);
 		}
@@ -66,12 +66,13 @@ class PlanService extends VultrService
 	public function getBMPlans(?ListOptions &$options = null) : array
 	{
 		$plans = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
 			$plans = $this->list('plans-metal', new BMPlan(), $options);
 			$this->setPlanLocations($plans);
 		}

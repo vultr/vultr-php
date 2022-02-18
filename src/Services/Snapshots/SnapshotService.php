@@ -19,19 +19,19 @@ class SnapshotService extends VultrService
 	{
 		$snapshots = [];
 
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
+		$params = [];
+		if ($description !== null)
+		{
+			$params['description'] = $description;
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
-
-			$params = [];
-			if ($description !== null)
-			{
-				$params['description'] = $description;
-			}
-
 			$snapshots = $this->list('snapshots', new Snapshot(), $options, $params);
 		}
 		catch (VultrServiceException $e)
@@ -45,6 +45,7 @@ class SnapshotService extends VultrService
 	/**
 	 * @param $snapshot_id - string - UUID of the snapshot
 	 * @throws SnapshotException
+	 * @throws VultrException
 	 * @return Snapshot
 	 */
 	public function getSnapshot(string $snapshot_id) : Snapshot
@@ -58,23 +59,14 @@ class SnapshotService extends VultrService
 			throw new SnapshotException('Failed to get snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$snapshot = VultrUtil::mapObject($stdclass, new Snapshot(), 'snapshot');
-		}
-		catch (Throwable $e)
-		{
-			throw new SnapshotException('Failed to deserialize snapshot object: '.$e->getMessage(), null, $e);
-		}
-
-		return $snapshot;
+		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
 	}
 
 	/**
 	 * @param $instance_id - string - UUID of the instance that will have the snapshot taken of.
 	 * @param $description - string - What shall you name your snapshot?
 	 * @throws SnapshotException
+	 * @throws VultrException
 	 * @return Snapshot
 	 */
 	public function createSnapshot(string $instance_id, string $description = '') : Snapshot
@@ -91,17 +83,7 @@ class SnapshotService extends VultrService
 			throw new SnapshotException('Failed to create snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$snapshot = VultrUtil::mapObject($stdclass, new Snapshot(), 'snapshot');
-		}
-		catch (Throwable $e)
-		{
-			throw new Snapshot('Failed to deserialize snapshot object: '.$e->getMessage(), null, $e);
-		}
-
-		return $snapshot;
+		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
 	}
 
 	/**
@@ -124,17 +106,7 @@ class SnapshotService extends VultrService
 			throw new SnapshotException('Failed to create snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$snapshot = VultrUtil::mapObject($stdclass, new Snapshot(), 'snapshot');
-		}
-		catch (Throwable $e)
-		{
-			throw new Snapshot('Failed to deserialize snapshot object: '.$e->getMessage(), null, $e);
-		}
-
-		return $snapshot;
+		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
 	}
 
 	/**

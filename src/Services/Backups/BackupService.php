@@ -19,19 +19,19 @@ class BackupService extends VultrService
 	public function getBackups(?string $instance_id = null, ?ListOptions &$options = null) : array
 	{
 		$backups = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
+		$params = [];
+		if ($instance_id !== null)
+		{
+			$params['instance_id'] = $instance_id;
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
-
-			$params = [];
-			if ($instance_id !== null)
-			{
-				$params['instance_id'] = $instance_id;
-			}
-
 			$backups = $this->list('backups', new Backup(), $options, $params);
 		}
 		catch (VultrServiceException $e)
@@ -45,6 +45,7 @@ class BackupService extends VultrService
 	/**
 	 * @param $backup_id - string - UUID of the backup image.
 	 * @throws BackupException
+	 * @throws VultrException
 	 * @return Backup
 	 */
 	public function getBackup(string $backup_id) : Backup
@@ -58,16 +59,6 @@ class BackupService extends VultrService
 			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		try
-		{
-			$stdclass = json_decode($response->getBody());
-			$backup = VultrUtil::mapObject($stdclass, new Backup(), 'backup');
-		}
-		catch (Throwable $e)
-		{
-			throw new BackupException('Failed to deserialize backup object: '.$e->getMessage(), null, $e);
-		}
-
-		return $backup;
+		return VultrUtil::convertJSONToObject($response->getBody(), new Backup(), 'backup');
 	}
 }

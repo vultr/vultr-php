@@ -17,17 +17,19 @@ class ApplicationService extends VultrService
 	/**
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
 	 * @param $options - ListOptions|null - Interact via reference.
+	 * @throws ApplicationException
 	 * @return Application[]
 	 */
 	public function getApplications(string $filter = self::FILTER_ALL, ?ListOptions &$options = null) : array
 	{
 		$applications = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(150);
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(150);
-			}
 			$applications = $this->list('applications', new Application(), $options, ['type' => $filter]);
 		}
 		catch (VultrServiceException $e)

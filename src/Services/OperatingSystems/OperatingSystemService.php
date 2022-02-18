@@ -18,12 +18,13 @@ class OperatingSystemService extends VultrService
 	public function getOperatingSystems(?ListOptions &$options = null) : array
 	{
 		$os = [];
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
 		try
 		{
-			if ($options === null)
-			{
-				$options = new ListOptions(100);
-			}
 			$os = $this->list('os', new OperatingSystem(), $options);
 		}
 		catch (VultrServiceException $e)
