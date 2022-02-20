@@ -29,7 +29,7 @@ class VultrClient
 		'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
 		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
 		'plans'            => Services\Plans\PlanService::class,
-		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
+		'reserved_ips'     => Services\ReservedIPs\ReservedIPService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class,
 		'snapshots'        => Services\Snapshots\SnapshotService::class,
 		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
