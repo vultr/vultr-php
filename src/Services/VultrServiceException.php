@@ -22,13 +22,13 @@ class VultrServiceException extends VultrException
 	public const OBJ_CODE = 311; // Object Storage
 	public const OS_CODE = 312; // Operating System
 	public const PLAN_CODE = 313;
-	public const VPC_CODE = 314; // Private Networks
 	public const RESERVED_IP_CODE = 315;
 	public const REGION_CODE = 316;
 	public const SNAPSHOT_CODE = 317;
 	public const SSH_CODE = 318;
 	public const STARTUP_CODE = 319;
 	public const USER_CODE = 320;
+	public const VPC_CODE = 314; // Private Networks
 
 	public function __construct(string $message, int $code = VultrException::SERVICE_CODE, ?int $http_code = null, ?Throwable $previous = null)
 	{
