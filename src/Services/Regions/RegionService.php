@@ -2,8 +2,8 @@
 
 namespace Vultr\VultrPhp\Services\Regions;
 
-use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
+use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Util\ListOptions;
 
 class RegionService extends VultrService
@@ -15,21 +15,18 @@ class RegionService extends VultrService
 	 * @throws RegionException
 	 * @return Region[]
 	 */
-	public function getRegions(?ListOptions &$options = null) : array
+	public function getRegions(?ListOptions&$options = null) : array
 	{
 		$regions = [];
-		if ($options === null)
-		{
+		if ($options === null) {
 			$options = new ListOptions(100);
 		}
 
 		try
 		{
 			$regions = $this->list('regions', new Region(), $options);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode(), $e);
+		} catch (VultrServiceException $e) {
+			throw new RegionException("Failed to get regions: " . $e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $regions;
@@ -41,20 +38,17 @@ class RegionService extends VultrService
 	 * @throws RegionException
 	 * @return array[VPSPlan|BMPlan]
 	 */
-	public function getAvailablility(string $id, ?string $type = null) : array
+	public function getAvailablility(string $id, ?string $type = null): array
 	{
 		try
 		{
 			$params = [];
-			if ($type !== null)
-			{
+			if ($type !== null) {
 				$params['type'] = $type;
 			}
-			$response = $this->get('regions/'.$id.'/availability', $params);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new RegionException('Failed to get available compute in region: '.$e->getMessage(), $e->getHTTPCode(), $e);
+			$response = $this->get('regions/' . $id . '/availability', $params);
+		} catch (VultrServiceException $e) {
+			throw new RegionException('Failed to get available compute in region: ' . $e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		$plans = [];
@@ -64,16 +58,16 @@ class RegionService extends VultrService
 			$plan_service = $this->getVultrClient()->plans;
 			$plan_service->cachePlans();
 
-			foreach ($decode['available_plans'] as $plan_id)
-			{
+			foreach ($decode['available_plans'] as $plan_id) {
 				$plan = $plan_service->getPlan($plan_id);
-				if ($plan === null) continue; // Not valid plan.
+				if ($plan === null) {
+					continue;
+				}
+				// Not valid plan.
 				$plans[] = $plan;
 			}
-		}
-		catch (Exception $e)
-		{
-			throw new RegionException('Failed to deserialize availability plan objects: '.$e->getMessage(), null, $e);
+		} catch (Exception $e) {
+			throw new RegionException('Failed to deserialize availability plan objects: ' . $e->getMessage(), null, $e);
 		}
 		return $plans;
 	}
@@ -83,7 +77,7 @@ class RegionService extends VultrService
 	 * @throws RegionException
 	 * @return Region|null
 	 */
-	public function getRegion(string $id) : ?Region
+	public function getRegion(string $id): ?Region
 	{
 		$this->cacheRegions();
 		return static::$cache_region[$id] ?? null;
@@ -94,14 +88,15 @@ class RegionService extends VultrService
 	 * @throws RegionException
 	 * @return void
 	 */
-	public function cacheRegions(bool $override = false) : void
+	public function cacheRegions(bool $override = false): void
 	{
-		if (static::$cache_region !== null && !$override) return;
+		if (static::$cache_region !== null && !$override) {
+			return;
+		}
 
 		static::$cache_region = [];
 		$options = new ListOptions(500);
-		foreach ($this->getRegions($options) as $region)
-		{
+		foreach ($this->getRegions($options) as $region) {
 			static::$cache_region[$region->getId()] = $region;
 		}
 	}
