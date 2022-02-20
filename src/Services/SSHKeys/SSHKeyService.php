@@ -8,6 +8,29 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class SSHKeyService extends VultrService
 {
+	public function getSSHKey(string $ssh_key_id) : SSHKey
+	{
 
+	}
+
+	public function getSSHKeys(?ListOptions $options = null) : array
+	{
+
+	}
+
+	public function updateSSHKey(SSHKey $ssh_key) : void
+	{
+
+	}
+
+	public function deleteSSHKey(string $ssh_key_id) : void
+	{
+
+	}
+
+	public function createSSHKey(string $name, string $ssh_key) : SSHKey
+	{
+
+	}
 }
 
