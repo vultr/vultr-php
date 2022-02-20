@@ -50,7 +50,7 @@ class RegionService extends VultrService
 			{
 				$params['type'] = $type;
 			}
-			$response = $this->get('regions/' .$id.'/availability', $params);
+			$response = $this->get('regions/'.$id.'/availability', $params);
 		}
 		catch (VultrServiceException $e)
 		{
