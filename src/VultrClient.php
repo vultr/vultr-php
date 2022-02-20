@@ -54,7 +54,8 @@ class VultrClient
 	{
 		$class = self::MAP[$name] ?? null;
 
-		if ($class !== null) {
+		if ($class !== null) 
+		{
 			return new $class($this, $this->client);
 		}
 
@@ -63,9 +64,12 @@ class VultrClient
 
 	public static function create(string $API_KEY, array $guzzle_options = []) : VultrClient
 	{
-		try {
+		try 
+		{
 			$client = new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
-		} catch (Exception $e) {
+		} 
+		catch (Exception $e) 
+		{
 			throw new VultrClientException('Failed to initialize client: '.$e->getMessage(), null, $e);
 		}
 
