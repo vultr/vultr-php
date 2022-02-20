@@ -32,7 +32,7 @@ class VultrClient
 		'reserved_ips'     => Services\ReservedIPs\ReservedIPService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class,
 		'snapshots'        => Services\Snapshots\SnapshotService::class,
-		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
+		'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
 		//'users'            => Services\Users\UserService::class, // TODO
 		//'vpc'              => Services\PrivateNetworks\VPCService::class, // TODO
