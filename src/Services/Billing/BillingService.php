@@ -18,13 +18,17 @@ class BillingService extends VultrService
 	public function getBills(?ListOptions &$options = null) : array
 	{
 		$bills = [];
-		if ($options === null) {
+		if ($options === null)
+		{
 			$options = new ListOptions(100);
 		}
 
-		try {
+		try
+		{
 			$bills = $this->list('bills', new Bill(), $options);
-		} catch (VultrServiceException $e) {
+		}
+		catch (VultrServiceException $e)
+		{
 			throw new BillException("Failed to get bills: " .$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
@@ -49,13 +53,15 @@ class BillingService extends VultrService
 	 */
 	public function cacheBills(bool $override = false) : void
 	{
-		if (static::$cache_bill !== null && !$override) {
+		if (static::$cache_bill !== null && !$override)
+		{
 			return;
 		}
 
 		static::$cache_bill = [];
 		$options = new ListOptions(500);
-		foreach ($this->getBills($options) as $bill) {
+		foreach ($this->getBills($options) as $bill)
+		{
 			static::$cache_bill[$bill->getId()] = $bill;
 		}
 	}
