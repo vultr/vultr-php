@@ -32,4 +32,24 @@ class UsersTest extends VultrTest
 		$this->expectException(UserException::class);
 		$client->users->getUser($user_id);
 	}
+
+	public function testGetUsers()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testCreateUser()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testUpdateUser()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testDeleteUser()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
 }
