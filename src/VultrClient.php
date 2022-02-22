@@ -26,16 +26,16 @@ class VultrClient
 		'iso'              => Services\ISO\ISOService::class, // TODO
 		'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO, do load balancers, and block storage before this.
 		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO, do firewall before this
-		//'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
+		'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class, // TODO
 		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
 		'plans'            => Services\Plans\PlanService::class,
-		//'reserved_ips'     => Services\ReservedIPs\ReservedIPsService::class, // TODO
+		'reserved_ips'     => Services\ReservedIPs\ReservedIPService::class, // TODO
 		'regions'          => Services\Regions\RegionService::class,
 		'snapshots'        => Services\Snapshots\SnapshotService::class,
-		//'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
-		//'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
-		//'users'            => Services\Users\UserService::class, // TODO
-		//'vpc'              => Services\PrivateNetworks\VPCService::class, // TODO
+		'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
+		'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
+		'users'            => Services\Users\UserService::class, // TODO
+		'vpc'              => Services\VPC\VPCService::class, // TODO
 	];
 
 	/**
