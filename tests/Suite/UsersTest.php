@@ -4,6 +4,7 @@ namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Users\UserException;
+use Vultr\VultrPhp\Services\Users\User;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
@@ -35,7 +36,30 @@ class UsersTest extends VultrTest
 
 	public function testGetUsers()
 	{
-		$this->markTestSkipped('Incomplete');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('GET', 'users'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		foreach ($client->users->getUsers() as $user)
+		{
+			$this->assertInstanceOf(User::class, $user);
+			foreach ($data['users'] as $object)
+			{
+				if ($user->getId() != $object['id']) continue;
+
+				foreach ($user->toArray() as $attr => $value)
+				{
+					$this->assertEquals($value, $object[$attr]);
+				}
+				break;
+			}
+		}
+
+		$this->expectException(UserException::class);
+		$client->users->getUsers();
 	}
 
 	public function testCreateUser()

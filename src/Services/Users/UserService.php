@@ -29,9 +29,29 @@ class UserService extends VultrService
 		return VultrUtil::convertJSONToObject($response->getBody(), new User(), 'user');
 	}
 
+	/**
+	 * @param $options - ListOptions - Interact via reference.
+	 * @throws UserException
+	 * @return User[]
+	 */
 	public function getUsers(?ListOptions &$options = null) : array
 	{
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
 
+		$users = [];
+		try
+		{
+			$users = $this->list('users', new User(), $options);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new UserException('Failed to get users: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return $users;
 	}
 
 	public function createUser(User $user) : User
