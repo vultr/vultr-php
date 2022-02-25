@@ -198,7 +198,7 @@ abstract class VultrService
 		return $response;
 	}
 
-	protected function list(string $uri, ModelInterface $model, ListOptions $options, ?array $params = null) : array
+	protected function list(string $uri, ModelInterface $model, ListOptions &$options, ?array $params = null) : array
 	{
 		try
 		{
