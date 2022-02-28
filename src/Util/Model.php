@@ -39,8 +39,35 @@ abstract class Model implements ModelInterface
 			// Convert our camelcased properties to underscores.
 			$underscore_prop = strtolower((string) \preg_replace('/(?<!^)[A-Z]/', '_$0', $property->getName()));
 
-			$method_name = 'get'.ucfirst($property->getName());
-			$array[$underscore_prop] = $this->$method_name();
+			$nulled_value = '';
+			switch ($property->getType()->getName())
+			{
+				case 'string':
+					$nulled_value = '';
+				break;
+
+				case 'float':
+				case 'int':
+					$nulled_value = 0;
+				break;
+
+				case 'array':
+					$nulled_value = [];
+				break;
+
+				case 'bool':
+					$nulled_value = false;
+				break;
+			}
+
+			$value = $nulled_value;
+			if ($property->isInitialized($this))
+			{
+				$method_name = 'get'.ucfirst($property->getName());
+				$value = $this->$method_name();
+			}
+
+			$array[$underscore_prop] =  $value;
 		}
 
 		return $array;
