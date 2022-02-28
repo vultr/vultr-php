@@ -54,9 +54,32 @@ class UserService extends VultrService
 		return $users;
 	}
 
-	public function createUser(User $user) : User
+	/**
+	 * @param $password - string
+	 * @param $user - User Model with any properties defined will be used in the response.
+	 * @throws UserException
+	 * @throws VultrException
+	 * @return User
+	 */
+	public function createUser(string $password, User $user) : User
 	{
+		$params = $user->toArray();
+		$params['password'] = $password;
+		foreach ($params as $attr => $param)
+		{
+			if (empty($param)) unset($params[$attr]);
+		}
 
+		try
+		{
+			$response = $this->post('users', $params);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new UserException('Failed to create user: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return VultrUtil::convertJSONToObject($response->getBody(), new User(), 'user');
 	}
 
 	public function updateUser(User $user) : void
