@@ -34,7 +34,7 @@ class VultrClient
 		'snapshots'        => Services\Snapshots\SnapshotService::class,
 		'ssh_keys'         => Services\SSHKeys\SSHKeyService::class, // TODO
 		'startup_scripts'  => Services\StartupScripts\StartupScriptService::class, // TODO
-		'users'            => Services\Users\UserService::class, // TODO
+		'users'            => Services\Users\UserService::class,
 		'vpc'              => Services\VPC\VPCService::class, // TODO
 	];
 

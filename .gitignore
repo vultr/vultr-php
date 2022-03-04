@@ -2,3 +2,4 @@
 .phpunit.cache
 /api_key.php
 .phpdoc
+examples/test.php
