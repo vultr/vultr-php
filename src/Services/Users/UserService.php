@@ -82,14 +82,38 @@ class UserService extends VultrService
 		return VultrUtil::convertJSONToObject($response->getBody(), new User(), 'user');
 	}
 
+	/**
+	 * @param $user - User
+	 * @throws UserException
+	 * @return void
+	 */
 	public function updateUser(User $user) : void
 	{
-
+		try
+		{
+			$this->patch('users/'.$user->getId(), $user->toArray());
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new UserException('Failed to update user: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
+	/**
+	 * @param $user_id - string
+	 * @throws UserException
+	 * @return void
+	 */
 	public function deleteUser(string $user_id) : void
 	{
-
+		try
+		{
+			$this->delete('users/'.$user_id);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new UserException('Failed to delete user: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 }
 
