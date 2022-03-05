@@ -17,15 +17,6 @@ class AccountService extends VultrService
 	 */
 	public function getAccount() : Account
 	{
-		try
-		{
-			$response = $this->get('account');
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new AccountException('Failed to get account info: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new Account(), 'account');
+		return $this->getObject('account', new Account());
 	}
 }

@@ -50,16 +50,7 @@ class SnapshotService extends VultrService
 	 */
 	public function getSnapshot(string $snapshot_id) : Snapshot
 	{
-		try
-		{
-			$response = $this->get('snapshots/'.$snapshot_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SnapshotException('Failed to get snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
+		return $this->getObject('snapshots/'.$snapshot_id, new Snapshot());
 	}
 
 	/**

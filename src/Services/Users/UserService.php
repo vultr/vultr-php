@@ -17,16 +17,7 @@ class UserService extends VultrService
 	 */
 	public function getUser(string $user_id) : User
 	{
-		try
-		{
-			$response = $this->get('users/'.$user_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new UserException('Failed to get user info: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new User(), 'user');
+		return $this->getObject('users/'.$user_id, new User());
 	}
 
 	/**

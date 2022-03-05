@@ -50,15 +50,6 @@ class BackupService extends VultrService
 	 */
 	public function getBackup(string $backup_id) : Backup
 	{
-		try
-		{
-			$response = $this->get('backups/'.$backup_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new BackupException('Failed to get backup: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new Backup(), 'backup');
+		return $this->getObject('backups/'.$backup_id, new Backup());
 	}
 }
