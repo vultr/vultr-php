@@ -50,4 +50,9 @@ class SSHKey extends Model
 	{
 		$this->sshKey = $ssh_key;
 	}
+
+	public function getResponseName() : string
+	{
+		return 'ssh_key';
+	}
 }
