@@ -7,6 +7,7 @@ use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Services\Plans\BMPlan;
 use Vultr\VultrPhp\Services\Plans\PlanException;
 use Vultr\VultrPhp\Services\Plans\PlanService;
+use Vultr\VultrPhp\Services\Regions\Region;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
@@ -201,6 +202,7 @@ class PlansTest extends VultrTest
 			$this->assertIsArray($value);
 			foreach ($value as $region)
 			{
+				$this->assertInstanceOf(Region::class, $region);
 				foreach ($region->toArray() as $reg_attr => $reg_val)
 				{
 					$this->assertEquals($reg_val, $this->region_map[$region->getId()][$reg_attr]);
