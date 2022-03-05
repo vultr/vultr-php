@@ -10,7 +10,7 @@ class SSHKeyService extends VultrService
 {
 	public function getSSHKey(string $ssh_key_id) : SSHKey
 	{
-
+		return $this->getObject('ssh-keys/'.$ssh_key_id, new SSHKey());
 	}
 
 	public function getSSHKeys(?ListOptions $options = null) : array
