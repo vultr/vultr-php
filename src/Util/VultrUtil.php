@@ -79,4 +79,15 @@ class VultrUtil
 
 		return $object;
 	}
+
+	/**
+	 * @param $camelCase - string - a camel cased string that will be converted to underscore notation
+	 * @param $lowercase - bool - whether the string will be all lowercase or not.
+	 * @return string
+	 */
+	public static function convertCamelCaseToUnderscore(string $camelCase, bool $lowercase = true) : string
+	{
+		$underscored = (string)preg_replace('/(?<!^)[A-Z]/', '_$0', $camelCase);
+		return $lowercase ? strtolower($underscored) : $underscored;
+	}
 }

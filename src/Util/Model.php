@@ -18,12 +18,21 @@ abstract class Model implements ModelInterface
 	 */
 	public function getResponseListName() : string
 	{
+		return rtrim($this->getResponseName(), 's').'s';
+	}
+
+	/**
+	 * Get the wrapped response of an individual object
+	 * This allows us to conform with the api and target the specific element without statically defining them.
+	 */
+	public function getResponseName() : string
+	{
 		$classname = get_class($this);
 		if ($pos = strrpos($classname, '\\'))
 		{
 			$classname = substr($classname, $pos + 1);
 		}
-		return rtrim(strtolower($classname), 's').'s';
+		return VultrUtil::convertCamelCaseToUnderscore($classname);
 	}
 
 	/**
@@ -37,7 +46,7 @@ abstract class Model implements ModelInterface
 		foreach ($reflection->getProperties() as $property)
 		{
 			// Convert our camelcased properties to underscores.
-			$underscore_prop = strtolower((string) \preg_replace('/(?<!^)[A-Z]/', '_$0', $property->getName()));
+			$underscore_prop = VultrUtil::convertCamelCaseToUnderscore($property->getName());
 
 			$nulled_value = '';
 			switch ($property->getType()->getName())
