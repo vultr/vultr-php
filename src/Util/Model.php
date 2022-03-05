@@ -70,6 +70,15 @@ abstract class Model implements ModelInterface
 			}
 
 			$value = $nulled_value;
+			/**
+			 * PHP Versions 8.0 and below will throw an error if checking if its initialized on protected props
+			 * Even though they are a child of this class. Its dumb.
+			 */
+			if (version_compare(PHP_VERSION, '8.1', '<'))
+			{
+				$property->setAccessible(true);
+			}
+
 			if ($property->isInitialized($this))
 			{
 				$method_name = 'get'.ucfirst($property->getName());
