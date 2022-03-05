@@ -8,6 +8,12 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class SSHKeyService extends VultrService
 {
+	/**
+	 * @param $ssh_key_id - string - UUID of the ssh key
+	 * @throws SSHKeyException
+	 * @throws VultrException
+	 * @return SSHKey
+	 */
 	public function getSSHKey(string $ssh_key_id) : SSHKey
 	{
 		return $this->getObject('ssh-keys/'.$ssh_key_id, new SSHKey());
