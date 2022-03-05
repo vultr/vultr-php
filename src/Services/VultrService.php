@@ -39,6 +39,29 @@ abstract class VultrService
 	}
 
 	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object that will be mapped to the get response.
+	 * @throws Child of VultrServiceObject
+	 * @return ModelInterface
+	 */
+	protected function getObject(string $uri, ModelInterface $model) : ModelInterface
+	{
+		$exception_class = $model::class.'Exception';
+
+		$underscored_class = $model->getResponseName();
+		try
+		{
+			$response = $this->get($uri);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new $exception_class('Failed to get '.str_replace('_', ' ', $underscored_class). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $underscored_class);
+	}
+
+	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
 	 * @throws VultrServiceException
