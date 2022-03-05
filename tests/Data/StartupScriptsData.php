@@ -10,12 +10,12 @@ class StartupScriptsData extends DataProvider
 	{
 		return json_decode('{
   "startup_script": {
-    "id": "'.$startup_id.'",
-    "date_created": "2020-10-10T01:56:20+00:00",
-    "date_modified": "2020-10-10T01:59:20+00:00",
-    "name": "Example Startup Script",
-    "type": "pxe",
-    "script": "QmFzZTY0IEV4YW1wbGUgRGF0YQ=="
+	"id": "'.$startup_id.'",
+	"date_created": "2020-10-10T01:57:20+00:00",
+	"date_modified": "2020-10-10T01:59:20+00:00",
+	"name": "Example Startup Script",
+	"type": "pxe",
+	"script": "QmFzZTY0IEV4YW1wbGUgRGF0YQ=="
   }
 }', true);
 	}
