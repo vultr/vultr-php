@@ -63,7 +63,7 @@ class VultrUtil
 	{
 		$class_name = get_class($model);
 		$std_class = json_decode($json);
-		if ($std_class === null)
+		if (!is_object($std_class))
 		{
 			throw new VultrException('Failed to deserialize json for '.$class_name.' object: '.json_last_error_msg());
 		}
