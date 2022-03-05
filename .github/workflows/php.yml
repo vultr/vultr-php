@@ -29,11 +29,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-  unit_tests:
+  tests:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v2
 
       - name: Run test suite
-        with: composer-cache
         run: composer test
