@@ -16,16 +16,7 @@ class StartupScriptService extends VultrService
 	 */
 	public function getStartupScript(string $startup_id) : StartupScript
 	{
-		try
-		{
-			$response = $this->get('startup-scripts/'.$startup_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new StartupScriptException('Failed to get startup script info: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new StartupScript(), 'startup_script');
+		return $this->getObject('startup-scripts/'.$startup_id, new StartupScript());
 	}
 
 	/**
