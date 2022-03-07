@@ -52,7 +52,7 @@ class SnapshotsTest extends VultrTest
 		foreach ($client->snapshots->getSnapshots($description) as $snapshot)
 		{
 			$this->assertInstanceOf(Snapshot::class, $snapshot);
-			foreach ($data['snapshots'] as $object)
+			foreach ($data[$snapshot->getResponseListName()] as $object)
 			{
 				if ($object['id'] !== $snapshot->getId()) continue;
 				foreach ($snapshot->toArray() as $attr => $value)
@@ -80,7 +80,7 @@ class SnapshotsTest extends VultrTest
 		$this->assertInstanceOf(Snapshot::class, $snapshot);
 		foreach ($snapshot->toArray() as $attr => $value)
 		{
-			$this->assertEquals($value, $data['snapshot'][$attr]);
+			$this->assertEquals($value, $data[$snapshot->getResponseName()][$attr]);
 		}
 
 		$this->expectException(SnapshotException::class);
@@ -115,7 +115,7 @@ class SnapshotsTest extends VultrTest
 		$this->assertInstanceOf(Snapshot::class, $snapshot);
 		foreach ($snapshot->toArray() as $attr => $value)
 		{
-			$this->assertEquals($value, $data['snapshot'][$attr]);
+			$this->assertEquals($value, $data[$snapshot->getResponseName()][$attr]);
 		}
 		$this->assertEquals($id, $snapshot->getId());
 		$this->assertEquals($description, $snapshot->getDescription());
@@ -138,7 +138,7 @@ class SnapshotsTest extends VultrTest
 		$this->assertInstanceOf(Snapshot::class, $snapshot);
 		foreach ($snapshot->toArray() as $attr => $value)
 		{
-			$this->assertEquals($value, $data['snapshot'][$attr]);
+			$this->assertEquals($value, $data[$snapshot->getResponseName()][$attr]);
 		}
 		$this->assertEquals($description, $snapshot->getDescription());
 

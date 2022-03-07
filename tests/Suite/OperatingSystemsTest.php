@@ -26,7 +26,7 @@ class OperatingSystemsTest extends VultrTest
 		foreach ($client->operating_system->getOperatingSystems() as $os)
 		{
 			$this->assertInstanceOf(OperatingSystem::class, $os);
-			foreach ($data['os'] as $object)
+			foreach ($data[$os->getResponseListName()] as $object)
 			{
 				if ($object['id'] !== $os->getId()) continue;
 				foreach ($os->toArray() as $attr => $value)
@@ -50,16 +50,16 @@ class OperatingSystemsTest extends VultrTest
 		]);
 		$id = 124;
 		$selected_os = null;
-		foreach ($data['os'] as $os)
+		$os = $client->operating_system->getOperatingSystem($id);
+		foreach ($data[$os->getResponseListName()] as $os_response)
 		{
-			if ($os['id'] !== $id) continue;
+			if ($os_response['id'] !== $id) continue;
 
-			$selected_os = $os;
+			$selected_os = $os_response;
 			break;
 		}
 		$this->assertNotNull($selected_os, 'Failed to find an operating system, id needs to be adjusted.');
 
-		$os = $client->operating_system->getOperatingSystem(124);
 		$this->assertInstanceOf(OperatingSystem::class, $os);
 		foreach ($os->toArray() as $attr => $value)
 		{

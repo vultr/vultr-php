@@ -28,7 +28,7 @@ class BackupsTest extends VultrTest
 		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
-			foreach ($data['backups'] as $object)
+			foreach ($data[$backup->getResponseListName()] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
 
@@ -58,7 +58,7 @@ class BackupsTest extends VultrTest
 		foreach ($backups as $backup)
 		{
 			$this->assertInstanceOf(Backup::class, $backup);
-			foreach ($data['backups'] as $object)
+			foreach ($data[$backup->getResponseListName()] as $object)
 			{
 				if ($object['id'] !== $backup->getId()) continue;
 
@@ -88,7 +88,7 @@ class BackupsTest extends VultrTest
 		$this->assertInstanceOf(Backup::class, $backup);
 		foreach ($backup->toArray() as $attr => $value)
 		{
-			$this->assertEquals($value, $data['backup'][$attr]);
+			$this->assertEquals($value, $data[$backup->getResponseName()][$attr]);
 		}
 
 		$this->expectException(BackupException::class);

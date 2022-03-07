@@ -29,7 +29,7 @@ class AccountTest extends VultrTest
 		$this->assertInstanceOf(Account::class, $account);
 		foreach ($account->toArray() as $attr => $value)
 		{
-			$this->assertEquals($value, $data['account'][$attr]);
+			$this->assertEquals($value, $data[$account->getResponseName()][$attr]);
 		}
 
 		try

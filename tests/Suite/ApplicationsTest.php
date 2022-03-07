@@ -75,9 +75,9 @@ class ApplicationsTest extends VultrTest
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 		]);
 
-		$selected = $data['applications'][0]; // @see ApplicationsData::dataGetApplications
 		$app = $client->applications->getApplication(1);
 		$this->assertInstanceOf(Application::class, $app);
+		$selected = $data[$app->getResponseListName()][0]; // @see ApplicationsData::dataGetApplications
 		foreach ($app->toArray() as $attr => $value)
 		{
 			$this->assertEquals($value, $selected[$attr]);
@@ -92,7 +92,7 @@ class ApplicationsTest extends VultrTest
 		foreach ($response as $app)
 		{
 			$this->assertInstanceOf(Application::class, $app);
-			foreach ($data['applications'] as $object)
+			foreach ($data[$app->getResponseListName()] as $object)
 			{
 				if ($object['id'] !== $app->getId()) continue;
 				foreach ($app->toArray() as $attr => $value)
