@@ -91,4 +91,9 @@ class User extends Model
 	{
 		$this->acls = $acls;
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['email', 'name', 'password', 'api_enabled', 'acls'];
+	}
 }

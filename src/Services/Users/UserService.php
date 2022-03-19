@@ -67,7 +67,7 @@ class UserService extends VultrService
 	{
 		try
 		{
-			$this->patch('users/'.$user->getId(), $user->toArray());
+			$this->patch('users/'.$user->getId(), $user->getUpdateArray());
 		}
 		catch (VultrServiceException $e)
 		{
