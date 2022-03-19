@@ -83,4 +83,9 @@ class ISO extends Model
 	{
 		$this->status = $status;
 	}
+
+	public function getResponseName() : string
+	{
+		return 'iso';
+	}
 }
