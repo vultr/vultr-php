@@ -12,6 +12,15 @@ use ReflectionClass;
 abstract class Model implements ModelInterface
 {
 	/**
+	 * Flat array to specify array props that will be checked on whether they should be updated or not.
+	 * @return array
+	 */
+	public function getUpdateParams() : array
+	{
+		return [];
+	}
+
+	/**
 	 * Get the list name of a model.
 	 * For instance during a list api call, objects will be wrapped in a parent json.
 	 * This allows us to conform with the api and target the specific element without statically defining them.
@@ -89,6 +98,20 @@ abstract class Model implements ModelInterface
 		}
 
 		return $array;
+	}
+
+	public function getUpdateArray() : array
+	{
+		$update = [];
+		$attributes = $this->toArray();
+		foreach ($this->getUpdateParams() as $param)
+		{
+			if (empty($attributes[$param])) continue;
+
+			$update[$param] = $attributes[$param];
+		}
+
+		return $update;
 	}
 
 	/**
