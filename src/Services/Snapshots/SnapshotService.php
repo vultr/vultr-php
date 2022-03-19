@@ -47,19 +47,10 @@ class SnapshotService extends VultrService
 	 */
 	public function createSnapshot(string $instance_id, string $description = '') : Snapshot
 	{
-		try
-		{
-			$response = $this->post('snapshots', [
-				'instance_id' => $instance_id,
-				'description' => $description
-			]);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SnapshotException('Failed to create snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
+		return $this->createObject('snapshots', new Snapshot(), [
+			'instance_id' => $instance_id,
+			'description' => $description
+		]);
 	}
 
 	/**
@@ -70,19 +61,10 @@ class SnapshotService extends VultrService
 	 */
 	public function createSnapshotFromURL(string $url, string $description = '') : Snapshot
 	{
-		try
-		{
-			$response = $this->post('snapshots/create-from-url', [
-				'url'         => $url,
-				'description' => $description
-			]);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SnapshotException('Failed to create snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new Snapshot(), 'snapshot');
+		return $this->createObject('snapshots/create-from-url', new Snapshot(), [
+			'url'         => $url,
+			'description' => $description
+		]);
 	}
 
 	/**
