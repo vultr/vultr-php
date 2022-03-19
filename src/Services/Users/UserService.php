@@ -75,14 +75,7 @@ class UserService extends VultrService
 	 */
 	public function deleteUser(string $user_id) : void
 	{
-		try
-		{
-			$this->delete('users/'.$user_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new UserException('Failed to delete user: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->deleteObject('users/'.$user_id, new User());
 	}
 }
 

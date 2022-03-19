@@ -29,9 +29,14 @@ class ReservedIPService extends VultrService
 		return $this->getListObjects('reserved-ips', new ReservedIP(), $options);
 	}
 
+	/**
+	 * @param $reserved_id - string
+	 * @throws ReservedIPException
+	 * @return void
+	 */
 	public function deleteReservedIP(string $reserved_id) : void
 	{
-
+		$this->deleteObject('reserved-ips/'.$reserved_id, new ReservedIP());
 	}
 
 	public function createReservedIP(ReservedIP $reserved_ip) : ReservedIP

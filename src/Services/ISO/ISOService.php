@@ -41,13 +41,6 @@ class ISOService extends VultrService
 
 	public function deleteISO(string $iso_id) : void
 	{
-		try
-		{
-			$this->delete('iso/'.$snapshot_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new ISOException('Failed to delete iso: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->deleteObject('iso/'.$iso_id, new ISO());
 	}
 }

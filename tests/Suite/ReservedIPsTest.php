@@ -62,7 +62,16 @@ class ReservedIPsTest extends VultrTest
 
 	public function testDeleteReservedIP()
 	{
-		$this->markTestSkipped('Incomplete');
+		$id = 'asfsdgsdaf-sadgf-sadga-sdgasdg';
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new RequestException('Bad Request', new Request('DELETE', 'reserved-ips/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$client->reserved_ips->deleteReservedIP($id);
+
+		$this->expectException(ReservedIPException::class);
+		$client->reserved_ips->deleteReservedIP($id);
 	}
 
 	public function testCreateReservedIP()

@@ -92,13 +92,6 @@ class SnapshotService extends VultrService
 	 */
 	public function deleteSnapshot(string $snapshot_id) : void
 	{
-		try
-		{
-			$this->delete('snapshots/'.$snapshot_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SnapshotException('Failed to delete snapshot: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->deleteObject('snapshots/'.$snapshot_id, new Snapshot());
 	}
 }

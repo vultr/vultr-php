@@ -72,14 +72,7 @@ class StartupScriptService extends VultrService
 	 */
 	public function deleteStartupScript(string $startup_id) : void
 	{
-		try
-		{
-			$this->delete('startup-scripts/'.$startup_id);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new StartupScriptException('Failed to delete startup script: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->deleteObject('startup-scripts/'.$startup_id, new StartupScript());
 	}
 }
 
