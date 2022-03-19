@@ -50,4 +50,9 @@ class PublicISO extends Model
 	{
 		$this->md5sum = $md5sum;
 	}
+
+	public function getResponseListName() : string
+	{
+		return 'public_isos';
+	}
 }
