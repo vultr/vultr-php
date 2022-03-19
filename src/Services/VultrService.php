@@ -46,14 +46,13 @@ abstract class VultrService
 	 */
 	protected function getObject(string $uri, ModelInterface $model) : ModelInterface
 	{
-		$exception_class = $model::class.'Exception';
-
 		try
 		{
 			$response = $this->get($uri);
 		}
 		catch (VultrServiceException $e)
 		{
+			$exception_class = $this->getModelExceptionClass($model);
 			throw new $exception_class('Failed to get '.$this->getReadableClassType($model). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
@@ -75,8 +74,6 @@ abstract class VultrService
 			$options = new ListOptions(100);
 		}
 
-		$exception_class = $model::class.'Exception';
-
 		$objects = [];
 		try
 		{
@@ -84,22 +81,48 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
+			$exception_class = $this->getModelExceptionClass($model);
 			throw new $exception_class('Failed to list '.$model->getResponseListName().': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
 		return $objects;
 	}
 
+	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object model that we are updating. This needs to be a fully initialized object.
+	 * @throws Child of VultrServiceObject
+	 * @return void
+	 */
 	protected function patchObject(string $uri, ModelInterface $model) : void
 	{
-		$exception_class = $model::class.'Exception';
 		try
 		{
 			$this->patch($uri, $model->getUpdateArray());
 		}
 		catch (VultrServiceException $e)
 		{
+			$exception_class = $this->getModelExceptionClass($model);
 			throw new $exception_class('Failed to update '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+	}
+
+	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object model that we are acting on deleting. This doesn't need to be a fully initialized object.
+	 * @throws Child of VultrServiceObject
+	 * @return void
+	 */
+	protected function deleteObject(string $uri, ModelInterface $model) : void
+	{
+		try
+		{
+			$this->delete($uri);
+		}
+		catch (VultrServiceException $e)
+		{
+			$exception_class = $this->getModelExceptionClass($model);
+			throw new $exception_class('Failed to delete '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 	}
 
@@ -246,5 +269,10 @@ abstract class VultrService
 	private function getReadableClassType(ModelInterface $model) : string
 	{
 		return str_replace('_', ' ', $model->getResponseName());
+	}
+
+	private function getModelExceptionClass(ModelInterface $model) : string
+	{
+		return $model::class.'Exception';
 	}
 }
