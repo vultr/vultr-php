@@ -48,17 +48,16 @@ abstract class VultrService
 	{
 		$exception_class = $model::class.'Exception';
 
-		$underscored_class = $model->getResponseName();
 		try
 		{
 			$response = $this->get($uri);
 		}
 		catch (VultrServiceException $e)
 		{
-			throw new $exception_class('Failed to get '.str_replace('_', ' ', $underscored_class). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
+			throw new $exception_class('Failed to get '.$this->getReadableClassType($model). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $underscored_class);
+		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $model->getResponseName());
 	}
 
 	/**
@@ -89,6 +88,19 @@ abstract class VultrService
 		}
 
 		return $objects;
+	}
+
+	protected function patchObject(string $uri, ModelInterface $model) : void
+	{
+		$exception_class = $model::class.'Exception';
+		try
+		{
+			$this->patch($uri, $model->getUpdateArray());
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new $exception_class('Failed to update '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
@@ -229,5 +241,10 @@ abstract class VultrService
 		}
 
 		return $response;
+	}
+
+	private function getReadableClassType(ModelInterface $model) : string
+	{
+		return str_replace('_', ' ', $model->getResponseName());
 	}
 }
