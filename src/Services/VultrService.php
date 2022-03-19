@@ -52,7 +52,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			$exception_class = $this->getModelExceptionClass($model);
+			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to get '.$this->getReadableClassType($model). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
@@ -81,7 +81,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			$exception_class = $this->getModelExceptionClass($model);
+			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to list '.$model->getResponseListName().': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
@@ -102,7 +102,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			$exception_class = $this->getModelExceptionClass($model);
+			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to update '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 	}
@@ -121,7 +121,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			$exception_class = $this->getModelExceptionClass($model);
+			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to delete '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 	}
@@ -141,7 +141,7 @@ abstract class VultrService
 		}
 		catch (VultrServiceException $e)
 		{
-			$exception_class = $this->getModelExceptionClass($model);
+			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to create '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
@@ -291,10 +291,5 @@ abstract class VultrService
 	private function getReadableClassType(ModelInterface $model) : string
 	{
 		return str_replace('_', ' ', $model->getResponseName());
-	}
-
-	private function getModelExceptionClass(ModelInterface $model) : string
-	{
-		return $model::class.'Exception';
 	}
 }

@@ -11,6 +11,11 @@ use ReflectionClass;
  */
 abstract class Model implements ModelInterface
 {
+	public function getModelExceptionClass() : string
+	{
+		return get_class($this).'Exception';
+	}
+
 	/**
 	 * Flat array to specify array props that will be checked on whether they should be updated or not.
 	 * @return array

@@ -10,4 +10,5 @@ interface ModelInterface
 	public function getUpdateArray() : array;
 	public function getUpdateParams() : array;
 	public function resetObject() : void;
+	public function getModelExceptionClass() : string;
 }
