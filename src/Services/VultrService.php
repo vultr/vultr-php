@@ -126,6 +126,13 @@ abstract class VultrService
 		}
 	}
 
+	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object model that we are creating
+	 * @param $params - array - The values that we will be sending. Refactor to use getUpdateParams/getUpdateArray?
+	 * @throws Child of VultrServiceObject
+	 * @return ModelInterface
+	 */
 	protected function createObject(string $uri, ModelInterface $model, array $params) : ModelInterface
 	{
 		try
