@@ -55,4 +55,9 @@ class PublicISO extends Model
 	{
 		return 'public_isos';
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('PublicISO', 'ISO', parent::getModelExceptionClass());
+	}
 }
