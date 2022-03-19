@@ -19,14 +19,26 @@ class SSHKeyService extends VultrService
 		return $this->getObject('ssh-keys/'.$ssh_key_id, new SSHKey());
 	}
 
+	/**
+	 * @param $options - ListOptions|null - Interact via reference.
+	 * @throws SSHKeyException
+	 * @return SSHKey[]
+	 */
 	public function getSSHKeys(?ListOptions $options = null) : array
 	{
-
+		return $this->getListObjects('ssh-keys', new SSHKey(), $options);
 	}
 
 	public function updateSSHKey(SSHKey $ssh_key) : void
 	{
-
+		try
+		{
+			$this->patch('ssh-keys/'.$ssh_key->getId(), $ssh_key->getUpdateArray());
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new SSHKeyException('Failed to update ssh key: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	public function deleteSSHKey(string $ssh_key_id) : void

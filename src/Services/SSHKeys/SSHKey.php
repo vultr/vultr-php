@@ -55,4 +55,9 @@ class SSHKey extends Model
 	{
 		return 'ssh_key';
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['name', 'ssh_key'];
+	}
 }

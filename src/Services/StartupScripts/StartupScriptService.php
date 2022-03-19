@@ -64,7 +64,7 @@ class StartupScriptService extends VultrService
 	{
 		try
 		{
-			$this->patch('startup-scripts/'.$script->getId(), $script->toArray());
+			$this->patch('startup-scripts/'.$script->getId(), $script->getUpdateArray());
 		}
 		catch (VultrServiceException $e)
 		{

@@ -72,4 +72,9 @@ class StartupScript extends Model
 	{
 		$this->script = $script;
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['name', 'script', 'type'];
+	}
 }
