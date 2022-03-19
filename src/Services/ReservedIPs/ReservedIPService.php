@@ -39,9 +39,26 @@ class ReservedIPService extends VultrService
 		$this->deleteObject('reserved-ips/'.$reserved_id, new ReservedIP());
 	}
 
-	public function createReservedIP(ReservedIP $reserved_ip) : ReservedIP
+	/**
+	 * @param $region - string - Region identifaction site code.
+	 * @param $ip_type - string - v4 or v6
+	 * @param $label - string - What shall you name it?
+	 * @throws ReservedIPException
+	 * @return ReservedIP
+	 */
+	public function createReservedIP(string $region, string $ip_type, string $label = '') : ReservedIP
 	{
+		$params = [
+			'region' => $region,
+			'ip_type' => $ip_type,
+		];
 
+		if ($label != '')
+		{
+			$params['label'] = $label;
+		}
+
+		return $this->createObject('reserved-ips', new ReservedIP(), $params);
 	}
 
 	public function convertInstanceIP(string $ip_address, ?string $label = null) : ReservedIP

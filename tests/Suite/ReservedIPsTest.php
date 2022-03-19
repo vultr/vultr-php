@@ -76,7 +76,27 @@ class ReservedIPsTest extends VultrTest
 
 	public function testCreateReservedIP()
 	{
-		$this->markTestSkipped('Incomplete');
+		$data = $this->getDataProvider()->getData();
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('POST', 'reserved-ips'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$region = 'ewr';
+		$ip_type = 'v4';
+		$label = 'Example Reserved IPv4';
+		$reserved_ip = $client->reserved_ips->createReservedIP($region, $ip_type, $label);
+		$this->assertInstanceOf(ReservedIP::class, $reserved_ip);
+		foreach ($reserved_ip->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $data[$reserved_ip->getResponseName()][$attr]);
+		}
+		$this->assertEquals($region, $reserved_ip->getRegion());
+		$this->assertEquals($ip_type, $reserved_ip->getIpType());
+		$this->assertEquals($label, $reserved_ip->getLabel());
+
+		$this->expectException(ReservedIPException::class);
+		$client->reserved_ips->createReservedIP($region, $ip_type, $label);
 	}
 
 	public function testConvertInstanceIP()
