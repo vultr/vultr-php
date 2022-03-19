@@ -62,14 +62,7 @@ class StartupScriptService extends VultrService
 	 */
 	public function updateStartupScript(StartupScript $script) : void
 	{
-		try
-		{
-			$this->patch('startup-scripts/'.$script->getId(), $script->getUpdateArray());
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new StartupScriptException('Failed to update startup script: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->patchObject('startup-scripts/'.$script->getId(), $script);
 	}
 
 	/**

@@ -31,14 +31,7 @@ class SSHKeyService extends VultrService
 
 	public function updateSSHKey(SSHKey $ssh_key) : void
 	{
-		try
-		{
-			$this->patch('ssh-keys/'.$ssh_key->getId(), $ssh_key->getUpdateArray());
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SSHKeyException('Failed to update ssh key: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->patchObject('ssh-keys/'.$ssh_key->getId(), $ssh_key);
 	}
 
 	public function deleteSSHKey(string $ssh_key_id) : void

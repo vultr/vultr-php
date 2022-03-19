@@ -65,14 +65,7 @@ class UserService extends VultrService
 	 */
 	public function updateUser(User $user) : void
 	{
-		try
-		{
-			$this->patch('users/'.$user->getId(), $user->getUpdateArray());
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new UserException('Failed to update user: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->patchObject('users/'.$user->getId(), $user);
 	}
 
 	/**
