@@ -62,6 +62,36 @@ abstract class VultrService
 	}
 
 	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object that will be mapped to the get response.
+	 * @param $options - ListOptions - Pagination object
+	 * @param $params - array - filter parameters.
+	 * @throws Child of VultrServiceObject
+	 * @return ModelInterface[]
+	 */
+	protected function getListObjects(string $uri, ModelInterface $model, ?ListOptions &$options = null, ?array $params = null) : array
+	{
+		if ($options === null)
+		{
+			$options = new ListOptions(100);
+		}
+
+		$exception_class = $model::class.'Exception';
+
+		$objects = [];
+		try
+		{
+			$objects = $this->list($uri, clone $model, $options);
+		}
+		catch (VultrServiceException $e)
+		{
+			throw new $exception_class('Failed to list '.$model->getResponseListName().': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return $objects;
+	}
+
+	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
 	 * @throws VultrServiceException
