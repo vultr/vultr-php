@@ -17,22 +17,7 @@ class RegionService extends VultrService
 	 */
 	public function getRegions(?ListOptions &$options = null) : array
 	{
-		$regions = [];
-		if ($options === null)
-		{
-			$options = new ListOptions(100);
-		}
-
-		try
-		{
-			$regions = $this->list('regions', new Region(), $options);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new RegionException("Failed to get regions: " .$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $regions;
+		return $this->getListObjects('regions', new Region(), $options);
 	}
 
 	/**

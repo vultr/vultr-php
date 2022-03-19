@@ -27,22 +27,7 @@ class UserService extends VultrService
 	 */
 	public function getUsers(?ListOptions &$options = null) : array
 	{
-		if ($options === null)
-		{
-			$options = new ListOptions(100);
-		}
-
-		$users = [];
-		try
-		{
-			$users = $this->list('users', new User(), $options);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new UserException('Failed to get users: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $users;
+		return $this->getListObjects('users', new User(), $options);
 	}
 
 	/**

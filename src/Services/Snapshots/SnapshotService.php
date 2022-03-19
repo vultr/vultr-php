@@ -14,32 +14,17 @@ class SnapshotService extends VultrService
 	 * @param $description - string|null - Filter via description of the snapshots on the account.
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws SnapshotException
+	 * @return Snapshot[]
 	 */
 	public function getSnapshots(?string $description = null, ?ListOptions &$options = null) : array
 	{
-		$snapshots = [];
-
-		if ($options === null)
-		{
-			$options = new ListOptions(100);
-		}
-
 		$params = [];
 		if ($description !== null)
 		{
 			$params['description'] = $description;
 		}
 
-		try
-		{
-			$snapshots = $this->list('snapshots', new Snapshot(), $options, $params);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new SnapshotException('Failed to get snapshots: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $snapshots;
+		return $this->getListObjects('snapshots', new Snapshot(), $options, $params);
 	}
 
 	/**
@@ -109,7 +94,7 @@ class SnapshotService extends VultrService
 	{
 		try
 		{
-			$response = $this->delete('snapshots/'.$snapshot_id);
+			$this->delete('snapshots/'.$snapshot_id);
 		}
 		catch (VultrServiceException $e)
 		{

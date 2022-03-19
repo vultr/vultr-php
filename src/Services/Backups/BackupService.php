@@ -18,28 +18,13 @@ class BackupService extends VultrService
 	 */
 	public function getBackups(?string $instance_id = null, ?ListOptions &$options = null) : array
 	{
-		$backups = [];
-		if ($options === null)
-		{
-			$options = new ListOptions(100);
-		}
-
 		$params = [];
 		if ($instance_id !== null)
 		{
 			$params['instance_id'] = $instance_id;
 		}
 
-		try
-		{
-			$backups = $this->list('backups', new Backup(), $options, $params);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new BackupException('Failed to get backups: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $backups;
+		return $this->getListObjects('backups', new Backup(), $options, $params);
 	}
 
 	/**

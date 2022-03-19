@@ -26,22 +26,7 @@ class StartupScriptService extends VultrService
 	 */
 	public function getStartupScripts(?ListOptions &$options = null) : array
 	{
-		if ($options === null)
-		{
-			$options = new ListOptions(100);
-		}
-
-		$scripts = [];
-		try
-		{
-			$scripts = $this->list('startup-scripts', new StartupScript(), $options);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new StartupScriptException('Failed to get startup scripts: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $scripts;
+		return $this->getListObjects('startup-scripts', new StartupScript(), $options);
 	}
 
 	/**

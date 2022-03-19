@@ -22,22 +22,11 @@ class ApplicationService extends VultrService
 	 */
 	public function getApplications(string $filter = self::FILTER_ALL, ?ListOptions &$options = null) : array
 	{
-		$applications = [];
 		if ($options === null)
 		{
 			$options = new ListOptions(150);
 		}
-
-		try
-		{
-			$applications = $this->list('applications', new Application(), $options, ['type' => $filter]);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new ApplicationException('Failed to get applications: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return $applications;
+		return $this->getListObjects('applications', new Application(), $options, ['type' => $filter]);
 	}
 
 	/**
