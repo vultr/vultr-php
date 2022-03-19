@@ -126,6 +126,21 @@ abstract class VultrService
 		}
 	}
 
+	protected function createObject(string $uri, ModelInterface $model, array $params) : ModelInterface
+	{
+		try
+		{
+			$response = $this->post($uri, $params);
+		}
+		catch (VultrServiceException $e)
+		{
+			$exception_class = $this->getModelExceptionClass($model);
+			throw new $exception_class('Failed to create '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $model->getResponseName());
+	}
+
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
