@@ -12,6 +12,12 @@ class PlanService extends VultrService
 	public const FILTER_VC2 = 'vc2';
 	public const FILTER_VHF = 'vhf';
 	public const FILTER_VDC = 'vdc';
+	public const FILTER_VOC = 'voc';
+	public const FILTER_VOCG = 'voc-g';
+	public const FILTER_VOCC = 'voc-c';
+	public const FILTER_VOCM = 'voc-m';
+	public const FILTER_VOCS = 'voc-s';
+
 	public const FILTER_VBM = 'vbm';
 
 	public const FILTER_WINDOWS = 'windows';
@@ -19,7 +25,7 @@ class PlanService extends VultrService
 	private static ?array $cache_plans = null;
 
 	/**
-	 * @param $type - string|null - FILTER_ALL, FILTER_VC2, FILTER_VHF, FILTER_VDC
+	 * @param $type - string|null - FILTER_*
 	 * @param $os - string|null - FILTER_WINDOWS
 	 * @param $options - ListOptions - Interact via reference.
 	 * @throws PlanException
