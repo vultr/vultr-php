@@ -59,6 +59,7 @@ class ISOTest extends VultrTest
 				{
 					$this->assertEquals($prop_val, $object[$prop]);
 				}
+				break;
 			}
 		}
 

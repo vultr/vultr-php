@@ -36,7 +36,30 @@ class StartupScriptsTest extends VultrTest
 
 	public function testGetStartupScripts()
 	{
-		$this->markTestSkipped('Incomplete');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('GET', 'startup-scripts'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$scripts = $client->startup_scripts->getStartupScripts();
+		foreach ($scripts as $script)
+		{
+			$this->assertInstanceOf(StartupScript::class, $script);
+			foreach ($data[$script->getResponseListName()] as $object)
+			{
+				if ($object['id'] !== $script->getId()) continue;
+				foreach ($script->toArray() as $prop => $prop_val)
+				{
+					$this->assertEquals($prop_val, $object[$prop]);
+				}
+				break;
+			}
+		}
+
+		$this->expectException(StartupScriptException::class);
+		$client->startup_scripts->getStartupScripts();
 	}
 
 	public function testCreateStartupScript()
@@ -52,7 +75,7 @@ class StartupScriptsTest extends VultrTest
 		$data['date_modified'] = '2020-10-10T01:56:20+00:00';
 
 		$client = $this->getDataProvider()->createClientHandler([
-			new Response(201, ['Content-Type' => 'application/json'], json_encode(['startup_script' => $data])),
+			new Response(201, ['Content-Type' => 'application/json'], json_encode([$startup_script->getResponseName() => $data])),
 			new RequestException('Bad Request', new Request('POST', 'startup-scripts'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
 		]);
 

@@ -53,6 +53,7 @@ class ReservedIPsTest extends VultrTest
 				{
 					$this->assertEquals($value, $object[$attr]);
 				}
+				break;
 			}
 		}
 
