@@ -25,6 +25,7 @@ class StartupScriptsTest extends VultrTest
 		]);
 
 		$script = $client->startup_scripts->getStartupScript($startup_id);
+		$this->assertInstanceOf(StartupScript::class, $script);
 		foreach ($script->toArray() as $attr => $value)
 		{
 			$this->assertEquals($value, $data['startup_script'][$attr]);
@@ -44,6 +45,8 @@ class StartupScriptsTest extends VultrTest
 		]);
 
 		$scripts = $client->startup_scripts->getStartupScripts();
+		$this->assertIsArray($scripts);
+		$this->assertEquals($data['meta']['total'], count($scripts));
 		foreach ($scripts as $script)
 		{
 			$this->assertInstanceOf(StartupScript::class, $script);
@@ -93,17 +96,30 @@ class StartupScriptsTest extends VultrTest
 
 	public function testUpdateStartupScript()
 	{
-		$this->markTestSkipped('Incomplete');
+		$script = new StartupScript();
+		$script->setId('cb676a46-66fd-4dfb-b839-443f2e6c0b60');
+		$script->setName('My new name');
+		$script->setScript(base64_encode('echo "new script"'));
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new RequestException('Bad Request', new Request('PATCH', 'startup-scripts/'.$script->getId()), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$client->startup_scripts->updateStartupScript($script);
+
+		$this->expectException(StartupScriptException::class);
+		$client->startup_scripts->updateStartupScript($script);
 	}
 
 	public function testDeleteStartupScript()
 	{
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DEL', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new RequestException('Bad Request', new Request('DEL', 'startup-scripts/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
 		]);
 
-		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$client->startup_scripts->deleteStartupScript($id);
 
 		$this->expectException(StartupScriptException::class);
