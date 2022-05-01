@@ -15,6 +15,7 @@ class BlockStorage extends Model
 	protected string $attachedToInstance;
 	protected string $label;
 	protected string $mountId;
+	protected string $blockType;
 
 	public function getId() : string
 	{
@@ -94,6 +95,16 @@ class BlockStorage extends Model
 	public function setMountId(string $mount_id) : void
 	{
 		$this->mountId = $mount_id;
+	}
+
+	public function getBlockType() : string
+	{
+		return $this->blockType;
+	}
+
+	public function setBlockType(string $block_type) : void
+	{
+		$this->blockType = $block_type;
 	}
 }
 
