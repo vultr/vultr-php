@@ -75,6 +75,15 @@ class StartupScriptsTest extends VultrTest
 
 	public function testDeleteStartupScript()
 	{
-		$this->markTestSkipped('Incomplete');
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new RequestException('Bad Request', new Request('DEL', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->startup_scripts->deleteStartupScript($id);
+
+		$this->expectException(StartupScriptException::class);
+		$client->startup_scripts->deleteStartupScript($id);
 	}
 }
