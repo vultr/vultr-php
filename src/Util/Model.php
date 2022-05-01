@@ -62,28 +62,6 @@ abstract class Model implements ModelInterface
 			// Convert our camelcased properties to underscores.
 			$underscore_prop = VultrUtil::convertCamelCaseToUnderscore($property->getName());
 
-			$nulled_value = '';
-			switch ($property->getType()->getName())
-			{
-				case 'string':
-					$nulled_value = '';
-				break;
-
-				case 'float':
-				case 'int':
-					$nulled_value = 0;
-				break;
-
-				case 'array':
-					$nulled_value = [];
-				break;
-
-				case 'bool':
-					$nulled_value = false;
-				break;
-			}
-
-			$value = $nulled_value;
 			/**
 			 * PHP Versions 8.0 and below will throw an error if checking if its initialized on protected props
 			 * Even though they are a child of this class. Its dumb.
@@ -93,11 +71,13 @@ abstract class Model implements ModelInterface
 				$property->setAccessible(true);
 			}
 
-			if ($property->isInitialized($this))
+			if (!$property->isInitialized($this))
 			{
-				$method_name = 'get'.ucfirst($property->getName());
-				$value = $this->$method_name();
+				continue;
 			}
+
+			$method_name = 'get'.ucfirst($property->getName());
+			$value = $this->$method_name();
 
 			$array[$underscore_prop] =  $value;
 		}
