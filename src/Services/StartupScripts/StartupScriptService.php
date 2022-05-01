@@ -43,16 +43,7 @@ class StartupScriptService extends VultrService
 			if (empty($param)) unset($params[$attr]);
 		}
 
-		try
-		{
-			$response = $this->post('startup-scripts', $params);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new StartupScriptException('Failed to create a startup script: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new StartupScript(), 'startup_script');
+		return $this->createObject('startup-scripts', new StartupScript(), $params);
 	}
 
 	/**

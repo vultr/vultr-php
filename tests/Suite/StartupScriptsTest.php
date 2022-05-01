@@ -3,6 +3,7 @@
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use Vultr\VultrPhp\VultrClient;
+use Vultr\VultrPhp\Services\StartupScripts\StartupScript;
 use Vultr\VultrPhp\Services\StartupScripts\StartupScriptException;
 
 use GuzzleHttp\Psr7\Response;
@@ -40,7 +41,31 @@ class StartupScriptsTest extends VultrTest
 
 	public function testCreateStartupScript()
 	{
-		$this->markTestSkipped('Incomplete');
+		$startup_script = new StartupScript();
+		$startup_script->setName('My name of startupscript');
+		$startup_script->setType('boot');
+		$startup_script->setScript(base64_encode('echo "hello world"'));
+
+		$data = $startup_script->toArray();
+		$data['id'] = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$data['date_created'] = '2020-10-10T01:56:20+00:00';
+		$data['date_modified'] = '2020-10-10T01:56:20+00:00';
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode(['startup_script' => $data])),
+			new RequestException('Bad Request', new Request('POST', 'startup-scripts'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$script = $client->startup_scripts->createStartupScript($startup_script);
+		$this->assertInstanceOf(StartupScript::class, $script);
+		$array = $script->toArray();
+		foreach ($script->toArray() as $prop => $prop_val)
+		{
+			$this->assertEquals($prop_val, $data[$prop]);
+		}
+
+		$this->expectException(StartupScriptException::class);
+		$client->startup_scripts->createStartupScript($startup_script);
 	}
 
 	public function testUpdateStartupScript()
