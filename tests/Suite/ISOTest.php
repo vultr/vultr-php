@@ -38,7 +38,29 @@ class ISOTest extends VultrTest
 
 	public function testGetISOs()
 	{
-		$this->markTestSkipped('Incomplete');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Not Found', new Request('GET', 'iso'), new Response(404, [], json_encode(['error' => 'Not found']))),
+		]);
+
+		$isos = $client->iso->getISOs();
+
+		$this->assertIsArray($isos);
+		$this->assertEquals($data['meta']['total'], count($isos));
+		foreach ($isos as $iso)
+		{
+			$this->assertInstanceOf(ISO::class, $iso);
+			foreach ($data[$iso->getResponseListName()] as $object)
+			{
+				if ($object['id'] !== $iso->getId()) continue;
+				foreach ($iso->toArray() as $prop => $prop_val)
+				{
+					$this->assertEquals($prop_val, $object[$prop]);
+				}
+			}
+		}
 	}
 
 	public function testGetPublicISOs()
