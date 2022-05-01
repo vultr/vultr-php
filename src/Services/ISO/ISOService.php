@@ -25,18 +25,7 @@ class ISOService extends VultrService
 
 	public function createISO(string $url) : ISO
 	{
-		try
-		{
-			$response = $this->post('iso', [
-				'url'         => $url,
-			]);
-		}
-		catch (VultrServiceException $e)
-		{
-			throw new ISOException('Failed to create iso: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new ISO(), 'iso');
+		return $this->createObject('iso', new ISO(), ['url' => $url]);
 	}
 
 	public function deleteISO(string $iso_id) : void

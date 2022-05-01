@@ -61,6 +61,9 @@ class ISOTest extends VultrTest
 				}
 			}
 		}
+
+		$this->expectException(ISOException::class);
+		$client->iso->getISOs();
 	}
 
 	public function testGetPublicISOs()
@@ -95,11 +98,35 @@ class ISOTest extends VultrTest
 
 	public function testCreateISO()
 	{
-		$this->markTestSkipped('Incomplete');
+		$data = $this->getDataProvider()->getData();
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new RequestException('Bad Request', new Request('POST', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$iso = $client->iso->createISO('http://myamazingiso.com');
+		$this->assertInstanceOf(ISO::class, $iso);
+		$array = $iso->toArray();
+		foreach ($data[$iso->getResponseName()] as $prop => $prop_val)
+		{
+			$this->assertEquals($prop_val, $array[$prop]);
+		}
+
+		$this->expectException(ISOException::class);
+		$client->iso->createISO('hafsadfsdgfsadg');
 	}
 
 	public function testDeleteISO()
 	{
-		$this->markTestSkipped('Incomplete');
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new RequestException('Bad Request', new Request('DEL', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->iso->deleteISO($id);
+
+		$this->expectException(ISOException::class);
+		$client->iso->deleteISO($id);
 	}
 }
