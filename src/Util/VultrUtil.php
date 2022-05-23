@@ -74,7 +74,7 @@ class VultrUtil
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrException('Failed to deserialize '.$class_name.' object :'.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
+			throw new VultrException('Failed to deserialize '.$class_name.' object: '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
 		}
 
 		return $object;
