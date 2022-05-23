@@ -33,7 +33,7 @@ abstract class VultrService
 	/**
 	 * Get the Guzzle Client
 	 */
-	protected function getClient() : Client
+	protected function getGuzzleClient() : Client
 	{
 		return $this->client;
 	}
@@ -262,7 +262,7 @@ abstract class VultrService
 	{
 		try
 		{
-			$response = $this->getClient()->request($method, $uri, $options);
+			$response = $this->getGuzzleClient()->request($method, $uri, $options);
 		}
 		catch (RequestException $e)
 		{
@@ -278,11 +278,11 @@ abstract class VultrService
 					$message = $error['error'];
 				}
 			}
-			throw new VultrServiceException($method.' failed : '.$message, VultrException::SERVICE_CODE, $code, $e);
+			throw new VultrServiceException($method.' failed: '.$message, VultrException::SERVICE_CODE, $code, $e);
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrServiceException($method.' fatal failed : '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+			throw new VultrServiceException($method.' fatal failed: '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
 		}
 
 		return $response;

@@ -31,6 +31,11 @@ class VultrUtil
 			$object = $stdclass->$prop;
 		}
 
+		if (!is_object($object))
+		{
+			throw new VultrException('Failed to map object for '.get_class($model).': Object is invalid. Percieved Object Data: '.var_export($object, true).'. Object Parameter: '.var_export($stdclass, true));
+		}
+
 		$mapped_object = $model;
 		try
 		{
