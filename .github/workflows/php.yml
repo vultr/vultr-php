@@ -38,6 +38,8 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
+      - name: PHP Lint
+        run: vendor/bin/phpcs .
       - name: Run 8.1 Test Suite
         run: php8.1 vendor/bin/phpunit
       - name: Run 8.0 Test Suite

@@ -88,4 +88,5 @@
 	</rule>
 	<rule ref="PEAR.Commenting.InlineComment"/>
 
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
 </ruleset>
