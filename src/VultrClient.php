@@ -39,6 +39,11 @@ class VultrClient
 	];
 
 	/**
+	 * Optimization
+	 */
+	private $class_cache = [];
+
+	/**
 	 * @param $auth
 	 * @see VultrAuth
 	 * @param $guzzle_options
@@ -56,7 +61,7 @@ class VultrClient
 
 		if ($class !== null)
 		{
-			return new $class($this, $this->client);
+			return $this->class_cache[$class] ?? ($this->class_cache[$class] = new $class($this, $this->client));
 		}
 
 		return null;
