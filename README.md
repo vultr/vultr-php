@@ -11,8 +11,24 @@
 
 ## Getting Started
 
+### Installation
+```php
+composer require vultr/vultr-php
+```
+
+### Usage
+
+## Documentation
+
+See our documentation for [detailed information about API v2](https://www.vultr.com/api).
+
+TODO
+
 ## Support
 
 ## Contribute
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
