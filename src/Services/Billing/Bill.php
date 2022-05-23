@@ -8,6 +8,7 @@ class Bill extends Model
 {
 	protected int $id;
 	protected string $date;
+	protected string $type;
 	protected string $description;
 	protected float $amount;
 	protected float $balance;
@@ -30,6 +31,16 @@ class Bill extends Model
 	public function setDate(string $date) : void
 	{
 		$this->date = $date;
+	}
+
+	public function getType() : string
+	{
+		return $this->type;
+	}
+
+	public function setType(string $type) : void
+	{
+		$this->type = $type;
 	}
 
 	public function getDescription() : string
@@ -60,5 +71,15 @@ class Bill extends Model
 	public function setBalance(float $balance) : void
 	{
 		$this->balanace = $balance;
+	}
+
+	public function getResponseName() : string
+	{
+		return 'billing_history';
+	}
+
+	public function getResponseListName() : string
+	{
+		return $this->getResponseName();
 	}
 }
