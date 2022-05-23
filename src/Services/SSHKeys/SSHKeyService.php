@@ -29,19 +29,38 @@ class SSHKeyService extends VultrService
 		return $this->getListObjects('ssh-keys', new SSHKey(), $options);
 	}
 
+	/**
+	 * @param $ssh_key - SSHKey
+	 * @throws SSHKeyException
+	 * @return void
+	 */
 	public function updateSSHKey(SSHKey $ssh_key) : void
 	{
 		$this->patchObject('ssh-keys/'.$ssh_key->getId(), $ssh_key);
 	}
 
+	/**
+	 * @param $ssh_key_id - string - UUID of the ssh key
+	 * @throws SSHKeyException
+	 * @return void
+	 */
 	public function deleteSSHKey(string $ssh_key_id) : void
 	{
-
+		$this->deleteObject('ssh-keys/'.$ssh_key_id, new SSHKey());
 	}
 
+	/**
+	 * @param $name - string - what are you going to call the key.
+	 * @param $ssh_key - string - full ssh key
+	 * @throws SSHKeyException
+	 * @return void
+	 */
 	public function createSSHKey(string $name, string $ssh_key) : SSHKey
 	{
-
+		return $this->createObject('ssh-keys', new SSHKey(), [
+			'name'    => $name,
+			'ssh_key' => $ssh_key
+		]);
 	}
 }
 
