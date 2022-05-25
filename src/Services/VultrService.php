@@ -3,13 +3,16 @@
 namespace Vultr\VultrPhp\Services;
 
 use Throwable;
-use GuzzleHttp\Client;
+use Psr\Http\Client\ClientInterface;
+use GuzzleHttp\Psr7\Request;
+
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrClient;
+use Vultr\VultrPhp\VultrClientHandler;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
@@ -17,9 +20,9 @@ use Vultr\VultrPhp\Util\ListOptions;
 abstract class VultrService
 {
 	protected VultrClient $vultr;
-	private Client $client;
+	private VultrClientHandler $client;
 
-	public function __construct(VultrClient $vultr, Client $client)
+	public function __construct(VultrClient $vultr, VultrClientHandler $client)
 	{
 		$this->vultr = $vultr;
 		$this->client = $client;
@@ -30,10 +33,7 @@ abstract class VultrService
 		return $this->vultr;
 	}
 
-	/**
-	 * Get the Guzzle Client
-	 */
-	protected function getGuzzleClient() : Client
+	protected function getClientHandler() : VultrClientHandler
 	{
 		return $this->client;
 	}
@@ -48,7 +48,7 @@ abstract class VultrService
 	{
 		try
 		{
-			$response = $this->get($uri);
+			$response = $this->getClientHandler()->get($uri);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -77,7 +77,7 @@ abstract class VultrService
 		$objects = [];
 		try
 		{
-			$objects = $this->list($uri, clone $model, $options);
+			$objects = $this->list($uri, clone $model, $options, $params);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -98,7 +98,7 @@ abstract class VultrService
 	{
 		try
 		{
-			$this->patch($uri, $model->getUpdateArray());
+			$this->getClientHandler()->patch($uri, $model->getUpdateArray());
 		}
 		catch (VultrServiceException $e)
 		{
@@ -117,7 +117,7 @@ abstract class VultrService
 	{
 		try
 		{
-			$this->delete($uri);
+			$this->getClientHandler()->delete($uri);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -137,7 +137,7 @@ abstract class VultrService
 	{
 		try
 		{
-			$response = $this->post($uri, $params);
+			$response = $this->getClientHandler()->post($uri, $params);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -146,73 +146,6 @@ abstract class VultrService
 		}
 
 		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $model->getResponseName());
-	}
-
-	/**
-	 * @param $uri - string - anything after api.vultr.com/v2/
-	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
-	 * @throws VultrServiceException
-	 * @return ResponseInterface
-	 */
-	protected function delete(string $uri, ?array $params = []) : ResponseInterface
-	{
-		$options = [];
-		if ($params !== null)
-		{
-			$options[RequestOptions::QUERY] = $params;
-		}
-
-		return $this->request('DELETE', $uri, $options);
-	}
-
-	/**
-	 * @param $uri - string - anything after api.vultr.com/v2/
-	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
-	 * @return ResponseInterface
-	 */
-	protected function post(string $uri, array $params = []) : ResponseInterface
-	{
-		return $this->request('POST', $uri, [RequestOptions::JSON => $params]);
-	}
-
-	/**
-	 * @param $uri - string - anything after api.vultr.com/v2/
-	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
-	 * @return ResponseInterface
-	 */
-	protected function put(string $uri, array $params = []) : ResponseInterface
-	{
-		return $this->request('PUT', $uri, [RequestOptions::JSON => $params]);
-	}
-
-	/**
-	 * @param $uri - string - anything after api.vultr.com/v2/
-	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
-	 * @return ResponseInterface
-	 */
-	protected function patch(string $uri, array $params = []) : ResponseInterface
-	{
-		return $this->request('PATCH', $uri, [RequestOptions::JSON => $params]);
-	}
-
-	/**
-	 * @param $uri - string - anything after api.vultr.com/v2/
-	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
-	 * @throws VultrServiceException
-	 * @return ResponseInterface
-	 */
-	protected function get(string $uri, ?array $params = null) : ResponseInterface
-	{
-		$options = [];
-		if ($params !== null)
-		{
-			$options[RequestOptions::QUERY] = $params;
-		}
-
-		return $this->request('GET', $uri, $options);
 	}
 
 	protected function list(string $uri, ModelInterface $model, ListOptions &$options, ?array $params = null) : array
@@ -230,7 +163,7 @@ abstract class VultrService
 				$params['cursor'] = $options->getCurrentCursor();
 			}
 
-			$response = $this->get($uri, $params);
+			$response = $this->getClientHandler()->get($uri, $params);
 		}
 		catch (VultrServiceException $e)
 		{
@@ -256,36 +189,6 @@ abstract class VultrService
 		}
 
 		return $objects;
-	}
-
-	private function request(string $method, string $uri, array $options = []) : ResponseInterface
-	{
-		try
-		{
-			$response = $this->getGuzzleClient()->request($method, $uri, $options);
-		}
-		catch (RequestException $e)
-		{
-			$code = null;
-			$message = $e->getMessage();
-			if ($e->hasResponse())
-			{
-				$response = $e->getResponse();
-				$error = json_decode($response->getBody(), true);
-				$code = $response->getStatusCode();
-				if (isset($error['error']))
-				{
-					$message = $error['error'];
-				}
-			}
-			throw new VultrServiceException($method.' failed: '.$message, VultrException::SERVICE_CODE, $code, $e);
-		}
-		catch (Throwable $e)
-		{
-			throw new VultrServiceException($method.' fatal failed: '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
-		}
-
-		return $response;
 	}
 
 	private function getReadableClassType(ModelInterface $model) : string

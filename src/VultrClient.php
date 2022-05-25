@@ -3,15 +3,13 @@
 namespace Vultr\VultrPhp;
 
 use Exception;
-use GuzzleHttp\Client;
+use Psr\Http\Client\ClientInterface;
 
 use Vultr\VultrPhp\Services;
-use Vultr\VultrPhp\Util\ModelInterface;
 
 class VultrClient
 {
-	private VultrAuth $auth;
-	private Client $client;
+	private VultrClientHandler $client;
 
 	public const MAP = [
 		'account'          => Services\Account\AccountService::class,
@@ -44,15 +42,11 @@ class VultrClient
 	private $class_cache = [];
 
 	/**
-	 * @param $auth
-	 * @see VultrAuth
-	 * @param $guzzle_options
-	 * @see VultrConfig::generateGuzzleConfig
+	 * @param $http - PSR18 ClientInterface
 	 */
-	private function __construct(VultrAuth $auth, array $guzzle_options = [])
+	private function __construct(ClientInterface $http, VultrAuth $auth)
 	{
-		$this->auth = $auth;
-		$this->client = new Client(VultrConfig::generateGuzzleConfig($auth, $guzzle_options));
+		$this->client = new VultrClientHandler($http, $auth);
 	}
 
 	public function __get(string $name)
@@ -67,11 +61,11 @@ class VultrClient
 		return null;
 	}
 
-	public static function create(string $API_KEY, array $guzzle_options = []) : VultrClient
+	public static function create(ClientInterface $http, string $API_KEY) : VultrClient
 	{
 		try
 		{
-			$client = new VultrClient(new VultrAuth($API_KEY), $guzzle_options);
+			$client = new VultrClient($http, new VultrAuth($API_KEY));
 		}
 		catch (Exception $e)
 		{

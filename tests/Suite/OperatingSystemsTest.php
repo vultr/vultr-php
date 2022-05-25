@@ -8,7 +8,6 @@ use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystemException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -20,7 +19,7 @@ class OperatingSystemsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('This is an exception', new Request('GET', 'os'), new Response(400, [], json_encode(['error' => 'Bad request']))),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
 		foreach ($client->operating_system->getOperatingSystems() as $os)

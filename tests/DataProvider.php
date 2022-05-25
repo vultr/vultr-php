@@ -4,6 +4,7 @@ namespace Vultr\VultrPhp\Tests;
 
 use Vultr\VultrPhp\VultrClient;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\MockHandler;
 
@@ -23,6 +24,6 @@ abstract class DataProvider implements DataProviderInterface
 	public function createClientHandler(array $requests, ?MockHandler &$mock = null) : VultrClient
 	{
 		$mock = new MockHandler($requests);
-		return VultrClient::create('TEST1234', ['handler' => HandlerStack::create($mock)]);
+		return VultrClient::create(new Client(['handler' => HandlerStack::create($mock)]), 'TEST1234');
 	}
 }

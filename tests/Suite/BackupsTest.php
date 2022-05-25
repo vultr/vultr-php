@@ -8,7 +8,6 @@ use Vultr\VultrPhp\Services\Backups\BackupException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -20,7 +19,7 @@ class BackupsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$backups = $client->backups->getBackups();
@@ -50,7 +49,7 @@ class BackupsTest extends VultrTest
 		$data = $this->getDataProvider()->getData($id);
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request'])))
+			new Response(400, [], json_encode(['error' => 'Bad Request']))
 		]);
 
 		$backups = $client->backups->getBackups($id);
@@ -81,7 +80,7 @@ class BackupsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Not Found', new Request('GET', 'backups/wrong-id'), new Response(404, [], json_encode(['error' => 'Not found']))),
+			new Response(404, [], json_encode(['error' => 'Not found'])),
 		]);
 
 		$backup = $client->backups->getBackup($id);

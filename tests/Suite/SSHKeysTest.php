@@ -21,7 +21,7 @@ class SSHKeysTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'ssh-keys/'.$ssh_id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$ssh_key = $client->ssh_keys->getSSHKey($ssh_id);
@@ -41,7 +41,7 @@ class SSHKeysTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'ssh-keys'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$keys = $client->ssh_keys->getSSHKeys();
@@ -70,7 +70,7 @@ class SSHKeysTest extends VultrTest
 		$ssh_id = '3b8066a7-b438-455a-9688-44afc9a3597f';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('PATCH', 'ssh-keys/'.$ssh_id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$ssh_key = new SSHKey();
@@ -89,7 +89,7 @@ class SSHKeysTest extends VultrTest
 		$ssh_id = '3b8066a7-b438-455a-9688-44afc9a3597f';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DELETE', 'ssh-keys/'.$ssh_id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->ssh_keys->deleteSSHKey($ssh_id);
@@ -110,7 +110,7 @@ class SSHKeysTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode([$ssh_key->getResponseName() => $data])),
-			new RequestException('Bad Request', new Request('POST', 'ssh-keys'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$ssh_key = $client->ssh_keys->createSSHKey($ssh_key->getName(), $ssh_key->getSshKey());

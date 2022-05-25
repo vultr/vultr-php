@@ -10,7 +10,6 @@ use Vultr\VultrPhp\Services\Applications\ApplicationException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -22,7 +21,7 @@ class ApplicationsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('This is an exception', new Request('GET', 'applications'), new Response(400, [], json_encode(['error' => 'Bad request']))),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
 		$options = null;
@@ -39,7 +38,7 @@ class ApplicationsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('This is an exception', new Request('GET', 'applications'), new Response(400, [], json_encode(['error' => 'Bad request']))),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
 		$options = null;
@@ -56,7 +55,7 @@ class ApplicationsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('This is an exception', new Request('GET', 'applications'), new Response(400, [], json_encode(['error' => 'Bad request']))),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
 		$options = null;

@@ -9,7 +9,6 @@ use Vultr\VultrPhp\Services\Account\AccountException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -22,7 +21,7 @@ class AccountTest extends VultrTest
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(200, [], 'Invalid json'),
-			new RequestException('This is an exception', new Request('GET', 'account'), new Response(400, [], json_encode(['error' => 'Bad request'])))
+			new Response(400, [], json_encode(['error' => 'Bad request']))
 		]);
 
 		$account = $client->account->getAccount();

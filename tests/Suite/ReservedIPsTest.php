@@ -8,7 +8,6 @@ use Vultr\VultrPhp\Services\ReservedIPs\ReservedIP;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -21,7 +20,7 @@ class ReservedIPsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'reserved-ips/'.$reserved_id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$reserved_ip = $client->reserved_ips->getReservedIP($reserved_id);
@@ -40,7 +39,7 @@ class ReservedIPsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'reserved-ips'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		foreach ($client->reserved_ips->getReservedIPs() as $reserved_ip)
@@ -66,7 +65,7 @@ class ReservedIPsTest extends VultrTest
 		$id = 'asfsdgsdaf-sadgf-sadga-sdgasdg';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DELETE', 'reserved-ips/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->reserved_ips->deleteReservedIP($id);
@@ -80,7 +79,7 @@ class ReservedIPsTest extends VultrTest
 		$data = $this->getDataProvider()->getData();
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('POST', 'reserved-ips'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$region = 'ewr';

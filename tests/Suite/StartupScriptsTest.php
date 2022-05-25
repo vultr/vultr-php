@@ -8,7 +8,6 @@ use Vultr\VultrPhp\Services\StartupScripts\StartupScriptException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -21,7 +20,7 @@ class StartupScriptsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'startup-scripts/'.$startup_id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$script = $client->startup_scripts->getStartupScript($startup_id);
@@ -41,7 +40,7 @@ class StartupScriptsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'startup-scripts'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$scripts = $client->startup_scripts->getStartupScripts();
@@ -79,7 +78,7 @@ class StartupScriptsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(201, ['Content-Type' => 'application/json'], json_encode([$startup_script->getResponseName() => $data])),
-			new RequestException('Bad Request', new Request('POST', 'startup-scripts'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$script = $client->startup_scripts->createStartupScript($startup_script);
@@ -103,7 +102,7 @@ class StartupScriptsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('PATCH', 'startup-scripts/'.$script->getId()), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->startup_scripts->updateStartupScript($script);
@@ -117,7 +116,7 @@ class StartupScriptsTest extends VultrTest
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DEL', 'startup-scripts/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->startup_scripts->deleteStartupScript($id);

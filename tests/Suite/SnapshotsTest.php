@@ -8,7 +8,6 @@ use Vultr\VultrPhp\Services\Snapshots\SnapshotException;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -20,7 +19,7 @@ class SnapshotsTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		foreach ($client->snapshots->getSnapshots() as $snapshot)
@@ -47,7 +46,7 @@ class SnapshotsTest extends VultrTest
 		$data = $this->getDataProvider()->getData($description);
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		foreach ($client->snapshots->getSnapshots($description) as $snapshot)
@@ -74,7 +73,7 @@ class SnapshotsTest extends VultrTest
 		$data = $this->getDataProvider()->getData($id);
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'snapshots/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$snapshot = $client->snapshots->getSnapshot($id);
@@ -93,7 +92,7 @@ class SnapshotsTest extends VultrTest
 		$id = 'asfsdgsdaf-sadgf-sadga-sdgasdg';
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DELETE', 'snapshots/'.$id), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->snapshots->deleteSnapshot($id);
@@ -109,7 +108,7 @@ class SnapshotsTest extends VultrTest
 		$data = $this->getDataProvider()->getData($id);
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('POST', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$snapshot = $client->snapshots->createSnapshot($id, $description);
@@ -132,7 +131,7 @@ class SnapshotsTest extends VultrTest
 		$data = $this->getDataProvider()->getData();
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('POST', 'snapshots'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$snapshot = $client->snapshots->createSnapshotFromURL($url, $description);

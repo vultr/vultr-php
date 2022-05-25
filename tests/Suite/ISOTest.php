@@ -9,7 +9,6 @@ use Vultr\VultrPhp\Services\ISO\PublicISO;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -22,7 +21,7 @@ class ISOTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Not Found', new Request('GET', 'iso/hello-world'), new Response(404, [], json_encode(['error' => 'Not found']))),
+			new Response(404, [], json_encode(['error' => 'Not found'])),
 		]);
 
 		$iso = $client->iso->getISO($id);
@@ -42,7 +41,7 @@ class ISOTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Not Found', new Request('GET', 'iso'), new Response(404, [], json_encode(['error' => 'Not found']))),
+			new Response(404, [], json_encode(['error' => 'Not found'])),
 		]);
 
 		$isos = $client->iso->getISOs();
@@ -73,7 +72,7 @@ class ISOTest extends VultrTest
 
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'iso-public'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$public_isos = $client->iso->getPublicISOs();
@@ -102,7 +101,7 @@ class ISOTest extends VultrTest
 		$data = $this->getDataProvider()->getData();
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('POST', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$iso = $client->iso->createISO('http://myamazingiso.com');
@@ -121,7 +120,7 @@ class ISOTest extends VultrTest
 	{
 		$client = $this->getDataProvider()->createClientHandler([
 			new Response(204),
-			new RequestException('Bad Request', new Request('DEL', 'iso'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';

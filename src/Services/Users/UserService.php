@@ -48,7 +48,7 @@ class UserService extends VultrService
 
 		try
 		{
-			$response = $this->post('users', $params);
+			$response = $this->getClientHandler()->post('users', $params);
 		}
 		catch (VultrServiceException $e)
 		{

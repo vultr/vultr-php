@@ -6,7 +6,9 @@ require (__DIR__.'/../vendor/autoload.php');
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Util\ListOptions;
 
-$client = VultrClient::create(API_KEY);
+use GuzzleHttp\Client;
+
+$client = VultrClient::create(new Client(), API_KEY);
 
 echo "======================\n";
 echo "List\n";

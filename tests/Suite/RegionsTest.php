@@ -10,7 +10,6 @@ use Vultr\VultrPhp\Services\Plans\BMPlan;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -24,7 +23,7 @@ class RegionsTest extends VultrTest
 
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$map = $this->mapRegions($data['regions']);
@@ -57,7 +56,7 @@ class RegionsTest extends VultrTest
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($bm_plans)), // Cache Plans
 
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$client->regions->cacheRegions(true);

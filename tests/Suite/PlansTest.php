@@ -11,7 +11,6 @@ use Vultr\VultrPhp\Services\Regions\Region;
 
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -70,7 +69,7 @@ class PlansTest extends VultrTest
 		$plans = $provider->getData();
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		foreach ($client->plans->getVPSPlans() as $plan)
@@ -96,7 +95,7 @@ class PlansTest extends VultrTest
 		$plans = $provider->getData();
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VC2), $plans, PlanService::FILTER_VC2);
@@ -111,7 +110,7 @@ class PlansTest extends VultrTest
 		$plans = $provider->getData();
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VHF), $plans, PlanService::FILTER_VHF);
@@ -126,7 +125,7 @@ class PlansTest extends VultrTest
 		$plans = $provider->getData();
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		$this->testFilter($client->plans->getVPSPlans(PlanService::FILTER_VDC), $plans, PlanService::FILTER_VDC);
@@ -141,7 +140,7 @@ class PlansTest extends VultrTest
 		$plans = $provider->getData();
 		$client = $provider->createClientHandler([
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
-			new RequestException('Bad Request', new Request('GET', 'backups'), new Response(400, [], json_encode(['error' => 'Bad Request']))),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
 		foreach ($client->plans->getBMPlans() as $plan)
