@@ -69,7 +69,7 @@ class VultrClient
 		}
 		catch (Exception $e)
 		{
-			throw new VultrClientException('Failed to initialize client: '.$e->getMessage(), null, $e);
+			throw new VultrException('Failed to initialize client: '.$e->getMessage(), null, $e);
 		}
 
 		return $client;

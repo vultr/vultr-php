@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use Vultr\VultrPhp\Services\VultrServiceException;
 
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\UriResolver;
 use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\Psr7\Message;
@@ -108,13 +109,17 @@ class VultrClientHandler
 			$request = $this->applyOptions($request, $options);
 			$response = $this->client->sendRequest($request);
 		}
+		catch (NetworkExceptionInterface|RequestExceptionInterface $e)
+		{
+			throw new VultrClientException($this->formalizeErrorMessage(new Response(500), $e->getRequest()), null, $e);
+		}
 		catch (Throwable $e)
 		{
 			throw new VultrClientException($method.' fatal failed: '.$e->getMessage(), null, $e);
 		}
 
 
-		$level = (int) \floor($response->getStatusCode() / 100);
+		$level = (int) floor($response->getStatusCode() / 100);
 		if ($level >= 4)
 		{
 			$message = $this->formalizeErrorMessage($response, $request);
@@ -132,7 +137,7 @@ class VultrClientHandler
 			$json = json_encode($options[self::JSON], 0, 512);
 			if (JSON_ERROR_NONE !== json_last_error())
 			{
-				throw new InvalidArgumentException('json_encode error: ' . \json_last_error_msg());
+				throw new InvalidArgumentException('json_encode error: ' . json_last_error_msg());
 			}
 			$options['body'] = $json;
 			unset($options[self::JSON]);
@@ -143,7 +148,7 @@ class VultrClientHandler
 			$value = $options[self::QUERY];
 			if (is_array($value))
 			{
-				$value = http_build_query($value, '', '&', \PHP_QUERY_RFC3986);
+				$value = http_build_query($value, '', '&', PHP_QUERY_RFC3986);
 			}
 
 			if (!is_string($value))
