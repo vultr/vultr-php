@@ -110,7 +110,7 @@ class VultrClientHandler
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrServiceException($method.' fatal failed: '.$e->getMessage(), VultrException::SERVICE_CODE, null, $e);
+			throw new VultrClientException($method.' fatal failed: '.$e->getMessage(), null, $e);
 		}
 
 
@@ -118,7 +118,7 @@ class VultrClientHandler
 		if ($level >= 4)
 		{
 			$message = $this->formalizeErrorMessage($response, $request);
-			throw new VultrServiceException($method.' failed: '.$message, VultrException::SERVICE_CODE, $response->getStatusCode());
+			throw new VultrClientException($method.' failed: '.$message, $response->getStatusCode());
 		}
 
 		return $response;

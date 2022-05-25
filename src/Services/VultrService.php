@@ -4,15 +4,15 @@ namespace Vultr\VultrPhp\Services;
 
 use Throwable;
 use Psr\Http\Client\ClientInterface;
-use GuzzleHttp\Psr7\Request;
-
-use GuzzleHttp\RequestOptions;
-use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
+
+use GuzzleHttp\Psr7\Request;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\VultrClientHandler;
+use Vultr\VultrPhp\VultrClientException;
+
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
@@ -50,7 +50,7 @@ abstract class VultrService
 		{
 			$response = $this->getClientHandler()->get($uri);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to get '.$this->getReadableClassType($model). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
@@ -100,7 +100,7 @@ abstract class VultrService
 		{
 			$this->getClientHandler()->patch($uri, $model->getUpdateArray());
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to update '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
@@ -119,7 +119,7 @@ abstract class VultrService
 		{
 			$this->getClientHandler()->delete($uri);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to delete '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
@@ -139,7 +139,7 @@ abstract class VultrService
 		{
 			$response = $this->getClientHandler()->post($uri, $params);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			$exception_class = $model->getModelExceptionClass();
 			throw new $exception_class('Failed to create '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
@@ -165,7 +165,7 @@ abstract class VultrService
 
 			$response = $this->getClientHandler()->get($uri, $params);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			throw new VultrServiceException('Failed to list: '.$e->getMessage(), VultrException::SERVICE_CODE, $e->getHTTPCode(), $e);
 		}

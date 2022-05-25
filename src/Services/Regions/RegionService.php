@@ -2,7 +2,7 @@
 
 namespace Vultr\VultrPhp\Services\Regions;
 
-use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\VultrClientException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
@@ -37,7 +37,7 @@ class RegionService extends VultrService
 			}
 			$response = $this->getClientHandler()->get('regions/'.$id.'/availability', $params);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			throw new RegionException('Failed to get available compute in region: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}

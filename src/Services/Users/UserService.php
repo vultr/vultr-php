@@ -2,7 +2,8 @@
 
 namespace Vultr\VultrPhp\Services\Users;
 
-use Vultr\VultrPhp\Services\VultrServiceException;
+use Vultr\VultrPhp\VultrClientException;
+
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -50,7 +51,7 @@ class UserService extends VultrService
 		{
 			$response = $this->getClientHandler()->post('users', $params);
 		}
-		catch (VultrServiceException $e)
+		catch (VultrClientException $e)
 		{
 			throw new UserException('Failed to create user: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
