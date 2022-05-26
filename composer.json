@@ -5,19 +5,23 @@
     "license": "MIT",
     "homepage": "https://github.com/vultr/vultr-php",
     "keywords": [
-        "vultr",
-        "vultr-api",
-        "vultr-api-version-2",
-        "vultr-php"
+        "vultr", "vultr-api", "vultr-api-version-2", "vultr-php",
+        "psr-7", "psr-17", "psr-18",
+        "http", "client", "discovery", "message", "factory"
     ],
     "authors": [
         {
             "name": "The Constant Company, LLC.",
-            "email": "developers@vultr.com",
+            "email": "opensource@vultr.com",
             "homepage": "https://www.vultr.com"
+        },
+        {
+            "name": "Vinnie Marone",
+            "email": "vmarone@vultr.com"
         }
     ],
-    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "minimum-stability": "beta",
     "require": {
         "php": "^8.0",
         "json-mapper/json-mapper": "^2.10",
