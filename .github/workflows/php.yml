@@ -41,7 +41,7 @@ jobs:
       - name: PHP Lint
         run: vendor/bin/phpcs -v .
       - name: test
-        run: cat vendor/composer/autoload_psr4.php
+        run: composer dump-autoload
       - name: Run 8.1 Test Suite
         run: php8.1 vendor/bin/phpunit
       - name: Run 8.0 Test Suite
