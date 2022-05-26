@@ -22,6 +22,11 @@
     ],
     "prefer-stable": true,
     "minimum-stability": "beta",
+    "suggest": {
+        "guzzlehttp/guzzle": "A PSR Compatible HTTP Client Library",
+        "symfony/http-client": "A PSR Compatible HTTP Client Library along with nyholm/psr7",
+        "php-http/curl-client": "A PSR Compatible HTTP Client Library"
+    },
     "require": {
         "php": "^8.0",
         "json-mapper/json-mapper": "^2.10",
