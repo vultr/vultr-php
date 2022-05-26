@@ -5,9 +5,8 @@ require (__DIR__.'/../vendor/autoload.php');
 
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Util\ListOptions;
-use GuzzleHttp\Client;
 
-$client = VultrClient::create(new Client(), API_KEY);
+$client = VultrClient::create(API_KEY);
 
 $backups = [];
 $options = new ListOptions(2);

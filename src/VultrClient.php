@@ -4,6 +4,11 @@ namespace Vultr\VultrPhp;
 
 use Exception;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+
+use Http\Discovery\Psr18ClientDiscovery;
+use Http\Discovery\Psr17FactoryDiscovery;
 
 use Vultr\VultrPhp\Services;
 
@@ -44,9 +49,21 @@ class VultrClient
 	/**
 	 * @param $http - PSR18 ClientInterface
 	 */
-	private function __construct(ClientInterface $http, VultrAuth $auth)
+	private function __construct(
+		VultrAuth $auth,
+		?ClientInterface $http = null,
+		?RequestFactoryInterface $request = null,
+		?ResponseFactoryInterface $response = null,
+		?StreamFactoryInterface $stream = null
+	)
 	{
-		$this->client = new VultrClientHandler($http, $auth);
+		$this->client = new VultrClientHandler(
+			$auth,
+			$http ?: Psr18ClientDiscovery::find(),
+			$request ?: Psr17FactoryDiscovery::findRequestFactory(),
+			$response ?: Psr17FactoryDiscovery::findResponseFactory(),
+			$stream ?: Psr17FactoryDiscovery::findStreamFactory()
+		);
 	}
 
 	public function __get(string $name)
@@ -61,11 +78,37 @@ class VultrClient
 		return null;
 	}
 
-	public static function create(ClientInterface $http, string $API_KEY) : VultrClient
+	public function setClient(ClientInterface $http) : void
+	{
+		$this->client->setClient($http);
+	}
+
+	public function setRequestFactory(RequestFactoryInterface $request) : void
+	{
+		$this->client->setRequestFactory($request);
+	}
+
+	public function setResponseFactory(ResponseFactoryInterface $response) : void
+	{
+		$this->client->setResponseFactory($response);
+	}
+
+	public function setStreamFactory(StreamFactoryInterface $stream) : void
+	{
+		$this->client->setStreamFactory($stream);
+	}
+
+	public static function create(
+		string $API_KEY,
+		?ClientInterface $http = null,
+		?RequestFactoryInterface $request = null,
+		?ResponseFactoryInterface $response = null,
+		?StreamFactoryInterface $stream = null
+	) : VultrClient
 	{
 		try
 		{
-			$client = new VultrClient($http, new VultrAuth($API_KEY));
+			$client = new VultrClient(new VultrAuth($API_KEY), $http, $request, $response, $stream);
 		}
 		catch (Exception $e)
 		{

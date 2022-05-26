@@ -6,8 +6,6 @@ use Throwable;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 
-use GuzzleHttp\Psr7\Request;
-
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\VultrClientHandler;

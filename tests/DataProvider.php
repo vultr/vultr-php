@@ -24,6 +24,6 @@ abstract class DataProvider implements DataProviderInterface
 	public function createClientHandler(array $requests, ?MockHandler &$mock = null) : VultrClient
 	{
 		$mock = new MockHandler($requests);
-		return VultrClient::create(new Client(['handler' => HandlerStack::create($mock)]), 'TEST1234');
+		return VultrClient::create('TEST1234', new Client(['handler' => HandlerStack::create($mock)]));
 	}
 }

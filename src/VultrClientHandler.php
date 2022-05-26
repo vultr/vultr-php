@@ -7,13 +7,11 @@ use InvalidArgumentException;
 
 use Vultr\VultrPhp\Services\VultrServiceException;
 
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\UriResolver;
-use GuzzleHttp\Psr7\Utils;
-use GuzzleHttp\Psr7\Message;
-
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
@@ -21,15 +19,49 @@ use Psr\Http\Message\UriInterface;
 class VultrClientHandler
 {
 	private ClientInterface $client;
+	private RequestFactoryInterface $request_fact;
+	private ResponseFactoryInterface $response_fact;
+	private StreamFactoryInterface $stream_fact;
+
 	private VultrAuth $auth;
 
 	private const QUERY = 0;
 	private const JSON = 1;
 
-	public function __construct(ClientInterface $http, VultrAuth $auth)
+	public function __construct(
+		VultrAuth $auth,
+		ClientInterface $http,
+		RequestFactoryInterface $request,
+		ResponseFactoryInterface $response,
+		StreamFactoryInterface $stream
+	)
+	{
+		$this->auth = $auth;
+
+		$this->setClient($http);
+		$this->setRequestFactory($request);
+		$this->setResponseFactory($response);
+		$this->setStreamFactory($stream);
+	}
+
+	public function setClient(ClientInterface $http) : void
 	{
 		$this->client = $http;
-		$this->auth = $auth;
+	}
+
+	public function setRequestFactory(RequestFactoryInterface $request) : void
+	{
+		$this->request_fact = $request;
+	}
+
+	public function setResponseFactory(ResponseFactoryInterface $response) : void
+	{
+		$this->response_fact = $response;
+	}
+
+	public function setStreamFactory(StreamFactoryInterface $stream) : void
+	{
+		$this->stream_fact = $stream;
 	}
 
 	/**
@@ -103,15 +135,18 @@ class VultrClientHandler
 	{
 		try
 		{
-			$merged_uri = UriResolver::resolve(Utils::uriFor(VultrConfig::getBaseURI()), Utils::uriFor($uri));
+			$request = $this->request_fact->createRequest($method, VultrConfig::getBaseURI().ltrim($uri, '/'));
+			foreach (VultrConfig::generateHeaders($this->auth) as $header => $value)
+			{
+				$request = $request->withHeader($header, $value);
+			}
 
-			$request = new Request($method, $merged_uri, VultrConfig::generateHeaders($this->auth));
 			$request = $this->applyOptions($request, $options);
 			$response = $this->client->sendRequest($request);
 		}
 		catch (NetworkExceptionInterface|RequestExceptionInterface $e)
 		{
-			throw new VultrClientException($this->formalizeErrorMessage(new Response(500), $e->getRequest()), null, $e);
+			throw new VultrClientException($this->formalizeErrorMessage($this->response_fact->createResponse(500), $e->getRequest()), null, $e);
 		}
 		catch (Throwable $e)
 		{
@@ -131,7 +166,6 @@ class VultrClientHandler
 
 	private function applyOptions(RequestInterface $request, array &$options) : RequestInterface
 	{
-		$modify = [];
 		if (isset($options[self::JSON]))
 		{
 			$json = json_encode($options[self::JSON], 0, 512);
@@ -139,7 +173,7 @@ class VultrClientHandler
 			{
 				throw new InvalidArgumentException('json_encode error: ' . json_last_error_msg());
 			}
-			$options['body'] = $json;
+			$request = $request->withBody($this->stream_fact->createStream($json));
 			unset($options[self::JSON]);
 		}
 
@@ -155,11 +189,12 @@ class VultrClientHandler
 			{
 				throw new InvalidArgumentException('query must be a string or array');
 			}
-			$modify['query'] = $value;
+
+			$request = $request->withUri($request->getUri()->withQuery($value), true);
 			unset($options[self::QUERY]);
 		}
 
-		return Utils::modifyRequest($request, $modify);
+		return $request;
 	}
 
 	private function formalizeErrorMessage(ResponseInterface $response, RequestInterface $request) : string
@@ -169,6 +204,8 @@ class VultrClientHandler
 		{
 			return $error['error'];
 		}
+
+		$level = (int) floor($response->getStatusCode() / 100);
 
 		$label = 'Unsuccessful request';
 		if ($level === 4) $label = 'Client error';
@@ -183,8 +220,45 @@ class VultrClientHandler
 			$response->getReasonPhrase()
 		);
 
-		$message .= "\n".Message::bodySummary($response)."\n";
+		if ($summary = $this->bodySummary($response) !== null)
+		{
+			$message .= "\n{$summary}\n";
+		}
 
 		return $message;
+	}
+
+	private function bodySummary(MessageInterface $message, int $truncateAt = 120): ?string
+	{
+		$body = $message->getBody();
+
+		if (!$body->isSeekable() || !$body->isReadable())
+		{
+			return null;
+		}
+
+		$size = $body->getSize();
+
+		if ($size === 0)
+		{
+			return null;
+		}
+
+		$summary = $body->read($truncateAt);
+		$body->rewind();
+
+		if ($size > $truncateAt)
+		{
+			$summary .= ' (truncated...)';
+		}
+
+		// Matches any printable character, including unicode characters:
+		// letters, marks, numbers, punctuation, spacing, and separators.
+		if (preg_match('/[^\pL\pM\pN\pP\pS\pZ\n\r\t]/u', $summary))
+		{
+			return null;
+		}
+
+		return $summary;
 	}
 }
