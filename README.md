@@ -14,6 +14,11 @@
 
 ## Getting Started
 
+Must have a PSR7, PSR17, and PSR18 Compatible HTTP Client. 
+[![View all PSR's](https://www.php-fig.org/psr/)
+Whether you implement your own or install 1, this client will act on those interfaces.
+https://packagist.org/providers/psr/http-client-implementation
+
 ### Installation
 ```php
 composer require vultr/vultr-php
