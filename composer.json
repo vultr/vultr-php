@@ -48,8 +48,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Vultr\\VultrPhp\\Tests\\": "tests/",
-            "Http\\Discovery\\": "vendor/php-http/discovery/src"
+            "Vultr\\VultrPhp\\Tests\\": "tests/"
         }
     },
     "scripts": {
