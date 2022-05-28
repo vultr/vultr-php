@@ -58,5 +58,10 @@
         "issues": "https://github.com/vultr/vultr-php/issues",
         "source": "https://github.com/vultr/vultr-php",
         "docs": "https://www.vultr.com/api/"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="CGV">
+<ruleset name="Standard">
 	<description>The VultrPhp coding standards.</description>
 	<arg name="tab-width" value="4"/>
 
@@ -8,6 +8,7 @@
 	<exclude-pattern>*/.phpdoc/*</exclude-pattern>
 	<exclude-pattern>*/.phpunit.cache/*</exclude-pattern>
 
+	<rule ref="Generic.PHP.Syntax" />
 	<rule ref="Generic.PHP.DisallowShortOpenTag.EchoFound">
 		<severity>0</severity>
 	</rule>
@@ -37,16 +38,15 @@
 	</rule>
 	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
 	<rule ref="Generic.WhiteSpace.ScopeIndent">
-	<properties>
-		<property name="ignoreIndentationTokens" type="array" value="T_DOC_COMMENT_OPEN_TAG"/>
-		<property name="indent" value="4"/>
-		<property name="tabIndent" value="true"/>
-		<property name="exact" value="true"/>
-	</properties>
+		<properties>
+			<property name="ignoreIndentationTokens" type="array" value="T_DOC_COMMENT_OPEN_TAG"/>
+			<property name="indent" value="4"/>
+			<property name="tabIndent" value="true"/>
+			<property name="exact" value="true"/>
+		</properties>
 	</rule>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-	<rule ref="Generic.PHP.LowerCaseKeyword"/>
-	<rule ref="Generic.PHP.LowerCaseConstant"/>
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 	<rule ref="PSR2.Classes.ClassDeclaration"/>
 
 	<rule ref="Squiz.Scope.MethodScope"/>
@@ -88,5 +88,17 @@
 	</rule>
 	<rule ref="PEAR.Commenting.InlineComment"/>
 
+	<rule ref="Squiz.Arrays.ArrayDeclaration">
+        <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
+    </rule>
+    <rule ref="Generic.Arrays.ArrayIndent"/>
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
 </ruleset>
