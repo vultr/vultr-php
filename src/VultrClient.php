@@ -2,10 +2,11 @@
 
 namespace Vultr\VultrPhp;
 
-use Exception;
+use Throwable;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 
 use Http\Discovery\Psr18ClientDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
@@ -110,7 +111,7 @@ class VultrClient
 		{
 			$client = new VultrClient(new VultrAuth($API_KEY), $http, $request, $response, $stream);
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
 			throw new VultrException('Failed to initialize client: '.$e->getMessage(), null, $e);
 		}

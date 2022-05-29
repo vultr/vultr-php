@@ -20,7 +20,10 @@ class VultrClientTest extends VultrTest
 	public function testClientCreate()
 	{
 		$client = VultrClient::create('Test1234');
+		$this->assertInstanceOf(VultrClient::class, $client);
 
+		$guzzle_factory = new \GuzzleHttp\Psr7\HttpFactory();
+		$client = VultrClient::create('Test1234', new \GuzzleHttp\Client(), $guzzle_factory, $guzzle_factory, $guzzle_factory);
 		$this->assertInstanceOf(VultrClient::class, $client);
 	}
 
