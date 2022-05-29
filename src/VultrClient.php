@@ -48,7 +48,10 @@ class VultrClient
 	private $class_cache = [];
 
 	/**
-	 * @param $http - PSR18 ClientInterface
+	 * @param $http - PSR18 ClientInterface - https://www.php-fig.org/psr/psr-18/
+	 * @param $request - PSR17 RequestFactoryInterface - https://www.php-fig.org/psr/psr-17/#21-requestfactoryinterface
+	 * @param $response - PSR17 ResponseFactoryInterface - https://www.php-fig.org/psr/psr-17/#22-responsefactoryinterface
+	 * @param $stream - PSR17 StreamFactoryInterface - https://www.php-fig.org/psr/psr-17/#22-responsefactoryinterface
 	 */
 	private function __construct(
 		VultrAuth $auth,
@@ -113,7 +116,7 @@ class VultrClient
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrException('Failed to initialize client: '.$e->getMessage(), null, $e);
+			throw new VultrException('Failed to initialize client: '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
 		}
 
 		return $client;

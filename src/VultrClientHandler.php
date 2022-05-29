@@ -5,8 +5,6 @@ namespace Vultr\VultrPhp;
 use Throwable;
 use InvalidArgumentException;
 
-use Vultr\VultrPhp\Services\VultrServiceException;
-
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -14,7 +12,6 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\UriInterface;
 
 class VultrClientHandler
 {
@@ -67,7 +64,7 @@ class VultrClientHandler
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
-	 * @throws VultrServiceException
+	 * @throws VultrClientException
 	 * @return ResponseInterface
 	 */
 	public function delete(string $uri, ?array $params = []) : ResponseInterface
@@ -84,7 +81,7 @@ class VultrClientHandler
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
+	 * @throws VultrClientException
 	 * @return ResponseInterface
 	 */
 	public function post(string $uri, array $params = []) : ResponseInterface
@@ -95,7 +92,7 @@ class VultrClientHandler
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
+	 * @throws VultrClientException
 	 * @return ResponseInterface
 	 */
 	public function put(string $uri, array $params = []) : ResponseInterface
@@ -106,7 +103,7 @@ class VultrClientHandler
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array - form data that will be encoded to a json
-	 * @throws VultrServiceException
+	 * @throws VultrClientException
 	 * @return ResponseInterface
 	 */
 	public function patch(string $uri, array $params = []) : ResponseInterface
@@ -117,7 +114,7 @@ class VultrClientHandler
 	/**
 	 * @param $uri - string - anything after api.vultr.com/v2/
 	 * @param $params - array|null - query parameters that will be added to the uri query stirng.
-	 * @throws VultrServiceException
+	 * @throws VultrClientException
 	 * @return ResponseInterface
 	 */
 	public function get(string $uri, ?array $params = null) : ResponseInterface
@@ -144,7 +141,7 @@ class VultrClientHandler
 			$request = $this->applyOptions($request, $options);
 			$response = $this->client->sendRequest($request);
 		}
-		catch (NetworkExceptionInterface|RequestExceptionInterface $e)
+		catch (ClientExceptionInterface $e)
 		{
 			throw new VultrClientException($this->formalizeErrorMessage($this->response_fact->createResponse(500), $e->getRequest()), null, $e);
 		}
@@ -153,8 +150,7 @@ class VultrClientHandler
 			throw new VultrClientException($method.' fatal failed: '.$e->getMessage(), null, $e);
 		}
 
-
-		$level = (int) floor($response->getStatusCode() / 100);
+		$level = $this->getLevel($response);
 		if ($level >= 4)
 		{
 			$message = $this->formalizeErrorMessage($response, $request);
@@ -205,7 +201,7 @@ class VultrClientHandler
 			return $error['error'];
 		}
 
-		$level = (int) floor($response->getStatusCode() / 100);
+		$level = $this->getLevel($response);
 
 		$label = 'Unsuccessful request';
 		if ($level === 4) $label = 'Client error';
@@ -260,5 +256,10 @@ class VultrClientHandler
 		}
 
 		return $summary;
+	}
+
+	private function getLevel(ResponseInterface $response) : int
+	{
+		return (int) floor($response->getStatusCode() / 100);
 	}
 }
