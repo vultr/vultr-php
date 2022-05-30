@@ -1,17 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp;
 
 use Throwable;
 use InvalidArgumentException;
 
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
+
+use Vultr\VultrPhp\Util\VultrUtil;
 
 class VultrClientHandler
 {
@@ -75,7 +81,7 @@ class VultrClientHandler
 			$options[self::QUERY] = $params;
 		}
 
-		return $this->request('DELETE', $uri, $options);
+		return $this->request($this->generateRequest('DELETE', $uri, $options));
 	}
 
 	/**
@@ -86,7 +92,7 @@ class VultrClientHandler
 	 */
 	public function post(string $uri, array $params = []) : ResponseInterface
 	{
-		return $this->request('POST', $uri, [self::JSON => $params]);
+		return $this->request($this->generateRequest('POST', $uri, [self::JSON => $params]));
 	}
 
 	/**
@@ -97,7 +103,7 @@ class VultrClientHandler
 	 */
 	public function put(string $uri, array $params = []) : ResponseInterface
 	{
-		return $this->request('PUT', $uri, [self::JSON => $params]);
+		return $this->request($this->generateRequest('PUT', $uri, [self::JSON => $params]));
 	}
 
 	/**
@@ -108,7 +114,7 @@ class VultrClientHandler
 	 */
 	public function patch(string $uri, array $params = []) : ResponseInterface
 	{
-		return $this->request('PATCH', $uri, [self::JSON => $params]);
+		return $this->request($this->generateRequest('PATCH', $uri, [self::JSON => $params]));
 	}
 
 	/**
@@ -125,20 +131,24 @@ class VultrClientHandler
 			$options[self::QUERY] = $params;
 		}
 
-		return $this->request('GET', $uri, $options);
+		return $this->request($this->generateRequest('GET', $uri, $options));
 	}
 
-	private function request(string $method, string $uri, array $options = []) : ResponseInterface
+	private function generateRequest(string $method, string $uri, array $options = []) : RequestInterface
+	{
+		$request = $this->request_fact->createRequest($method, VultrConfig::getBaseURI().ltrim($uri, '/'));
+		foreach (VultrConfig::generateHeaders($this->auth) as $header => $value)
+		{
+			$request = $request->withHeader($header, $value);
+		}
+
+		return $this->applyOptions($request, $options);
+	}
+
+	private function request(RequestInterface $request) : ResponseInterface
 	{
 		try
 		{
-			$request = $this->request_fact->createRequest($method, VultrConfig::getBaseURI().ltrim($uri, '/'));
-			foreach (VultrConfig::generateHeaders($this->auth) as $header => $value)
-			{
-				$request = $request->withHeader($header, $value);
-			}
-
-			$request = $this->applyOptions($request, $options);
 			$response = $this->client->sendRequest($request);
 		}
 		catch (ClientExceptionInterface $e)
@@ -147,14 +157,14 @@ class VultrClientHandler
 		}
 		catch (Throwable $e)
 		{
-			throw new VultrClientException($method.' fatal failed: '.$e->getMessage(), null, $e);
+			throw new VultrClientException($request->getMethod().' fatal failed: '.$e->getMessage(), null, $e);
 		}
 
-		$level = $this->getLevel($response);
+		$level = VultrUtil::getLevel($response);
 		if ($level >= 4)
 		{
 			$message = $this->formalizeErrorMessage($response, $request);
-			throw new VultrClientException($method.' failed: '.$message, $response->getStatusCode());
+			throw new VultrClientException($request->getMethod().' failed: '.$message, $response->getStatusCode());
 		}
 
 		return $response;
@@ -195,13 +205,13 @@ class VultrClientHandler
 
 	private function formalizeErrorMessage(ResponseInterface $response, RequestInterface $request) : string
 	{
-		$error = json_decode($response->getBody(), true);
+		$error = json_decode((string)$response->getBody(), true);
 		if (isset($error['error']))
 		{
 			return $error['error'];
 		}
 
-		$level = $this->getLevel($response);
+		$level = VultrUtil::getLevel($response);
 
 		$label = 'Unsuccessful request';
 		if ($level === 4) $label = 'Client error';
@@ -256,10 +266,5 @@ class VultrClientHandler
 		}
 
 		return $summary;
-	}
-
-	private function getLevel(ResponseInterface $response) : int
-	{
-		return (int) floor($response->getStatusCode() / 100);
 	}
 }

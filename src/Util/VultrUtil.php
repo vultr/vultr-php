@@ -1,15 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Util;
 
+use stdClass;
 use Throwable;
+
 use Vultr\VultrPhp\VultrException;
 
 use JsonMapper\JsonMapper;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
 use JsonMapper\Enums\TextNotation;
-use stdClass;
+
+use Psr\Http\Message\ResponseInterface;
 
 class VultrUtil
 {
@@ -94,5 +99,14 @@ class VultrUtil
 	{
 		$underscored = (string)preg_replace('/(?<!^)[A-Z]/', '_$0', $camelCase);
 		return $lowercase ? strtolower($underscored) : $underscored;
+	}
+
+	/**
+	 * Get Status Code level
+	 * @return int
+	 */
+	public static function getLevel(ResponseInterface $response) : int
+	{
+		return (int) floor($response->getStatusCode() / 100);
 	}
 }
