@@ -41,9 +41,9 @@
 	<rule ref="PSR2.Classes.ClassDeclaration"/>
 	<rule ref="PSR2.Classes.PropertyDeclaration"/>
     <rule ref="PSR2.Methods.MethodDeclaration"/>
+    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket"/>
 	<rule ref="PSR2.Files.ClosingTag"/>
 	<rule ref="PSR2.ControlStructures.ControlStructureSpacing"/>
-	<rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket"/>
 
 	<!-- Squiz Standard -->
 	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
@@ -63,6 +63,7 @@
 	<rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
 	<rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
 	<rule ref="Squiz.ControlStructures.SwitchDeclaration"/>
+	<rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
 	<rule ref="Squiz.ControlStructures.SwitchDeclaration.MissingDefault"/>
 	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnNewLine"/>
 	<rule ref="Squiz.ControlStructures.SwitchDeclaration.EmptyCase"/>
