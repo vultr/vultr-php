@@ -5,10 +5,15 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use Closure;
-use Psr7\Response;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\HttpFactory;
+use GuzzleHttp\Psr7\Response;
 use ReflectionClass;
 use Vultr\VultrPhp\Tests\VultrTest;
-use VultrAuth;
+use Vultr\VultrPhp\VultrAuth;
+use Vultr\VultrPhp\VultrClientException;
+use Vultr\VultrPhp\VultrClientHandler;
 
 class VultrClientHandlerTest extends VultrTest
 {
