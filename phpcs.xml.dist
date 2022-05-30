@@ -20,6 +20,7 @@
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
 	<rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+	<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
 
 	<rule ref="Generic.Files.LineEndings">
 		<properties>
