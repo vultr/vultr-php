@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\Util\ListOptions;
-use Vultr\VultrPhp\Services\Applications\Application;
-use Vultr\VultrPhp\Services\Applications\ApplicationService;
-use Vultr\VultrPhp\Services\Applications\ApplicationException;
-
 use GuzzleHttp\Psr7\Response;
-
+use Vultr\VultrPhp\Services\Applications\Application;
+use Vultr\VultrPhp\Services\Applications\ApplicationException;
+use Vultr\VultrPhp\Services\Applications\ApplicationService;
 use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\Util\ListOptions;
 
 class ApplicationsTest extends VultrTest
 {

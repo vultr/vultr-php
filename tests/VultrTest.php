@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests;
 
 use Error;
-
 use PHPUnit\Framework\TestCase;
 
 class VultrTest extends TestCase

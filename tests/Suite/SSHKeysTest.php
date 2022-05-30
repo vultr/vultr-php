@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\SSHKeys\SSHKey;
 use Vultr\VultrPhp\Services\SSHKeys\SSHKeyException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class SSHKeysTest extends VultrTest

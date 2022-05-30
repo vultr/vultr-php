@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests;
 
-use Vultr\VultrPhp\VultrClient;
-
 use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use Vultr\VultrPhp\VultrClient;
 
 abstract class DataProvider implements DataProviderInterface
 {

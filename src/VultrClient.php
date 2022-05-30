@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp;
 
-use Throwable;
+use Http\Discovery\Psr17FactoryDiscovery;
+use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-
-use Http\Discovery\Psr18ClientDiscovery;
-use Http\Discovery\Psr17FactoryDiscovery;
-
+use Throwable;
 use Vultr\VultrPhp\Services;
 
 class VultrClient

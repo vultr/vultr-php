@@ -4,19 +4,16 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp;
 
-use Throwable;
 use InvalidArgumentException;
-
-use Psr\Http\Client\ClientInterface;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\ResponseFactoryInterface;
-use Psr\Http\Message\StreamFactoryInterface;
-
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
-
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use Throwable;
 use Vultr\VultrPhp\Util\VultrUtil;
 
 class VultrClientHandler

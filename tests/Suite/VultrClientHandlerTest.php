@@ -4,20 +4,11 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use ReflectionClass;
 use Closure;
-
-use GuzzleHttp\{
-Psr7\Response, Psr7\HttpFactory,
-Client, HandlerStack,
-Handler\MockHandler
-};
-use Vultr\VultrPhp\{
-VultrAuth, VultrClientHandler, VultrClientException,
-Util\VultrUtil
-};
-
+use Psr7\Response;
+use ReflectionClass;
 use Vultr\VultrPhp\Tests\VultrTest;
+use VultrAuth;
 
 class VultrClientHandlerTest extends VultrTest
 {

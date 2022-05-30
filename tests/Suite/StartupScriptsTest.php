@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\StartupScripts\StartupScript;
 use Vultr\VultrPhp\Services\StartupScripts\StartupScriptException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class StartupScriptsTest extends VultrTest

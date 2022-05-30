@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Data;
 
 use Vultr\VultrPhp\Services\Plans\PlanService;
-
-use Vultr\VultrPhp\Tests\DataProvider;
 use Vultr\VultrPhp\Tests\Data\RegionsData;
+use Vultr\VultrPhp\Tests\DataProvider;
+
 class PlansData extends DataProvider
 {
 	public function dataGetVPSPlans() : array

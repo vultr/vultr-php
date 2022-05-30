@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use stdClass;
-use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\Util\VultrUtil;
-use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Tests\Data\VultrUtilData;
+use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrException;
 
 class VultrUtilTest extends VultrTest
 {

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\VultrAuth;
 use Vultr\VultrPhp\VultrClient;
-
-use Vultr\VultrPhp\Tests\VultrTest;
 
 class VultrClientTest extends VultrTest
 {

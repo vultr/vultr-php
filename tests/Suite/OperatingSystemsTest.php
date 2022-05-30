@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
 use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystemException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class OperatingSystemsTest extends VultrTest

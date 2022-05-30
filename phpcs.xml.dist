@@ -95,6 +95,17 @@
 
     <!-- Slevomat Standard -->
     <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+    <!-- Absolutely not -->
+    <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable"/>
     <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+    	<properties>
+    		<property name="linesCountBeforeFirstUse" value="1"/>
+    		<property name="linesCountBetweenUseTypes" value="0"/>
+    		<property name="linesCountAfterLastUse" value="1"/>
+    	</properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
 </ruleset>

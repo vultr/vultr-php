@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\Services\Users\UserException;
-use Vultr\VultrPhp\Services\Users\User;
-
 use GuzzleHttp\Psr7\Response;
-
+use Vultr\VultrPhp\Services\Users\User;
+use Vultr\VultrPhp\Services\Users\UserException;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class UsersTest extends VultrTest

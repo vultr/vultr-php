@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\Services\ReservedIPs\ReservedIPException;
-use Vultr\VultrPhp\Services\ReservedIPs\ReservedIP;
-
 use GuzzleHttp\Psr7\Response;
-
+use Vultr\VultrPhp\Services\ReservedIPs\ReservedIP;
+use Vultr\VultrPhp\Services\ReservedIPs\ReservedIPException;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class ReservedIPsTest extends VultrTest

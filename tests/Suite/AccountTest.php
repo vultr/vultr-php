@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrException;
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Account\Account;
 use Vultr\VultrPhp\Services\Account\AccountException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\VultrException;
 
 class AccountTest extends VultrTest
 {

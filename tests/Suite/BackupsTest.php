@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Backups\Backup;
 use Vultr\VultrPhp\Services\Backups\BackupException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class BackupsTest extends VultrTest

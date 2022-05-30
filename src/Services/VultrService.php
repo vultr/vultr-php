@@ -5,15 +5,13 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services;
 
 use Throwable;
-
-use Vultr\VultrPhp\VultrException;
-use Vultr\VultrPhp\VultrClient;
-use Vultr\VultrPhp\VultrClientHandler;
-use Vultr\VultrPhp\VultrClientException;
-
-use Vultr\VultrPhp\Util\VultrUtil;
-use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\Util\ModelInterface;
+use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrClient;
+use Vultr\VultrPhp\VultrClientException;
+use Vultr\VultrPhp\VultrClientHandler;
+use Vultr\VultrPhp\VultrException;
 
 abstract class VultrService
 {

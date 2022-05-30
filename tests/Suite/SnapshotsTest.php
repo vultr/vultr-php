@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Snapshots\Snapshot;
 use Vultr\VultrPhp\Services\Snapshots\SnapshotException;
-
-use GuzzleHttp\Psr7\Response;
-
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class SnapshotsTest extends VultrTest

@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Util;
 
-use stdClass;
-use Throwable;
-
-use Vultr\VultrPhp\VultrException;
-
+use JsonMapper\Enums\TextNotation;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
-use JsonMapper\Enums\TextNotation;
-
 use Psr\Http\Message\ResponseInterface;
+use stdClass;
+use Throwable;
+use Vultr\VultrPhp\VultrException;
 
 class VultrUtil
 {

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\Services\VultrServiceException;
-
 use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\VultrException;
 
 class VultrExceptionTest extends VultrTest
 {
