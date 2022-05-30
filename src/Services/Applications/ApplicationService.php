@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Applications;
 
-use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
@@ -53,9 +52,18 @@ class ApplicationService extends VultrService
 
 		static::$cache_applications = [];
 		$options = new ListOptions(500);
-		foreach ($this->getApplications(self::FILTER_ALL) as $app)
+		while (true)
 		{
-			static::$cache_applications[$app->getId()] = $app;
+			foreach ($this->getApplications(self::FILTER_ALL, $options) as $app)
+			{
+				static::$cache_applications[$app->getId()] = $app;
+			}
+
+			if ($options->getNextCursor() == '')
+			{
+				break;
+			}
+			$options->setCurrentCursor($options->getNextCursor());
 		}
 	}
 }
