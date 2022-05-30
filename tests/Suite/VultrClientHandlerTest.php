@@ -18,99 +18,26 @@ use Vultr\VultrPhp\VultrClientHandler;
 
 class VultrClientHandlerTest extends VultrTest
 {
-	public function testPost()
+	public function testCRUD()
 	{
-		$this->testCallback(function ($client) {
-			return $client->post('test1234');
-		});
+		foreach (['post', 'patch', 'get', 'delete', 'put'] as $action)
+		{
+			$this->testCallback(function ($client) use ($action) {
+				return $client->$action('test1234');
+			});
 
-		$this->testCallback(function ($client) {
-			return $client->post('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
+			$this->testCallback(function ($client) use ($action) {
+				return $client->$action('test1234', ['same_i_iam' => 'green eggs and ham']);
+			});
 
-		$this->testErrorReturn(function ($client) {
-			$client->post('test1234');
-		});
+			$this->testErrorReturn(function ($client) use ($action) {
+				$client->$action('test1234');
+			});
 
-		$this->testErrorReturn(function ($client) {
-			$client->post('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-	}
-
-	public function testGet()
-	{
-		$this->testCallback(function ($client) {
-			return $client->get('test1234');
-		});
-
-		$this->testCallback(function ($client) {
-			return $client->get('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->get('test1234');
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->get('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-	}
-
-	public function testPatch()
-	{
-		$this->testCallback(function ($client) {
-			return $client->patch('test1234');
-		});
-
-		$this->testCallback(function ($client) {
-			return $client->patch('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->patch('test1234');
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->patch('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-	}
-
-	public function testDelete()
-	{
-		$this->testCallback(function ($client) {
-			return $client->delete('test1234');
-		});
-
-		$this->testCallback(function ($client) {
-			return $client->delete('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->delete('test1234');
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->delete('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-	}
-
-	public function testPut()
-	{
-		$this->testCallback(function ($client) {
-			return $client->put('test1234');
-		});
-
-		$this->testCallback(function ($client) {
-			return $client->put('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->put('test1234');
-		});
-
-		$this->testErrorReturn(function ($client) {
-			$client->put('test1234', ['same_i_iam' => 'green eggs and ham']);
-		});
+			$this->testErrorReturn(function ($client) use ($action) {
+				$client->$action('test1234', ['same_i_iam' => 'green eggs and ham']);
+			});
+		}
 	}
 
 	private function generateClient(array $responses) : VultrClientHandler
@@ -169,9 +96,13 @@ class VultrClientHandlerTest extends VultrTest
 			])),
 		]);
 
-		$this->expectException(VultrClientException::class);
-		$this->expectExceptionMessageMatches('/'.$error.'/');
-
-		$function($client);
+		try
+		{
+			$function($client);
+		}
+		catch (VultrClientException $e)
+		{
+			$this->assertStringContainsString($error, $e->getMessage());
+		}
 	}
 }
