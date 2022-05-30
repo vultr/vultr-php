@@ -6,8 +6,8 @@ namespace Vultr\VultrPhp\Tests\Suite;
 
 use Closure;
 use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\HttpFactory;
 use GuzzleHttp\Psr7\Response;
 use ReflectionClass;

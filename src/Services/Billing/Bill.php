@@ -84,4 +84,9 @@ class Bill extends Model
 	{
 		return $this->getResponseName();
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('BillException', 'BillingException', parent::getModelExceptionClass());
+	}
 }

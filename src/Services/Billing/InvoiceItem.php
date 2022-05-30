@@ -100,4 +100,9 @@ class InvoiceItem extends Model
 	{
 		return 'invoice_item';
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('InvoiceItem', 'Billing', parent::getModelExceptionClass());
+	}
 }

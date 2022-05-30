@@ -6,6 +6,7 @@ namespace Vultr\VultrPhp\Tests;
 
 use Error;
 use PHPUnit\Framework\TestCase;
+use Vultr\VultrPhp\Util\ModelInterface;
 
 class VultrTest extends TestCase
 {
@@ -44,5 +45,24 @@ class VultrTest extends TestCase
 			$region_map[$region['id']] = $region;
 		}
 		return $region_map;
+	}
+
+	protected function testListObject(ModelInterface $model, array $response_objects, array $spec_data) : void
+	{
+		$this->assertEquals($spec_data['meta']['total'], count($response_objects));
+		foreach ($response_objects as $response_object)
+		{
+			$this->assertInstanceOf($model::class, $response_object);
+			foreach ($spec_data[$response_object->getResponseListName()] as $object)
+			{
+				if ($object['id'] !== $response_object->getId()) continue;
+
+				foreach ($response_object->toArray() as $prop => $prop_val)
+				{
+					$this->assertEquals($prop_val, $object[$prop]);
+				}
+				break;
+			}
+		}
 	}
 }

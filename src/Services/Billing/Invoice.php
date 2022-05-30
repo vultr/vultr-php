@@ -68,4 +68,9 @@ class Invoice extends Model
 	{
 		return 'billing_invoice';
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('Invoice', 'Billing', parent::getModelExceptionClass());
+	}
 }
