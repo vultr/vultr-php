@@ -91,6 +91,9 @@ class ApplicationsData extends DataProvider
 
 	protected function dataGetApplication() : array
 	{
-		return $this->dataGetApplications();
+		$data = $this->dataGetApplications();
+
+		$data['meta']['links']['next'] = '';
+		return $data;
 	}
 }
