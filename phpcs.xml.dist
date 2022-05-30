@@ -92,4 +92,8 @@
 
     <!-- Pear Standard -->
     <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <!-- Slevomat Standard -->
+    <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
 </ruleset>

@@ -117,7 +117,6 @@ class SSHKeysTest extends VultrTest
 
 		$ssh_key = $client->ssh_keys->createSSHKey($ssh_key->getName(), $ssh_key->getSshKey());
 		$this->assertInstanceOf(SSHKey::class, $ssh_key);
-		$array = $ssh_key->toArray();
 		foreach ($ssh_key->toArray() as $prop => $prop_val)
 		{
 			$this->assertEquals($prop_val, $data[$prop]);

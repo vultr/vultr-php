@@ -85,7 +85,6 @@ class StartupScriptsTest extends VultrTest
 
 		$script = $client->startup_scripts->createStartupScript($startup_script);
 		$this->assertInstanceOf(StartupScript::class, $script);
-		$array = $script->toArray();
 		foreach ($script->toArray() as $prop => $prop_val)
 		{
 			$this->assertEquals($prop_val, $data[$prop]);

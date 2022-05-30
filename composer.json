@@ -39,7 +39,8 @@
     "require-dev": {
         "guzzlehttp/guzzle": "^7.4",
         "phpunit/phpunit": "^9.5",
-        "squizlabs/php_codesniffer": "^3.6"
+        "squizlabs/php_codesniffer": "^3.6",
+        "slevomat/coding-standard": "^7.2"
     },
     "autoload": {
         "psr-4": {

@@ -127,7 +127,7 @@ class VultrClientHandlerTest extends VultrTest
 	private function generateGenericResponses() : array
 	{
 		$responses = [];
-		foreach ($this->getHTTPCodesFromGuzzle() as $http_code => $reason)
+		foreach (array_keys($this->getHTTPCodesFromGuzzle()) as $http_code)
 		{
 			$responses[] = new Response($http_code);
 		}
