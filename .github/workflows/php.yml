@@ -39,7 +39,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
       - name: PHP Lint
-        run: vendor/bin/phpcs -v -s .
+        run: vendor/bin/phpcs --extensions=php -v -s
       - name: Run 8.1 Test Suite
         run: php8.1 vendor/bin/phpunit
       - name: Run 8.0 Test Suite
