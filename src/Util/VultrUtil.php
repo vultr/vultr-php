@@ -9,7 +9,6 @@ use Throwable;
 
 use Vultr\VultrPhp\VultrException;
 
-use JsonMapper\JsonMapper;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
 use JsonMapper\Enums\TextNotation;

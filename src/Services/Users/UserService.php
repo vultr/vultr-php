@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Users;
 
-use Vultr\VultrPhp\VultrClientException;
 
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
-use Vultr\VultrPhp\Util\VultrUtil;
 
 class UserService extends VultrService
 {

@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\ISO\ISOException;
 use Vultr\VultrPhp\Services\ISO\ISO;
 use Vultr\VultrPhp\Services\ISO\PublicISO;
 
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 

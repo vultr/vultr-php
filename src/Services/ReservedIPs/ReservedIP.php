@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services\ReservedIPs;
 
 use Vultr\VultrPhp\Util\Model;
-use Vultr\VultrPhp\Services\Regions\Region;
 
 class ReservedIP extends Model
 {

@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\ReservedIPs\ReservedIPException;
 use Vultr\VultrPhp\Services\ReservedIPs\ReservedIP;
 
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 

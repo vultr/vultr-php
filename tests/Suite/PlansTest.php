@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Services\Plans\BMPlan;
 use Vultr\VultrPhp\Services\Plans\PlanException;
@@ -12,7 +11,6 @@ use Vultr\VultrPhp\Services\Plans\PlanService;
 use Vultr\VultrPhp\Services\Regions\Region;
 
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 

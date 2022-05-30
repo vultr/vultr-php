@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
-use Vultr\VultrPhp\VultrClient;
 use Vultr\VultrPhp\Services\SSHKeys\SSHKey;
 use Vultr\VultrPhp\Services\SSHKeys\SSHKeyException;
 
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 
 use Vultr\VultrPhp\Tests\VultrTest;
 

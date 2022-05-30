@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Snapshots;
 
-use Throwable;
-use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Services\VultrService;
-use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ListOptions;
 
 class SnapshotService extends VultrService

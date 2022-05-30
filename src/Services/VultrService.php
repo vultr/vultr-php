@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services;
 
 use Throwable;
-use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\ResponseInterface;
 
 use Vultr\VultrPhp\VultrException;
 use Vultr\VultrPhp\VultrClient;

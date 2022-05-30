@@ -96,4 +96,5 @@
     <!-- Slevomat Standard -->
     <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
     <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
 </ruleset>
