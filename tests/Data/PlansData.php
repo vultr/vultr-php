@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Tests\Data;
 
 use Vultr\VultrPhp\Services\Plans\PlanService;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Services\Applications;
 
 use Vultr\VultrPhp\Services\VultrServiceException;

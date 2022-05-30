@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Services\Regions;
 
 use Vultr\VultrPhp\VultrClientException;
@@ -45,7 +47,7 @@ class RegionService extends VultrService
 		$plans = [];
 		try
 		{
-			$decode = json_decode($response->getBody(), true);
+			$decode = json_decode((string)$response->getBody(), true);
 			$plan_service = $this->getVultrClient()->plans;
 			$plan_service->cachePlans();
 

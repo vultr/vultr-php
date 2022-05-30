@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Services;
 
 use Throwable;
@@ -54,7 +56,7 @@ abstract class VultrService
 			throw new $exception_class('Failed to get '.$this->getReadableClassType($model). ' info: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $model->getResponseName());
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), clone $model, $model->getResponseName());
 	}
 
 	/**
@@ -143,7 +145,7 @@ abstract class VultrService
 			throw new $exception_class('Failed to create '.$this->getReadableClassType($model).': '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		return VultrUtil::convertJSONToObject($response->getBody(), clone $model, $model->getResponseName());
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), clone $model, $model->getResponseName());
 	}
 
 	protected function list(string $uri, ModelInterface $model, ListOptions &$options, ?array $params = null) : array
@@ -171,7 +173,7 @@ abstract class VultrService
 		$objects = [];
 		try
 		{
-			$stdclass = json_decode($response->getBody());
+			$stdclass = json_decode((string)$response->getBody());
 			$options->setTotal($stdclass->meta->total);
 			$options->setNextCursor($stdclass->meta->links->next);
 			$options->setPrevCursor($stdclass->meta->links->prev);

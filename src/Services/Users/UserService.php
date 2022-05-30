@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Services\Users;
 
 use Vultr\VultrPhp\VultrClientException;
@@ -47,16 +49,7 @@ class UserService extends VultrService
 			if (empty($param)) unset($params[$attr]);
 		}
 
-		try
-		{
-			$response = $this->getClientHandler()->post('users', $params);
-		}
-		catch (VultrClientException $e)
-		{
-			throw new UserException('Failed to create user: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
-
-		return VultrUtil::convertJSONToObject($response->getBody(), new User(), 'user');
+		return $this->createObject('users', new User(), $params);
 	}
 
 	/**

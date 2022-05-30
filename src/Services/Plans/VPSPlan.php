@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vultr\VultrPhp\Services\Plans;
 
 use Vultr\VultrPhp\Util\Model;
