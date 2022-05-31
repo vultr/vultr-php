@@ -1,0 +1,31 @@
+{
+  "invoice_items": [
+    {
+      "description": "Load Balancer (my-loadbalancer)",
+      "product": "Load Balancer",
+      "start_date": "2021-08-31T00:00:00+00:00",
+      "end_date": "2021-09-30T00:00:00+00:00",
+      "units": 720,
+      "unit_type": "hours",
+      "unit_price": 0.0149,
+      "total": 10
+    },
+    {
+      "description": "1.1.1.1 (8192 MB) [my-instance]",
+      "product": "Vultr Cloud Compute",
+      "start_date": "2021-09-15T00:00:00+00:00",
+      "end_date": "2021-09-30T00:00:00+00:00",
+      "units": 371,
+      "unit_type": "hours",
+      "unit_price": 0.0595,
+      "total": 22.09
+    }
+  ],
+  "meta": {
+    "total": 2,
+    "links": {
+      "next": "WxYzExampleNext",
+      "prev": ""
+    }
+  }
+}

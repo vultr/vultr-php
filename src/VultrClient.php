@@ -22,7 +22,7 @@ class VultrClient
 		'applications'     => Services\Applications\ApplicationService::class,
 		'backups'          => Services\Backups\BackupService::class,
 		'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
-		'billing'          => Services\Billing\BillingService::class, // TODO
+		'billing'          => Services\Billing\BillingService::class,
 		'blockstorage'     => Services\BlockStorage\BlockStorageService::class, // TODO
 		'dns'              => Services\DNS\DNSService::class, // TODO
 		'firewall'         => Services\Firewall\FirewallService::class, // TODO

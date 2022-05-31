@@ -59,10 +59,19 @@ class VultrTest extends TestCase
 
 				foreach ($response_object->toArray() as $prop => $prop_val)
 				{
-					$this->assertEquals($prop_val, $object[$prop]);
+					$this->assertEquals($prop_val, $object[$prop], "Prop {$prop} failed to meet comparison against spec.");
 				}
 				break;
 			}
+		}
+	}
+
+	protected function testGetObject(ModelInterface $model, ModelInterface $response_object, array $spec_data) : void
+	{
+		$this->assertInstanceOf($model::class, $response_object);
+		foreach ($response_object->toArray() as $attr => $value)
+		{
+			$this->assertEquals($value, $spec_data[$response_object->getResponseName()][$attr], "Attribute {$attr} failed to meet comparison against spec.");
 		}
 	}
 }

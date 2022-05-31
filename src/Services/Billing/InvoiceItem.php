@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Billing;
 
+use Vultr\VultrPhp\Util\Model;
 
 class InvoiceItem extends Model
 {
@@ -14,7 +15,7 @@ class InvoiceItem extends Model
 	protected int $units;
 	protected string $unitType;
 	protected float $unitPrice;
-	protected int $total;
+	protected float $total;
 
 	public function getDescription() : string
 	{
@@ -86,12 +87,12 @@ class InvoiceItem extends Model
 		$this->unitPrice = $unit_price;
 	}
 
-	public function getTotal() : int
+	public function getTotal() : float
 	{
 		return $this->total;
 	}
 
-	public function setTotal(int $total) : void
+	public function setTotal(float $total) : void
 	{
 		$this->total = $total;
 	}
