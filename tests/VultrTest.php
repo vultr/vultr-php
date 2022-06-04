@@ -47,7 +47,7 @@ class VultrTest extends TestCase
 		return $region_map;
 	}
 
-	protected function testListObject(ModelInterface $model, array $response_objects, array $spec_data) : void
+	protected function testListObject(ModelInterface $model, array $response_objects, array $spec_data, string $key = 'id', string $response_func = 'getId') : void
 	{
 		$this->assertEquals($spec_data['meta']['total'], count($response_objects));
 		foreach ($response_objects as $response_object)
@@ -55,7 +55,7 @@ class VultrTest extends TestCase
 			$this->assertInstanceOf($model::class, $response_object);
 			foreach ($spec_data[$response_object->getResponseListName()] as $object)
 			{
-				if ($object['id'] !== $response_object->getId()) continue;
+				if ($object[$key] !== $response_object->$response_func()) continue;
 
 				foreach ($response_object->toArray() as $prop => $prop_val)
 				{
