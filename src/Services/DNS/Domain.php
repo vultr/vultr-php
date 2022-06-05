@@ -46,5 +46,10 @@ class Domain extends Model
 	{
 		return str_replace('DomainException', 'DNSException', parent::getModelExceptionClass());
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['dns_sec'];
+	}
 }
 

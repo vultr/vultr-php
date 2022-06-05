@@ -55,4 +55,38 @@ class DNSTest extends VultrTest
 		$this->expectException(DNSException::class);
 		$client->dns->createDomain($data['domain']['domain'], $data['domain']['dns_sec']);
 	}
+
+	public function testDeleteDomain()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$client->dns->deleteDomain('example.com');
+
+		$this->expectException(DNSException::class);
+		$client->dns->deleteDomain('example.com');
+	}
+
+	public function testUpdateDomain()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$domain = new Domain();
+		$domain->setDomain('example.com');
+		$domain->setDnsSec('disabled');
+
+		$client->dns->updateDomain($domain);
+
+		$this->expectException(DNSException::class);
+		$client->dns->updateDomain($domain);
+	}
 }
