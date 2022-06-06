@@ -43,22 +43,7 @@ class ISOTest extends VultrTest
 		]);
 
 		$isos = $client->iso->getISOs();
-
-		$this->assertIsArray($isos);
-		$this->assertEquals($data['meta']['total'], count($isos));
-		foreach ($isos as $iso)
-		{
-			$this->assertInstanceOf(ISO::class, $iso);
-			foreach ($data[$iso->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $iso->getId()) continue;
-				foreach ($iso->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new ISO(), $isos, $data);
 
 		$this->expectException(ISOException::class);
 		$client->iso->getISOs();
@@ -74,21 +59,7 @@ class ISOTest extends VultrTest
 		]);
 
 		$public_isos = $client->iso->getPublicISOs();
-		$this->assertEquals($data['meta']['total'], count($public_isos));
-		foreach ($public_isos as $public_iso)
-		{
-			$this->assertInstanceOf(PublicISO::class, $public_iso);
-			foreach ($data[$public_iso->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $public_iso->getId()) continue;
-
-				foreach ($public_iso->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new PublicISO(), $public_isos, $data);
 
 		$this->expectException(ISOException::class);
 		$client->iso->getPublicISOs();

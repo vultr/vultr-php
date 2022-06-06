@@ -20,19 +20,7 @@ class OperatingSystemsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
-		foreach ($client->operating_system->getOperatingSystems() as $os)
-		{
-			$this->assertInstanceOf(OperatingSystem::class, $os);
-			foreach ($data[$os->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $os->getId()) continue;
-				foreach ($os->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new OperatingSystem(), $client->operating_system->getOperatingSystems(), $data);
 
 		$this->expectException(OperatingSystemException::class);
 		$client->operating_system->getOperatingSystems();

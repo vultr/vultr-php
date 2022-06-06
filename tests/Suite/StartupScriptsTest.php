@@ -41,22 +41,7 @@ class StartupScriptsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$scripts = $client->startup_scripts->getStartupScripts();
-		$this->assertIsArray($scripts);
-		$this->assertEquals($data['meta']['total'], count($scripts));
-		foreach ($scripts as $script)
-		{
-			$this->assertInstanceOf(StartupScript::class, $script);
-			foreach ($data[$script->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $script->getId()) continue;
-				foreach ($script->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new StartupScript(), $client->startup_scripts->getStartupScripts(), $data);
 
 		$this->expectException(StartupScriptException::class);
 		$client->startup_scripts->getStartupScripts();

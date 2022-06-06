@@ -86,19 +86,7 @@ class ApplicationsTest extends VultrTest
 
 	private function testApps(array $response, array $data)
 	{
-		foreach ($response as $app)
-		{
-			$this->assertInstanceOf(Application::class, $app);
-			foreach ($data[$app->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $app->getId()) continue;
-				foreach ($app->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new Application(), $response, $data);
 	}
 
 	private function testOptions(ListOptions $options, array $data)

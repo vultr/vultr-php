@@ -40,19 +40,7 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->reserved_ips->getReservedIPs() as $reserved_ip)
-		{
-			$this->assertInstanceOf(ReservedIP::class, $reserved_ip);
-			foreach ($data[$reserved_ip->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $reserved_ip->getId()) continue;
-				foreach ($reserved_ip->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new ReservedIP(), $client->reserved_ips->getReservedIPs(), $data);
 
 		$this->expectException(ReservedIPException::class);
 		$client->reserved_ips->getReservedIPs();

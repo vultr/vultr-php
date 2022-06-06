@@ -40,20 +40,7 @@ class UsersTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->users->getUsers() as $user)
-		{
-			$this->assertInstanceOf(User::class, $user);
-			foreach ($data['users'] as $object)
-			{
-				if ($user->getId() != $object['id']) continue;
-
-				foreach ($user->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new User(), $client->users->getUsers(), $data);
 
 		$this->expectException(UserException::class);
 		$client->users->getUsers();

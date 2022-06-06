@@ -41,22 +41,7 @@ class SSHKeysTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$keys = $client->ssh_keys->getSSHKeys();
-		$this->assertIsArray($keys);
-		$this->assertEquals($data['meta']['total'], count($keys));
-		foreach ($keys as $ssh_key)
-		{
-			$this->assertInstanceOf(SSHKey::class, $ssh_key);
-			foreach ($data[$ssh_key->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $ssh_key->getId()) continue;
-				foreach ($ssh_key->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new SSHKey(), $client->ssh_keys->getSSHKeys(), $data);
 
 		$this->expectException(SSHKeyException::class);
 		$client->ssh_keys->getSSHKeys();

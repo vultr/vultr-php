@@ -20,19 +20,7 @@ class SnapshotsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->snapshots->getSnapshots() as $snapshot)
-		{
-			$this->assertInstanceOf(Snapshot::class, $snapshot);
-			foreach ($data['snapshots'] as $object)
-			{
-				if ($object['id'] !== $snapshot->getId()) continue;
-				foreach ($snapshot->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new Snapshot(), $client->snapshots->getSnapshots(), $data);
 
 		$this->expectException(SnapshotException::class);
 		$client->snapshots->getSnapshots();
@@ -47,19 +35,7 @@ class SnapshotsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->snapshots->getSnapshots($description) as $snapshot)
-		{
-			$this->assertInstanceOf(Snapshot::class, $snapshot);
-			foreach ($data[$snapshot->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $snapshot->getId()) continue;
-				foreach ($snapshot->toArray() as $attr => $value)
-				{
-					$this->assertEquals($value, $object[$attr]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new Snapshot(), $client->snapshots->getSnapshots($description), $data);
 
 		$this->expectException(SnapshotException::class);
 		$client->snapshots->getSnapshots($description);

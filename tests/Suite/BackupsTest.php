@@ -21,21 +21,7 @@ class BackupsTest extends VultrTest
 		]);
 
 		$backups = $client->backups->getBackups();
-		$this->assertEquals($data['meta']['total'], count($backups));
-		foreach ($backups as $backup)
-		{
-			$this->assertInstanceOf(Backup::class, $backup);
-			foreach ($data[$backup->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $backup->getId()) continue;
-
-				foreach ($backup->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new Backup(), $backups, $data);
 
 		$this->expectException(BackupException::class);
 		$client->backups->getBackups();
@@ -51,21 +37,7 @@ class BackupsTest extends VultrTest
 		]);
 
 		$backups = $client->backups->getBackups($id);
-		$this->assertEquals($data['meta']['total'], count($backups));
-		foreach ($backups as $backup)
-		{
-			$this->assertInstanceOf(Backup::class, $backup);
-			foreach ($data[$backup->getResponseListName()] as $object)
-			{
-				if ($object['id'] !== $backup->getId()) continue;
-
-				foreach ($backup->toArray() as $prop => $prop_val)
-				{
-					$this->assertEquals($prop_val, $object[$prop]);
-				}
-				break;
-			}
-		}
+		$this->testListObject(new Backup(), $backups, $data);
 
 		$this->expectException(BackupException::class);
 		$client->backups->getBackups($id);
