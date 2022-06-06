@@ -28,6 +28,12 @@ abstract class DataProvider implements DataProviderInterface
 		$file = __DIR__.'/json_responses/'.$function.'.json';
 		if (!file_exists($file))
 		{
+			$folder = str_replace('data', '', str_replace('vultr\vultrphp\tests\data\\', '', strtolower($this::class)));
+			$file = __DIR__.'/json_responses/'.$folder.'/'.$function.'.json';
+		}
+
+		if (!file_exists($file))
+		{
 			throw new InvalidArgumentException('Please specify either a data provider function '.$backtrace['class'].'::'.$function.' or add the json response for the test at '.$file);
 		}
 		return json_decode(file_get_contents($file), true);
