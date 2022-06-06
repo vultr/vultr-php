@@ -60,4 +60,26 @@ class VultrUtilTest extends VultrTest
 		$json = 'asdasfasfs';
 		VultrUtil::convertJSONToObject($json, new VultrUtilData());
 	}
+
+	public function testDecodeJSON()
+	{
+		$json = json_encode([
+			'id' => 1,
+			'value1' => 'addasdasdfasf',
+			'value2' => 69,
+			'value3' => 4.20,
+			'value4' => ['spaghetti', 'bolognese'],
+			'value5' => false
+		]);
+
+		$object = VultrUtil::decodeJSON($json, false);
+
+		$this->assertInstanceOf(stdClass::class, $object);
+
+		$array = VultrUtil::decodeJSON($json, true);
+		$this->assertIsArray($array);
+
+		$this->expectException(VultrException::class);
+		VultrUtil::decodeJSON('jsadngfasjdfg dsajvndsagfjnsadfjnsadfjasdfn ssadfjsadfjnsdaf');
+	}
 }
