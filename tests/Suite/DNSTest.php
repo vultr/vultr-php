@@ -7,6 +7,7 @@ namespace Vultr\VultrPhp\Tests\Suite;
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\DNS\DNSException;
 use Vultr\VultrPhp\Services\DNS\Domain;
+use Vultr\VultrPhp\Services\DNS\Record;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class DNSTest extends VultrTest
@@ -109,5 +110,35 @@ class DNSTest extends VultrTest
 
 		$this->expectException(DNSException::class);
 		$client->dns->getDNSSecInfo('example.com');
+	}
+
+	public function testGetRecords()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$this->testListObject(new Record(), $client->dns->getRecords('example.com'), $data);
+
+		$this->expectException(DNSException::class);
+		$client->dns->getRecords('example.com');
+	}
+
+	public function testGetRecord()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$this->testGetObject(new Record(), $client->dns->getRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'), $data);
+
+		$this->expectException(DNSException::class);
+		$client->dns->getRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60');
 	}
 }

@@ -109,14 +109,14 @@ class DNSService extends VultrService
 
 	}
 
-	public function getRecords(string $domain) : array
+	public function getRecords(string $domain, ?ListOptions &$options = null) : array
 	{
-
+		return $this->getListObjects('domains/'.$domain.'/records', new Record(), $options);
 	}
 
 	public function getRecord(string $domain, string $record_id) : Record
 	{
-
+		return $this->getObject('domains/'.$domain.'/records/'.$record_id, new Record());
 	}
 
 	public function updateRecord(string $domain, Record $record) : void
