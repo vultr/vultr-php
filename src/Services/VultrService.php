@@ -169,7 +169,7 @@ abstract class VultrService
 		$objects = [];
 		try
 		{
-			$stdclass = json_decode((string)$response->getBody());
+			$stdclass = VultrUtil::decodeJSON((string)$response->getBody());
 			$options->setTotal($stdclass->meta->total);
 			$options->setNextCursor($stdclass->meta->links->next);
 			$options->setPrevCursor($stdclass->meta->links->prev);

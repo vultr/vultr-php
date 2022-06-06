@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Util;
 
+use Exception;
 use JsonMapper\Enums\TextNotation;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
@@ -68,11 +69,7 @@ class VultrUtil
 	public static function convertJSONToObject(string $json, ModelInterface $model, ?string $prop = null) : ModelInterface
 	{
 		$class_name = get_class($model);
-		$std_class = json_decode($json);
-		if (!is_object($std_class))
-		{
-			throw new VultrException('Failed to deserialize json for '.$class_name.' object: '.json_last_error_msg());
-		}
+		$std_class = static::decodeJSON($json);
 
 		try
 		{
@@ -84,6 +81,28 @@ class VultrUtil
 		}
 
 		return $object;
+	}
+
+	public static function decodeJSON(string $json, bool $array = false) : stdClass|array
+	{
+		try
+		{
+			$decode = json_decode($json, $array, 512, JSON_THROW_ON_ERROR);
+			if ($array && !is_array($decode))
+			{
+				throw Exception('JSON was unable to be parsed into an array.');
+			}
+			else if (!$array && !is_object($decode))
+			{
+				throw new Exception('JSON was unable to be parsed into an object');
+			}
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrException('Failed to decode json: '.$e->getMessage().'. perceived json data: '.var_export($json, true), VultrException::DEFAULT_CODE, null, $e);
+		}
+
+		return $decode;
 	}
 
 	/**

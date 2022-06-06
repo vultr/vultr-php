@@ -35,7 +35,7 @@ class AccountTest extends VultrTest
 		}
 		catch (VultrException $e)
 		{
-			$this->assertStringContainsString('Failed to deserialize json', $e->getMessage());
+			$this->assertStringContainsString('Failed to decode json', $e->getMessage());
 		}
 
 		$this->expectException(AccountException::class);
