@@ -6,6 +6,8 @@ namespace Vultr\VultrPhp\Services\DNS;
 
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrClientException;
 
 class DNSService extends VultrService
 {
@@ -80,9 +82,26 @@ class DNSService extends VultrService
 
 	}
 
-	public function getDNSSecInfo() : array
+	/**
+	 * @param $domain - string - Example: example.com
+	 * @throws DNSException
+	 * @throws VultrException
+	 * @return array
+	 */
+	public function getDNSSecInfo(string $domain) : array
 	{
+		$client = $this->getClientHandler();
 
+		try
+		{
+			$response = $client->get('domains/'.$domain.'/dnssec');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new DNSException('Failed to get dns sec information: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		return VultrUtil::decodeJSON((string)$response->getBody(), true)['dns_sec'];
 	}
 
 	public function createRecord(string $domain, Record $record) : Record

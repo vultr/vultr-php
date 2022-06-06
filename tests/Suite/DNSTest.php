@@ -89,4 +89,25 @@ class DNSTest extends VultrTest
 		$this->expectException(DNSException::class);
 		$client->dns->updateDomain($domain);
 	}
+
+	public function testGetDNSSecInfo()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$response_data = $client->dns->getDNSSecInfo('example.com');
+		$this->assertIsArray($response_data);
+		$this->assertEquals(count($response_data), count($data['dns_sec']));
+		foreach ($response_data as $index => $entry)
+		{
+			$this->assertEquals($entry, $data['dns_sec'][$index]);
+		}
+
+		$this->expectException(DNSException::class);
+		$client->dns->getDNSSecInfo('example.com');
+	}
 }
