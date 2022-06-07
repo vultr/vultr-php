@@ -12,6 +12,7 @@ use Vultr\VultrPhp\VultrClientException;
 class DNSService extends VultrService
 {
 	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/list-dns-domains
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws DNSException
 	 * @return Domain[]
@@ -22,6 +23,7 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
 	 * @return Domain
@@ -55,6 +57,7 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/delete-dns-domain
 	 * @throws DNSException
 	 * @return void
 	 */
@@ -64,6 +67,7 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain
 	 * @throws DNSException
 	 * @return void
 	 */
@@ -83,6 +87,7 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-dnssec
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
 	 * @throws VultrException
@@ -104,16 +109,37 @@ class DNSService extends VultrService
 		return VultrUtil::decodeJSON((string)$response->getBody(), true)['dns_sec'];
 	}
 
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/create-dns-domain-record
+	 * @param $domain - string - Example: example.com
+	 * @param $record - Record
+	 * @throws DNSException
+	 * @return Record
+	 */
 	public function createRecord(string $domain, Record $record) : Record
 	{
-
+		return $this->createObject('domains/'.$domain.'/records', new Record(), $record->getInitializedProps());
 	}
 
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/create-dns-domain-record
+	 * @param $domain - string - Example: example.com
+	 * @param $options - ListOptions|null - Interact via reference.
+	 * @throws DNSException
+	 * @return array
+	 */
 	public function getRecords(string $domain, ?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('domains/'.$domain.'/records', new Record(), $options);
 	}
 
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-record
+	 * @param $domain - string - Example: example.com
+	 * @param $record_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws DNSException
+	 * @return array
+	 */
 	public function getRecord(string $domain, string $record_id) : Record
 	{
 		return $this->getObject('domains/'.$domain.'/records/'.$record_id, new Record());

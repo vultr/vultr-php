@@ -38,13 +38,7 @@ class StartupScriptService extends VultrService
 	 */
 	public function createStartupScript(StartupScript $script) : StartupScript
 	{
-		$params = $script->toArray();
-		foreach ($params as $attr => $param)
-		{
-			if (empty($param)) unset($params[$attr]);
-		}
-
-		return $this->createObject('startup-scripts', new StartupScript(), $params);
+		return $this->createObject('startup-scripts', new StartupScript(), $script->getInitializedProps());
 	}
 
 	/**

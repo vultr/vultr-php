@@ -141,4 +141,28 @@ class DNSTest extends VultrTest
 		$this->expectException(DNSException::class);
 		$client->dns->getRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60');
 	}
+
+	public function testCreateRecord()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$post_record = new Record();
+		$post_record->setName('www');
+		$post_record->setType('A');
+		$post_record->setData('192.0.2.123');
+		$record = $client->dns->createRecord('example.com', $post_record);
+
+		$this->assertEquals($post_record->getName(), $record->getName());
+		$this->assertEquals($post_record->getType(), $record->getType());
+		$this->assertEquals($post_record->getType(), $record->getType());
+		$this->testGetObject(new Record(), $record, $data);
+
+		$this->expectException(DNSException::class);
+		$client->dns->createRecord('example.com', $post_record);
+	}
 }

@@ -101,6 +101,17 @@ abstract class Model implements ModelInterface
 		return $update;
 	}
 
+	public function getInitializedProps() : array
+	{
+		$params = $this->toArray();
+		foreach ($params as $attr => $param)
+		{
+			if (empty($param)) unset($params[$attr]);
+		}
+
+		return $params;
+	}
+
 	/**
 	 * Reset properties of the object to uninitialized state.
 	 */
