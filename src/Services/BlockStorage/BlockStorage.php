@@ -59,6 +59,16 @@ class BlockStorage extends Model
 		$this->status = $status;
 	}
 
+	public function getSizeGb() : int
+	{
+		return $this->sizeGb;
+	}
+
+	public function setSizeGb(int $size_gb) : void
+	{
+		$this->sizeGb = $size_gb;
+	}
+
 	public function getRegion() : string
 	{
 		return $this->region;
@@ -107,6 +117,16 @@ class BlockStorage extends Model
 	public function setBlockType(string $block_type) : void
 	{
 		$this->blockType = $block_type;
+	}
+
+	public function getResponseName() : string
+	{
+		return 'block';
+	}
+
+	public function getUpdateParams() : array
+	{
+		return ['label', 'size_gb'];
 	}
 }
 
