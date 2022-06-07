@@ -145,13 +145,27 @@ class DNSService extends VultrService
 		return $this->getObject('domains/'.$domain.'/records/'.$record_id, new Record());
 	}
 
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain-record
+	 * @param $domain - string - Example: example.com
+	 * @param $record - Record - Fully initialized object.
+	 * @throws DNSException
+	 * @return void
+	 */
 	public function updateRecord(string $domain, Record $record) : void
 	{
-
+		$this->patchObject('domains/'.$domain.'/records/'.$record->getId(), $record);
 	}
 
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/delete-dns-domain-record
+	 * @param $domain - string - Example: example.com
+	 * @param $record_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws DNSException
+	 * @return void
+	 */
 	public function deleteRecord(string $domain, string $record_id) : void
 	{
-
+		$this->deleteObject('domains/'.$domain.'/records/'.$record_id, new Record());
 	}
 }

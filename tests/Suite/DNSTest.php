@@ -152,9 +152,9 @@ class DNSTest extends VultrTest
 		]);
 
 		$post_record = new Record();
-		$post_record->setName('www');
-		$post_record->setType('A');
-		$post_record->setData('192.0.2.123');
+		$post_record->setName($data['record']['name']);
+		$post_record->setType($data['record']['type']);
+		$post_record->setData($data['record']['data']);
 		$record = $client->dns->createRecord('example.com', $post_record);
 
 		$this->assertEquals($post_record->getName(), $record->getName());
@@ -164,5 +164,38 @@ class DNSTest extends VultrTest
 
 		$this->expectException(DNSException::class);
 		$client->dns->createRecord('example.com', $post_record);
+	}
+
+	public function testUpdateRecord()
+	{
+		$provider = $this->getDataProvider();
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$record = new Record();
+		$record->setId('cb676a46-66fd-4dfb-b839-443f2e6c0b60');
+		$record->setName('foo');
+		$record->setTtl(100);
+
+		$client->dns->updateRecord('example.com', $record);
+
+		$this->expectException(DNSException::class);
+		$client->dns->updateRecord('example.com', $record);
+	}
+
+	public function testDeleteRecord()
+	{
+		$provider = $this->getDataProvider();
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$client->dns->deleteRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60');
+
+		$this->expectException(DNSException::class);
+		$client->dns->deleteRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60');
 	}
 }

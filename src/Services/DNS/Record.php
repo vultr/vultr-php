@@ -79,4 +79,9 @@ class Record extends Model
 	{
 		return str_replace('RecordException', 'DNSException', parent::getModelExceptionClass());
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['name', 'data', 'ttl', 'priority'];
+	}
 }
