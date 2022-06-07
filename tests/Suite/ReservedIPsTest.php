@@ -21,11 +21,7 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$reserved_ip = $client->reserved_ips->getReservedIP($reserved_id);
-		foreach ($reserved_ip->toArray() as $attr => $value)
-		{
-			$this->assertEquals($value, $data[$reserved_ip->getResponseName()][$attr]);
-		}
+		$this->testGetObject(new ReservedIP(), $client->reserved_ips->getReservedIP($reserved_id), $data);
 
 		$this->expectException(ReservedIPException::class);
 		$client->reserved_ips->getReservedIP($reserved_id);
@@ -87,16 +83,50 @@ class ReservedIPsTest extends VultrTest
 
 	public function testConvertInstanceIP()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$this->testGetObject(new ReservedIP(), $client->reserved_ips->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']), $data);
+
+		$this->expectException(ReservedIPException::class);
+		$client->reserved_ips->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']);
 	}
 
 	public function testAttachReservedIP()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$ip = '192.168.0.1';
+		$instance_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->reserved_ips->attachReservedIP($ip, $instance_id);
+
+		$this->expectException(ReservedIPException::class);
+		$client->reserved_ips->attachReservedIP($ip, $instance_id);
 	}
 
 	public function testDetachReservedIP()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$ip = '192.168.0.1';
+		$client->reserved_ips->detachReservedIP($ip);
+
+		$this->expectException(ReservedIPException::class);
+		$client->reserved_ips->detachReservedIP($ip);
 	}
 }
