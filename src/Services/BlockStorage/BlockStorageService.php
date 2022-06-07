@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\BlockStorage;
 
-use Vultr\VultrPhp\VultrClientException;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\VultrClientException;
 
 class BlockStorageService extends VultrService
 {
