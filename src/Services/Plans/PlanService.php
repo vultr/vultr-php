@@ -10,15 +10,19 @@ use Vultr\VultrPhp\Util\ListOptions;
 
 class PlanService extends VultrService
 {
-	public const FILTER_ALL = 'all';
-	public const FILTER_VC2 = 'vc2';
-	public const FILTER_VHF = 'vhf';
-	public const FILTER_VDC = 'vdc';
-	public const FILTER_VOC = 'voc';
-	public const FILTER_VOCG = 'voc-g';
-	public const FILTER_VOCC = 'voc-c';
-	public const FILTER_VOCM = 'voc-m';
-	public const FILTER_VOCS = 'voc-s';
+	/**
+	 * @see https://www.vultr.com/api/#tag/plans/operation/list-plans
+	 */
+	public const FILTER_ALL = 'all'; // All available types
+	public const FILTER_VC2 = 'vc2'; // Cloud Compute
+	public const FILTER_VHF = 'vhf'; // High Frequency Compute
+	public const FILTER_VDC = 'vdc'; // Dedicated Cloud.
+	public const FILTER_VOC = 'voc'; // All Optimized Cloud Types
+	public const FILTER_VOCG = 'voc-g'; // General Purpose Optimized Cloud
+	public const FILTER_VOCC = 'voc-c'; // CPU Optimized Cloud
+	public const FILTER_VOCM = 'voc-m'; // Memory Optimized Cloud
+	public const FILTER_VOCS = 'voc-s'; // Storage Optimized Cloud
+	public const FILTER_VCG = 'vcg'; // Cloud gpu
 
 	public const FILTER_VBM = 'vbm';
 
