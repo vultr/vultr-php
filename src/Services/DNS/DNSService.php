@@ -58,6 +58,7 @@ class DNSService extends VultrService
 
 	/**
 	 * @see https://www.vultr.com/api/#tag/dns/operation/delete-dns-domain
+	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
 	 * @return void
 	 */
@@ -76,14 +77,27 @@ class DNSService extends VultrService
 		$this->patchObject('domains/'.$domain->getDomain(), $domain);
 	}
 
-	public function getSOAInfo() : DNSSOA
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-soa
+	 * @param $domain - string - Example: example.com
+	 * @throws DNSException
+	 * @return DNSSOA
+	 */
+	public function getSOAInfo(string $domain) : DNSSOA
 	{
-
+		return $this->getObject('domains/'.$domain.'/soa', new DNSSOA());
 	}
 
-	public function updateSOAInfo() : void
+	/**
+	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain-soa
+	 * @param $domain - string - Example: example.com
+	 * @param $soa - DNSSOA
+	 * @throws DNSException
+	 * @return void
+	 */
+	public function updateSOAInfo(string $domain, DNSSOA $soa) : void
 	{
-
+		$this->patchObject('domains/'.$domain.'/soa', $soa);
 	}
 
 	/**

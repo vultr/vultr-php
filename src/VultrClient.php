@@ -24,7 +24,7 @@ class VultrClient
 		'baremetal'        => Services\BareMetal\BareMetalService::class, // TODO
 		'billing'          => Services\Billing\BillingService::class,
 		'blockstorage'     => Services\BlockStorage\BlockStorageService::class, // TODO
-		'dns'              => Services\DNS\DNSService::class, // TODO
+		'dns'              => Services\DNS\DNSService::class,
 		'firewall'         => Services\Firewall\FirewallService::class, // TODO
 		'instances'        => Services\Instances\InstanceService::class, // TODO
 		'iso'              => Services\ISO\ISOService::class,

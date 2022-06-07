@@ -6,6 +6,7 @@ namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\DNS\DNSException;
+use Vultr\VultrPhp\Services\DNS\DNSSOA;
 use Vultr\VultrPhp\Services\DNS\Domain;
 use Vultr\VultrPhp\Services\DNS\Record;
 use Vultr\VultrPhp\Tests\VultrTest;
@@ -197,5 +198,37 @@ class DNSTest extends VultrTest
 
 		$this->expectException(DNSException::class);
 		$client->dns->deleteRecord('example.com', 'cb676a46-66fd-4dfb-b839-443f2e6c0b60');
+	}
+
+	public function testGetSOAInfo()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$this->testGetObject(new DNSSOA(), $client->dns->getSOAInfo('example.com'), $data);
+
+		$this->expectException(DNSException::class);
+		$client->dns->getSOAInfo('example.com');
+	}
+
+	public function testUpdateSOAInfo()
+	{
+		$provider = $this->getDataProvider();
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$soa = new DNSSOA();
+		$soa->setEmail('tos@example.com');
+
+		$client->dns->updateSOAInfo('example.com', $soa);
+
+		$this->expectException(DNSException::class);
+		$client->dns->updateSOAInfo('example.com', $soa);
 	}
 }
