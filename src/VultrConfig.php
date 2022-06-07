@@ -6,7 +6,7 @@ namespace Vultr\VultrPhp;
 
 class VultrConfig
 {
-	public const VERSION = '0.1';
+	public const VERSION = '0.2';
 	public const API_VERSION = 'v2';
 	public const API_URI = 'https://api.vultr.com/';
 	public const USERAGENT = 'VultrPhp/'.self::VERSION. '(API_VERSION: '.self::API_VERSION.')';

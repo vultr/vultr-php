@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vultr\VultrPhp\Services\ReservedIPs;
+namespace Vultr\VultrPhp\Services\ReservedIP;
 
 use Throwable;
 use Vultr\VultrPhp\Services\VultrServiceException;

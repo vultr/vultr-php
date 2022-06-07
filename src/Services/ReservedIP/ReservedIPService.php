@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vultr\VultrPhp\Services\ReservedIPs;
+namespace Vultr\VultrPhp\Services\ReservedIP;
 
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;

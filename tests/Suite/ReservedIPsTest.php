@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
-use Vultr\VultrPhp\Services\ReservedIPs\ReservedIP;
-use Vultr\VultrPhp\Services\ReservedIPs\ReservedIPException;
+use Vultr\VultrPhp\Services\ReservedIP\ReservedIP;
+use Vultr\VultrPhp\Services\ReservedIP\ReservedIPException;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class ReservedIPsTest extends VultrTest
@@ -21,10 +21,10 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testGetObject(new ReservedIP(), $client->reserved_ips->getReservedIP($reserved_id), $data);
+		$this->testGetObject(new ReservedIP(), $client->reserved_ip->getReservedIP($reserved_id), $data);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->getReservedIP($reserved_id);
+		$client->reserved_ip->getReservedIP($reserved_id);
 	}
 
 	public function testGetReservedIPs()
@@ -36,10 +36,10 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new ReservedIP(), $client->reserved_ips->getReservedIPs(), $data);
+		$this->testListObject(new ReservedIP(), $client->reserved_ip->getReservedIPs(), $data);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->getReservedIPs();
+		$client->reserved_ip->getReservedIPs();
 	}
 
 	public function testDeleteReservedIP()
@@ -50,10 +50,10 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$client->reserved_ips->deleteReservedIP($id);
+		$client->reserved_ip->deleteReservedIP($id);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->deleteReservedIP($id);
+		$client->reserved_ip->deleteReservedIP($id);
 	}
 
 	public function testCreateReservedIP()
@@ -67,7 +67,7 @@ class ReservedIPsTest extends VultrTest
 		$region = 'ewr';
 		$ip_type = 'v4';
 		$label = 'Example Reserved IPv4';
-		$reserved_ip = $client->reserved_ips->createReservedIP($region, $ip_type, $label);
+		$reserved_ip = $client->reserved_ip->createReservedIP($region, $ip_type, $label);
 		$this->assertInstanceOf(ReservedIP::class, $reserved_ip);
 		foreach ($reserved_ip->toArray() as $attr => $value)
 		{
@@ -78,7 +78,7 @@ class ReservedIPsTest extends VultrTest
 		$this->assertEquals($label, $reserved_ip->getLabel());
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->createReservedIP($region, $ip_type, $label);
+		$client->reserved_ip->createReservedIP($region, $ip_type, $label);
 	}
 
 	public function testConvertInstanceIP()
@@ -91,10 +91,10 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testGetObject(new ReservedIP(), $client->reserved_ips->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']), $data);
+		$this->testGetObject(new ReservedIP(), $client->reserved_ip->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']), $data);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']);
+		$client->reserved_ip->convertInstanceIP($data['reserved_ip']['subnet'], $data['reserved_ip']['label']);
 	}
 
 	public function testAttachReservedIP()
@@ -108,10 +108,10 @@ class ReservedIPsTest extends VultrTest
 
 		$ip = '192.168.0.1';
 		$instance_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
-		$client->reserved_ips->attachReservedIP($ip, $instance_id);
+		$client->reserved_ip->attachReservedIP($ip, $instance_id);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->attachReservedIP($ip, $instance_id);
+		$client->reserved_ip->attachReservedIP($ip, $instance_id);
 	}
 
 	public function testDetachReservedIP()
@@ -124,9 +124,9 @@ class ReservedIPsTest extends VultrTest
 		]);
 
 		$ip = '192.168.0.1';
-		$client->reserved_ips->detachReservedIP($ip);
+		$client->reserved_ip->detachReservedIP($ip);
 
 		$this->expectException(ReservedIPException::class);
-		$client->reserved_ips->detachReservedIP($ip);
+		$client->reserved_ip->detachReservedIP($ip);
 	}
 }
