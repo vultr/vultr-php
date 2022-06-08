@@ -65,13 +65,28 @@ class VirtualPrivateCloud extends Model
 		$this->v4Subnet = $v4_subnet;
 	}
 
-	public function getV4SubnetMask(int $v4_subnet_mask) : void
+	public function getV4SubnetMask() : int
+	{
+		return $this->v4SubnetMask;
+	}
+
+	public function setV4SubnetMask(int $v4_subnet_mask) : void
 	{
 		$this->v4SubnetMask = $v4_subnet_mask;
 	}
 
 	public function getResponseName() : string
 	{
-		return 'network';
+		return 'vpc';
+	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('VirtualPrivateCloudException', 'VPCException', parent::getModelExceptionClass());
+	}
+
+	public function getUpdateParams() : array
+	{
+		return ['description'];
 	}
 }

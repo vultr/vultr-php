@@ -39,7 +39,7 @@ class VultrClient
 		'ssh_keys'         => Services\SSHKeys\SSHKeyService::class,
 		'startup_scripts'  => Services\StartupScripts\StartupScriptService::class,
 		'users'            => Services\Users\UserService::class,
-		'vpc'              => Services\VPC\VPCService::class, // TODO
+		'vpc'              => Services\VPC\VPCService::class,
 	];
 
 	/**
