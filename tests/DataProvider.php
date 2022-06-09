@@ -25,12 +25,8 @@ abstract class DataProvider implements DataProviderInterface
 			return $this->$function();
 		}
 
-		$file = __DIR__.'/json_responses/'.$function.'.json';
-		if (!file_exists($file))
-		{
-			$folder = str_replace('data', '', str_replace('vultr\vultrphp\tests\data\\', '', strtolower($this::class)));
-			$file = __DIR__.'/json_responses/'.$folder.'/'.$function.'.json';
-		}
+		$folder = str_replace('data', '', str_replace('vultr\vultrphp\tests\data\\', '', strtolower($this::class)));
+		$file = __DIR__.'/json_responses/'.$folder.'/'.$function.'.json';
 
 		if (!file_exists($file))
 		{
