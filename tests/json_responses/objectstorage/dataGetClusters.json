@@ -1,0 +1,29 @@
+{
+  "clusters": [
+    {
+      "id": 2,
+      "region": "ewr",
+      "hostname": "ewr1.vultrobjects.com",
+      "deploy": "yes"
+    },
+    {
+      "id": 3,
+      "region": "tyo",
+      "hostname": "tyo.vultrobjects.com",
+      "deploy": "yes"
+    },
+    {
+      "id": 4,
+      "region": "lax",
+      "hostname": "lax.vultrobjects.com",
+      "deploy": "yes"
+    }
+  ],
+  "meta": {
+    "total": 3,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

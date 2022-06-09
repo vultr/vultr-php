@@ -107,4 +107,9 @@ class ObjectStorage extends Model
 	{
 		$this->s3SecretKey = $s3_secret_key;
 	}
+
+	public function getUpdateParams() : array
+	{
+		return ['label'];
+	}
 }
