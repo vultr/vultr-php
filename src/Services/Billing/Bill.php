@@ -72,7 +72,7 @@ class Bill extends Model
 
 	public function setBalance(float $balance) : void
 	{
-		$this->balanace = $balance;
+		$this->balance = $balance;
 	}
 
 	public function getResponseName() : string

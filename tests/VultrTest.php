@@ -57,9 +57,15 @@ class VultrTest extends TestCase
 			{
 				if ($object[$key] !== $response_object->$response_func()) continue;
 
-				foreach ($response_object->toArray() as $prop => $prop_val)
+				$array = $response_object->toArray();
+				foreach ($array as $prop => $prop_val)
 				{
-					$this->assertEquals($prop_val, $object[$prop], "Prop {$prop} failed to meet comparison against spec.");
+					$this->assertEquals($prop_val, $object[$prop], "Attribute {$prop} failed to meet comparison against spec.");
+				}
+
+				foreach ($object as $attr => $value)
+				{
+					$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
 				}
 				break;
 			}
@@ -69,9 +75,15 @@ class VultrTest extends TestCase
 	protected function testGetObject(ModelInterface $model, ModelInterface $response_object, array $spec_data) : void
 	{
 		$this->assertInstanceOf($model::class, $response_object);
+		$array = $response_object->toArray();
 		foreach ($response_object->toArray() as $attr => $value)
 		{
 			$this->assertEquals($value, $spec_data[$response_object->getResponseName()][$attr], "Attribute {$attr} failed to meet comparison against spec.");
+		}
+
+		foreach ($spec_data[$response_object->getResponseName()] as $attr => $value)
+		{
+			$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
 		}
 	}
 }

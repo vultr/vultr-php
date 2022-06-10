@@ -12,6 +12,7 @@ class ObjectStorage extends Model
 	protected string $dateCreated;
 	protected int $clusterId;
 	protected string $region;
+	protected string $location;
 	protected string $label;
 	protected string $status;
 	protected string $s3Hostname;
@@ -66,6 +67,16 @@ class ObjectStorage extends Model
 	public function setLabel(string $label) : void
 	{
 		$this->label = $label;
+	}
+
+	public function getLocation() : string
+	{
+		return $this->location;
+	}
+
+	public function setLocation(string $location) : void
+	{
+		$this->location = $location;
 	}
 
 	public function getStatus() : string

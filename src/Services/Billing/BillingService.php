@@ -10,6 +10,7 @@ use Vultr\VultrPhp\Util\ListOptions;
 class BillingService extends VultrService
 {
 	/**
+	 * @see https://www.vultr.com/api/#operation/list-billing-history
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BillingException
 	 * @return Bill[]
@@ -20,6 +21,7 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#operation/list-invoices
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BillingException
 	 * @return Invoices[]
@@ -30,6 +32,7 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#operation/get-invoice
 	 * @param $invoice_id - int
 	 * @throws BillingException
 	 * @return Invoice
@@ -40,6 +43,7 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#operation/get-invoice-items
 	 * @param $invoice_id - int
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BillingException
