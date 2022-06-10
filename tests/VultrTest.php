@@ -63,7 +63,7 @@ class VultrTest extends TestCase
 					$this->assertEquals($prop_val, $object[$prop], "Attribute {$prop} failed to meet comparison against spec.");
 				}
 
-				foreach ($object as $attr => $value)
+				foreach (array_keys($object) as $attr)
 				{
 					$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
 				}
@@ -81,7 +81,7 @@ class VultrTest extends TestCase
 			$this->assertEquals($value, $spec_data[$response_object->getResponseName()][$attr], "Attribute {$attr} failed to meet comparison against spec.");
 		}
 
-		foreach ($spec_data[$response_object->getResponseName()] as $attr => $value)
+		foreach (array_keys($spec_data[$response_object->getResponseName()]) as $attr)
 		{
 			$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
 		}
