@@ -25,7 +25,7 @@ class VultrClient
 		'billing'          => Services\Billing\BillingService::class,
 		'blockstorage'     => Services\BlockStorage\BlockStorageService::class,
 		'dns'              => Services\DNS\DNSService::class,
-		'firewall'         => Services\Firewall\FirewallService::class, // TODO
+		'firewall'         => Services\Firewall\FirewallService::class,
 		'instances'        => Services\Instances\InstanceService::class, // TODO
 		'iso'              => Services\ISO\ISOService::class,
 		'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO, do load balancers, and block storage before this.
