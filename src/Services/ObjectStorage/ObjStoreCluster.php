@@ -8,17 +8,17 @@ use Vultr\VultrPhp\Util\Model;
 
 class ObjStoreCluster extends Model
 {
-	protected string $id;
+	protected int $id;
 	protected string $region;
 	protected string $hostname;
 	protected string $deploy;
 
-	public function getId() : string
+	public function getId() : int
 	{
 		return $this->id;
 	}
 
-	public function setId(string $id) : void
+	public function setId(int $id) : void
 	{
 		$this->id = $id;
 	}

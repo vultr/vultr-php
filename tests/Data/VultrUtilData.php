@@ -8,19 +8,19 @@ use Vultr\VultrPhp\Util\Model;
 
 class VultrUtilData extends Model
 {
-	protected string $id;
+	protected int $id;
 	protected string $value1;
 	protected int $value2;
 	protected float $value3;
 	protected array $value4;
 	protected bool $value5;
 
-	public function getId() : string
+	public function getId() : int
 	{
 		return $this->id;
 	}
 
-	public function setId(string $id) : void
+	public function setId(int $id) : void
 	{
 		$this->id = $id;
 	}
