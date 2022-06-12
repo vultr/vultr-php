@@ -43,7 +43,7 @@ class ISO extends Model
 
 	public function setFilename(string $file_name) : void
 	{
-		$this->filename = $filename;
+		$this->filename = $file_name;
 	}
 
 	public function getSize() : int
