@@ -43,6 +43,30 @@ class VultrUtil
 		{
 			$map = (new JsonMapperFactory())->bestFit();
 			$map->push(new CaseConversion(TextNotation::UNDERSCORE(), TextNotation::CAMEL_CASE()));
+			/**
+			 * Is it even a good idea?
+			$map->setPropertyMapper(new class {
+				public function __invoke(
+					\stdClass $json,
+					\JsonMapper\Wrapper\ObjectWrapper $object,
+					\JsonMapper\ValueObjects\PropertyMap $prop_map,
+					\JsonMapper\JsonMapperInterface $mapper
+				): void {
+					$values = (array) $json;
+					foreach ($values as $key => $value)
+					{
+						if (!$prop_map->hasProperty($key))
+						{
+							continue;
+						}
+
+						$property = $prop_map->getProperty($key);
+
+						$methodName = 'set' . \ucfirst($property->getName());
+						$object->getObject()->$methodName($value);
+					}
+				}
+			});*/
 
 			$model->resetObject();
 
