@@ -102,6 +102,8 @@ class BareMetalTest extends VultrTest
 		$update = new BareMetalUpdate();
 		$update->setLabel($data['bare_metal']['label']);
 		$update->setTags($data['bare_metal']['tags']);
+		$update->setEnableIpv6(in_array('ipv6', $data['bare_metal']['features']));
+		$update->setUserData(base64_encode('hello_world'));
 		$update_bm = $client->baremetal->updateBareMetal($baremetal->getId(), $update);
 
 		$this->testGetObject(new BareMetal(), $update_bm, $data);
