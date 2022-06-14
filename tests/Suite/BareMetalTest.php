@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\BareMetal\BareMetal;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalCreate;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalException;
+use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv4Info;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalUpdate;
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -110,5 +111,50 @@ class BareMetalTest extends VultrTest
 
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->updateBareMetal($baremetal->getId(), $update);
+	}
+
+	public function testGetIPv4Addresses()
+	{
+		$provider = $this->getDataProvider();
+		$spec_data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($spec_data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$response_objects = $client->baremetal->getIPv4Addresses($id);
+		$this->assertEquals($spec_data['meta']['total'], count($response_objects));
+		foreach ($response_objects as $response_object)
+		{
+			$this->assertInstanceOf(BareMetalIPv4Info::class, $response_object);
+			foreach ($spec_data[$response_object->getResponseListName()] as $object)
+			{
+				if ($object['ip'] !== $response_object->getIp()) continue;
+
+				$array = $response_object->toArray();
+				foreach ($array as $prop => $prop_val)
+				{
+					// This does not exist in the response
+					// But should be the same as the id fed into the parameter.
+					if ($prop === 'id')
+					{
+						$this->assertEquals($prop_val, $id);
+						continue;
+					}
+
+					$this->assertEquals($prop_val, $object[$prop], "Attribute {$prop} failed to meet comparison against spec.");
+				}
+
+				foreach (array_keys($object) as $attr)
+				{
+					$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
+				}
+				break;
+			}
+		}
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getIPv4Addresses($id);
 	}
 }

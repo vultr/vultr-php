@@ -78,4 +78,37 @@ class BareMetalService extends VultrService
 
 		return VultrUtil::convertJSONToObject((string)$response->getBody(), $model, $model->getResponseName());
 	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-ipv4-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @throws VultrException
+	 * @return BareMetalIPv4Info[]
+	 */
+	public function getIPv4Addresses(string $id) : array
+	{
+		$client = $this->getClientHandler();
+
+		try
+		{
+			$response = $client->get('bare-metals/'.$id.'/ipv4');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to get baremetal ipv4 information: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		$objects = [];
+		$decode = VultrUtil::decodeJSON((string)$response->getBody());
+		$model = new BareMetalIPv4Info();
+		$response_name = $model->getResponseListName();
+		foreach ($decode->$response_name as $ipv4)
+		{
+			$object = VultrUtil::mapObject($ipv4, $model);
+			$object->setId($id);
+			$objects[] = $object;
+		}
+		return $objects;
+	}
 }
