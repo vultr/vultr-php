@@ -140,6 +140,11 @@ class VultrUtil
 		return $lowercase ? strtolower($underscored) : $underscored;
 	}
 
+	public static function convertUnderscoreToCamelCase(string $key) : string
+	{
+		return lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $key))));
+	}
+
 	/**
 	 * Get Status Code level
 	 * @return int

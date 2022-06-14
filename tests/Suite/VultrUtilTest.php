@@ -82,4 +82,15 @@ class VultrUtilTest extends VultrTest
 		$this->expectException(VultrException::class);
 		VultrUtil::decodeJSON('jsadngfasjdfg dsajvndsagfjnsadfjnsadfjasdfn ssadfjsadfjnsdaf');
 	}
+
+	public function testConvertCamelCaseToUnderscore()
+	{
+		$this->assertEquals('hello_world', VultrUtil::convertCamelCaseToUnderscore('helloWorld'));
+		$this->assertEquals('hello_World', VultrUtil::convertCamelCaseToUnderscore('helloWorld', false));
+	}
+
+	public function testConvertUnderscoreToCamelCase()
+	{
+		$this->assertEquals('helloWorld', VultrUtil::convertUnderscoreToCamelCase('hello_world'));
+	}
 }
