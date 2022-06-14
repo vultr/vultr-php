@@ -40,7 +40,7 @@ abstract class Model implements ModelInterface
 
 	public function getModelExceptionClass() : string
 	{
-		return get_class($this).'Exception';
+		return $this::class.'Exception';
 	}
 
 	/**

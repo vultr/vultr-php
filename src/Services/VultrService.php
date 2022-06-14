@@ -90,11 +90,17 @@ abstract class VultrService
 	 * @throws Child of VultrServiceObject
 	 * @return void
 	 */
-	protected function patchObject(string $uri, ModelInterface $model) : void
+	protected function patchObject(string $uri, ModelInterface $model, ?array $params = null) : void
 	{
+		$payload = $model->getUpdateArray();
+		if ($params !== null)
+		{
+			$payload = $params;
+		}
+
 		try
 		{
-			$this->getClientHandler()->patch($uri, $model->getUpdateArray());
+			$this->getClientHandler()->patch($uri, $payload);
 		}
 		catch (VultrClientException $e)
 		{
