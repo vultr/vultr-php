@@ -111,4 +111,138 @@ class BareMetalService extends VultrService
 		}
 		return $objects;
 	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-ipv6-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @throws VultrException
+	 * @return BareMetalIPv6Info[]
+	 */
+	public function getIPv6Addresses(string $id) : array
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/start-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function startBareMetal(string $id) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/start-bare-metals
+	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function startBareMetals(array $ids) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/reboot-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function rebootBareMetal(string $id) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/reboot-bare-metals
+	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function rebootBareMetals(array $ids) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/reinstall-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return BareMetal
+	 */
+	public function reinstallBareMetal(string $id) : BareMetal
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/halt-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function haltBareMetal(string $id) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/halt-baremetals
+	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
+	 * @throws BareMetalException
+	 * @return void
+	 */
+	public function haltBareMetals(array $ids) : void
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-bandwidth-baremetal
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return array
+	 */
+	public function getBandwidth(string $id) : array
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-bare-metal-userdata
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return string
+	 */
+	public function getUserData(string $id) : string
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-bare-metals-upgrades
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $type - string - filter based on upgrade types.
+	 * @throws BareMetalException
+	 * @return OperatingSystem|Application[]
+	 */
+	public function getAvailableUpgrades(string $id, string $type = 'all') : array
+	{
+
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-bare-metal-vnc
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws BareMetalException
+	 * @return string
+	 */
+	public function getVNCUrl(string $id) : string
+	{
+
+	}
 }
