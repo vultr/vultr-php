@@ -9,8 +9,10 @@ use Vultr\VultrPhp\Services\BareMetal\BareMetal;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalCreate;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalException;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv4Info;
+use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv6Info;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalUpdate;
 use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\Util\ModelInterface;
 
 class BareMetalTest extends VultrTest
 {
@@ -124,10 +126,35 @@ class BareMetalTest extends VultrTest
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$response_objects = $client->baremetal->getIPv4Addresses($id);
+		$this->testAddressInfo(new BareMetalIPv4Info(), $response_objects, $spec_data, $id);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getIPv4Addresses($id);
+	}
+
+	public function testGetIPv6Addresses()
+	{
+		$provider = $this->getDataProvider();
+		$spec_data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($spec_data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$response_objects = $client->baremetal->getIPv6Addresses($id);
+		$this->testAddressInfo(new BareMetalIPv6Info(), $response_objects, $spec_data, $id);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getIPv6Addresses($id);
+	}
+
+	private function testAddressInfo(ModelInterface $model, array $response_objects, array $spec_data, string $id)
+	{
 		$this->assertEquals($spec_data['meta']['total'], count($response_objects));
 		foreach ($response_objects as $response_object)
 		{
-			$this->assertInstanceOf(BareMetalIPv4Info::class, $response_object);
+			$this->assertInstanceOf($model::class, $response_object);
 			foreach ($spec_data[$response_object->getResponseListName()] as $object)
 			{
 				if ($object['ip'] !== $response_object->getIp()) continue;
@@ -153,8 +180,5 @@ class BareMetalTest extends VultrTest
 				break;
 			}
 		}
-
-		$this->expectException(BareMetalException::class);
-		$client->baremetal->getIPv4Addresses($id);
 	}
 }
