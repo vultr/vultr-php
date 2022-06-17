@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\BareMetal;
 
+use Vultr\VultrPhp\Services\Applications\Application;
+use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\ModelInterface;
@@ -296,7 +298,27 @@ class BareMetalService extends VultrService
 	 */
 	public function getAvailableUpgrades(string $id, string $type = 'all') : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('bare-metals/'.$id.'/upgrades', ['type' => $type]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to get available upgrades: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$output = [];
+		$application = new Application();
+		$os = new OperatingSystem();
+		foreach (VultrUtil::decodeJSON((string)$response->getBody())->upgrades as $type => $upgrades)
+		{
+			foreach ($upgrades as $upgrade)
+			{
+				$output[] = VultrUtil::mapObject($upgrade, $type === 'os' ? clone $os : clone $application);
+			}
+		}
+
+		return $output;
 	}
 
 	/**

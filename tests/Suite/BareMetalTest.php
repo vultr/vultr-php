@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
+use Vultr\VultrPhp\Services\Applications\Application;
 use Vultr\VultrPhp\Services\BareMetal\BareMetal;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalCreate;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalException;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv4Info;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv6Info;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalUpdate;
+use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Util\ModelInterface;
 
@@ -300,7 +302,7 @@ class BareMetalTest extends VultrTest
 		$data = $provider->getData();
 
 		$client = $provider->createClientHandler([
-			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
@@ -323,7 +325,7 @@ class BareMetalTest extends VultrTest
 		$data = $provider->getData();
 
 		$client = $provider->createClientHandler([
-			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
@@ -341,7 +343,7 @@ class BareMetalTest extends VultrTest
 		$data = $provider->getData();
 
 		$client = $provider->createClientHandler([
-			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
@@ -351,5 +353,45 @@ class BareMetalTest extends VultrTest
 
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->getVNCUrl($id);
+	}
+
+	public function testGetAvailableUpgrades()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$upgrades = $client->baremetal->getAvailableUpgrades($id);
+		foreach ($upgrades as $upgrade)
+		{
+			$os = $upgrade instanceof OperatingSystem;
+			$application = $upgrade instanceof Application;
+			$this->assertTrue(($os || $application));
+
+			$found = false;
+			foreach ($data['upgrades'][$application ? 'applications' : 'os'] as $spec_data)
+			{
+				if ($spec_data['id'] !== $upgrade->getId()) continue;
+				$found = true;
+				$array = $upgrade->toArray();
+				foreach ($array as $attr => $value)
+				{
+					$this->assertEquals($value, $spec_data[$attr], "Attribute {$attr} failed to meet comparison against spec.");
+				}
+
+				foreach (array_keys($spec_data) as $attr)
+				{
+					$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
+				}
+				break;
+			}
+
+			$this->assertTrue($found);
+		}
 	}
 }
