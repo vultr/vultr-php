@@ -169,7 +169,7 @@ class VultrClientHandler
 
 	private function applyOptions(RequestInterface $request, array &$options) : RequestInterface
 	{
-		if (isset($options[self::JSON]))
+		if (isset($options[self::JSON]) && !empty($options[self::JSON]))
 		{
 			$json = json_encode($options[self::JSON], 0, 512);
 			if (JSON_ERROR_NONE !== json_last_error())
