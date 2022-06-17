@@ -213,4 +213,68 @@ class BareMetalTest extends VultrTest
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->startBareMetals($ids);
 	}
+
+	public function testRebootBareMetal()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->baremetal->rebootBareMetal($id);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->rebootBareMetal($id);
+	}
+
+	public function testRebootBareMetals()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$ids = ['cb676a46-66fd-4dfb-b839-443f2e6c0b60', 'cb676a46-66fd-4dfb-b839-443f2e6c0b67'];
+		$client->baremetal->rebootBareMetals($ids);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->rebootBareMetals($ids);
+	}
+
+	public function testHaltBareMetal()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->baremetal->haltBareMetal($id);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->haltBareMetal($id);
+	}
+
+	public function testHaltBareMetals()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$ids = ['cb676a46-66fd-4dfb-b839-443f2e6c0b60', 'cb676a46-66fd-4dfb-b839-443f2e6c0b67'];
+		$client->baremetal->haltBareMetals($ids);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->haltBareMetals($ids);
+	}
 }

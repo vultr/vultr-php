@@ -137,14 +137,7 @@ class BareMetalService extends VultrService
 	 */
 	public function startBareMetal(string $id) : void
 	{
-		try
-		{
-			$this->getClientHandler()->post('bare-metals/'.$id.'/start');
-		}
-		catch (VultrClientException $e)
-		{
-			throw new BareMetalException('Failed to start baremetal server: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->singleServerAction('start', $id);
 	}
 
 	/**
@@ -155,14 +148,7 @@ class BareMetalService extends VultrService
 	 */
 	public function startBareMetals(array $ids) : void
 	{
-		try
-		{
-			$this->getClientHandler()->post('bare-metals/start', ['baremetal_ids' => $ids]);
-		}
-		catch (VultrClientException $e)
-		{
-			throw new BareMetalException('Failed to start baremetal servers: '.$e->getMessage(), $e->getHTTPCode(), $e);
-		}
+		$this->multipleServersAction('start', $ids);
 	}
 
 	/**
@@ -173,7 +159,7 @@ class BareMetalService extends VultrService
 	 */
 	public function rebootBareMetal(string $id) : void
 	{
-
+		$this->singleServerAction('reboot', $id);
 	}
 
 	/**
@@ -184,7 +170,7 @@ class BareMetalService extends VultrService
 	 */
 	public function rebootBareMetals(array $ids) : void
 	{
-
+		$this->multipleServersAction('reboot', $ids);
 	}
 
 	/**
@@ -206,7 +192,7 @@ class BareMetalService extends VultrService
 	 */
 	public function haltBareMetal(string $id) : void
 	{
-
+		$this->singleServerAction('halt', $id);
 	}
 
 	/**
@@ -217,7 +203,31 @@ class BareMetalService extends VultrService
 	 */
 	public function haltBareMetals(array $ids) : void
 	{
+		$this->multipleServersAction('halt', $ids);
+	}
 
+	private function singleServerAction(string $action, string $id) : void
+	{
+		try
+		{
+			$this->getClientHandler()->post('bare-metals/'.$id.'/'.$action);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to '.$action.' baremetal server: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+	}
+
+	private function multipleServersAction(string $action, array $ids) : void
+	{
+		try
+		{
+			$this->getClientHandler()->post('bare-metals/'.$action, ['baremetal_ids' => $ids]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to '.$action.' baremetal servers: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
