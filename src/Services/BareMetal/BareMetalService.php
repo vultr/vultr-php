@@ -137,7 +137,14 @@ class BareMetalService extends VultrService
 	 */
 	public function startBareMetal(string $id) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('bare-metals/'.$id.'/start');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to start baremetal server: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
@@ -148,7 +155,14 @@ class BareMetalService extends VultrService
 	 */
 	public function startBareMetals(array $ids) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('bare-metals/start', ['baremetal_ids' => $ids]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to start baremetal servers: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
