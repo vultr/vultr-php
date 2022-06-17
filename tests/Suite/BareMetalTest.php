@@ -293,4 +293,27 @@ class BareMetalTest extends VultrTest
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->reinstallBaremetal($id);
 	}
+
+	public function testGetBandwidth()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+
+		$bandwidth = $client->baremetal->getBandwidth($id);
+		foreach ($data['bandwidth'] as $date => $attributes)
+		{
+			$this->assertEquals($bandwidth[$date]['incoming_bytes'], $attributes['incoming_bytes']);
+			$this->assertEquals($bandwidth[$date]['outgoing_bytes'], $attributes['outgoing_bytes']);
+		}
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getBandwidth($id);
+	}
 }

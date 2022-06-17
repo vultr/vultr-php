@@ -234,11 +234,34 @@ class BareMetalService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-bandwidth-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
+	 * @throws VultrException
 	 * @return array
 	 */
 	public function getBandwidth(string $id) : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('bare-metals/'.$id.'/bandwidth');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to get bandwidth for baremetal server: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$decode = VultrUtil::decodeJSON((string)$response->getBody(), true);
+
+		$output = [];
+		// Just a standardization, in the event the api ever changes its attributes. We can just change it here maintain backwards compat.
+		foreach ($decode['bandwidth'] as $date => $attr)
+		{
+			$output[$date] = [];
+			foreach (['incoming_bytes', 'outgoing_bytes'] as $attribute)
+			{
+				$output[$date][$attribute] = $attr[$attribute];
+			}
+		}
+
+		return $output;
 	}
 
 	/**
