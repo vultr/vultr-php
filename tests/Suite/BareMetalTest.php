@@ -316,4 +316,40 @@ class BareMetalTest extends VultrTest
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->getBandwidth($id);
 	}
+
+	public function testGetUserData()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$user_data = $client->baremetal->getUserData($id);
+		$this->assertEquals('Base64 Example Data', $user_data);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getUserData($id);
+	}
+
+	public function testGetVNCUrl()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$url = $client->baremetal->getVNCUrl($id);
+		$this->assertEquals('https://my.vultr.com/subs/baremetal/novnc/api.php?data=00example11223344', $url);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getVNCUrl($id);
+	}
 }

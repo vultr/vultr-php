@@ -268,11 +268,23 @@ class BareMetalService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-bare-metal-userdata
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
+	 * @throws VultrException
 	 * @return string
 	 */
 	public function getUserData(string $id) : string
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('bare-metals/'.$id.'/user-data');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to get user data: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$decode = VultrUtil::decodeJSON((string)$response->getBody(), true);
+
+		return base64_decode($decode['user_data']['data']);
 	}
 
 	/**
@@ -291,10 +303,20 @@ class BareMetalService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-bare-metal-vnc
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
+	 * @throws VultrException
 	 * @return string
 	 */
 	public function getVNCUrl(string $id) : string
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('bare-metals/'.$id.'/vnc');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new BareMetalException('Failed to get vnc url: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		return VultrUtil::decodeJSON((string)$response->getBody(), true)['vnc']['url'];
 	}
 }
