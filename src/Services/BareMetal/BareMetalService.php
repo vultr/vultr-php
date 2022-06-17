@@ -181,7 +181,7 @@ class BareMetalService extends VultrService
 	 */
 	public function reinstallBareMetal(string $id) : BareMetal
 	{
-
+		return $this->createObject('bare-metals/'.$id.'/reinstall', new BareMetal(), []);
 	}
 
 	/**

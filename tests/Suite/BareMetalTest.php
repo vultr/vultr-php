@@ -277,4 +277,20 @@ class BareMetalTest extends VultrTest
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->haltBareMetals($ids);
 	}
+
+	public function testReinstallBareMetal()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testGetObject(new BareMetal(), $client->baremetal->reinstallBaremetal($id), $data);
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->reinstallBaremetal($id);
+	}
 }
