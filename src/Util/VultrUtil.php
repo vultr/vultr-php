@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Util;
 
 use Exception;
-use JsonMapper\JsonMapper;
 use JsonMapper\Enums\TextNotation;
+use JsonMapper\JsonMapper;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
 use Psr\Http\Message\ResponseInterface;

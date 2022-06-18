@@ -6,10 +6,6 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
-use JsonMapper\Middleware\AbstractMiddleware;
-use JsonMapper\Wrapper\ObjectWrapper;
-use JsonMapper\ValueObjects\PropertyMap;
-use JsonMapper\JsonMapperInterface;
 
 class LoadBalancerService extends VultrService
 {
