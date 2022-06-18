@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Util;
 
 use Exception;
+use JsonMapper\JsonMapper;
 use JsonMapper\Enums\TextNotation;
 use JsonMapper\JsonMapperFactory;
 use JsonMapper\Middleware\CaseConversion;
@@ -15,6 +16,37 @@ use Vultr\VultrPhp\VultrException;
 
 class VultrUtil
 {
+	public static function initJSONMapper() : JsonMapper
+	{
+		$map = (new JsonMapperFactory())->bestFit();
+		$map->push(new CaseConversion(TextNotation::UNDERSCORE(), TextNotation::CAMEL_CASE()));
+		/**
+		 * Is it even a good idea?
+		$map->setPropertyMapper(new class {
+			public function __invoke(
+				\stdClass $json,
+				\JsonMapper\Wrapper\ObjectWrapper $object,
+				\JsonMapper\ValueObjects\PropertyMap $prop_map,
+				\JsonMapper\JsonMapperInterface $mapper
+			): void {
+				$values = (array) $json;
+				foreach ($values as $key => $value)
+				{
+					if (!$prop_map->hasProperty($key))
+					{
+						continue;
+					}
+
+					$property = $prop_map->getProperty($key);
+
+					$methodName = 'set' . \ucfirst($property->getName());
+					$object->getObject()->$methodName($value);
+				}
+			}
+		});*/
+
+		return $map;
+	}
 	/**
 	 * @param $stdClass - Raw class that comes from json_decode. This is what JsonMapper accepts.
 	 * @param $model - A model that will be used to map the json response to the object.
@@ -38,39 +70,11 @@ class VultrUtil
 			throw new VultrException('Failed to map object for '.get_class($model).': Object is invalid. Percieved Object Data: '.var_export($object, true).'. Object Parameter: '.var_export($stdclass, true));
 		}
 
+		$model->resetObject();
 		$mapped_object = $model;
 		try
 		{
-			$map = (new JsonMapperFactory())->bestFit();
-			$map->push(new CaseConversion(TextNotation::UNDERSCORE(), TextNotation::CAMEL_CASE()));
-			/**
-			 * Is it even a good idea?
-			$map->setPropertyMapper(new class {
-				public function __invoke(
-					\stdClass $json,
-					\JsonMapper\Wrapper\ObjectWrapper $object,
-					\JsonMapper\ValueObjects\PropertyMap $prop_map,
-					\JsonMapper\JsonMapperInterface $mapper
-				): void {
-					$values = (array) $json;
-					foreach ($values as $key => $value)
-					{
-						if (!$prop_map->hasProperty($key))
-						{
-							continue;
-						}
-
-						$property = $prop_map->getProperty($key);
-
-						$methodName = 'set' . \ucfirst($property->getName());
-						$object->getObject()->$methodName($value);
-					}
-				}
-			});*/
-
-			$model->resetObject();
-
-			$mapped_object = $map->mapObject($object, clone $model);
+			$mapped_object = static::initJSONMapper()->mapObject($object, clone $model);
 		}
 		catch (Throwable $e)
 		{
@@ -97,7 +101,7 @@ class VultrUtil
 
 		try
 		{
-			$object = self::mapObject($std_class, $model, $prop);
+			$object = static::mapObject($std_class, $model, $prop);
 		}
 		catch (Throwable $e)
 		{
