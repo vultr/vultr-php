@@ -58,6 +58,22 @@ class LoadBalancersTest extends VultrTest
 		$client->loadbalancers->getLoadBalancers();
 	}
 
+	public function testDeleteLoadBalancer()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$client->loadbalancers->deleteLoadBalancer($id);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->deleteLoadBalancer($id);
+	}
+
 	private function testObject(ModelInterface $response_object, array $spec_data)
 	{
 		$this->assertInstanceOf(LoadBalancer::class, $response_object);
