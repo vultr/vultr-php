@@ -126,7 +126,7 @@ class LoadBalancerService extends VultrService
 	 */
 	public function getFirewallRules(string $id, ?ListOptions &$options = null) : array
 	{
-
+		return $this->getListObjects('load-balancers/'.$id.'/firewall-rules', new FirewallRule(), $options);
 	}
 
 	/**
@@ -138,7 +138,7 @@ class LoadBalancerService extends VultrService
 	 */
 	public function getFirewallRule(string $loadbalancer_id, string $firewall_id) : FirewallRule
 	{
-
+		return $this->getObject('load-balancers/'.$loadbalancer_id.'/firewall-rules/'.$firewall_id, new FirewallRule());
 	}
 
 	/**

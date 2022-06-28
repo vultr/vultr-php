@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
-use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
+use Vultr\VultrPhp\Services\LoadBalancers\FirewallRule;
 use Vultr\VultrPhp\Services\LoadBalancers\ForwardRule;
+use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Util\ModelInterface;
@@ -130,12 +131,35 @@ class LoadBalancersTest extends VultrTest
 
 	public function testGetFirewallRules()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'random-id';
+		$this->testListObject(new FirewallRule(), $client->loadbalancers->getFirewallRules($id), $data);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->getForwardingRules($id);
 	}
 
 	public function testGetFirewallRule()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'random-id';
+		$firewall_id = 'asb123f2e6c0b60';
+		$this->testGetObject(new FirewallRule(), $client->loadbalancers->getFirewallRule($id, $firewall_id), $data);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->getForwardingRule($id, $firewall_id);
 	}
 
 	private function testObject(ModelInterface $response_object, array $spec_data)
