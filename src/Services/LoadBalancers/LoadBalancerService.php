@@ -79,7 +79,7 @@ class LoadBalancerService extends VultrService
 	 */
 	public function getForwardingRules(string $id, ?ListOptions &$options = null) : array
 	{
-		return $this->getListObjects('load-balancers/'.$id, new ForwardRule(), $options);
+		return $this->getListObjects('load-balancers/'.$id.'/forwarding-rules', new ForwardRule(), $options);
 	}
 
 	/**
@@ -89,9 +89,9 @@ class LoadBalancerService extends VultrService
 	 * @throws LoadBalancerException
 	 * @return FowardRule
 	 */
-	public function getForwardRule(string $loadbalancer_id, string $forward_id) : ForwardRule
+	public function getForwardingRule(string $loadbalancer_id, string $forward_id) : ForwardRule
 	{
-
+		return $this->getObject('load-balancers/'.$loadbalancer_id.'/forwarding-rules/'.$forward_id, new ForwardRule());
 	}
 
 	/**

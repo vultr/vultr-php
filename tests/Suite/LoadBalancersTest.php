@@ -103,7 +103,19 @@ class LoadBalancersTest extends VultrTest
 
 	public function testGetForwardRule()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'random-id';
+		$forward_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testGetObject(new ForwardRule(), $client->loadbalancers->getForwardingRule($id, $forward_id), $data);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->getForwardingRule($id, $forward_id);
 	}
 
 	public function testCreateForwardingRule()
