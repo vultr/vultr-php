@@ -6,6 +6,7 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrClientException;
 
 class LoadBalancerService extends VultrService
 {
@@ -98,11 +99,18 @@ class LoadBalancerService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/create-load-balancer-forwarding-rules
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws LoadBalancerException
-	 * @return ???????
+	 * @return void
 	 */
-	public function createForwardingRule(string $id, ForwardRule $rule)
+	public function createForwardingRule(string $id, ForwardRule $rule) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('load-balancers/'.$id.'/forwarding-rules', $rule->getInitializedProps());
+		}
+		catch (VultrClientException $e)
+		{
+			throw new LoadBalancerException('Failed to create forwarding rule for load balancer '.$id.': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
@@ -114,7 +122,7 @@ class LoadBalancerService extends VultrService
 	 */
 	public function deleteForwardRule(string $loadbalancer_id, string $forward_id) : void
 	{
-
+		$this->deleteObject('load-balancers/'.$loadbalancer_id.'/forwarding-rules/'.$forward_id, new ForwardRule());
 	}
 
 	/**

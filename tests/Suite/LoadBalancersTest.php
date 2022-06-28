@@ -121,12 +121,34 @@ class LoadBalancersTest extends VultrTest
 
 	public function testCreateForwardingRule()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$rule = new ForwardRule();
+		$rule->setFrontendProtocol('HTTP');
+		$rule->setFrontendPort(80);
+		$rule->setBackendProtocol('HTTP');
+		$rule->setBackendPort(8080);
+
+		$client->loadbalancers->createForwardingRule('random-id', $rule);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->createForwardingRule('random-id', $rule);
 	}
 
 	public function testDeleteForwardRule()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$client->loadbalancers->deleteForwardRule('random-loadbalancer-id', 'random-forwarding-rule-id');
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->deleteForwardRule('random-loadbalancer-id', 'random-forwarding-rule-id');
 	}
 
 	public function testGetFirewallRules()
