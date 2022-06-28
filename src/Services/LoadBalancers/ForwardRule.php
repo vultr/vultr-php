@@ -59,8 +59,18 @@ class ForwardRule extends Model
 		return $this->backendPort;
 	}
 
-	public function setBackendPort(int $backent_port) : void
+	public function setBackendPort(int $backend_port) : void
 	{
-		$this->backendPort = $backent_port;
+		$this->backendPort = $backend_port;
+	}
+
+	public function getResponseName() : string
+	{
+		return 'forwarding_rule';
+	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('ForwardRuleException', 'LoadBalancerException', parent::getModelExceptionClass());
 	}
 }

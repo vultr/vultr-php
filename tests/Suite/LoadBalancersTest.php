@@ -6,6 +6,7 @@ namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
+use Vultr\VultrPhp\Services\LoadBalancers\ForwardRule;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Util\ModelInterface;
@@ -58,6 +59,16 @@ class LoadBalancersTest extends VultrTest
 		$client->loadbalancers->getLoadBalancers();
 	}
 
+	public function testCreateLoadBalancer()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
+	public function testUpdateLoadBalancer()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
 	public function testDeleteLoadBalancer()
 	{
 		$provider = $this->getDataProvider();
@@ -72,6 +83,47 @@ class LoadBalancersTest extends VultrTest
 
 		$this->expectException(LoadBalancerException::class);
 		$client->loadbalancers->deleteLoadBalancer($id);
+	}
+
+	public function testGetForwardingRules()
+	{
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'random-id';
+		$this->testListObject(new ForwardRule(), $client->loadbalancers->getForwardingRules($id), $data);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->getForwardingRules($id);
+	}
+
+	public function testGetForwardRule()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
+	public function testCreateForwardingRule()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
+	public function testDeleteForwardRule()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
+	public function testGetFirewallRules()
+	{
+		$this->markTestSkipped('Not Implemented');
+	}
+
+	public function testGetFirewallRule()
+	{
+		$this->markTestSkipped('Not Implemented');
 	}
 
 	private function testObject(ModelInterface $response_object, array $spec_data)

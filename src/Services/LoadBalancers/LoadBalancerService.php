@@ -75,11 +75,11 @@ class LoadBalancerService extends VultrService
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws LoadBalancerException
-	 * return ForwardRule[]
+	 * @return ForwardRule[]
 	 */
 	public function getForwardingRules(string $id, ?ListOptions &$options = null) : array
 	{
-
+		return $this->getListObjects('load-balancers/'.$id, new ForwardRule(), $options);
 	}
 
 	/**
