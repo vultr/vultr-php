@@ -56,9 +56,11 @@ class LoadBalancerService extends VultrService
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/update-load-balancer
-	 * ????
+	 * @param $update - LoadBalancerUpdate
+	 * @throws LoadBalancerException
+	 * @return void
 	 */
-	public function updateLoadBalancer()
+	public function updateLoadBalancer(LoadBalancerUpdate $update) : void
 	{
 
 	}

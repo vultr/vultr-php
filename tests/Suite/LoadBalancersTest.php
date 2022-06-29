@@ -7,14 +7,14 @@ namespace Vultr\VultrPhp\Tests\Suite;
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\LoadBalancers\FirewallRule;
 use Vultr\VultrPhp\Services\LoadBalancers\ForwardRule;
-use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
 use Vultr\VultrPhp\Services\LoadBalancers\LBHealth;
-use Vultr\VultrPhp\Services\LoadBalancers\StickySession;
-use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
+use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerCreate;
+use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
+use Vultr\VultrPhp\Services\LoadBalancers\StickySession;
 use Vultr\VultrPhp\Tests\VultrTest;
-use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
+use Vultr\VultrPhp\Util\VultrUtil;
 
 class LoadBalancersTest extends VultrTest
 {
