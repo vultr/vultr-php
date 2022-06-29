@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Services\VultrService;
+use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
