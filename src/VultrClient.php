@@ -25,11 +25,11 @@ class VultrClient
 		'billing'          => Services\Billing\BillingService::class,
 		'blockstorage'     => Services\BlockStorage\BlockStorageService::class,
 		'dns'              => Services\DNS\DNSService::class,
-		'firewall'         => Services\Firewall\FirewallService::class,
+		'firewall'         => Services\Firewall\FirewallService::class, // Implement createFirewallRule
 		'instances'        => Services\Instances\InstanceService::class, // TODO
 		'iso'              => Services\ISO\ISOService::class,
 		'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO, do load balancers, and block storage before this.
-		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO, do firewall before this
+		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO
 		'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class,
 		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
 		'plans'            => Services\Plans\PlanService::class,

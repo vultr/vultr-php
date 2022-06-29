@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services\Firewall;
 
 use Vultr\VultrPhp\Services\VultrService;
+use Vultr\VultrPhp\Util\ListOptions;
 
 class FirewallService extends VultrService
 {
@@ -85,6 +86,18 @@ class FirewallService extends VultrService
 	public function getFirewallRule(string $group_id, int $rule_id) : FirewallRule
 	{
 		return $this->getObject('firewalls/'.$group_id.'/rules/'.$rule_id, new FirewallRule());
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/post-firewalls-firewall-group-id-rules
+	 * @param $group_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $rule - FirewallRule
+	 * @throws FirewallException
+	 * @return FirewallRule
+	 */
+	public function createFirewallRule(string $group_id, FirewallRule $rule) : FirewallRule
+	{
+		// TODO
 	}
 
 	/**
