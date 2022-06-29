@@ -6,8 +6,8 @@ namespace Vultr\VultrPhp\Tests;
 
 use Error;
 use PHPUnit\Framework\TestCase;
-use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\Util\ModelInterface;
 
 class VultrTest extends TestCase
 {
