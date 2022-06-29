@@ -48,7 +48,10 @@ class LoadBalancerService extends VultrService
 	 */
 	public function createLoadBalancer(LoadBalancerCreate $create) : LoadBalancer
 	{
+		$loadbalancer = $this->createObject('load-balancers', new LoadBalancer(), $create->getPayloadParams());
+		$this->setRules($loadbalancer);
 
+		return $loadbalancer;
 	}
 
 	/**

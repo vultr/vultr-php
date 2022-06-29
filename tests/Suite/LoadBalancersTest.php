@@ -8,8 +8,12 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\LoadBalancers\FirewallRule;
 use Vultr\VultrPhp\Services\LoadBalancers\ForwardRule;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
+use Vultr\VultrPhp\Services\LoadBalancers\LBHealth;
+use Vultr\VultrPhp\Services\LoadBalancers\StickySession;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
+use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerCreate;
 use Vultr\VultrPhp\Tests\VultrTest;
+use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\Util\ModelInterface;
 
 class LoadBalancersTest extends VultrTest
@@ -62,7 +66,94 @@ class LoadBalancersTest extends VultrTest
 
 	public function testCreateLoadBalancer()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$provider = $this->getDataProvider();
+		$spec_data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($spec_data)),
+			new Response(400, [], json_encode(['error' => 'Bad request']))
+		]);
+
+		$spec_generic_info = $spec_data['load_balancer']['generic_info'];
+		$create = new LoadBalancerCreate('ewr');
+		$create->setBalancingAlgorithm($spec_generic_info['balancing_algorithm']);
+		$create->setSslRedirect($spec_generic_info['ssl_redirect']);
+		$create->setProxyProtocol($spec_generic_info['proxy_protocol']);
+
+		$create->setHealthCheck($this->createLBHealthFromData($spec_data['load_balancer']['health_check']));
+
+		$forwarding_rules = [];
+		foreach ($spec_data['load_balancer']['forwarding_rules'] as $rule)
+		{
+			$forwarding_rules[] = VultrUtil::mapObject((object)$rule, new ForwardRule());
+		}
+		$create->setForwardingRules($forwarding_rules);
+
+		$firewall_rules = [];
+		foreach ($spec_data['load_balancer']['firewall_rules'] as $rule)
+		{
+			$firewall_rules[] = VultrUtil::mapObject((object)$rule, new FirewallRule());
+		}
+		$create->setFirewallRules($firewall_rules);
+
+		$session = new StickySession();
+		$session->setCookieName($spec_generic_info['sticky_sessions']['cookie_name']);
+		$create->setStickySession($session);
+
+		$create->setLabel($spec_data['load_balancer']['label']);
+		$create->setInstances($spec_data['load_balancer']['instances']);
+
+		$loadbalancer = $client->loadbalancers->createLoadBalancer($create);
+		$this->assertInstanceOf(LoadBalancer::class, $loadbalancer);
+		foreach (['getBalancingAlgorithm', 'getSslRedirect', 'getProxyProtocol'] as $method)
+		{
+			$this->assertEquals($create->$method(), $loadbalancer->getGenericInfo()->$method());
+		}
+
+		foreach (['getProtocol', 'getPort', 'getCheckInterval', 'getResponseTimeout', 'getUnhealthyThreshold', 'getHealthyThreshold'] as $method)
+		{
+			$this->assertEquals($create->getHealthCheck()->$method(), $loadbalancer->getHealthCheck()->$method());
+		}
+
+		foreach (['getForwardingRules', 'getFirewallRules'] as $method)
+		{
+			$compare_array = [];
+			foreach ($create->$method() as $rule)
+			{
+				$compare_array[] = $rule->toArray();
+			}
+			$compare_array_2 = [];
+			foreach ($loadbalancer->$method() as $rule)
+			{
+				$compare_array_2[] = $rule->toArray();
+			}
+			$this->assertEquals($compare_array, $compare_array_2);
+		}
+
+		$this->assertEquals($create->getStickySession()->toArray(), $loadbalancer->getGenericInfo()->getStickySessions()->toArray());
+
+		$this->assertFalse($loadbalancer->getHasSsl());
+		$this->assertNull($create->getSsl());
+
+		$this->assertEquals($create->getLabel(), $loadbalancer->getLabel());
+		$this->assertEquals($create->getInstances(), $loadbalancer->getInstances());
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->createLoadBalancer($create);
+	}
+
+	private function createLBHealthFromData(array $spec_health) : LBHealth
+	{
+		$create_health = new LBHealth();
+		$create_health->setProtocol($spec_health['protocol']);
+		$create_health->setPort($spec_health['port']);
+		$create_health->setPath($spec_health['path']);
+		$create_health->setCheckInterval($spec_health['check_interval']);
+		$create_health->setResponseTimeout($spec_health['response_timeout']);
+		$create_health->setUnhealthyThreshold($spec_health['unhealthy_threshold']);
+		$create_health->setHealthyThreshold($spec_health['healthy_threshold']);
+
+		return $create_health;
 	}
 
 	public function testUpdateLoadBalancer()
