@@ -86,6 +86,13 @@ class FirewallRule extends Model
 
 	public function setSubnet(string $subnet) : void
 	{
+		if (strpos($subnet, '/') !== false)
+		{
+			list($ip, $bit) = explode('/', $subnet);
+			$subnet = $ip;
+			$this->setSubnetSize((int)$bit);
+		}
+
 		$this->subnet = $subnet;
 	}
 

@@ -135,7 +135,37 @@ class FirewallTest extends VultrTest
 
 	public function testCreateFirewallRule()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$rule = new FirewallRule();
+		$rule->setIpType($data['firewall_rule']['ip_type']);
+		$rule->setProtocol($data['firewall_rule']['protocol']);
+		$rule->setSubnet($data['firewall_rule']['subnet']);
+		$rule->setSubnetSize($data['firewall_rule']['subnet_size']);
+		$rule->setPort($data['firewall_rule']['port']);
+		$rule->setSource($data['firewall_rule']['source']);
+		$rule->setNotes($data['firewall_rule']['notes']);
+
+		$firewall_rule = $client->firewall->createFirewallRule('12315423525-123123123', $rule);
+		$this->testGetObject(new FirewallRule(), $firewall_rule, $data);
+
+		$this->expectException(FirewallException::class);
+		$client->firewall->createFirewallRule('12315423525-123123123', $rule);
+	}
+
+	public function testSetSubnetByCIDR()
+	{
+		$rule = new FirewallRule();
+		$rule->setSubnet('0.0.0.0/0');
+
+		$this->assertEquals($rule->getSubnet(), '0.0.0.0');
+		$this->assertEquals($rule->getSubnetSize(), 0);
 	}
 
 	public function testDeleteFirewallRule()

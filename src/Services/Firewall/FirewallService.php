@@ -97,7 +97,7 @@ class FirewallService extends VultrService
 	 */
 	public function createFirewallRule(string $group_id, FirewallRule $rule) : FirewallRule
 	{
-		// TODO
+		return $this->createObject('firewalls/'.$group_id.'/rules', new FirewallRule(), $rule->getInitializedProps());
 	}
 
 	/**
