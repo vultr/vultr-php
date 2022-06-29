@@ -6,16 +6,10 @@ namespace Vultr\VultrPhp\Util;
 
 use ReflectionClass;
 use RuntimeException;
-use Vultr\VultrPhp\Util\VultrUtil;
 
 abstract class ModelOptions
 {
 	private array $prop_map;
-
-	/**
-	 * The exception class path name
-	 */
-	abstract public function getModelExceptionClass() : string;
 
 	public function __construct()
 	{
@@ -67,7 +61,13 @@ abstract class ModelOptions
 		{
 			if ($this->$key === null) continue;
 
-			$output[$key] = $this->$key;
+			$value = $this->$key;
+			if ($value instanceof Model)
+			{
+				$value = $value->toArray();
+			}
+
+			$output[$key] = $value;
 		}
 
 		return $output;
