@@ -20,7 +20,8 @@ class SnapshotsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new Snapshot(), $client->snapshots->getSnapshots(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new Snapshot(), $client->snapshots->getSnapshots(null, $options), $data);
 
 		$this->expectException(SnapshotException::class);
 		$client->snapshots->getSnapshots();

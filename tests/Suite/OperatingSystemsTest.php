@@ -20,7 +20,8 @@ class OperatingSystemsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
-		$this->testListObject(new OperatingSystem(), $client->operating_system->getOperatingSystems(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new OperatingSystem(), $client->operating_system->getOperatingSystems($options), $data);
 
 		$this->expectException(OperatingSystemException::class);
 		$client->operating_system->getOperatingSystems();

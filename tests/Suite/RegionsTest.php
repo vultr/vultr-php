@@ -25,7 +25,8 @@ class RegionsTest extends VultrTest
 		]);
 
 		$map = $this->mapRegions($data['regions']);
-		foreach ($client->regions->getRegions() as $region)
+		$options = $this->createListOptions();
+		foreach ($client->regions->getRegions($options) as $region)
 		{
 			$this->assertInstanceOf(Region::class, $region);
 			$this->assertNotNull($map[$region->getId()]);

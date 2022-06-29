@@ -27,7 +27,8 @@ class BareMetalTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new BareMetal(), $client->baremetal->getBareMetals(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new BareMetal(), $client->baremetal->getBareMetals($options), $data);
 
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->getBareMetals();

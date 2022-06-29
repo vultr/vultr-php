@@ -22,7 +22,8 @@ class BillingTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new Bill(), $client->billing->getBillingHistory(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new Bill(), $client->billing->getBillingHistory($options), $data);
 
 		$this->expectException(BillingException::class);
 		$client->billing->getBillingHistory();
@@ -37,7 +38,8 @@ class BillingTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new Invoice(), $client->billing->getInvoices(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new Invoice(), $client->billing->getInvoices($options), $data);
 
 		$this->expectException(BillingException::class);
 		$client->billing->getInvoices();
@@ -67,7 +69,8 @@ class BillingTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->billing->getInvoiceItems(123456) as $item)
+		$options = $this->createListOptions();
+		foreach ($client->billing->getInvoiceItems(123456, $options) as $item)
 		{
 			$this->assertInstanceOf(InvoiceItem::class, $item);
 			foreach ($data[$item->getResponseListName()] as $object)

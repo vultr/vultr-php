@@ -36,7 +36,8 @@ class ReservedIPsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new ReservedIP(), $client->reserved_ip->getReservedIPs(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new ReservedIP(), $client->reserved_ip->getReservedIPs($options), $data);
 
 		$this->expectException(ReservedIPException::class);
 		$client->reserved_ip->getReservedIPs();

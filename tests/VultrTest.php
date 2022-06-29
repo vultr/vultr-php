@@ -7,6 +7,7 @@ namespace Vultr\VultrPhp\Tests;
 use Error;
 use PHPUnit\Framework\TestCase;
 use Vultr\VultrPhp\Util\ModelInterface;
+use Vultr\VultrPhp\Util\ListOptions;
 
 class VultrTest extends TestCase
 {
@@ -85,5 +86,10 @@ class VultrTest extends TestCase
 		{
 			$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
 		}
+	}
+
+	protected function createListOptions() : ListOptions
+	{
+		return new ListOptions(100);
 	}
 }

@@ -46,7 +46,8 @@ class LoadBalancersTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad request'])),
 		]);
 
-		foreach ($client->loadbalancers->getLoadBalancers() as $response_object)
+		$options = $this->createListOptions();
+		foreach ($client->loadbalancers->getLoadBalancers($options) as $response_object)
 		{
 			$data = null;
 			foreach ($spec_data[$response_object->getResponseListName()] as $json_object)

@@ -22,7 +22,8 @@ class FirewallTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new FirewallGroup(), $client->firewall->getFirewallGroups(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new FirewallGroup(), $client->firewall->getFirewallGroups($options), $data);
 
 		$this->expectException(FirewallException::class);
 		$client->firewall->getFirewallGroups();
@@ -106,8 +107,9 @@ class FirewallTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
+		$options = $this->createListOptions();
 		$group_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
-		$this->testListObject(new FirewallRule(), $client->firewall->getFirewallRules($group_id), $data);
+		$this->testListObject(new FirewallRule(), $client->firewall->getFirewallRules($group_id, $options), $data);
 
 		$this->expectException(FirewallException::class);
 		$client->firewall->getFirewallRules($group_id);
@@ -129,6 +131,11 @@ class FirewallTest extends VultrTest
 
 		$this->expectException(FirewallException::class);
 		$client->firewall->getFirewallRule($group_id, $rule_id);
+	}
+
+	public function testCreateFirewallRule()
+	{
+		$this->markTestSkipped('Not Implemented');
 	}
 
 	public function testDeleteFirewallRule()

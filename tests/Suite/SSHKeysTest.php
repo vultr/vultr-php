@@ -41,7 +41,8 @@ class SSHKeysTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new SSHKey(), $client->ssh_keys->getSSHKeys(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new SSHKey(), $client->ssh_keys->getSSHKeys($options), $data);
 
 		$this->expectException(SSHKeyException::class);
 		$client->ssh_keys->getSSHKeys();

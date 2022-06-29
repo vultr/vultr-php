@@ -40,7 +40,8 @@ class UsersTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new User(), $client->users->getUsers(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new User(), $client->users->getUsers($options), $data);
 
 		$this->expectException(UserException::class);
 		$client->users->getUsers();

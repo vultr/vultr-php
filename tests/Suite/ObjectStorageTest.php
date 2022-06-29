@@ -22,7 +22,8 @@ class ObjectStorageTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new ObjectStorage(), $client->objectstorage->getObjectStoreSubs(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new ObjectStorage(), $client->objectstorage->getObjectStoreSubs($options), $data);
 
 		$this->expectException(ObjectStorageException::class);
 		$client->objectstorage->getObjectStoreSubs();
@@ -137,7 +138,8 @@ class ObjectStorageTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new ObjStoreCluster(), $client->objectstorage->getClusters(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new ObjStoreCluster(), $client->objectstorage->getClusters($options), $data);
 
 		$this->expectException(ObjectStorageException::class);
 		$client->objectstorage->getClusters();

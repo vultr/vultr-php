@@ -22,7 +22,8 @@ class DNSTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new Domain(), $client->dns->getDomains(), $data, 'domain', 'getDomain');
+		$options = $this->createListOptions();
+		$this->testListObject(new Domain(), $client->dns->getDomains($options), $data, 'domain', 'getDomain');
 
 		$this->expectException(DNSException::class);
 		$client->dns->getDomains();
@@ -122,7 +123,8 @@ class DNSTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new Record(), $client->dns->getRecords('example.com'), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new Record(), $client->dns->getRecords('example.com', $options), $data);
 
 		$this->expectException(DNSException::class);
 		$client->dns->getRecords('example.com');

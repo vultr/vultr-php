@@ -20,7 +20,8 @@ class BlockStorageTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new BlockStorage(), $client->blockstorage->getBlockDevices(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new BlockStorage(), $client->blockstorage->getBlockDevices($options), $data);
 
 		$this->expectException(BlockStorageException::class);
 		$client->blockstorage->getBlockDevices();

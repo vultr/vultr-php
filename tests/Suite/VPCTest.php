@@ -36,7 +36,8 @@ class VPCTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new VirtualPrivateCloud(), $client->vpc->getVPCs(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new VirtualPrivateCloud(), $client->vpc->getVPCs($options), $data);
 
 		$this->expectException(VPCException::class);
 		$client->vpc->getVPCs();

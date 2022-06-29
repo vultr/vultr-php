@@ -41,7 +41,8 @@ class StartupScriptsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testListObject(new StartupScript(), $client->startup_scripts->getStartupScripts(), $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new StartupScript(), $client->startup_scripts->getStartupScripts($options), $data);
 
 		$this->expectException(StartupScriptException::class);
 		$client->startup_scripts->getStartupScripts();

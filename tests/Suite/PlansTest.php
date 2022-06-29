@@ -70,7 +70,8 @@ class PlansTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->plans->getVPSPlans() as $plan)
+		$options = $this->createListOptions();
+		foreach ($client->plans->getVPSPlans(null, null, $options) as $plan)
 		{
 			$this->assertInstanceOf(VPSPlan::class, $plan);
 			$found_plan = null;
@@ -141,7 +142,8 @@ class PlansTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		foreach ($client->plans->getBMPlans() as $plan)
+		$options = $this->createListOptions();
+		foreach ($client->plans->getBMPlans($options) as $plan)
 		{
 			$this->assertInstanceOf(BMPlan::class, $plan);
 			$found_plan = null;

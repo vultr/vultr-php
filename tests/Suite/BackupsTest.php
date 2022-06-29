@@ -20,7 +20,8 @@ class BackupsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$backups = $client->backups->getBackups();
+		$options = $this->createListOptions();
+		$backups = $client->backups->getBackups(null, $options);
 		$this->testListObject(new Backup(), $backups, $data);
 
 		$this->expectException(BackupException::class);
@@ -36,7 +37,8 @@ class BackupsTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request']))
 		]);
 
-		$backups = $client->backups->getBackups($id);
+		$options = $this->createListOptions();
+		$backups = $client->backups->getBackups($id, $options);
 		$this->testListObject(new Backup(), $backups, $data);
 
 		$this->expectException(BackupException::class);

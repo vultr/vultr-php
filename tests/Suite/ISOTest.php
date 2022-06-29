@@ -42,8 +42,8 @@ class ISOTest extends VultrTest
 			new Response(404, [], json_encode(['error' => 'Not found'])),
 		]);
 
-		$isos = $client->iso->getISOs();
-		$this->testListObject(new ISO(), $isos, $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new ISO(), $client->iso->getISOs($options), $data);
 
 		$this->expectException(ISOException::class);
 		$client->iso->getISOs();
@@ -58,8 +58,8 @@ class ISOTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$public_isos = $client->iso->getPublicISOs();
-		$this->testListObject(new PublicISO(), $public_isos, $data);
+		$options = $this->createListOptions();
+		$this->testListObject(new PublicISO(), $client->iso->getPublicISOs($options), $data);
 
 		$this->expectException(ISOException::class);
 		$client->iso->getPublicISOs();
