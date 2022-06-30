@@ -57,13 +57,23 @@ class LoadBalancerService extends VultrService
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/update-load-balancer
+	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $update - LoadBalancerUpdate
 	 * @throws LoadBalancerException
 	 * @return void
 	 */
-	public function updateLoadBalancer(LoadBalancerUpdate $update) : void
+	public function updateLoadBalancer(string $id, LoadBalancerUpdate $update) : void
 	{
+		$client = $this->getClientHandler();
 
+		try
+		{
+			$client->patch('load-balancers/'.$id, $update->getPayloadParams());
+		}
+		catch (VultrClientException $e)
+		{
+			throw new LoadBalancerException('Failed to update baremetal server: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**

@@ -29,7 +29,7 @@ class VultrClient
 		'instances'        => Services\Instances\InstanceService::class, // TODO
 		'iso'              => Services\ISO\ISOService::class,
 		'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO, do load balancers, and block storage before this.
-		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class, // TODO
+		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class,
 		'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class,
 		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
 		'plans'            => Services\Plans\PlanService::class,

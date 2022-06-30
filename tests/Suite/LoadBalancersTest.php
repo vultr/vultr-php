@@ -11,6 +11,8 @@ use Vultr\VultrPhp\Services\LoadBalancers\LBHealth;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancer;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerCreate;
 use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerException;
+use Vultr\VultrPhp\Services\LoadBalancers\LoadBalancerUpdate;
+use Vultr\VultrPhp\Services\LoadBalancers\SSL;
 use Vultr\VultrPhp\Services\LoadBalancers\StickySession;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Util\ModelInterface;
@@ -159,7 +161,58 @@ class LoadBalancersTest extends VultrTest
 
 	public function testUpdateLoadBalancer()
 	{
-		$this->markTestSkipped('Not Implemented');
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad request'])),
+		]);
+
+		$update = new LoadBalancerUpdate();
+		$ssl = new SSL();
+		$ssl->setPrivateKey('asdhbs dfhbsadf sadfhsdbaf');
+		$ssl->setCertificate('asdsdgdfsag dfdsfgdfsg');
+		$ssl->setChain('sadfgdfhg aadsfgdfg');
+		$update->setSsl($ssl);
+
+		$session = new StickySession();
+		$session->setCookieName('hello_world');
+		$update->setStickySession($session);
+
+		$forwarding_rule = new ForwardRule();
+		$forwarding_rule->setFrontendProtocol('HTTP');
+		$forwarding_rule->setFrontendPort(80);
+		$forwarding_rule->setBackendProtocol('HTTPS');
+		$forwarding_rule->setBackendPort(443);
+		$update->setForwardingRules([$forwarding_rule]);
+
+		$firewall_rule = new FirewallRule();
+		$firewall_rule->setPort(80);
+		$firewall_rule->setSource('192.168.1.1/16');
+		$firewall_rule->setIpType('v4');
+		$update->setFirewallRules([$firewall_rule]);
+
+		$health = new LBHealth();
+		$health->setProtocol('HTTPS');
+		$health->setPort(443);
+		$health->setPath('/health');
+		$health->setCheckInterval(10);
+		$health->setResponseTimeout(5);
+		$health->setUnhealthyThreshold(4);
+		$health->setHealthyThreshold(3);
+		$update->setHealthCheck($health);
+
+		$update->setProxyProtocol(true);
+		$update->setSslRedirect(true);
+		$update->setBalancingAlgorithm('leastconn');
+		$update->setInstances(['cb676a46-66fd-4dfb-b839-443f2e6c0b60']);
+		$update->setLabel('my new lovely label');
+		$update->setVpc('9fed374c-0afc-42bf-926c-abcf840b5406');
+
+		$client->loadbalancers->updateLoadBalancer('random-load-balancer-uuid', $update);
+
+		$this->expectException(LoadBalancerException::class);
+		$client->loadbalancers->updateLoadBalancer('random-load-balancer-uuid', $update);
 	}
 
 	public function testDeleteLoadBalancer()
