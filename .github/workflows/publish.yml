@@ -2,7 +2,8 @@ name: Publish Code Coverage
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - '*'
 
 jobs:
   build_and_publish:
