@@ -24,7 +24,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
     - name: PHP Versions
-      run: php -i
+      run: ls /etc/php && ls /usr/bin | grep php
 
   tests:
     runs-on: ubuntu-latest
