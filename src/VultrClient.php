@@ -17,7 +17,7 @@ class VultrClient
 {
 	private VultrClientHandler $client;
 
-	public const MAP = [
+	private const MAP = [
 		'account'          => Services\Account\AccountService::class,
 		'applications'     => Services\Applications\ApplicationService::class,
 		'backups'          => Services\Backups\BackupService::class,
@@ -54,20 +54,32 @@ class VultrClient
 	 * @param $stream - PSR17 StreamFactoryInterface - https://www.php-fig.org/psr/psr-17/#22-responsefactoryinterface
 	 */
 	private function __construct(
-		VultrAuth $auth,
+		string $API_KEY,
 		?ClientInterface $http = null,
 		?RequestFactoryInterface $request = null,
 		?ResponseFactoryInterface $response = null,
 		?StreamFactoryInterface $stream = null
 	)
 	{
-		$this->client = new VultrClientHandler(
-			$auth,
-			$http ?: Psr18ClientDiscovery::find(),
-			$request ?: Psr17FactoryDiscovery::findRequestFactory(),
-			$response ?: Psr17FactoryDiscovery::findResponseFactory(),
-			$stream ?: Psr17FactoryDiscovery::findStreamFactory()
-		);
+		try
+		{
+			$this->setClientHandler($API_KEY, $http, $request, $response, $stream);
+		}
+		catch (Throwable $e)
+		{
+			throw new VultrException('Failed to initialize client: '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
+		}
+	}
+
+	public static function create(
+		string $API_KEY,
+		?ClientInterface $http = null,
+		?RequestFactoryInterface $request = null,
+		?ResponseFactoryInterface $response = null,
+		?StreamFactoryInterface $stream = null
+	) : VultrClient
+	{
+		return new VultrClient($API_KEY, $http, $request, $response, $stream);
 	}
 
 	public function __get(string $name)
@@ -102,23 +114,20 @@ class VultrClient
 		$this->client->setStreamFactory($stream);
 	}
 
-	public static function create(
+	protected function setClientHandler(
 		string $API_KEY,
 		?ClientInterface $http = null,
 		?RequestFactoryInterface $request = null,
 		?ResponseFactoryInterface $response = null,
 		?StreamFactoryInterface $stream = null
-	) : VultrClient
+	) : void
 	{
-		try
-		{
-			$client = new VultrClient(new VultrAuth($API_KEY), $http, $request, $response, $stream);
-		}
-		catch (Throwable $e)
-		{
-			throw new VultrException('Failed to initialize client: '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
-		}
-
-		return $client;
+		$this->client = new VultrClientHandler(
+			new VultrAuth($API_KEY),
+			$http ?: Psr18ClientDiscovery::find(),
+			$request ?: Psr17FactoryDiscovery::findRequestFactory(),
+			$response ?: Psr17FactoryDiscovery::findResponseFactory(),
+			$stream ?: Psr17FactoryDiscovery::findStreamFactory()
+		);
 	}
 }
