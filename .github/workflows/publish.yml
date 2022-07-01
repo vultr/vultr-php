@@ -27,5 +27,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./phpunit.cache/html
+        publish_dir: ./.phpunit.cache/html
         destination_dir: code-coverage
