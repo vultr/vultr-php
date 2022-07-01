@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use Exception;
-use ReflectionClass;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\HttpFactory;
+use ReflectionClass;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\VultrAuth;
 use Vultr\VultrPhp\VultrClient;
-use Vultr\VultrPhp\VultrClientHandler;
 use Vultr\VultrPhp\VultrException;
 
 class VultrClientTest extends VultrTest

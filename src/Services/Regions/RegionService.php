@@ -7,8 +7,8 @@ namespace Vultr\VultrPhp\Services\Regions;
 use Exception;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
-use Vultr\VultrPhp\VultrClientException;
 use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrClientException;
 
 class RegionService extends VultrService
 {

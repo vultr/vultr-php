@@ -6,8 +6,8 @@ namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Plans\BMPlan;
-use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Services\Plans\PlanService;
+use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Services\Regions\Region;
 use Vultr\VultrPhp\Services\Regions\RegionException;
 use Vultr\VultrPhp\Tests\VultrTest;
