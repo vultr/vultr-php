@@ -8,13 +8,13 @@ use Vultr\VultrPhp\Util\Model;
 
 class ISO extends Model
 {
-	public string $id;
-	public string $dateCreated;
-	public string $filename;
-	public int $size;
-	public string $md5sum;
-	public string $sha512sum;
-	public string $status;
+	protected string $id;
+	protected string $dateCreated;
+	protected string $filename;
+	protected int $size;
+	protected string $md5sum;
+	protected string $sha512sum;
+	protected string $status;
 
 	public function getId() : string
 	{
