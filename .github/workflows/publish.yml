@@ -13,12 +13,18 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+    - name: Make Dist and Copy
+      run: |
+        mkdir dist
+        cp README.md dist/README.md
+        cp LICENSE dist/LICENSE
+        cp CHANGELOG.md dist/CHANGELOG.md
+        cp .gitignore dist/.gitignore
     - name: Build Code Coverage
-      run: composer cover
+      run: composer cover_prod
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./.phpunit.cache/html
-        destination_dir: code-coverage
+        publish_dir: ./dist
         enable_jekyll: true

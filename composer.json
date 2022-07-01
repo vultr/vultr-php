@@ -55,6 +55,7 @@
     "scripts": {
         "test": "vendor/bin/phpunit --no-coverage",
         "cover": "vendor/bin/phpunit",
+        "cover_prod": "vendor/bin/phpunit --coverage-html dist/code-coverage",
         "lint": "vendor/bin/phpcs --extensions=php -s",
         "beautify": "vendor/bin/phpcbf --extensions=php -v"
     },
