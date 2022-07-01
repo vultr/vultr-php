@@ -7,6 +7,7 @@ namespace Vultr\VultrPhp\Tests\Suite;
 use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Plans\BMPlan;
 use Vultr\VultrPhp\Services\Plans\VPSPlan;
+use Vultr\VultrPhp\Services\Plans\PlanService;
 use Vultr\VultrPhp\Services\Regions\Region;
 use Vultr\VultrPhp\Services\Regions\RegionException;
 use Vultr\VultrPhp\Tests\VultrTest;
@@ -55,6 +56,7 @@ class RegionsTest extends VultrTest
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($bm_plans)), // Cache Plans
 
 			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], 'bad json'),
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
@@ -70,7 +72,7 @@ class RegionsTest extends VultrTest
 			}
 		}
 
-		foreach ($client->regions->getAvailablility($id) as $plan)
+		foreach ($client->regions->getAvailablility($id, PlanService::FILTER_ALL) as $plan)
 		{
 			$this->assertContains($plan::class, [VPSPlan::class, BMPlan::class]);
 			foreach ($plan->toArray() as $attr => $value)
@@ -89,6 +91,15 @@ class RegionsTest extends VultrTest
 					}
 				}
 			}
+		}
+
+		try
+		{
+			$client->regions->getAvailablility($id);
+		}
+		catch (RegionException $e)
+		{
+			$this->assertStringContainsString('Failed to deserialize', $e->getMessage());
 		}
 
 		$this->expectException(RegionException::class);
