@@ -20,6 +20,7 @@ jobs:
         cp LICENSE dist/LICENSE
         cp CHANGELOG.md dist/CHANGELOG.md
         cp .gitignore dist/.gitignore
+        cp _config.yml dist/_config.yml
     - name: Build Code Coverage
       run: composer cover_prod
     - name: Deploy
