@@ -13,14 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
     - name: Build Code Coverage
       run: composer cover
     - name: Deploy
@@ -29,3 +21,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./.phpunit.cache/html
         destination_dir: code-coverage
+        enable_jekyll: true
