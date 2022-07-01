@@ -3,8 +3,6 @@ name: Publish Code Coverage
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -24,4 +22,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
     - name: Build Code Coverage
-      run: vendor/bin/phpunit ; ls .phpunit.cache/html
+      run: composer cover
