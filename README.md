@@ -12,6 +12,9 @@
 [![Total Downloads](http://poser.pugx.org/vultr/vultr-php/downloads)](https://packagist.org/packages/vultr/vultr-php)
 [![CodeFactor](https://www.codefactor.io/repository/github/porthorian/vultr-php/badge)](https://www.codefactor.io/repository/github/porthorian/vultr-php)
 
+
+View our test [Code Coverage](https://vultr.github.io/vultr-php/code-coverage/index.html)
+
 ## Getting Started
 
 Must have a PSR7, PSR17, and PSR18 Compatible HTTP Client. 

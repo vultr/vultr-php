@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_and_publish:
     runs-on: ubuntu-latest
     env:
       XDEBUG_MODE: coverage
@@ -23,3 +23,9 @@ jobs:
           ${{ runner.os }}-php-
     - name: Build Code Coverage
       run: composer cover
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        public_dir: ./phpunit.cache/html
+        destination_dir: code-coverage
