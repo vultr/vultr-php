@@ -16,7 +16,7 @@ class Instance extends Model
 	protected string $internalIp;
 	protected int $vcpuCount;
 	protected string $region;
-	protected string $defaultPassword;
+	protected ?string $defaultPassword = null;
 	protected string $dateCreated;
 	protected string $status;
 	protected string $powerStatus;
@@ -118,7 +118,7 @@ class Instance extends Model
 		$this->region = $region;
 	}
 
-	public function getDefaultPassword() : string
+	public function getDefaultPassword() : ?string
 	{
 		return $this->defaultPassword;
 	}
