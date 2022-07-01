@@ -1,1 +1,1 @@
-include: [code-coverage/_css, code-coverage/_icons, code-coverage/_js]
+include: [_css, _icons, _js]
