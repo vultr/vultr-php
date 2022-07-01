@@ -1,1 +1,1 @@
-include: _css, _icons, _js
+include: [_css, _icons, _js]
