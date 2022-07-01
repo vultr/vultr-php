@@ -284,9 +284,7 @@ class BareMetalService extends VultrService
 			throw new BareMetalException('Failed to get user data: '.$e->getMessage(), $e->getHTTPCode(), $e);
 		}
 
-		$decode = VultrUtil::decodeJSON((string)$response->getBody(), true);
-
-		return base64_decode($decode['user_data']['data']);
+		return base64_decode(VultrUtil::decodeJSON((string)$response->getBody(), true)['user_data']['data']);
 	}
 
 	/**

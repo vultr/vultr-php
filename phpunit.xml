@@ -25,6 +25,10 @@
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
               processUncoveredFiles="true">
+        <report>
+            <html outputDirectory=".phpunit.cache/html"/>
+        </report>
+
         <include>
             <directory suffix=".php">src</directory>
         </include>
