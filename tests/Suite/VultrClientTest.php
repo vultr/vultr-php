@@ -48,7 +48,7 @@ class VultrClientTest extends VultrTest
 
 		$class = new ReflectionClass(VultrClient::class);
 		$constructor = $class->getConstructor();
-
+		$constructor->setAccessible(true);
 		$this->expectException(VultrException::class);
 		$constructor->invokeArgs($mock, ['Test1234', $guzzle_client, $guzzle_factory, $guzzle_factory, $guzzle_factory]);
 	}
