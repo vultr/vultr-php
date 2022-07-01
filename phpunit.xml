@@ -15,7 +15,6 @@
 
     <php>
         <ini name="memory_limit" value="512M" />
-        <ini name="xdebug.mode" value="coverage" />
     </php>
 
     <testsuites>
