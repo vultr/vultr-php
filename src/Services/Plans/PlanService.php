@@ -31,6 +31,7 @@ class PlanService extends VultrService
 	private static ?array $cache_plans = null;
 
 	/**
+	 * @see https://www.vultr.com/api/#operation/list-plans
 	 * @param $type - string|null - FILTER_*
 	 * @param $os - string|null - FILTER_WINDOWS
 	 * @param $options - ListOptions - Interact via reference.
@@ -71,6 +72,7 @@ class PlanService extends VultrService
 	}
 
 	/**
+	 * @see https://www.vultr.com/api/#operation/list-metal-plans
 	 * @param $options - ListOptions - Interact via reference.
 	 * @throws PlanException
 	 * @return BMPlan[]

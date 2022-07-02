@@ -133,6 +133,21 @@ class PlansTest extends VultrTest
 		$client->plans->getVPSPlans(PlanService::FILTER_VDC);
 	}
 
+	public function testGetVPSPlansFilter_Windows()
+	{
+		$provider = $this->getDataProvider();
+		$plans = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($plans)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$this->testFilter($client->plans->getVPSPlans(null, PlanService::FILTER_WINDOWS), $plans, PlanService::FILTER_WINDOWS);
+
+		$this->expectException(PlanException::class);
+		$client->plans->getVPSPlans(null, PlanService::FILTER_WINDOWS);
+	}
+
 	public function testGetBMPlans()
 	{
 		$provider = $this->getDataProvider();
@@ -165,7 +180,11 @@ class PlansTest extends VultrTest
 		foreach ($objects as $plan)
 		{
 			$this->assertInstanceOf(VPSPlan::class, $plan);
-			$this->assertEquals($plan->getType(), $filter);
+			if ($filter !== PlanService::FILTER_WINDOWS)
+			{
+				$this->assertEquals($plan->getType(), $filter);
+			}
+
 			$found_plan = null;
 			foreach ($plans[$plan->getResponseListName()] as $response)
 			{

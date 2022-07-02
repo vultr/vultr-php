@@ -53,7 +53,7 @@ class DNSTest extends VultrTest
 			new Response(400, [], json_encode(['error' => 'Bad Request'])),
 		]);
 
-		$this->testGetObject(new Domain(), $client->dns->createDomain($data['domain']['domain'], $data['domain']['dns_sec']), $data);
+		$this->testGetObject(new Domain(), $client->dns->createDomain($data['domain']['domain'], $data['domain']['dns_sec'], '127.0.0.1'), $data);
 
 		$this->expectException(DNSException::class);
 		$client->dns->createDomain($data['domain']['domain'], $data['domain']['dns_sec']);

@@ -30,6 +30,11 @@ class PlansData extends DataProvider
 		return $this->filterVPSPlans(PlanService::FILTER_VDC);
 	}
 
+	public function dataGetVPSPlansFilter_Windows() : array
+	{
+		return $this->dataGetVPSPlans();
+	}
+
 	public function dataGetBMPlans() : array
 	{
 		return json_decode(file_get_contents(__DIR__.'/../json_responses/v2-get-plans-metal.json'), true);
