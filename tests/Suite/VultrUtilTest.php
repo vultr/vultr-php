@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Tests\Suite;
 
+use RuntimeException;
 use stdClass;
+use Vultr\VultrPhp\Tests\Data\ModelOptionsData;
 use Vultr\VultrPhp\Tests\Data\VultrUtilData;
 use Vultr\VultrPhp\Tests\VultrTest;
 use Vultr\VultrPhp\Util\VultrUtil;
@@ -51,6 +53,7 @@ class VultrUtilTest extends VultrTest
 		$test = [];
 		$test['test'] = $array;
 		$object = VultrUtil::convertJSONToObject(json_encode($test), new VultrUtilData(), 'test');
+		$this->assertEmpty($object->getUpdateParams());
 		foreach ($object->toArray() as $attr => $value)
 		{
 			$this->assertEquals($value, $test['test'][$attr]);
@@ -92,5 +95,46 @@ class VultrUtilTest extends VultrTest
 	public function testConvertUnderscoreToCamelCase()
 	{
 		$this->assertEquals('helloWorld', VultrUtil::convertUnderscoreToCamelCase('hello_world'));
+	}
+
+	public function testModelOptions()
+	{
+		$options = new ModelOptionsData();
+
+		try
+		{
+			$options->AAAasfe(12345);
+		}
+		catch (RuntimeException $e)
+		{
+			$this->assertStringContainsString('Call to undefined method', $e->getMessage());
+			$this->assertStringNotContainsString('prop', $e->getMessage());
+		}
+
+		try
+		{
+			$options->getHelloWorld();
+		}
+		catch (RuntimeException $e)
+		{
+			$this->assertStringContainsString('Call to undefined method prop', $e->getMessage());
+		}
+
+		try
+		{
+			$options->dudeString();
+		}
+		catch (RuntimeException $e)
+		{
+			$this->assertStringContainsString('Call to undefined action', $e->getMessage());
+		}
+
+		$this->assertNotEquals($options->getArray(), $options->withArray(['fu']));
+		$this->assertNotEquals($options->getInt(), $options->withInt(5));
+		$this->assertNotEquals($options->getString(), $options->withString('aaaaa'));
+
+		$old = $options->getInt();
+		$options->setInt(55);
+		$this->assertNotEquals($old, $options->getInt());
 	}
 }

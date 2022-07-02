@@ -23,7 +23,7 @@ abstract class ModelOptions
 
 	public function __call($name, $args) : mixed
 	{
-		if (!preg_match('/^([a-z]*)(.*)$/', $name, $match))
+		if (!preg_match('/^([a-z]{3,4})(.*)$/', $name, $match))
 		{
 			throw new RuntimeException('Call to undefined method '.$this::class.'::'.$name);
 		}
