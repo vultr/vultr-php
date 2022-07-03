@@ -298,4 +298,38 @@ class InstancesTest extends VultrTest
 		$this->expectException(InstanceException::class);
 		$client->instances->getVPCs($id, $options);
 	}
+
+	public function testAttachVPC()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$vpc_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b65';
+		$this->assertNull($client->instances->attachVPC($id, $vpc_id));
+
+		$this->expectException(InstanceException::class);
+		$client->instances->attachVPC($id, $vpc_id);
+	}
+
+	public function testDetachVPC()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$vpc_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b65';
+		$this->assertNull($client->instances->detachVPC($id, $vpc_id));
+
+		$this->expectException(InstanceException::class);
+		$client->instances->detachVPC($id, $vpc_id);
+	}
 }

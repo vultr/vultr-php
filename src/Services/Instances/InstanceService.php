@@ -235,7 +235,14 @@ class InstanceService extends VultrService
 	 */
 	public function attachVPC(string $id, string $vpc_id) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/vpcs/attach', ['vpc_id' => $vpc_id]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to attach vpc: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
@@ -247,7 +254,14 @@ class InstanceService extends VultrService
 	 */
 	public function detachVPC(string $id, string $vpc_id) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/vpcs/detach', ['vpc_id' => $vpc_id]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to detach vpc: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
