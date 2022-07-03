@@ -30,6 +30,7 @@ jobs:
     - name: Generate Code Coverage Badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
       with:
+        report: .phpunit.cache/clover.xml
         coverage_badge_path: dist/code-coverage/badge.svg
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

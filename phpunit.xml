@@ -27,7 +27,7 @@
               processUncoveredFiles="true">
         <report>
             <html outputDirectory=".phpunit.cache/html"/>
-            <clover outputFile="clover.xml" />
+            <clover outputFile=".phpunit.cache/clover.xml" />
         </report>
 
         <include>
