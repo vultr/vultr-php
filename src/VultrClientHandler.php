@@ -202,10 +202,13 @@ class VultrClientHandler
 
 	private function formalizeErrorMessage(ResponseInterface $response, RequestInterface $request) : string
 	{
-		$error = json_decode((string)$response->getBody(), true);
-		if (isset($error['error']))
+		if ($response->getHeaderLine('Content-Type') === 'application/json' && $response->getBody()->getSize() < 512)
 		{
-			return $error['error'];
+			$error = json_decode((string)$response->getBody(), true);
+			if (isset($error['error']))
+			{
+				return $error['error'];
+			}
 		}
 
 		$level = VultrUtil::getLevel($response);
@@ -223,7 +226,7 @@ class VultrClientHandler
 			$response->getReasonPhrase()
 		);
 
-		if ($summary = $this->bodySummary($response) !== null)
+		if (($summary = $this->bodySummary($response)) !== null)
 		{
 			$message .= "\n{$summary}\n";
 		}
@@ -245,6 +248,11 @@ class VultrClientHandler
 		if ($size === 0)
 		{
 			return null;
+		}
+
+		if ($body->eof())
+		{
+			$body->rewind();
 		}
 
 		$summary = $body->read($truncateAt);

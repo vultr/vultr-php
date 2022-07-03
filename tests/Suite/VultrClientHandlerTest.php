@@ -40,6 +40,17 @@ class VultrClientHandlerTest extends VultrTest
 		}
 	}
 
+	public function testBodySummary()
+	{
+		$text = substr(bin2hex(random_bytes(512)), 0, 512);
+		$client = $this->generateClient([
+			new Response(400, ['Content-Type' => 'text/html'], $text)
+		]);
+
+		$this->expectExceptionMessageMatches('/'.substr($text, 0, 120).' \(truncated...\)/');
+		$client->get('test1234');
+	}
+
 	private function generateClient(array $responses) : VultrClientHandler
 	{
 		$guzzle_factory = new HttpFactory();
@@ -91,7 +102,7 @@ class VultrClientHandlerTest extends VultrTest
 	{
 		$error = 'I am a wonderful error';
 		$client = $this->generateClient([
-			new Response(400, ['Content-Type: application/json'], json_encode([
+			new Response(400, ['Content-Type' => 'application/json'], json_encode([
 				'error' => $error
 			])),
 		]);
@@ -102,6 +113,7 @@ class VultrClientHandlerTest extends VultrTest
 		}
 		catch (VultrClientException $e)
 		{
+			$this->assertMatchesRegularExpression('/(?>GET|PATCH|POST|DELETE|PUT) failed\: '.$error.'/', $e->getMessage());
 			$this->assertStringContainsString($error, $e->getMessage());
 		}
 	}
