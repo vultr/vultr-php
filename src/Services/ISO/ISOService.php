@@ -14,12 +14,12 @@ class ISOService extends VultrService
 		return $this->getObject('iso/'.$iso_id, new ISO());
 	}
 
-	public function getISOs(?ListOptions $options = null) : array
+	public function getISOs(?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('iso', new ISO(), $options);
 	}
 
-	public function getPublicISOs(?ListOptions $options = null) : array
+	public function getPublicISOs(?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('iso-public', new PublicISO(), $options);
 	}

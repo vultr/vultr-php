@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Instances\Instance;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
+use Vultr\VultrPhp\Services\Instances\VPCAttachment;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class InstancesTest extends VultrTest
@@ -279,5 +280,22 @@ class InstancesTest extends VultrTest
 
 		$this->expectException(InstanceException::class);
 		$client->instances->restoreInstance($id, $snapshot_id);
+	}
+
+	public function testGetVPCs()
+	{
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$options = $this->createListOptions();
+		$id = 'cb676a46-66fd-4dfb-b835-443f2e6c0b60';
+		$this->testListObject(new VPCAttachment(), $client->instances->getVPCs($id, $options), $data);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->getVPCs($id, $options);
 	}
 }

@@ -16,7 +16,7 @@ class BlockStorageService extends VultrService
 	 * @throws BlockStorageException
 	 * @return array
 	 */
-	public function getBlockDevices(?ListOptions $options = null) : array
+	public function getBlockDevices(?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('blocks', new BlockStorage(), $options);
 	}

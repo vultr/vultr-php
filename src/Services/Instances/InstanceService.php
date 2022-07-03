@@ -22,7 +22,7 @@ class InstanceService extends VultrService
 	 * @throws InstanceException
 	 * @return Instance[]
 	 */
-	public function getInstances(?array $filters = null, ?ListOptions $options = null) : array
+	public function getInstances(?array $filters = null, ?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('instances', new Instance(), $options, $filters);
 	}
@@ -221,9 +221,9 @@ class InstanceService extends VultrService
 	 * @throws InstanceException
 	 * @return array
 	 */
-	public function getVPCs() : array
+	public function getVPCs(string $id, ?ListOptions &$options = null) : array
 	{
-
+		return $this->getListObjects('instances/'.$id.'/vpcs', new VPCAttachment(), $options);
 	}
 
 	/**

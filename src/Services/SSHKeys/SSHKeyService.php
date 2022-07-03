@@ -25,7 +25,7 @@ class SSHKeyService extends VultrService
 	 * @throws SSHKeyException
 	 * @return SSHKey[]
 	 */
-	public function getSSHKeys(?ListOptions $options = null) : array
+	public function getSSHKeys(?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('ssh-keys', new SSHKey(), $options);
 	}

@@ -27,7 +27,7 @@ class ReservedIPService extends VultrService
 	 * @throws ReservedIPException
 	 * @return ReservedIP[]
 	 */
-	public function getReservedIPs(?ListOptions $options = null) : array
+	public function getReservedIPs(?ListOptions &$options = null) : array
 	{
 		return $this->getListObjects('reserved-ips', new ReservedIP(), $options);
 	}
