@@ -26,7 +26,7 @@ jobs:
       run: |
         composer cover
         mkdir dist/code-coverage
-        cp -R .phpunit.cache/code-coverage/* dist/code-coverage
+        cp -R .phpunit.cache/html/* dist/code-coverage
     - name: Generate Code Coverage Badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
       with:
