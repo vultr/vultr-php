@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Instances\Instance;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
+use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -331,5 +332,57 @@ class InstancesTest extends VultrTest
 
 		$this->expectException(InstanceException::class);
 		$client->instances->detachVPC($id, $vpc_id);
+	}
+
+	public function testGetIsoStatus()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testGetObject(new IsoStatus(), $client->instances->getIsoStatus($id), $data);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->getIsoStatus($id);
+	}
+
+	public function testAttachIsoToInstance()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$iso_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testGetObject(new IsoStatus(), $client->instances->attachIsoToInstance($id, $iso_id), $data);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->attachIsoToInstance($id, $iso_id);
+	}
+
+	public function testDetachIsoFromInstance()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$status = $client->instances->detachIsoFromInstance($id);
+		$this->testGetObject(new IsoStatus(), $status, $data);
+
+		$this->assertNull($status->getIsoId());
+
+		$this->expectException(InstanceException::class);
+		$client->instances->detachIsoFromInstance($id);
 	}
 }

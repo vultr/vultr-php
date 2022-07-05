@@ -268,11 +268,21 @@ class InstanceService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-instance-iso-status
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
-	 * @return string
+	 * @return IsoStatus
 	 */
-	public function getIsoStatus(string $id) : string
+	public function getIsoStatus(string $id) : IsoStatus
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('instances/'.$id.'/iso');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to get iso status: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$model = new IsoStatus();
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), $model, $model->getResponseName());
 	}
 
 	/**
@@ -280,22 +290,32 @@ class InstanceService extends VultrService
 	 * @param $id - string - Instance ID - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $iso_id - string
 	 * @throws InstanceException
-	 * @return string
+	 * @return IsoStatus
 	 */
-	public function attachIsoToInstance(string $id, string $iso_id) : string
+	public function attachIsoToInstance(string $id, string $iso_id) : IsoStatus
 	{
-
+		return $this->createObject('instances/'.$id.'/iso/attach', new IsoStatus(), ['iso_id' => $iso_id]);
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/detach-instance-iso
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
-	 * @return string
+	 * @return IsoStatus
 	 */
-	public function detachIsoFromInstance(string $id) : string
+	public function detachIsoFromInstance(string $id) : IsoStatus
 	{
+		try
+		{
+			$response = $this->getClientHandler()->post('instances/'.$id.'/iso/detach');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to detach iso: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$model = new IsoStatus();
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), $model, $model->getResponseName());
 	}
 
 	/**
