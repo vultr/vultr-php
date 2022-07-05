@@ -146,6 +146,12 @@ abstract class Model implements ModelInterface
 		foreach ($reflection->getProperties() as $property)
 		{
 			$name = $property->getName();
+			$type = $property->getType();
+			if ($type->allowsNull())
+			{
+				$this->$name = null;
+				continue;
+			}
 
 			unset($this->$name);
 		}
