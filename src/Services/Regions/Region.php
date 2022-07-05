@@ -12,7 +12,7 @@ class Region extends Model
 	protected string $city;
 	protected string $country;
 	protected string $continent;
-	protected array $options = [];
+	protected array $options;
 
 	public function getId() : string
 	{
