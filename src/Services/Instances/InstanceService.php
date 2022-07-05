@@ -320,18 +320,32 @@ class InstanceService extends VultrService
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/create-instance-backup-schedule
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $backup - BackupSchedule
+	 * @throws InstanceException
+	 * @return void
 	 */
-	public function setBackupSchedule(string $id, BackupSchedule $backup) : BackupSchedule
+	public function setBackupSchedule(string $id, BackupSchedule $backup) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/backup-schedule', $backup->getInitializedProps());
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to setup backup schedule: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/get-instance-backup-schedule
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws InstanceException
+	 * @return BackupSchedule
 	 */
 	public function getBackupSchedule(string $id) : BackupSchedule
 	{
-
+		return $this->getObject('instances/'.$id.'/backup-schedule', new BackupSchedule());
 	}
 
 	/**
