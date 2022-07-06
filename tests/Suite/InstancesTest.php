@@ -449,6 +449,23 @@ class InstancesTest extends VultrTest
 		$client->instances->getIPv4Addresses($id, $options);
 	}
 
+	public function testCreateIPv4Address()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testGetObject(new InstanceIPv4Info(), $client->instances->createIPv4Address($id, true), $data, 'ip', 'getIp');
+
+		$this->expectException(InstanceException::class);
+		$client->instances->createIPv4Address($id, true);
+	}
+
 	public function testGetUserData()
 	{
 		$provider = $this->getDataProvider();

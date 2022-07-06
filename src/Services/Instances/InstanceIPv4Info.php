@@ -77,6 +77,11 @@ class InstanceIPv4Info extends Model
 
 	public function getResponseName() : string
 	{
-		return 'ipv4s';
+		return 'ipv4';
+	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('InstanceIPv4InfoException', 'InstanceException', parent::getModelExceptionClass());
 	}
 }

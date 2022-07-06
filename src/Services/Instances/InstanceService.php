@@ -422,9 +422,16 @@ class InstanceService extends VultrService
 		return $objects;
 	}
 
-	public function createIPv4Address(string $id)
+	/**
+	 * @see https://www.vultr.com/api/#operation/create-instance-ipv4
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $reboot - bool
+	 * @throws InstanceException
+	 * @return InstanceIPv4Info
+	 */
+	public function createIPv4Address(string $id, bool $reboot = true)
 	{
-
+		return $this->createObject('instances/'.$id.'/ipv4', new InstanceIPv4Info(), ['reboot' => $reboot]);
 	}
 
 	public function deleteIPv4Address(string $id, string $ip)
