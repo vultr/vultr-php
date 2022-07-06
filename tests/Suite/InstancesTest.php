@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Tests\Suite;
 
 use GuzzleHttp\Psr7\Response;
+use Vultr\VultrPhp\Services\Applications\Application;
 use Vultr\VultrPhp\Services\Instances\BackupSchedule;
 use Vultr\VultrPhp\Services\Instances\Instance;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
@@ -12,7 +13,6 @@ use Vultr\VultrPhp\Services\Instances\InstanceService;
 use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
 use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
-use Vultr\VultrPhp\Services\Applications\Application;
 use Vultr\VultrPhp\Services\Plans\VPSPlan;
 use Vultr\VultrPhp\Tests\Data\RegionsData;
 use Vultr\VultrPhp\Tests\VultrTest;

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Instances;
 
+use Vultr\VultrPhp\Services\Applications\Application;
+use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
-use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
-use Vultr\VultrPhp\Services\Applications\Application;
 
 class InstanceService extends VultrService
 {
