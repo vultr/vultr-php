@@ -125,7 +125,6 @@ class BareMetalService extends VultrService
 		foreach ($decode->$response_name as $info)
 		{
 			$object = VultrUtil::mapObject($info, $model);
-			$object->setId($id);
 			$objects[] = $object;
 		}
 		return $objects;

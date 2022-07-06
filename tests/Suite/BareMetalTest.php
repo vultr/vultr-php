@@ -129,7 +129,7 @@ class BareMetalTest extends VultrTest
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$response_objects = $client->baremetal->getIPv4Addresses($id);
-		$this->testAddressInfo(new BareMetalIPv4Info(), $response_objects, $spec_data, $id);
+		$this->testListObject(new BareMetalIPv4Info(), $response_objects, $spec_data, 'ip', 'getIp');
 
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->getIPv4Addresses($id);
@@ -146,43 +146,10 @@ class BareMetalTest extends VultrTest
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$response_objects = $client->baremetal->getIPv6Addresses($id);
-		$this->testAddressInfo(new BareMetalIPv6Info(), $response_objects, $spec_data, $id);
+		$this->testListObject(new BareMetalIPv6Info(), $response_objects, $spec_data, 'ip', 'getIp');
 
 		$this->expectException(BareMetalException::class);
 		$client->baremetal->getIPv6Addresses($id);
-	}
-
-	private function testAddressInfo(ModelInterface $model, array $response_objects, array $spec_data, string $id)
-	{
-		$this->assertEquals($spec_data['meta']['total'], count($response_objects));
-		foreach ($response_objects as $response_object)
-		{
-			$this->assertInstanceOf($model::class, $response_object);
-			foreach ($spec_data[$response_object->getResponseListName()] as $object)
-			{
-				if ($object['ip'] !== $response_object->getIp()) continue;
-
-				$array = $response_object->toArray();
-				foreach ($array as $prop => $prop_val)
-				{
-					// This does not exist in the response
-					// But should be the same as the id fed into the parameter.
-					if ($prop === 'id')
-					{
-						$this->assertEquals($prop_val, $id);
-						continue;
-					}
-
-					$this->assertEquals($prop_val, $object[$prop], "Attribute {$prop} failed to meet comparison against spec.");
-				}
-
-				foreach (array_keys($object) as $attr)
-				{
-					$this->assertTrue(array_key_exists($attr, $array), "Attribute {$attr} failed to exist in toArray of the response object.");
-				}
-				break;
-			}
-		}
 	}
 
 	public function testStartBareMetal()

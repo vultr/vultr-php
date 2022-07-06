@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Vultr\VultrPhp\Services\BareMetal;
+namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
-class BareMetalIPv4Info extends Model
+class InstanceIPv4Info extends Model
 {
-	// The response data.
 	protected string $ip;
 	protected string $netmask;
 	protected string $gateway;
 	protected string $type;
 	protected string $reverse;
+	protected ?string $macAddress = null;
 
 	public function getIp() : string
 	{
@@ -65,8 +65,18 @@ class BareMetalIPv4Info extends Model
 		$this->reverse = $reverse;
 	}
 
+	public function getMacAddress() : ?string
+	{
+		return $this->macAddress;
+	}
+
+	public function setMacAddress(string $macAddress) : void
+	{
+		$this->macAddress = $macAddress;
+	}
+
 	public function getResponseName() : string
 	{
-		return 'ipv4';
+		return 'ipv4s';
 	}
 }

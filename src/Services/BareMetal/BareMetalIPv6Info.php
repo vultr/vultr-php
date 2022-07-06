@@ -8,24 +8,11 @@ use Vultr\VultrPhp\Util\Model;
 
 class BareMetalIPv6Info extends Model
 {
-	// The baremetal id this info belongs too
-	protected string $id;
-
 	// The response data.
 	protected string $ip;
 	protected string $network;
 	protected int $networkSize;
 	protected string $type;
-
-	public function getId() : string
-	{
-		return $this->id;
-	}
-
-	public function setId(string $id) : void
-	{
-		$this->id = $id;
-	}
 
 	public function getIp() : string
 	{

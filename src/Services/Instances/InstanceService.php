@@ -392,9 +392,34 @@ class InstanceService extends VultrService
 		}
 	}
 
-	public function getIPv4Addresses(string $id)
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-instance-ipv4
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $options - ListOptions|null - Interact via reference.
+	 * @throws InstanceException
+	 * @return InstanceIPv4Info[]
+	 */
+	public function getIPv4Addresses(string $id, ?ListOptions &$options = null) : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('instances/'.$id.'/ipv4', ['public_network' => 'true']);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to get ipv4 addresses: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$objects = [];
+		$decode = VultrUtil::decodeJSON((string)$response->getBody());
+		$model = new InstanceIPv4Info();
+		$response_name = $model->getResponseListName();
+		foreach ($decode->$response_name as $info)
+		{
+			$object = VultrUtil::mapObject($info, $model);
+			$objects[] = $object;
+		}
+		return $objects;
 	}
 
 	public function createIPv4Address(string $id)
