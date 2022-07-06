@@ -435,9 +435,24 @@ class InstanceService extends VultrService
 
 	}
 
-	public function getUserData(string $id)
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-instance-userdata
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws InstanceException
+	 * @return string
+	 */
+	public function getUserData(string $id) : string
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('instances/'.$id.'/user-data');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to get user data: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		return base64_decode(VultrUtil::decodeJSON((string)$response->getBody(), true)['user_data']['data']);
 	}
 
 	public function getAvailableUpgrades(string $id, ?string $type = null) : array
