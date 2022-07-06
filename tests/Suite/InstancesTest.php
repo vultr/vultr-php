@@ -11,6 +11,10 @@ use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
 use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
+use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
+use Vultr\VultrPhp\Services\Applications\Application;
+use Vultr\VultrPhp\Services\Plans\VPSPlan;
+use Vultr\VultrPhp\Tests\Data\RegionsData;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class InstancesTest extends VultrTest
@@ -443,5 +447,62 @@ class InstancesTest extends VultrTest
 
 		$this->expectException(InstanceException::class);
 		$client->instances->getUserData($id);
+	}
+
+	public function testGetAvailableUpgrades()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$regions_provider = new RegionsData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($regions_provider->dataGetVPSPlans())),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($regions_provider->dataGetRegions())),
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($regions_provider->dataGetBMPlans())),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$spec_os = [];
+		foreach ($data['upgrades']['os'] as $os)
+		{
+			$spec_os[$os['id']] = $os;
+		}
+
+		$spec_apps = [];
+		foreach ($data['upgrades']['applications'] as $app)
+		{
+			$spec_apps[$app['id']] = $app;
+		}
+
+		$spec_plans = array_flip($data['upgrades']['plans']);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$upgrades = $client->instances->getAvailableUpgrades($id);
+
+		foreach ($upgrades as $upgrade)
+		{
+			$os = $upgrade instanceof OperatingSystem;
+			$application = $upgrade instanceof Application;
+			$plan = $upgrade instanceof VPSPlan;
+			$this->assertTrue($os || $application || $plan);
+
+			if ($os)
+			{
+				$this->assertEquals($upgrade->toArray(), $spec_os[$upgrade->getId()]);
+			}
+			else if ($application)
+			{
+				$this->assertEquals($upgrade->toArray(), $spec_apps[$upgrade->getId()]);
+			}
+			else
+			{
+				$this->assertTrue(isset($spec_plans[$upgrade->getId()]));
+			}
+		}
+
+		$this->expectException(InstanceException::class);
+		$client->instances->getAvailableUpgrades($id);
 	}
 }

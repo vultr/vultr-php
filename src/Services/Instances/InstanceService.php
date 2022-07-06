@@ -8,6 +8,8 @@ use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
+use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
+use Vultr\VultrPhp\Services\Applications\Application;
 
 class InstanceService extends VultrService
 {
@@ -455,9 +457,45 @@ class InstanceService extends VultrService
 		return base64_decode(VultrUtil::decodeJSON((string)$response->getBody(), true)['user_data']['data']);
 	}
 
-	public function getAvailableUpgrades(string $id, ?string $type = null) : array
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-instance-upgrades
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $type - string - filter based on upgrade types.
+	 * @throws InstanceException
+	 * @return OperatingSystem|Application|VPSPlan[]
+	 */
+	public function getAvailableUpgrades(string $id, string $type = 'all') : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('instances/'.$id.'/upgrades', ['type' => $type]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to get available upgrades: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$output = [];
+		$upgrades = VultrUtil::decodeJSON((string)$response->getBody())->upgrades;
+
+		foreach ($upgrades->os as $system)
+		{
+			$output[] = VultrUtil::mapObject($system, new OperatingSystem());
+		}
+
+		foreach ($upgrades->applications as $application)
+		{
+			$output[] = VultrUtil::mapObject($application, new Application());
+		}
+
+		foreach ($upgrades->plans as $vps_plan)
+		{
+			$plan = $this->getVultrClient()->plans->getPlan($vps_plan);
+			if ($plan === null) continue; // Plan is no longer being offered.
+			$output[] = $plan;
+		}
+
+		return $output;
 	}
 
 	// Private routines

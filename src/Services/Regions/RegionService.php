@@ -50,12 +50,10 @@ class RegionService extends VultrService
 		try
 		{
 			$decode = VultrUtil::decodeJSON((string)$response->getBody(), true);
-			$plan_service = $this->getVultrClient()->plans;
-			$plan_service->cachePlans();
 
 			foreach ($decode['available_plans'] as $plan_id)
 			{
-				$plan = $plan_service->getPlan($plan_id);
+				$plan = $this->getVultrClient()->plans->getPlan($plan_id);
 				if ($plan === null) continue; // Not valid plan.
 				$plans[] = $plan;
 			}
