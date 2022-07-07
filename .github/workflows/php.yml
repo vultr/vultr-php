@@ -44,6 +44,3 @@ jobs:
         run: php8.1 vendor/bin/phpunit --no-coverage
       - name: Run 8.0 Test Suite
         run: php8.0 vendor/bin/phpunit --no-coverage
-      - name: Run 7.4 Test Suite
-        continue-on-error: true
-        run: php7.4 vendor/bin/phpunit --no-coverage
