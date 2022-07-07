@@ -1,7 +1,6 @@
 {
   "firewall_rule": {
     "id": 1,
-    "type": "v4",
     "ip_type": "v4",
     "action": "accept",
     "protocol": "tcp",

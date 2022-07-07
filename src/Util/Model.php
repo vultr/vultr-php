@@ -129,9 +129,21 @@ abstract class Model implements ModelInterface
 	public function getInitializedProps() : array
 	{
 		$params = $this->toArray();
-		foreach ($params as $attr => $param)
+		$class = new ReflectionClass($this);
+		foreach ($class->getProperties() as $property)
 		{
-			if (empty($param)) unset($params[$attr]);
+			$attr = VultrUtil::convertCamelCaseToUnderscore($property->getName());
+			if (!array_key_exists($attr, $params))
+			{
+				continue;
+			}
+
+			// These are optional values that may be set in a response.
+			if ($property->hasDefaultValue() && $property->getDefaultValue() === $params[$attr])
+			{
+				unset($params[$attr]);
+				continue;
+			}
 		}
 
 		return $params;

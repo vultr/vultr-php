@@ -9,7 +9,6 @@ use Vultr\VultrPhp\Util\Model;
 class FirewallRule extends Model
 {
 	protected int $id;
-	protected string $type;
 	protected string $ipType;
 	protected string $action;
 	protected string $protocol;
@@ -27,16 +26,6 @@ class FirewallRule extends Model
 	public function setId(int $id) : void
 	{
 		$this->id = $id;
-	}
-
-	public function getType() : string
-	{
-		return $this->type;
-	}
-
-	public function setType(string $type) : void
-	{
-		$this->type = $type;
 	}
 
 	public function getIpType() : string

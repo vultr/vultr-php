@@ -166,6 +166,8 @@ class FirewallTest extends VultrTest
 
 		$this->assertEquals($rule->getSubnet(), '0.0.0.0');
 		$this->assertEquals($rule->getSubnetSize(), 0);
+
+		$this->assertEquals(['subnet' => '0.0.0.0', 'subnet_size' => 0], $rule->getInitializedProps());
 	}
 
 	public function testDeleteFirewallRule()
