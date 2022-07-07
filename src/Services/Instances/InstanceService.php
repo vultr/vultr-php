@@ -429,7 +429,7 @@ class InstanceService extends VultrService
 	 * @throws InstanceException
 	 * @return InstanceIPv4Info
 	 */
-	public function createIPv4Address(string $id, bool $reboot = true)
+	public function createIPv4Address(string $id, bool $reboot = true) : InstanceIPv4Info
 	{
 		return $this->createObject('instances/'.$id.'/ipv4', new InstanceIPv4Info(), ['reboot' => $reboot]);
 	}
@@ -446,31 +446,87 @@ class InstanceService extends VultrService
 		$this->deleteObject('instances/'.$id.'/ipv4/'.$ip, new InstanceIPv4Info());
 	}
 
-	public function createReverseIPv4Address(string $id)
+	/**
+	 * @see https://www.vultr.com/api/#operation/create-instance-reverse-ipv4
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $ip - string - Example: 127.0.0.1
+	 * @param $reverse - string - Example: foo.example.com
+	 * @throws InstanceException
+	 * @return void
+	 */
+	public function createReverseIPv4Address(string $id, string $ip, string $reverse) : void
+	{
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/ipv4/reverse', ['ip' => $ip, 'reverse' => $reverse]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to create reverse ipv4 address: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/post-instances-instance-id-ipv4-reverse-default
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $ip - string - Example: 127.0.0.1
+	 * @throws InstanceException
+	 * @return void
+	 */
+	public function setDefaultIPv4ReverseDNSEntry(string $id, string $ip) : void
+	{
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/ipv4/reverse/default', ['ip' => $ip]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to set default reverse ipv4 address: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+	}
+
+	/**
+	 * @see https://www.vultr.com/api/#operation/get-instance-ipv6
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws InstanceException
+	 * @return InstanceIPv6Info[]
+	 */
+	public function getIPv6Addresses(string $id) : array
 	{
 
 	}
 
-	public function setDefaultIPv4ReverseDNSEntry(string $id, string $ip)
+	/**
+	 * @see https://www.vultr.com/api/#operation/create-instance-reverse-ipv6
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $ipv6 - string - Example: 2001:0db8:0005:6bb0:5400:2ff0:fee5:0002
+	 * @param $reverse - string - Example: foo.example.com
+	 * @throws InstanceException
+	 * @return void
+	 */
+	public function createReverseIPv6Address(string $id, string $ipv6, string $reverse) : void
 	{
 
 	}
 
-	public function getIPv6Addresses(string $id)
+	/**
+	 * @see https://www.vultr.com/api/#operation/list-instance-ipv6-reverse
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws InstanceException
+	 * @return InstanceReverseIPv6[]
+	 */
+	public function getReverseIPv6Addresses(string $id) : array
 	{
 
 	}
 
-	public function createReverseIPv6Address(string $id)
-	{
-
-	}
-
-	public function getReverseIPv6Addresses(string $id)
-	{
-
-	}
-
+	/**
+	 * @see https://www.vultr.com/api/#operation/delete-instance-reverse-ipv6
+	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $ipv6 - string - Example: 2001:0db8:0005:6bb0:5400:2ff0:fee5:0002
+	 * @throws InstanceException
+	 * @return void
+	 */
 	public function deleteReverseIPv6Address(string $id, string $ipv6)
 	{
 

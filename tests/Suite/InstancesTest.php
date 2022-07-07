@@ -477,10 +477,65 @@ class InstancesTest extends VultrTest
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$ip = '127.0.0.1';
-		$client->instances->deleteIPv4Address($id, '127.0.0.1');
+		$client->instances->deleteIPv4Address($id, $ip);
 
 		$this->expectException(InstanceException::class);
-		$client->instances->deleteIPv4Address($id, '127.0.0.1');
+		$client->instances->deleteIPv4Address($id, $ip);
+	}
+
+	public function testCreateReverseIPv4Address()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$ip = '127.0.0.1';
+		$reverse = 'foo.example.com';
+		$client->instances->createReverseIPv4Address($id, $ip, $reverse);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->createReverseIPv4Address($id, $ip, $reverse);
+	}
+
+	public function testSetDefaultIPv4ReverseDNSEntry()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$ip = '127.0.0.1';
+		$client->instances->setDefaultIPv4ReverseDNSEntry($id, $ip);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->setDefaultIPv4ReverseDNSEntry($id, $ip);
+	}
+
+	public function testGetIPv6Addresses()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testCreateReverseIPv6Address()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testGetReverseIPv6Addresses()
+	{
+		$this->markTestSkipped('Incomplete');
+	}
+
+	public function testDeleteReverseIPv6Address()
+	{
+		$this->markTestSkipped('Incomplete');
 	}
 
 	public function testGetUserData()
