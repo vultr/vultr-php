@@ -14,7 +14,6 @@ use Vultr\VultrPhp\Services\BareMetal\BareMetalIPv6Info;
 use Vultr\VultrPhp\Services\BareMetal\BareMetalUpdate;
 use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
 use Vultr\VultrPhp\Tests\VultrTest;
-use Vultr\VultrPhp\Util\ModelInterface;
 
 class BareMetalTest extends VultrTest
 {
