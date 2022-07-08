@@ -11,6 +11,7 @@ use Vultr\VultrPhp\Services\Instances\Instance;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceIPv4Info;
 use Vultr\VultrPhp\Services\Instances\InstanceIPv6Info;
+use Vultr\VultrPhp\Services\Instances\InstanceReverseIPv6;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
 use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
@@ -538,17 +539,63 @@ class InstancesTest extends VultrTest
 
 	public function testCreateReverseIPv6Address()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$ip = '2001:0db8:0005:6bb0:5400:2ff0:fee5:0002';
+		$reverse = 'foo.example.com';
+		$client->instances->createReverseIPv6Address($id, $ip, $reverse);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->createReverseIPv6Address($id, $ip, $reverse);
 	}
 
 	public function testGetReverseIPv6Addresses()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		foreach ($client->instances->getReverseIPv6Addresses($id) as $response_object)
+		{
+			foreach ($data[$response_object->getResponseListName()] as $object)
+			{
+				if ($object['ip'] !== $response_object->getIp()) continue;
+
+				$this->testObject(new InstanceReverseIPv6(), $response_object, $object);
+				break;
+			}
+		}
+
+		$this->expectException(InstanceException::class);
+		$client->instances->getReverseIPv6Addresses($id);
 	}
 
 	public function testDeleteReverseIPv6Address()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$ip = '2001:0db8:0005:6bb0:5400:2ff0:fee5:0002';
+		$client->instances->deleteReverseIPv6Address($id, $ip);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->deleteReverseIPv6Address($id, $ip);
 	}
 
 	public function testGetUserData()

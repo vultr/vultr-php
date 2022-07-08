@@ -32,7 +32,7 @@ class LoadBalancersTest extends VultrTest
 
 		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
 		$response_object = $client->loadbalancers->getLoadBalancer($id);
-		$this->testObject($response_object, $spec_data[$response_object->getResponseName()]);
+		$this->testLBObject($response_object, $spec_data[$response_object->getResponseName()]);
 
 		$this->expectException(LoadBalancerException::class);
 		$client->loadbalancers->getLoadBalancer($id);
@@ -60,7 +60,7 @@ class LoadBalancersTest extends VultrTest
 				break;
 			}
 			$this->assertNotNull($data);
-			$this->testObject($response_object, $data);
+			$this->testLBObject($response_object, $data);
 		}
 
 		$this->expectException(LoadBalancerException::class);
@@ -329,7 +329,7 @@ class LoadBalancersTest extends VultrTest
 		$client->loadbalancers->getForwardingRule($id, $firewall_id);
 	}
 
-	private function testObject(ModelInterface $response_object, array $spec_data)
+	private function testLBObject(ModelInterface $response_object, array $spec_data)
 	{
 		$this->assertInstanceOf(LoadBalancer::class, $response_object);
 		$array = $response_object->toArray();

@@ -506,18 +506,43 @@ class InstanceService extends VultrService
 	 */
 	public function createReverseIPv6Address(string $id, string $ipv6, string $reverse) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('instances/'.$id.'/ipv6/reverse', ['ip' => $ipv6, 'reverse' => $reverse]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to create reverse ipv6 address: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/list-instance-ipv6-reverse
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
+	 * @throws VultrException
 	 * @return InstanceReverseIPv6[]
 	 */
 	public function getReverseIPv6Addresses(string $id) : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('instances/'.$id.'/ipv6/reverse');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to get reverse ipv6 addresses: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$objects = [];
+		$model = new InstanceReverseIPv6();
+		$stdclass = VultrUtil::decodeJSON((string)$response->getBody());
+		$list_name = $model->getResponseListName();
+		foreach ($stdclass->$list_name as $object)
+		{
+			$objects[] = VultrUtil::mapObject($object, $model);
+		}
+		return $objects;
 	}
 
 	/**
@@ -529,7 +554,7 @@ class InstanceService extends VultrService
 	 */
 	public function deleteReverseIPv6Address(string $id, string $ipv6)
 	{
-
+		$this->deleteObject('instances/'.$id.'/ipv6/reverse/'.$ipv6, new InstanceReverseIPv6());
 	}
 
 	/**
