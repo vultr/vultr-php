@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\BareMetal;
 
-class BareMetalUpdate extends BareMetalOptions
+use Vultr\VultrPhp\Util\ModelOptions;
+
+class BareMetalUpdate extends ModelOptions
 {
 	/**
 	 * @see https://www.vultr.com/api/#operation/update-baremetal

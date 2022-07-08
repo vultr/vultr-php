@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\BareMetal;
 
-class BareMetalCreate extends BareMetalOptions
+use Vultr\VultrPhp\Util\ModelOptions;
+
+class BareMetalCreate extends ModelOptions
 {
 	/**
 	 * @see https://www.vultr.com/api/#operation/create-baremetal
