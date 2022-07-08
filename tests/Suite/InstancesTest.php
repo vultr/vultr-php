@@ -10,6 +10,7 @@ use Vultr\VultrPhp\Services\Instances\BackupSchedule;
 use Vultr\VultrPhp\Services\Instances\Instance;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceIPv4Info;
+use Vultr\VultrPhp\Services\Instances\InstanceIPv6Info;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
 use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
@@ -520,7 +521,19 @@ class InstancesTest extends VultrTest
 
 	public function testGetIPv6Addresses()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$this->testListObject(new InstanceIPv6Info(), $client->instances->getIPv6Addresses($id), $data, 'ip', 'getIp');
+
+		$this->expectException(InstanceException::class);
+		$client->instances->getIPv6Addresses($id);
 	}
 
 	public function testCreateReverseIPv6Address()

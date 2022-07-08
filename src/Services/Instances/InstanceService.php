@@ -493,7 +493,7 @@ class InstanceService extends VultrService
 	 */
 	public function getIPv6Addresses(string $id) : array
 	{
-
+		return $this->getListObjects('instances/'.$id.'/ipv6', new InstanceIPv6Info());
 	}
 
 	/**
