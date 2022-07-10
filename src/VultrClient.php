@@ -13,6 +13,30 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Throwable;
 use Vultr\VultrPhp\Services;
 
+/**
+ * @property-read Services\Account\AccountService $account
+ * @property-read Services\Applications\ApplicationService $applications
+ * @property-read Services\Backups\BackupService $backups
+ * @property-read Services\BareMetal\BareMetalService $baremetal
+ * @property-read Services\Billing\BillingService $billing
+ * @property-read Services\BlockStorage\BlockStorageService $blockstorage
+ * @property-read Services\DNS\DNSService $dns
+ * @property-read Services\Firewall\FirewallService $firewall
+ * @property-read Services\Instances\InstanceService $instances
+ * @property-read Services\ISO\ISOService $iso
+ * @property-read Services\Kubernetes\KubernetesService $kubernetes
+ * @property-read Services\LoadBalancers\LoadBalancerService $loadbalancers
+ * @property-read Services\ObjectStorage\ObjectStorageService $objectstorage
+ * @property-read Services\OperatingSystems\OperatingSystemService $operating_system
+ * @property-read Services\Plans\PlanService $plans
+ * @property-read Services\ReservedIP\ReservedIPService $reserved_ip
+ * @property-read Services\Regions\RegionService $regions
+ * @property-read Services\Snapshots\SnapshotService $snapshots
+ * @property-read Services\SSHKeys\SSHKeyService $ssh_keys
+ * @property-read Services\StartupScripts\StartupScriptService $startup_scripts
+ * @property-read Services\Users\UserService $users
+ * @property-read Services\VPC\VPCService $vpc
+ */
 class VultrClient
 {
 	private VultrClientHandler $client;
