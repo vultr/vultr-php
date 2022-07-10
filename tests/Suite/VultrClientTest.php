@@ -68,7 +68,7 @@ class VultrClientTest extends VultrTest
 
 		$service_props = $reflection->getProperty('service_props');
 		$service_props->setAccessible(true);
-		$service_props->getValue($client);
+		$service_props = $service_props->getValue($client);
 		$this->assertNotEmpty($service_props);
 		foreach (array_keys($service_props) as $prop)
 		{
