@@ -10,6 +10,8 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use ReflectionClass;
+use ReflectionProperty;
 use Throwable;
 use Vultr\VultrPhp\Services;
 
@@ -41,35 +43,43 @@ class VultrClient
 {
 	private VultrClientHandler $client;
 
-	private const MAP = [
-		'account'          => Services\Account\AccountService::class,
-		'applications'     => Services\Applications\ApplicationService::class,
-		'backups'          => Services\Backups\BackupService::class,
-		'baremetal'        => Services\BareMetal\BareMetalService::class,
-		'billing'          => Services\Billing\BillingService::class,
-		'blockstorage'     => Services\BlockStorage\BlockStorageService::class,
-		'dns'              => Services\DNS\DNSService::class,
-		'firewall'         => Services\Firewall\FirewallService::class,
-		'instances'        => Services\Instances\InstanceService::class, // TODO
-		'iso'              => Services\ISO\ISOService::class,
-		'kubernetes'       => Services\Kubernetes\KubernetesService::class, // TODO, do load balancers, and block storage before this.
-		'loadbalancers'    => Services\LoadBalancers\LoadBalancerService::class,
-		'objectstorage'    => Services\ObjectStorage\ObjectStorageService::class,
-		'operating_system' => Services\OperatingSystems\OperatingSystemService::class,
-		'plans'            => Services\Plans\PlanService::class,
-		'reserved_ip'      => Services\ReservedIP\ReservedIPService::class,
-		'regions'          => Services\Regions\RegionService::class,
-		'snapshots'        => Services\Snapshots\SnapshotService::class,
-		'ssh_keys'         => Services\SSHKeys\SSHKeyService::class,
-		'startup_scripts'  => Services\StartupScripts\StartupScriptService::class,
-		'users'            => Services\Users\UserService::class,
-		'vpc'              => Services\VPC\VPCService::class,
-	];
-
 	/**
-	 * Optimization
+	 * @var int[]
 	 */
-	private $class_cache = [];
+	private array $service_props = [];
+
+	////
+	// Service Properties Start
+	// @codingStandardsIgnoreStart
+	////
+
+	private Services\Account\AccountService $_account;
+	private Services\Applications\ApplicationService $_applications;
+	private Services\Backups\BackupService $_backups;
+	private Services\BareMetal\BareMetalService $_baremetal;
+	private Services\Billing\BillingService $_billing;
+	private Services\BlockStorage\BlockStorageService $_blockstorage;
+	private Services\DNS\DNSService $_dns;
+	private Services\Firewall\FirewallService $_firewall;
+	private Services\Instances\InstanceService $_instances; // TODO
+	private Services\ISO\ISOService $_iso;
+	private Services\Kubernetes\KubernetesService $_kubernetes; // TODO
+	private Services\LoadBalancers\LoadBalancerService $_loadbalancers;
+	private Services\ObjectStorage\ObjectStorageService $_objectstorage;
+	private Services\OperatingSystems\OperatingSystemService $_operating_system;
+	private Services\Plans\PlanService $_plans;
+	private Services\ReservedIP\ReservedIPService $_reserved_ip;
+	private Services\Regions\RegionService $_regions;
+	private Services\Snapshots\SnapshotService $_snapshots;
+	private Services\SSHKeys\SSHKeyService $_ssh_keys;
+	private Services\StartupScripts\StartupScriptService $_startup_scripts;
+	private Services\Users\UserService $_users;
+	private Services\VPC\VPCService $_vpc;
+
+	////
+	// Service Properties End
+	// @codingStandardsIgnoreEnd
+	////
 
 	/**
 	 * @param $http - PSR18 ClientInterface - https://www.php-fig.org/psr/psr-18/
@@ -93,6 +103,16 @@ class VultrClient
 		{
 			throw new VultrException('Failed to initialize client: '.$e->getMessage(), VultrException::DEFAULT_CODE, null, $e);
 		}
+
+		foreach ((new ReflectionClass($this))->getProperties(ReflectionProperty::IS_PRIVATE) as $property)
+		{
+			$type_name = $property->getType()->getName();
+			if (stripos($type_name, 'Services') === false) continue;
+
+			$prop_name = $property->getName();
+			$this->$prop_name = new $type_name($this, $this->client);
+			$this->service_props[$prop_name] = 1;
+		}
 	}
 
 	public static function create(
@@ -108,14 +128,8 @@ class VultrClient
 
 	public function __get(string $name)
 	{
-		$class = self::MAP[$name] ?? null;
-
-		if ($class !== null)
-		{
-			return $this->class_cache[$class] ?? ($this->class_cache[$class] = new $class($this, $this->client));
-		}
-
-		return null;
+		$name = '_'.$name;
+		return ($this->service_props[$name] ?? null) !== null ? $this->$name : null;
 	}
 
 	public function setClient(ClientInterface $http) : void

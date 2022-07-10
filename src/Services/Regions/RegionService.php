@@ -28,7 +28,7 @@ class RegionService extends VultrService
 	 * @param $id - string - Ex ewr - Id of the region
 	 * @param $type - string|null - PlanService Filters - FILTER_ALL, FILTER_VC2, FILTER_VHF, FILTER_VDC, FILTER_VBM
 	 * @throws RegionException
-	 * @return array[VPSPlan|BMPlan]
+	 * @return (VPSPlan|BMPlan)[]
 	 */
 	public function getAvailablility(string $id, ?string $type = null) : array
 	{

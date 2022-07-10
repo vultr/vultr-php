@@ -56,10 +56,22 @@ class VultrClientTest extends VultrTest
 	public function testServiceHandle()
 	{
 		$client = VultrClient::create('Test1234');
-
-		foreach ((new ReflectionClass(VultrClient::class))->getConstant('MAP') as $prop => $class)
+		$reflection = new ReflectionClass($client);
+		$types = [];
+		foreach ($reflection->getProperties(\ReflectionProperty::IS_PRIVATE) as $property)
 		{
-			$this->assertInstanceOf($class, $client->$prop);
+			$type_name = $property->getType()->getName();
+			if (stripos($type_name, 'Services') === false) continue;
+
+			$types[$property->getName()] = $type_name;
+		}
+
+		$service_props = $reflection->getProperty('service_props')->getValue($client);
+		$this->assertNotEmpty($service_props);
+		foreach (array_keys($service_props) as $prop)
+		{
+			$service_prop = ltrim($prop, '_');
+			$this->assertInstanceOf($types[$prop], $client->$service_prop);
 		}
 
 		$this->assertNull($client->randomstuff);
