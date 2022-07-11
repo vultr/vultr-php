@@ -61,7 +61,7 @@ class VultrClient
 	private Services\BlockStorage\BlockStorageService $_blockstorage;
 	private Services\DNS\DNSService $_dns;
 	private Services\Firewall\FirewallService $_firewall;
-	private Services\Instances\InstanceService $_instances; // TODO
+	private Services\Instances\InstanceService $_instances;
 	private Services\ISO\ISOService $_iso;
 	private Services\Kubernetes\KubernetesService $_kubernetes; // TODO
 	private Services\LoadBalancers\LoadBalancerService $_loadbalancers;

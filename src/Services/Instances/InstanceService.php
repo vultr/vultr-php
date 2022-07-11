@@ -48,7 +48,7 @@ class InstanceService extends VultrService
 	 */
 	public function createInstance(InstanceCreate $create) : Instance
 	{
-
+		return $this->createObject('instances', new Instance(), $create->getPayloadParams());
 	}
 
 	/**
@@ -56,11 +56,24 @@ class InstanceService extends VultrService
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $update - InstanceUpdate
 	 * @throws InstanceException
-	 * @return void
+	 * @return Instance
 	 */
-	public function updateInstance(string $id, InstanceUpdate $update) : void
+	public function updateInstance(string $id, InstanceUpdate $update) : Instance
 	{
+		$client = $this->getClientHandler();
 
+		try
+		{
+			$response = $client->patch('instances/'.$id, $update->getPayloadParams());
+		}
+		catch (VultrClientException $e)
+		{
+			throw new InstanceException('Failed to update instance: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+
+		$model = new Instance();
+
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), $model, $model->getResponseName());
 	}
 
 	/**
@@ -582,7 +595,7 @@ class InstanceService extends VultrService
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $type - string - filter based on upgrade types.
 	 * @throws InstanceException
-	 * @return OperatingSystem|Application|VPSPlan[]
+	 * @return (OperatingSystem|Application|VPSPlan)[]
 	 */
 	public function getAvailableUpgrades(string $id, string $type = 'all') : array
 	{

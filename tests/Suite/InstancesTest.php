@@ -8,11 +8,13 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Applications\Application;
 use Vultr\VultrPhp\Services\Instances\BackupSchedule;
 use Vultr\VultrPhp\Services\Instances\Instance;
+use Vultr\VultrPhp\Services\Instances\InstanceCreate;
 use Vultr\VultrPhp\Services\Instances\InstanceException;
 use Vultr\VultrPhp\Services\Instances\InstanceIPv4Info;
 use Vultr\VultrPhp\Services\Instances\InstanceIPv6Info;
 use Vultr\VultrPhp\Services\Instances\InstanceReverseIPv6;
 use Vultr\VultrPhp\Services\Instances\InstanceService;
+use Vultr\VultrPhp\Services\Instances\InstanceUpdate;
 use Vultr\VultrPhp\Services\Instances\IsoStatus;
 use Vultr\VultrPhp\Services\Instances\VPCAttachment;
 use Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem;
@@ -62,12 +64,47 @@ class InstancesTest extends VultrTest
 
 	public function testCreateInstance()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$options = new InstanceCreate('ewr', 'vc2-6c-16gb');
+		$options->setLabel('Example Instance');
+		$options->setOsId(215);
+		$options->setUserData('QmFzZTY0IEV4YW1wbGUgRGF0YQ==');
+		$options->setBackups('enabled');
+		$options->setHostname('my_hostname');
+
+		$instance = $client->instances->createInstance($options);
+		$this->testGetObject(new Instance(), $instance, $data);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->createInstance($options);
 	}
 
 	public function testUpdateInstance()
 	{
-		$this->markTestSkipped('Incomplete');
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$options = new InstanceUpdate();
+		$options->setOsId(215);
+		$options->setPlan('vc2-24c-97gb');
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$instance = $client->instances->updateInstance($id, $options);
+		$this->testGetObject(new Instance(), $instance, $data);
+
+		$this->expectException(InstanceException::class);
+		$client->instances->updateInstance($id, $options);
 	}
 
 	public function testDeleteInstance()
