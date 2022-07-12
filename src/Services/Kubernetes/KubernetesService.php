@@ -107,6 +107,7 @@ class KubernetesService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-resources
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
+	 * @throws VultrException
 	 * @return array
 	 */
 	public function getResources(string $id) : array
@@ -143,11 +144,21 @@ class KubernetesService extends VultrService
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-available-upgrades
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
+	 * @throws VultrException
 	 * @return array
 	 */
 	public function getAvailableClusterUpgrades(string $id) : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('kubernetes/clusters/'.$id.'/available-upgrades');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to get cluster upgrades: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		return VultrUtil::decodeJSON((string)$response->getBody(), true)['available_upgrades'];
 	}
 
 	/**

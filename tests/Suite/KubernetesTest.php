@@ -182,6 +182,28 @@ class KubernetesTest extends VultrTest
 		$client->kubernetes->getResources($id);
 	}
 
+	public function testGetAvailableClusterUpgrades()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$upgrades = $client->kubernetes->getAvailableClusterUpgrades($id);
+		$this->assertCount(2, $upgrades);
+		foreach ($upgrades as $version)
+		{
+			$this->assertStringContainsString('v', $version);
+		}
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->getAvailableClusterUpgrades($id);
+	}
+
 	private function convertTestToArrayVKECluster(VKECluster &$cluster) : void
 	{
 		$node_pools = [];
