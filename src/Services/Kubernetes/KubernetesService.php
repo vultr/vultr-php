@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Services\Kubernetes;
 
+use Vultr\VultrPhp\Services\Kubernetes\Resources\BlockResource;
+use Vultr\VultrPhp\Services\Kubernetes\Resources\LoadBalancerResource;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
+use Vultr\VultrPhp\Util\VultrUtil;
+use Vultr\VultrPhp\VultrClientException;
 
 class KubernetesService extends VultrService
 {
@@ -107,7 +111,32 @@ class KubernetesService extends VultrService
 	 */
 	public function getResources(string $id) : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('kubernetes/clusters/'.$id.'/resources');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to get resources:'.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$objects = [];
+		$model = new NodeResource();
+		$stdclass = VultrUtil::decodeJSON((string)$response->getBody());
+		$response_name = $model->getResponseListName();
+		foreach ($stdclass->$response_name as $type => $resources)
+		{
+			$object = $model;
+			if ($type === 'block_storage') $object = new BlockResource();
+			else if ($type === 'load_balancer') $object = new LoadBalancerResource();
+
+			foreach ($resources as $resource)
+			{
+				$objects[] = VultrUtil::mapObject($resource, $object);
+			}
+		}
+
+		return $objects;
 	}
 
 	/**

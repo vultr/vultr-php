@@ -8,6 +8,9 @@ use GuzzleHttp\Psr7\Response;
 use Vultr\VultrPhp\Services\Kubernetes\KubernetesException;
 use Vultr\VultrPhp\Services\Kubernetes\Node;
 use Vultr\VultrPhp\Services\Kubernetes\NodePool;
+use Vultr\VultrPhp\Services\Kubernetes\NodeResource;
+use Vultr\VultrPhp\Services\Kubernetes\Resources\BlockResource;
+use Vultr\VultrPhp\Services\Kubernetes\Resources\LoadBalancerResource;
 use Vultr\VultrPhp\Services\Kubernetes\VKECluster;
 use Vultr\VultrPhp\Tests\VultrTest;
 
@@ -136,6 +139,47 @@ class KubernetesTest extends VultrTest
 
 		$this->expectException(KubernetesException::class);
 		$client->kubernetes->deleteClusterAndRelatedResources($id);
+	}
+
+	public function testGetResources()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$resources = $client->kubernetes->getResources($id);
+		foreach ($resources as $resource)
+		{
+			$this->assertInstanceOf(NodeResource::class, $resource);
+			$this->assertTrue(($resource instanceof BlockResource) || ($resource instanceof LoadBalancerResource));
+			$type = stripos($resource::class, 'BlockResource') !== false ? 'blockstorage' : 'unknown-resource';
+			$type = stripos($resource::class, 'LoadBalancerResource') !== false ? 'loadbalancer' : $type;
+			$this->assertEquals($resource->getType(), $type);
+
+			$resource_list = 'unknown';
+			if ($type === 'loadbalancer') $resource_list = 'load_balancer';
+			else if ($type === 'blockstorage') $resource_list = 'block_storage';
+
+			$found = false;
+			foreach ($data[$resource->getResponseListName()][$resource_list] as $cmp_resource)
+			{
+				if ($cmp_resource['id'] !== $resource->getId()) continue;
+				$cmp_resource['type'] = $type;
+				$this->testObject(new NodeResource(), $resource, $cmp_resource);
+				$found = true;
+				break;
+			}
+
+			$this->assertTrue($found);
+		}
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->getResources($id);
 	}
 
 	private function convertTestToArrayVKECluster(VKECluster &$cluster) : void
