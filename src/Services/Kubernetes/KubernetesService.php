@@ -164,12 +164,20 @@ class KubernetesService extends VultrService
 	/**
 	 * @see https://www.vultr.com/api/#operation/start-kubernetes-cluster-upgrade
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $upgrade_version - string - Example: v1.22.8+3
 	 * @throws KubernetesException
 	 * @return void
 	 */
-	public function startClusterUpgrade(string $id) : void
+	public function startClusterUpgrade(string $id, string $upgrade_version) : void
 	{
-
+		try
+		{
+			$response = $this->getClientHandler()->post('kubernetes/clusters/'.$id.'/upgrades', ['upgrade_version' => $upgrade_version]);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to start the upgrade for the cluster: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
