@@ -52,4 +52,9 @@ class Node extends Model
 	{
 		$this->status = $status;
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('NodeException', 'KubernetesException', parent::getModelExceptionClass());
+	}
 }

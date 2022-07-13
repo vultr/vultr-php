@@ -132,5 +132,10 @@ class NodePool extends Model
 	{
 		$this->nodes = $nodes;
 	}
+
+	public function getModelExceptionClass() : string
+	{
+		return str_replace('NodePoolException', 'KubernetesException', parent::getModelExceptionClass());
+	}
 }
 

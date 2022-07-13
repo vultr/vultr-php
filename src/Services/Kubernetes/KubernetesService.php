@@ -172,7 +172,7 @@ class KubernetesService extends VultrService
 	{
 		try
 		{
-			$response = $this->getClientHandler()->post('kubernetes/clusters/'.$id.'/upgrades', ['upgrade_version' => $upgrade_version]);
+			$this->getClientHandler()->post('kubernetes/clusters/'.$id.'/upgrades', ['upgrade_version' => $upgrade_version]);
 		}
 		catch (VultrClientException $e)
 		{
@@ -182,75 +182,145 @@ class KubernetesService extends VultrService
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/create-nodepools
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $pool - NodePool
+	 * @throws KubernetesException
+	 * @return NodePool
 	 */
-	public function createNodePool()
+	public function createNodePool(string $id, NodePool $pool) : NodePool
 	{
-
+		return $this->createObject('kubernetes/clusters/'.$id.'/node-pools', new NodePool(), $pool->getInitializedProps());
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/get-nodepools
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws KubernetesException
+	 * @return NodePool[]
 	 */
-	public function getNodePools()
+	public function getNodePools(string $id, ?ListOptions &$options = null) : array
 	{
-
+		return $this->getListObjects('kubernetes/clusters/'.$id.'/node-pools', new NodePool(), $options);
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/get-nodepool
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $nodepool_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws KubernetesException
+	 * @return NodePool
 	 */
-	public function getNodePool()
+	public function getNodePool(string $id, string $nodepool_id) : NodePool
 	{
-
+		return $this->getObject('kubernetes/clusters/'.$id.'/node-pools/'.$nodepool_id, new NodePool());
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/update-nodepool
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $nodepool - NodePool
+	 * @throws KubernetesException
+	 * @throws VultrException
+	 * @return NodePool
 	 */
-	public function updateNodePool()
+	public function updateNodePool(string $id, NodePool $nodepool) : NodePool
 	{
+		try
+		{
+			$response = $this->getClientHandler()->patch('kubernetes/clusters/'.$id.'/node-pools/'.$nodepool->getId(), $nodepool->getInitializedProps());
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to update node pool: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		$model = new NodePool();
+		return VultrUtil::convertJSONToObject((string)$response->getBody(), $model, $model->getResponseName());
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/delete-nodepool
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $nodepool_id - string
+	 * @throws KubernetesException
+	 * @return void
 	 */
-	public function deleteNodePool()
+	public function deleteNodePool(string $id, string $nodepool_id) : void
 	{
-
+		$this->deleteObject('kubernetes/clusters/'.$id.'/node-pools/'.$nodepool_id, new NodePool());
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/delete-nodepool-instance
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $nodepool_id - string
+	 * @param $node_id - string
+	 * @throws KubernetesException
+	 * @return void
 	 */
-	public function deleteNodePoolInstance()
+	public function deleteNodePoolInstance(string $id, string $nodepool_id, string $node_id) : void
 	{
-
+		$this->deleteObject('kubernetes/clusters/'.$id.'/node-pools/'.$nodepool_id.'/nodes/'.$node_id, new Node());
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/recycle-nodepool-instance
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @param $nodepool_id - string
+	 * @param $node_id - string
+	 * @throws KubernetesException
+	 * @return void
 	 */
-	public function recycleNodePoolInstance()
+	public function recycleNodePoolInstance(string $id, string $nodepool_id, string $node_id) : void
 	{
-
+		try
+		{
+			$this->getClientHandler()->post('kubernetes/clusters/'.$id.'/node-pools/'.$nodepool_id.'/nodes/'.$node_id);
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to recycle node pool instance: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-clusters-config
+	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
+	 * @throws KubernetesException
+	 * @throws VultrException
+	 * @return string
 	 */
-	public function getClusterKubeconfig()
+	public function getClusterKubeconfig(string $id) : string
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('kubernetes/clusters/'.$id.'/config');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to get kubeconfig: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		return base64_decode(VultrUtil::decodeJSON((string)$response->getBody(), true)['kube_config']);
 	}
 
 	/**
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-versions
 	 * @throws KubernetesException
+	 * @throws VultrException
 	 * @return array
 	 */
 	public function getAvailableVersions() : array
 	{
+		try
+		{
+			$response = $this->getClientHandler()->get('kubernetes/versions');
+		}
+		catch (VultrClientException $e)
+		{
+			throw new KubernetesException('Failed to get kubernetes versions: '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
 
+		return VultrUtil::decodeJSON((string)$response->getBody(), true)['versions'];
 	}
 }

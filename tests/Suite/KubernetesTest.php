@@ -221,6 +221,198 @@ class KubernetesTest extends VultrTest
 		$client->kubernetes->startClusterUpgrade($id, $upgrade_version);
 	}
 
+	public function testCreateNodePool()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(201, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$pool = new NodePool();
+		$pool->setPlan($data['node_pool']['plan']);
+		$pool->setNodeQuantity($data['node_pool']['node_quantity']);
+		$pool->setLabel($data['node_pool']['label']);
+		$pool->setAutoScaler($data['node_pool']['auto_scaler']);
+		$pool->setMinNodes($data['node_pool']['min_nodes']);
+		$pool->setMaxNodes($data['node_pool']['max_nodes']);
+		$node_pool = $client->kubernetes->createNodePool($id, $pool);
+		$nodes = [];
+		foreach ($node_pool->getNodes() as $node)
+		{
+			$this->assertInstanceOf(Node::class, $node);
+			$nodes[] = $node->toArray();
+		}
+		$node_pool->setNodes($nodes);
+
+		$this->testGetObject(new NodePool(), $node_pool, $data);
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->createNodePool($id, $pool);
+	}
+
+	public function testGetNodePools()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$options = $this->createListOptions();
+		$node_pools = $client->kubernetes->getNodePools($id, $options);
+		foreach ($node_pools as &$node_pool)
+		{
+			$nodes = [];
+			foreach ($node_pool->getNodes() as $node)
+			{
+				$this->assertInstanceOf(Node::class, $node);
+				$nodes[] = $node->toArray();
+			}
+			$node_pool->setNodes($nodes);
+		}
+		$this->testListObject(new NodePool(), $node_pools, $data);
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->getNodePools($id, $options);
+	}
+
+	public function testGetNodePool()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$nodepool_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b67';
+		$node_pool = $client->kubernetes->getNodePool($id, $nodepool_id);
+		$nodes = [];
+		foreach ($node_pool->getNodes() as $node)
+		{
+			$this->assertInstanceOf(Node::class, $node);
+			$nodes[] = $node->toArray();
+		}
+		$node_pool->setNodes($nodes);
+
+		$this->testGetObject(new NodePool(), $node_pool, $data);
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->getNodePool($id, $nodepool_id);
+	}
+
+	public function testUpdateNodePool()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(202, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$node_pool = new NodePool();
+		$node_pool->setId($data['node_pool']['id']);
+		$node_pool->setLabel($data['node_pool']['label']);
+		$node_pool->setPlan($data['node_pool']['plan']);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$node_pool = $client->kubernetes->updateNodePool($id, $node_pool);
+		$nodes = [];
+		foreach ($node_pool->getNodes() as $node)
+		{
+			$this->assertInstanceOf(Node::class, $node);
+			$nodes[] = $node->toArray();
+		}
+		$node_pool->setNodes($nodes);
+
+		$this->testGetObject(new NodePool(), $node_pool, $data);
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->updateNodePool($id, $node_pool);
+	}
+
+	public function testDeleteNodePool()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$nodepool_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b67';
+		$this->assertNull($client->kubernetes->deleteNodePool($id, $nodepool_id));
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->deleteNodePool($id, $nodepool_id);
+	}
+
+	public function testDeleteNodePoolInstance()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$nodepool_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b67';
+		$node_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b77';
+		$this->assertNull($client->kubernetes->deleteNodePoolInstance($id, $nodepool_id, $node_id));
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->deleteNodePoolInstance($id, $nodepool_id, $node_id);
+	}
+
+	public function testRecycleNodePoolInstance()
+	{
+		$provider = $this->getDataProvider();
+
+		$client = $provider->createClientHandler([
+			new Response(204),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$nodepool_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b67';
+		$node_id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b77';
+		$this->assertNull($client->kubernetes->recycleNodePoolInstance($id, $nodepool_id, $node_id));
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->recycleNodePoolInstance($id, $nodepool_id, $node_id);
+	}
+
+	public function testGetClusterKubeconfig()
+	{
+		$provider = $this->getDataProvider();
+		$data = $provider->getData();
+
+		$client = $provider->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		$id = 'cb676a46-66fd-4dfb-b839-443f2e6c0b60';
+		$kube_config = $client->kubernetes->getClusterKubeconfig($id);
+
+		$this->assertEquals(base64_decode($data['kube_config']), $kube_config);
+
+		$this->expectException(KubernetesException::class);
+		$client->kubernetes->getClusterKubeconfig($id);
+	}
+
 	private function convertTestToArrayVKECluster(VKECluster &$cluster) : void
 	{
 		$node_pools = [];
