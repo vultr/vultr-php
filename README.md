@@ -4,13 +4,13 @@
 
 # Vultr API PHP Client.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/vultr/vultr-php/main/LICENSE)
-[![Vultr-Php Changelog](https://img.shields.io/badge/-changelog-blue?style=flat-square)](https://github.com/vultr/vultr-php/blob/main/CHANGELOG.md)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vultr/vultr-php/main/LICENSE)
+[![Vultr-Php Changelog](https://img.shields.io/badge/-changelog-blue)](https://github.com/vultr/vultr-php/blob/main/CHANGELOG.md)
+[![PHP Version Require](http://poser.pugx.org/vultr/vultr-php/require/php)](https://packagist.org/packages/vultr/vultr-php)
 [![Latest Stable Version](http://poser.pugx.org/vultr/vultr-php/v)](https://packagist.org/packages/vultr/vultr-php)
 [![Latest Unstable Version](http://poser.pugx.org/vultr/vultr-php/v/unstable)](https://packagist.org/packages/vultr/vultr-php)
-[![PHP Tests](https://github.com/vultr/vultr-php/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/vultr/vultr-php/actions/workflows/php.yml)
 [![Total Downloads](http://poser.pugx.org/vultr/vultr-php/downloads)](https://packagist.org/packages/vultr/vultr-php)
-[![PHP Version Require](http://poser.pugx.org/vultr/vultr-php/require/php)](https://packagist.org/packages/vultr/vultr-php)
+[![PHP Tests](https://github.com/vultr/vultr-php/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/vultr/vultr-php/actions/workflows/php.yml)
 [![Test Coverage](https://vultr.github.io/vultr-php/code-coverage/badge.svg)](https://vultr.github.io/vultr-php/code-coverage/index.html)
 
 ## Getting Started
