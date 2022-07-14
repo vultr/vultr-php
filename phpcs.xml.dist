@@ -40,8 +40,8 @@
 	<!-- PSR2 Standard -->
 	<rule ref="PSR2.Classes.ClassDeclaration"/>
 	<rule ref="PSR2.Classes.PropertyDeclaration"/>
-    <rule ref="PSR2.Methods.MethodDeclaration"/>
-    <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket"/>
+	<rule ref="PSR2.Methods.MethodDeclaration"/>
+	<rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket"/>
 	<rule ref="PSR2.Files.ClosingTag"/>
 	<rule ref="PSR2.ControlStructures.ControlStructureSpacing"/>
 
@@ -79,33 +79,33 @@
 	</rule>
 
 	<rule ref="Squiz.Arrays.ArrayDeclaration">
-        <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
-        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
-    </rule>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.NoComma"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNoNewline" />
+	</rule>
 
-    <!-- Pear Standard -->
-    <rule ref="PEAR.Commenting.InlineComment"/>
+	<!-- Pear Standard -->
+	<rule ref="PEAR.Commenting.InlineComment"/>
 
-    <!-- Slevomat Standard -->
-    <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
-    <!-- Absolutely not -->
-    <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable"/>
-    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
-    	<properties>
-    		<property name="linesCountBeforeFirstUse" value="1"/>
-    		<property name="linesCountBetweenUseTypes" value="0"/>
-    		<property name="linesCountAfterLastUse" value="1"/>
-    	</properties>
-    </rule>
-    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+	<!-- Slevomat Standard -->
+	<config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+	<!-- Absolutely not -->
+	<rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable"/>
+	<rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+		<properties>
+			<property name="linesCountBeforeFirstUse" value="1"/>
+			<property name="linesCountBetweenUseTypes" value="0"/>
+			<property name="linesCountAfterLastUse" value="1"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
 </ruleset>
