@@ -95,7 +95,59 @@ while (true)
 
 #### Exception Usage
 
-TODO
+All exceptions are children of VultrException. 
+
+Exception tree
+
+* VultrException
+	* VultrClientException
+	* VultrServiceException
+		* AccountException
+		* ApplicationException
+		* BackupException
+		* BareMetalException
+		* BillingException
+		* BlockStorageException
+		* DNSException
+		* FirewallException
+		* InstanceException
+		* ISOException
+		* KubernetesException
+		* LoadBalancerException
+		* ObjectStorageException
+		* OperatingSystemException
+		* PlanException
+		* RegionException
+		* ReservedIPException
+		* SnapshotException
+		* SSHKeyException
+		* StartupScriptException
+		* UserException
+		* VPCException
+
+```php
+<?php
+
+declare(strict_types=1);
+
+require (__DIR__.'/../vendor/autoload.php');
+
+$client = Vultr\VultrPhp\VultrClient::create('Your Lovely Vultr API Key');
+
+try
+{
+	$account = $client->account->getAccount();
+}
+catch (Vultr\VultrPhp\Services\Account\AccountException $e)
+{
+	exit('Just a little http error no biggy :wink: : '. $e->getMessage().PHP_EOL);
+}
+catch (Vultr\VultrPhp\VultrException $e)
+{
+	exit('O crap something really bad happen: '.$e->getMessage().PHP_EOL);
+}
+```
+
 
 ## Documentation
 
