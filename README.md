@@ -148,16 +148,21 @@ catch (Vultr\VultrPhp\VultrException $e)
 }
 ```
 
-
 ## Documentation
 
 See our documentation for [detailed information about API v2](https://www.vultr.com/api).
 
+View our code-coverage for a detailed look https://vultr.github.io/vultr-php/code-coverage/index.html
+
 TODO
 
-## Support
+## Versioning
+
+This project follows [SemVer](https://semver.org/) for versioning. For the versions available, [see the tags on this repository](https://github.com/vultr/vultr-php/tags) or for [stable releases](https://github.com/vultr/vultr-php/releases)
 
 ## Contribute
+
+Feel free to send pull requests our way! Please see the [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
