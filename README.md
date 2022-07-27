@@ -154,7 +154,7 @@ See our documentation for [detailed information about API v2](https://www.vultr.
 
 View our code-coverage for a detailed look https://vultr.github.io/vultr-php/code-coverage/index.html
 
-TODO
+To view the specific library documentation please view https://vultr.github.io/vultr-php/docs/index.html
 
 ## Versioning
 
