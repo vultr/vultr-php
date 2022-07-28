@@ -22,7 +22,7 @@ This client will act on those interfaces above interfaces which allow for depend
 https://packagist.org/providers/psr/http-client-implementation
 
 ### Installation
-```
+```sh
 composer require vultr/vultr-php
 ```
 
