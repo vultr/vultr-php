@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp;
 
 /**
- * This class will eventually have to be refactored when we get around to supporting an actual OAuth authentication mechanism.
+ * Authentication mechanism that holds your API key.
+ *
+ * @todo This class will eventually have to be refactored when we get around to supporting an actual OAuth authentication mechanism.
  */
 class VultrAuth
 {

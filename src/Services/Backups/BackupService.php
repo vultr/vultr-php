@@ -10,6 +10,7 @@ use Vultr\VultrPhp\Util\ListOptions;
 class BackupService extends VultrService
 {
 	/**
+	 * Get information about backups on the account, or filtered based on the instance_id.
 	 * @param $instance_id - string|null - Get the current backups for the instance.
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BackupException
@@ -27,6 +28,7 @@ class BackupService extends VultrService
 	}
 
 	/**
+	 * Get a backup information based on the backup_id.
 	 * @param $backup_id - string - UUID of the backup image.
 	 * @throws BackupException
 	 * @throws VultrException

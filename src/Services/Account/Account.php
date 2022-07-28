@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Account;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Contains information about, the account, permission, and billing information
+ */
 class Account extends Model
 {
 	protected string $name;

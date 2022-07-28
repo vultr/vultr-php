@@ -1,5 +1,3 @@
-# Beta Release - 0.5
-
 <img src="https://www.vultr.com/dist/img/brand/logo-dark.svg" width="300">
 
 # Vultr API PHP Client.
