@@ -12,7 +12,7 @@
 [![Total Downloads](http://poser.pugx.org/vultr/vultr-php/downloads)](https://packagist.org/packages/vultr/vultr-php)
 [![PHP Tests](https://github.com/vultr/vultr-php/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/vultr/vultr-php/actions/workflows/php.yml)
 [![Test Coverage](https://vultr.github.io/vultr-php/code-coverage/badge.svg)](https://vultr.github.io/vultr-php/code-coverage/index.html)
-[![Library Documentation](https://img.shields.io/badge/documentation-lightgrey)](https://vultr.github.io/vultr-php/docs/index.html)
+[![Library Documentation](https://img.shields.io/badge/documentation-blue)](https://vultr.github.io/vultr-php/docs/index.html)
 
 ## Getting Started
 
