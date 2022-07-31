@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Backups;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds snapshot information on the backup.
+ */
 class Backup extends Model
 {
 	protected string $id;

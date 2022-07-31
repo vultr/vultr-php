@@ -15,6 +15,7 @@ class RegionService extends VultrService
 	private static ?array $cache_region = null;
 
 	/**
+	 * List all regions at vultr
 	 * @param $options - ListOptions - Interact via reference.
 	 * @throws RegionException
 	 * @return Region[]
@@ -25,6 +26,7 @@ class RegionService extends VultrService
 	}
 
 	/**
+	 * Get a list of the available plans in the region.
 	 * @param $id - string - Ex ewr - Id of the region
 	 * @param $type - string|null - PlanService Filters - FILTER_ALL, FILTER_VC2, FILTER_VHF, FILTER_VDC, FILTER_VBM
 	 * @throws RegionException
@@ -66,6 +68,7 @@ class RegionService extends VultrService
 	}
 
 	/**
+	 * Get a specific region object based on the region id
 	 * @param $id - string - Ex ewr - Region id.
 	 * @throws RegionException
 	 * @return Region|null

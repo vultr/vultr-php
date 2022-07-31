@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Applications;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds deployable application image info that can be used on virtualmachine's and baremetal's
+ */
 class Application extends Model
 {
 	protected int $id;

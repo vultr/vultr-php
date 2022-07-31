@@ -115,6 +115,9 @@ class VultrClient
 		}
 	}
 
+	/**
+	 * The entry point into using the client and all its related services.
+	 */
 	public static function create(
 		string $API_KEY,
 		?ClientInterface $http = null,
@@ -126,7 +129,12 @@ class VultrClient
 		return new VultrClient($API_KEY, $http, $request, $response, $stream);
 	}
 
-	public function __get(string $name)
+	/**
+	 * Magic method that allows interaction with readonly properties that house service handlers.
+	 *
+	 * Client will return null if the service object does not exist.
+	 */
+	public function __get(string $name) : mixed
 	{
 		$name = '_'.$name;
 		return ($this->service_props[$name] ?? null) !== null ? $this->$name : null;

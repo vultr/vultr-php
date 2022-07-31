@@ -14,30 +14,6 @@ use ReflectionClass;
  */
 abstract class Model implements ModelInterface
 {
-	/**
-	 * Maybe should just use this, if JSONMapper allows it.
-	 * It uses Reflection so much..
-	 */
-	/**
-	public function __call($name, $args) : mixed
-	{
-		if (!method_exists($this, $name))
-		{
-			if (preg_match('/^get(.*)$/', $name, $match))
-			{
-				$prop = lcfirst($match[0]);
-				return $this->$prop;
-			}
-			else if (preg_match('/^set(.*)$/', $name, $match))
-			{
-				$prop = lcfirst($match[1]);
-				$this->$prop = $args[0];
-				return null;
-			}
-			throw new RuntimeException('Call to undefined method '.$this::class.'::'.$name);
-		}
-	}*/
-
 	public function getModelExceptionClass() : string
 	{
 		return $this::class.'Exception';

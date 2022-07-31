@@ -16,6 +16,7 @@ class ApplicationService extends VultrService
 	private static ?array $cache_applications = null;
 
 	/**
+	 * Get a list of all available application images.
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws ApplicationException
@@ -31,6 +32,7 @@ class ApplicationService extends VultrService
 	}
 
 	/**
+	 * Get a specific application object based on the app_id.
 	 * @param $id - int - Application id, whether one click or marketplace app.
 	 * @throws ApplicationException
 	 * @return Application|null
