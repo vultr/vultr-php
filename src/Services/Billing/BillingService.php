@@ -10,6 +10,8 @@ use Vultr\VultrPhp\Util\ListOptions;
 class BillingService extends VultrService
 {
 	/**
+	 * Retrieve the billing history of the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-billing-history
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BillingException
@@ -21,6 +23,8 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * Retrieve the invoices of the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-invoices
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BillingException
@@ -32,6 +36,8 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * Get a specific invoice based on its id.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-invoice
 	 * @param $invoice_id - int
 	 * @throws BillingException
@@ -43,6 +49,8 @@ class BillingService extends VultrService
 	}
 
 	/**
+	 * Get invoice items to help drill into why the cost is what it is.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-invoice-items
 	 * @param $invoice_id - int
 	 * @param $options - ListOptions|null - Interact via reference.

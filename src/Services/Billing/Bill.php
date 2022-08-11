@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Billing;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds billing history information
+ */
 class Bill extends Model
 {
 	protected int $id;

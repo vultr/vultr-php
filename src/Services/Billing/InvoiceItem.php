@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Billing;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds item information on a specific invoice.
+ */
 class InvoiceItem extends Model
 {
 	protected string $description;
