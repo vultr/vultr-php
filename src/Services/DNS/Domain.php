@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\DNS;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds Domain information.
+ */
 class Domain extends Model
 {
 	protected string $domain;
