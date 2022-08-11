@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\BareMetal;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds baremetal information from the response of the api.
+ */
 class BareMetal extends Model
 {
 	protected string $id;

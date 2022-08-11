@@ -6,11 +6,12 @@ namespace Vultr\VultrPhp\Services\BareMetal;
 
 use Vultr\VultrPhp\Util\ModelOptions;
 
+/**
+ * Options to update a baremetal machine.
+ * @see https://www.vultr.com/api/#operation/update-baremetal
+ */
 class BareMetalUpdate extends ModelOptions
 {
-	/**
-	 * @see https://www.vultr.com/api/#operation/update-baremetal
-	 */
 	protected ?string $user_data = null;
 	protected ?string $label = null;
 	protected ?int $os_id = null;

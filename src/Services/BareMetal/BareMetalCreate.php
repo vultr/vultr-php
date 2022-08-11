@@ -6,12 +6,12 @@ namespace Vultr\VultrPhp\Services\BareMetal;
 
 use Vultr\VultrPhp\Util\ModelOptions;
 
+/**
+ * Options to create a baremetal machine.
+ * @see https://www.vultr.com/api/#operation/create-baremetal
+ */
 class BareMetalCreate extends ModelOptions
 {
-	/**
-	 * @see https://www.vultr.com/api/#operation/create-baremetal
-	 */
-
 	// Required Parameters.
 	protected string $region;
 	protected string $plan;
