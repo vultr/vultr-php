@@ -11,6 +11,8 @@ use Vultr\VultrPhp\VultrClientException;
 class BlockStorageService extends VultrService
 {
 	/**
+	 * Retrieve block storage devices on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/list-blocks
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BlockStorageException
@@ -22,6 +24,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Get a specific block storage device on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/get-block
 	 * @param $block_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BlockStorageException
@@ -33,6 +37,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Create a new block storage device in a region. The size range differs based on the block_type
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/create-block
 	 * @param $block - BlockStorage
 	 * @throws BlockStorageException
@@ -44,6 +50,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Update information on the block storage device.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/update-block
 	 * @param $block - BlockStorage
 	 * @throws BlockStorageException
@@ -55,6 +63,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Delete the block storage device.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/delete-block
 	 * @param $block_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BlockStorageException
@@ -66,6 +76,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Attach the block storage device to a virtual machine.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/attach-block
 	 * @param $block_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $live - bool
@@ -88,6 +100,8 @@ class BlockStorageService extends VultrService
 	}
 
 	/**
+	 * Detach the block storage device from the virtual machine.
+	 *
 	 * @see https://www.vultr.com/api/#tag/block/operation/detach-block
 	 * @param $block_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $live - bool
