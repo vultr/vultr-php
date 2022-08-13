@@ -13,6 +13,8 @@ use Vultr\VultrPhp\VultrClientException;
 class ObjectStorageService extends VultrService
 {
 	/**
+	 * Get object storage cluster regions that are available to be deployed in.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-object-storage-clusters
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws ObjectStorageException
@@ -24,6 +26,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Get all object storage subscriptions on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/s3/operation/list-object-storages
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws ObjectStorageException
@@ -35,6 +39,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Get a specific object storage subscription on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/s3/operation/get-object-storage
 	 * @param $object_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws ObjectStorageException
@@ -46,6 +52,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Create a object storage subscription in a region based on the cluster_id.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-object-storage
 	 * @param $cluster_id - integer - @see https://www.vultr.com/api/#operation/list-object-storage-clusters
 	 * @param $label - string|null - Null means omitted from the request.
@@ -67,6 +75,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Delete the object storage subscription and its data.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-object-storage
 	 * @param $object_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws ObjectStorageException
@@ -78,6 +88,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Update an object storage subscription on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/update-object-storage
 	 * @param $obj - ObjectStorage - Fully initialized object with your updated parameters.
 	 * @throws ObjectStorageException
@@ -89,6 +101,8 @@ class ObjectStorageService extends VultrService
 	}
 
 	/**
+	 * Regenerate the object storage access and secret keys for the subscription.
+	 *
 	 * @see https://www.vultr.com/api/#operation/regenerate-object-storage-keys
 	 * @param $obj - ObjectStorage - Fully initialized object.
 	 * @throws ObjectStorageException

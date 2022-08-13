@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\ObjectStorage;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds object storage cluster information.
+ */
 class ObjStoreCluster extends Model
 {
 	protected int $id;
