@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\ReservedIP;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds reserved ip address information
+ */
 class ReservedIP extends Model
 {
 	protected string $id;

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Snapshots;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds snapshot information.
+ */
 class Snapshot extends Model
 {
 	protected string $id;

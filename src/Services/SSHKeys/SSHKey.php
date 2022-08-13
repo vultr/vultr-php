@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\SSHKeys;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds ssh key information.
+ */
 class SSHKey extends Model
 {
 	protected string $id;

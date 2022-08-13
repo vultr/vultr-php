@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\StartupScripts;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds startup script information.
+ */
 class StartupScript extends Model
 {
 	protected string $id;

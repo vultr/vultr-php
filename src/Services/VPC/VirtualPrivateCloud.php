@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\VPC;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds virtual private cloud information.
+ */
 class VirtualPrivateCloud extends Model
 {
 	protected string $id;
