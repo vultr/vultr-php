@@ -63,7 +63,7 @@ The client uses a linked list to paginate between your cursors. Each list call r
 
 declare(strict_types=1);
 
-require (__DIR__.'/../vendor/autoload.php');
+require(__DIR__.'/../vendor/autoload.php');
 
 $client = Vultr\VultrPhp\VultrClient::create('Your Lovely Vultr API Key');
 
@@ -89,6 +89,37 @@ while (true)
 	// Setting the "CurrentCursor" will tell the client which page it should transcode the url to make the request too.
 	$options->setCurrentCursor($options->getNextCursor());
 }
+
+```
+
+#### ModelOptions Usage
+ModelOptions are objects that allow the user to pass in many arguments that don't neccessarily belong to a Model object. These are attributes that are specific to creation and update functions throughout the client library. Usage of these objects are quite simple. The idea was to reduce code complexity but also give the flexibility to deprecate certain methods when/if attributes are removed from responses.
+
+Lets take InstanceCreate for example. This object has many properties in it, that are all underscore_cased. These property names are than used to generate a request to the api.
+
+To keep the uniformity between the camelCased functions in this client library. ModelOptions makes use of php's `__call` magic method. In order to set these protected properties you can use variation of with functions example: withYourLovelyPropName('hello_world') or set functions example: setYourLovelyPropName('hello_world').
+
+These functions will set your attributes that will be used to generate the request of our underscored_props that will be sent to the api.
+
+With the addition of with and set type functions. There are also get functions that can be used as well. They follow the same camcelCased layout as the with and set functions.
+
+Example usage of these object functions.
+
+```php
+
+declare(strict_types=1);
+
+require(__DIR__.'/../vendor/autoload.php');
+
+use Vultr\VultrPhp\Services\Instances\InstanceCreate;
+
+$create = new InstanceCreate('ewr', 'vc2-6c-16gb');
+
+$create->setOsId(6969);
+
+$create = $create->withHostname('my-amazing-hostname');
+
+var_dump($create->getOsId(), $create->getHostname());
 
 ```
 
