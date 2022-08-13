@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds iso mount status information
+ */
 class IsoStatus extends Model
 {
 	protected string $state;

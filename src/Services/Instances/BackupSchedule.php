@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds backup schedule information
+ */
 class BackupSchedule extends Model
 {
 	protected ?bool $enabled = null;

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds instance information
+ */
 class Instance extends Model
 {
 	protected string $id;
