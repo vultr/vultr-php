@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds sticky session information that is used to generate a request to the api.
+ */
 class StickySession extends Model
 {
 	protected string $cookieName;

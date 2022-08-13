@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds load balanacer information, that balances the traffic.
+ */
 class LBInfo extends Model
 {
 	protected string $balancingAlgorithm;

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds firewall rule information
+ */
 class FirewallRule extends Model
 {
 	protected string $id;
