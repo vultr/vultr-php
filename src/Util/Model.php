@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Util;
 
 use ReflectionClass;
-//use RuntimeException;
 
 /**
+ * @ignore
  * Models need to implement camelcase properties.
  * These are converted from underscores from the api to camelCase for JSONMapper to assign them properly.
  * The reasoning why. Well I didn't feel like having to write custom Renames for each attribute.
