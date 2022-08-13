@@ -16,7 +16,7 @@
 
 Must have a PSR7, PSR17, and PSR18 Compatible HTTP Client. 
 [View all PSR's](https://www.php-fig.org/psr/)
-This client will act on those interfaces above interfaces which allow for dependancy injection. See Usage for more info.
+This client will act on those interfaces which allow for dependancy injection. See Usage for more info.
 https://packagist.org/providers/psr/http-client-implementation
 
 ### Installation

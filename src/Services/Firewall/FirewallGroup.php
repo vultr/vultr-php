@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Firewall;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds firewall group information"
+ */
 class FirewallGroup extends Model
 {
 	protected string $id;
