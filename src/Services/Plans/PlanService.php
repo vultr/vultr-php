@@ -129,8 +129,7 @@ class PlanService extends VultrService
 		$options = new ListOptions(500);
 		while (true)
 		{
-			$vps_plans = $this->getVPSPlans(null, null, $options);
-			foreach ($vps_plans as $plan)
+			foreach ($this->getVPSPlans(null, null, $options) as $plan)
 			{
 				static::$cache_plans[$plan->getId()] = $plan;
 			}
@@ -145,8 +144,7 @@ class PlanService extends VultrService
 		$options = new ListOptions(500);
 		while (true)
 		{
-			$bm_plans = $this->getBMPlans($options);
-			foreach ($bm_plans as $plan)
+			foreach ($this->getBMPlans($options) as $plan)
 			{
 				static::$cache_plans[$plan->getId()] = $plan;
 			}
@@ -161,14 +159,13 @@ class PlanService extends VultrService
 
 	private function setPlanLocations(array &$plans) : void
 	{
-		$region_service = $this->getVultrClient()->regions;
-		$region_service->cacheRegions();
+		$this->getVultrClient()->regions->cacheRegions();
 		foreach ($plans as $plan)
 		{
 			$regions = [];
 			foreach ($plan->getLocations() as $id)
 			{
-				$region = $region_service->getRegion($id);
+				$region = $this->getVultrClient()->regions->getRegion($id);
 
 				if ($region === null) continue; // Cache failure?
 

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Regions;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds region specific information.
+ */
 class Region extends Model
 {
 	protected string $id;
