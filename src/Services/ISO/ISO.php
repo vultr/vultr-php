@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\ISO;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds ISO information
+ * Holds ISO information.
  */
 class ISO extends Model
 {

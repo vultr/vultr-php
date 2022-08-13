@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds load balancer information
+ * Holds load balancer information.
  */
 class LoadBalancer extends Model
 {

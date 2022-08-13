@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Kubernetes;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds node information
+ * Holds node information.
  */
 class Node extends Model
 {

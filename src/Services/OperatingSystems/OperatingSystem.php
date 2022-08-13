@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\OperatingSystems;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds operating system information
+ * Holds operating system information.
  */
 class OperatingSystem extends Model
 {

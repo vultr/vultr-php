@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Kubernetes;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds vke cluster information
+ * Holds vke cluster information.
  */
 class VKECluster extends Model
 {
