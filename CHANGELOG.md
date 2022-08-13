@@ -1,5 +1,8 @@
 # Changelog
 
+## Release [1.0.0]
+* Initial Release of the Client
+
 ## Beta Release [0.5]
 * Initial Beta Release of the client
 * Ongoing test before the release of version 1
