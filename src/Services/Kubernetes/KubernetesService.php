@@ -11,6 +11,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Kubernetes service handler, for all kubernetes endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/kubernetes
+ */
 class KubernetesService extends VultrService
 {
 	/**

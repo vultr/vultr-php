@@ -8,6 +8,7 @@ use Vultr\VultrPhp\Util\ModelOptions;
 
 /**
  * Options to create a baremetal machine.
+ *
  * @see https://www.vultr.com/api/#operation/create-baremetal
  */
 class BareMetalCreate extends ModelOptions

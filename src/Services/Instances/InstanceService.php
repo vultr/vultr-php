@@ -11,6 +11,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Instance service handler, for all instances endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/instances
+ */
 class InstanceService extends VultrService
 {
 	public const FILTER_LABEL = 'label';

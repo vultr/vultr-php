@@ -9,6 +9,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * DNS service handler, for dns endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/dns
+ */
 class DNSService extends VultrService
 {
 	/**

@@ -10,6 +10,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Region service handler, for all regions endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/region
+ */
 class RegionService extends VultrService
 {
 	private static ?array $cache_region = null;

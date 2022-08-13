@@ -8,6 +8,11 @@ use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Blockstorage service handler, for blocks endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/block
+ */
 class BlockStorageService extends VultrService
 {
 	/**

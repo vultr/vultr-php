@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\SSHKeys;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * SSH key service handler, for all ssh-keys endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/ssh
+ */
 class SSHKeyService extends VultrService
 {
 	/**

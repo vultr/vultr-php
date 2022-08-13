@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Billing;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds invoice information
+ * Holds invoice information.
  */
 class Invoice extends Model
 {

@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\VPC;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Virtual private cloud service handler, for all vpcs endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/VPCs
+ */
 class VPCService extends VultrService
 {
 	/**

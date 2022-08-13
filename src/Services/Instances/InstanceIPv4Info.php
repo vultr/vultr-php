@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Instances;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds instance ipv4 address information
+ * Holds instance ipv4 address information.
  */
 class InstanceIPv4Info extends Model
 {

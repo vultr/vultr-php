@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Billing;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Billing service handler, for billing endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/billing
+ */
 class BillingService extends VultrService
 {
 	/**

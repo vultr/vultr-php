@@ -8,6 +8,11 @@ use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Plan service handler, for all plans endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/plans
+ */
 class PlanService extends VultrService
 {
 	/**

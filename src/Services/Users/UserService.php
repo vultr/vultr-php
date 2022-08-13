@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Users;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * User service handler, for all users endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/users
+ */
 class UserService extends VultrService
 {
 	/**

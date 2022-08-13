@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Instances;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds instance information
+ * Holds vps instance information.
  */
 class Instance extends Model
 {

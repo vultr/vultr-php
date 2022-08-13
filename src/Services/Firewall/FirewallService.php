@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Firewall;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Firewall service handler, for firewall endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/firewall
+ */
 class FirewallService extends VultrService
 {
 	/**

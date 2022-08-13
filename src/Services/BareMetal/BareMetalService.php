@@ -12,6 +12,11 @@ use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Baremetal service handler, for bare-metals endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/baremetal
+ */
 class BareMetalService extends VultrService
 {
 	/**

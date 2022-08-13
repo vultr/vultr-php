@@ -7,7 +7,7 @@ namespace Vultr\VultrPhp\Services\Firewall;
 use Vultr\VultrPhp\Util\Model;
 
 /**
- * Holds firewall rule information
+ * Holds firewall rule information.
  */
 class FirewallRule extends Model
 {

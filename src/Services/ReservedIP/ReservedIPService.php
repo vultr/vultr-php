@@ -9,6 +9,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Reserved IP service handler, for all reserved-ips endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/reserved-ip
+ */
 class ReservedIPService extends VultrService
 {
 	/**

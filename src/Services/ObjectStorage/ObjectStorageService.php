@@ -10,6 +10,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Object storage service handler, for all object-storage endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/s3
+ */
 class ObjectStorageService extends VultrService
 {
 	/**

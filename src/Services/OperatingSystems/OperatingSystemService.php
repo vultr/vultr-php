@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\OperatingSystems;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Operating system service handler, for all os endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/os
+ */
 class OperatingSystemService extends VultrService
 {
 	private static ?array $cache_operatingsystems = null;

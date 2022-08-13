@@ -8,6 +8,7 @@ use Vultr\VultrPhp\Util\ModelOptions;
 
 /**
  * Options to update a baremetal machine.
+ *
  * @see https://www.vultr.com/api/#operation/update-baremetal
  */
 class BareMetalUpdate extends ModelOptions

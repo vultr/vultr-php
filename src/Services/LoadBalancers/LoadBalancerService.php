@@ -9,6 +9,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Load balancer service handler, for all load-balancers endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/load-balancer
+ */
 class LoadBalancerService extends VultrService
 {
 	/**

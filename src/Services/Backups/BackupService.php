@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Backups;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Backup service handler, for backup endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/backup
+ */
 class BackupService extends VultrService
 {
 	/**
