@@ -51,6 +51,7 @@ while (true)
 
 echo PHP_EOL;
 echo "Removing the instance\n";
+sleep(1);
 $client->instances->deleteInstance($instance->getId());
 
 var_dump($client->instances->getInstances());

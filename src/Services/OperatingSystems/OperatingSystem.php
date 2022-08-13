@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\OperatingSystems;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds operating system information
+ */
 class OperatingSystem extends Model
 {
 	protected int $id;
