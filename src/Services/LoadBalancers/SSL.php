@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds SSL information that is used to generate a request to the api.
+ */
 class SSL extends Model
 {
 	protected string $privateKey;

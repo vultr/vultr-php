@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\LoadBalancers;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds load balancer health information.
+ */
 class LBHealth extends Model
 {
 	protected string $protocol;

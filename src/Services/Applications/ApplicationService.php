@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Applications;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Application service handler, for applications endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/application
+ */
 class ApplicationService extends VultrService
 {
 	public const FILTER_ALL = 'all';
@@ -17,6 +22,7 @@ class ApplicationService extends VultrService
 
 	/**
 	 * Get a list of all available application images.
+	 *
 	 * @param $filter - ENUM('all', 'marketplace', 'one-click')
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws ApplicationException
@@ -33,6 +39,7 @@ class ApplicationService extends VultrService
 
 	/**
 	 * Get a specific application object based on the app_id.
+	 *
 	 * @param $id - int - Application id, whether one click or marketplace app.
 	 * @throws ApplicationException
 	 * @return Application|null
@@ -44,6 +51,8 @@ class ApplicationService extends VultrService
 	}
 
 	/**
+	 * Cache all available applications from the vultr api.
+	 *
 	 * @param $override - bool - Depending on whether to requery the applications.
 	 * @throws ApplicationException
 	 * @return void

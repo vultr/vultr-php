@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\ObjectStorage;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds Object storage information.
+ */
 class ObjectStorage extends Model
 {
 	protected string $id;

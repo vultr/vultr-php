@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds instance reverse dns ipv6 information.
+ */
 class InstanceReverseIPv6 extends Model
 {
 	protected string $ip;

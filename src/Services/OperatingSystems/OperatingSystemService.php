@@ -7,11 +7,18 @@ namespace Vultr\VultrPhp\Services\OperatingSystems;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Operating system service handler, for all os endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/os
+ */
 class OperatingSystemService extends VultrService
 {
 	private static ?array $cache_operatingsystems = null;
 
 	/**
+	 * Get all operating systems that are available to be deployed.
+	 *
 	 * @param $options - ListOptions - Interact via reference.
 	 * @throws OperatingSystemException
 	 * @return OperatingSystem[]
@@ -22,6 +29,8 @@ class OperatingSystemService extends VultrService
 	}
 
 	/**
+	 * Get a specific operating system that is deployable.
+	 *
 	 * @param $id - string - Ex 124 - OS id.
 	 * @throws OperatingSystemException
 	 * @return OperatingSystem|null
@@ -33,6 +42,8 @@ class OperatingSystemService extends VultrService
 	}
 
 	/**
+	 * Query and cache all operating systems from the vultr api.
+	 *
 	 * @param $override - bool - Depending on whether to requery the operating systems.
 	 * @throws OperatingSystemException
 	 * @return void
@@ -43,9 +54,18 @@ class OperatingSystemService extends VultrService
 
 		static::$cache_operatingsystems = [];
 		$options = new ListOptions(500);
-		foreach ($this->getOperatingSystems($options) as $os)
+		while (true)
 		{
-			static::$cache_operatingsystems[$os->getId()] = $os;
+			foreach ($this->getOperatingSystems($options) as $os)
+			{
+				static::$cache_operatingsystems[$os->getId()] = $os;
+			}
+
+			if ($options->getNextCursor() == '')
+			{
+				break;
+			}
+			$options->setCurrentCursor($options->getNextCursor());
 		}
 	}
 }

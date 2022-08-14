@@ -21,7 +21,7 @@ class InstanceCreate extends ModelOptions
 	protected ?int $app_id = null;
 	protected ?string $image_id = null;
 
-	//
+	// Optional fields.
 	protected ?string $script_id = null;
 	protected ?array $sshkey_id = null;
 	protected ?string $ipxe_chain_url = null;

@@ -9,9 +9,16 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Load balancer service handler, for all load-balancers endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/load-balancer
+ */
 class LoadBalancerService extends VultrService
 {
 	/**
+	 * Get load balancers on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-load-balancer
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws LoadBalancerException
@@ -26,6 +33,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Get a specific load balancer on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-load-balancers
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws LoadBalancerException
@@ -42,6 +51,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Create a load balancer in a particular region.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-load-balancer
 	 * @param $create - LoadBalancerCreate
 	 * @throws LoadBalancerException
@@ -56,6 +67,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Update information for a load balancer. All attributes are optional. If not set the attributes will not be sent to the api.
+	 *
 	 * @see https://www.vultr.com/api/#operation/update-load-balancer
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $update - LoadBalancerUpdate
@@ -77,6 +90,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Delete a load balancer on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-load-balancer
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws LoadBalancerException
@@ -88,6 +103,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Get forwarding rules for a specific load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-load-balancer-forwarding-rules
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -100,6 +117,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Get a specific forwarding rule for on a load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-load-balancer-forwarding-rule
 	 * @param $loadbalancer_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $forward_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -112,6 +131,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Create a forwarding rule for a load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-load-balancer-forwarding-rules
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws LoadBalancerException
@@ -130,6 +151,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Delete forwarding rule on a load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-load-balancer-forwarding-rule
 	 * @param $loadbalancer_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $forward_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -142,6 +165,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Get firewall rules for a load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-loadbalancer-firewall-rules
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -154,6 +179,8 @@ class LoadBalancerService extends VultrService
 	}
 
 	/**
+	 * Get a specific firewall rule on a load balancer.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-loadbalancer-firewall-rule
 	 * @param $loadbalancer_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $firewall_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60

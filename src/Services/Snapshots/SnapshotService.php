@@ -7,6 +7,11 @@ namespace Vultr\VultrPhp\Services\Snapshots;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Snapshot service handler, for all snapshots endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/snapshot
+ */
 class SnapshotService extends VultrService
 {
 	/**

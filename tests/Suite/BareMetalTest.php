@@ -360,5 +360,8 @@ class BareMetalTest extends VultrTest
 
 			$this->assertTrue($found);
 		}
+
+		$this->expectException(BareMetalException::class);
+		$client->baremetal->getAvailableUpgrades($id);
 	}
 }

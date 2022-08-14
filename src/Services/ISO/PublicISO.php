@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\ISO;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds public iso information
+ */
 class PublicISO extends Model
 {
 	protected string $id;

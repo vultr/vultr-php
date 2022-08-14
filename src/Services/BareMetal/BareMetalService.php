@@ -12,9 +12,15 @@ use Vultr\VultrPhp\Util\ModelInterface;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Baremetal service handler, for bare-metals endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/baremetal
+ */
 class BareMetalService extends VultrService
 {
 	/**
+	 * List all Bare Metal instances in your account.
 	 * @see https://www.vultr.com/api/#operation/list-baremetals
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws BareMetalException
@@ -26,6 +32,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get information for a Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/get-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -37,6 +44,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Delete a Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/delete-baremetal
 	 * @throws BareMetalException
 	 * @return void
@@ -47,6 +55,8 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Create a new Bare Metal instance based on BareMetalCreate
+	 * @see BareMetalCreate
 	 * @see https://www.vultr.com/api/#operation/create-baremetal
 	 * @param $payload - BareMetalCreate
 	 * @throws BareMetalException
@@ -58,6 +68,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Update a Bare Metal instance. All attributes are optional in BareMetalUpdate. If not set the attributes will not be sent to the API.
 	 * @see https://www.vultr.com/api/#operation/update-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $payload - BareMetalUpdate
@@ -83,6 +94,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get all IPv4 information for the Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/get-ipv4-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -95,6 +107,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get all IPv6 information for the Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/get-ipv6-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -142,6 +155,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Start the Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/start-bare-metals
 	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
 	 * @throws BareMetalException
@@ -153,6 +167,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Reboot the Bare Metal instance.
 	 * @see https://www.vultr.com/api/#operation/reboot-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -164,6 +179,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Reboot multiple Bare Metal instances with 1 api call.
 	 * @see https://www.vultr.com/api/#operation/reboot-bare-metals
 	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
 	 * @throws BareMetalException
@@ -175,6 +191,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Reinstall the Bare Metal instance. This action usually takes a few seconds to complete.
 	 * @see https://www.vultr.com/api/#operation/reinstall-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -186,6 +203,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Halt the Bare Metal instance. The machine will remain off till started again.
 	 * @see https://www.vultr.com/api/#operation/halt-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -197,6 +215,7 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Halt multiple Bare Metal instances. The machines will remain off till started again.
 	 * @see https://www.vultr.com/api/#operation/halt-baremetals
 	 * @param $ids - array - Example: [cb676a46-66fd-4dfb-b839-443f2e6c0b60, cb676a46-66fd-4dfb-b839-443f2e6c0b65]
 	 * @throws BareMetalException
@@ -232,6 +251,11 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get bandwidth information for the Bare Metal instance
+	 *
+	 * The structure of the array will follow this format.
+	 * ['2022-11-05' => ['incoming_bytes' => 234523452352, 'outgoing_bytes' => 132432423]]
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-bandwidth-baremetal
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -266,6 +290,8 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get the user-supplied, which is decoded for you from base64 that the api returns.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-bare-metal-userdata
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException
@@ -287,6 +313,8 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get available upgrades for a Bare Metal instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-bare-metals-upgrades
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $type - string - filter based on upgrade types.
@@ -319,6 +347,8 @@ class BareMetalService extends VultrService
 	}
 
 	/**
+	 * Get the VNC URL for a Bare Metal instance. Which can be used to access the console of the machine.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-bare-metal-vnc
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws BareMetalException

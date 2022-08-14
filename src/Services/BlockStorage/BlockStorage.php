@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\BlockStorage;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds block storage device information.
+ */
 class BlockStorage extends Model
 {
 	protected string $id;

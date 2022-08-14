@@ -8,6 +8,11 @@ use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Plan service handler, for all plans endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/plans
+ */
 class PlanService extends VultrService
 {
 	/**
@@ -31,6 +36,8 @@ class PlanService extends VultrService
 	private static ?array $cache_plans = null;
 
 	/**
+	 * Get vps plans that are available at vultr.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-plans
 	 * @param $type - string|null - FILTER_*
 	 * @param $os - string|null - FILTER_WINDOWS
@@ -72,6 +79,8 @@ class PlanService extends VultrService
 	}
 
 	/**
+	 * Get baremetal plans that are available at vultr.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-metal-plans
 	 * @param $options - ListOptions - Interact via reference.
 	 * @throws PlanException
@@ -98,6 +107,8 @@ class PlanService extends VultrService
 	}
 
 	/**
+	 * Get a specific plan vps or baremetal plan from the static cache.
+	 *
 	 * @param $id - string - Ex vc2-1c-1gb - This can be a vps plan id or a baremetal plan id.
 	 * @throws PlanException
 	 * @return VPSPlan|BMPlan|null
@@ -109,6 +120,8 @@ class PlanService extends VultrService
 	}
 
 	/**
+	 * Query and cache all plans from the vultr api.
+	 *
 	 * @param $override - bool - Depending on whether to requery the plans.
 	 * @throws PlanException
 	 * @return void
@@ -119,29 +132,45 @@ class PlanService extends VultrService
 
 		static::$cache_plans = [];
 		$options = new ListOptions(500);
-		$vps_plans = $this->getVPSPlans(null, null, $options);
-		$options = new ListOptions(500);
-		$bm_plans = $this->getBMPlans($options);
-
-		foreach ([$bm_plans, $vps_plans] as $plans)
+		while (true)
 		{
-			foreach ($plans as $plan)
+			foreach ($this->getVPSPlans(null, null, $options) as $plan)
 			{
 				static::$cache_plans[$plan->getId()] = $plan;
 			}
+
+			if ($options->getNextCursor() == '')
+			{
+				break;
+			}
+			$options->setCurrentCursor($options->getNextCursor());
+		}
+
+		$options = new ListOptions(500);
+		while (true)
+		{
+			foreach ($this->getBMPlans($options) as $plan)
+			{
+				static::$cache_plans[$plan->getId()] = $plan;
+			}
+
+			if ($options->getNextCursor() == '')
+			{
+				break;
+			}
+			$options->setCurrentCursor($options->getNextCursor());
 		}
 	}
 
 	private function setPlanLocations(array &$plans) : void
 	{
-		$region_service = $this->getVultrClient()->regions;
-		$region_service->cacheRegions();
+		$this->getVultrClient()->regions->cacheRegions();
 		foreach ($plans as $plan)
 		{
 			$regions = [];
 			foreach ($plan->getLocations() as $id)
 			{
-				$region = $region_service->getRegion($id);
+				$region = $this->getVultrClient()->regions->getRegion($id);
 
 				if ($region === null) continue; // Cache failure?
 

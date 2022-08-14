@@ -9,9 +9,16 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * DNS service handler, for dns endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/dns
+ */
 class DNSService extends VultrService
 {
 	/**
+	 * List DNS domains on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/list-dns-domains
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws DNSException
@@ -23,6 +30,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Get a specific domain on the account.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
@@ -34,6 +43,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Create a DNS domain. If no ip address is supplied a domain with no records will be created.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-dns-domain
 	 * @param $domain - string - Example: example.com
 	 * @param $dns_sec - string
@@ -57,6 +68,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Delete the domain and all of its records.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/delete-dns-domain
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
@@ -68,6 +81,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Update the domain to enabled/disable other options.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain
 	 * @throws DNSException
 	 * @return void
@@ -78,6 +93,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Get SOA(start of authority) information for the domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-soa
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
@@ -89,6 +106,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Update the SOA information on the domain name. All attributes are optional.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain-soa
 	 * @param $domain - string - Example: example.com
 	 * @param $soa - DNSSOA
@@ -101,6 +120,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Get DNSSEC information for the domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-dnssec
 	 * @param $domain - string - Example: example.com
 	 * @throws DNSException
@@ -124,6 +145,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Create a DNS record for the domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/create-dns-domain-record
 	 * @param $domain - string - Example: example.com
 	 * @param $record - Record
@@ -136,6 +159,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Get DNS records for a given domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/create-dns-domain-record
 	 * @param $domain - string - Example: example.com
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -148,6 +173,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Get a specific DNS record for a given domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/get-dns-domain-record
 	 * @param $domain - string - Example: example.com
 	 * @param $record_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -160,6 +187,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Update the DNS record for the domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/update-dns-domain-record
 	 * @param $domain - string - Example: example.com
 	 * @param $record - Record - Fully initialized object.
@@ -172,6 +201,8 @@ class DNSService extends VultrService
 	}
 
 	/**
+	 * Delete a DNS record for a given domain name.
+	 *
 	 * @see https://www.vultr.com/api/#tag/dns/operation/delete-dns-domain-record
 	 * @param $domain - string - Example: example.com
 	 * @param $record_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60

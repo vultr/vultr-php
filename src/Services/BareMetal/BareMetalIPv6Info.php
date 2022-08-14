@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\BareMetal;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds ipv6 address information on the ip address attached to the baremetal machine.
+ */
 class BareMetalIPv6Info extends Model
 {
 	// The response data.

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Kubernetes;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds node information.
+ */
 class Node extends Model
 {
 	protected string $id;

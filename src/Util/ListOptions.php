@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Vultr\VultrPhp\Util;
 
+/**
+ * Pagination and metadata mechanism that can be used throughout all list functions.
+ *
+ * @see https://www.vultr.com/api/#section/Introduction/Meta-and-Pagination
+ */
 class ListOptions
 {
 	protected int $perPage = 50;

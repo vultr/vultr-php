@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Plans;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds vps plan information
+ */
 class VPSPlan extends Model
 {
 	protected string $id;

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds instance ipv6 address information
+ */
 class InstanceIPv6Info extends Model
 {
 	protected string $ip;

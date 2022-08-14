@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Users;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds sub user information.
+ */
 class User extends Model
 {
 	public const ACL_ABUSE = 'abuse';

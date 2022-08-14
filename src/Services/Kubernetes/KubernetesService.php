@@ -11,9 +11,16 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Kubernetes service handler, for all kubernetes endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/kubernetes
+ */
 class KubernetesService extends VultrService
 {
 	/**
+	 * Retrieve a kubernetes cluster on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-clusters
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -25,6 +32,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get a list of kubernetes clusters on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-kubernetes-clusters
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws KubernetesException
@@ -36,6 +45,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Create a kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-kubernetes-cluster
 	 * @param $region - string
 	 * @param $version - string
@@ -71,6 +82,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Update a kubernetes cluster.
+	 *
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $label - string
 	 * @throws KubernetesException
@@ -82,6 +95,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Delete a kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-kubernetes-cluster
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -93,6 +108,10 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Delete a kubernetes cluster and its resources.
+	 *
+	 * This means it will delete blockstorage, load balancers, and any other related resources.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-kubernetes-cluster-vke-id-delete-with-linked-resources
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -104,6 +123,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get resources belonging to a kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-resources
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -141,6 +162,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get available cluster upgrades.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-available-upgrades
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -162,6 +185,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Start a kubernetes cluster version upgrade.
+	 *
 	 * @see https://www.vultr.com/api/#operation/start-kubernetes-cluster-upgrade
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $upgrade_version - string - Example: v1.22.8+3
@@ -181,6 +206,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Create a node pool in the kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-nodepools
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $pool - NodePool
@@ -193,6 +220,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get available node pools in the kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-nodepools
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -204,6 +233,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get a specific node pool in the kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-nodepool
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $nodepool_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -216,6 +247,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Update a node pool in the kubernetes cluster with attributes from an initialized object.
+	 *
 	 * @see https://www.vultr.com/api/#operation/update-nodepool
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $nodepool - NodePool
@@ -239,6 +272,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Delete a node pool from a kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-nodepool
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $nodepool_id - string
@@ -251,6 +286,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Delete an instance from a node pool.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-nodepool-instance
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $nodepool_id - string
@@ -264,6 +301,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Reinstall a specific instance from a node pool.
+	 *
 	 * @see https://www.vultr.com/api/#operation/recycle-nodepool-instance
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $nodepool_id - string
@@ -284,6 +323,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get the kubeconfig for the kubernetes cluster.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-clusters-config
 	 * @param $id - string - VKE UUID, Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws KubernetesException
@@ -305,6 +346,8 @@ class KubernetesService extends VultrService
 	}
 
 	/**
+	 * Get available kubernetes versions that vultr supports.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-kubernetes-versions
 	 * @throws KubernetesException
 	 * @throws VultrException

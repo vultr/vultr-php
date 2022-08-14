@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Plans;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds bare metal plan information.
+ */
 class BMPlan extends Model
 {
 	protected string $id;

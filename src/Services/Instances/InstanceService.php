@@ -11,6 +11,11 @@ use Vultr\VultrPhp\Util\ListOptions;
 use Vultr\VultrPhp\Util\VultrUtil;
 use Vultr\VultrPhp\VultrClientException;
 
+/**
+ * Instance service handler, for all instances endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/instances
+ */
 class InstanceService extends VultrService
 {
 	public const FILTER_LABEL = 'label';
@@ -18,6 +23,8 @@ class InstanceService extends VultrService
 	public const FILTER_REGION = 'region';
 
 	/**
+	 * Get vps instances on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-instances
 	 * @param $filters - array|null - ENUM(FILTER_LABEL, FILTER_MAIN_IP, FILTER_REGION)
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -30,6 +37,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Retrieve a specific instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance
 	 * @param $id - string
 	 * @throws InstanceException
@@ -41,6 +50,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Create a new vps instance in a region with the desired plan and image.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-instance
 	 * @param $create - InstanceCreate
 	 * @throws InstanceException
@@ -52,6 +63,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Update all information for an instance. All attributes are optional. If not set, the attributes will not be sent to the api.
+	 *
 	 * @see https://www.vultr.com/api/#operation/update-instance
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $update - InstanceUpdate
@@ -77,6 +90,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Delete an instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-instance
 	 * @param $id - string
 	 * @throws InstanceException
@@ -88,6 +103,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Halt an array of instances on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/halt-instances
 	 * @param $ids - array
 	 * @throws InstanceException
@@ -99,6 +116,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Halt a specific instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/halt-instance
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -110,6 +129,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Reboot an array of instances on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/reboot-instances
 	 * @param $ids - array - Example: ['cb676a46-66fd-4dfb-b839-443f2e6c0b60', 'cb676a46-22fd-4dfb-b839-443f2e6c0b60']
 	 * @throws InstanceException
@@ -121,6 +142,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Reboot a specific instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/reboot-instance
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -132,6 +155,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Start a group of instances on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/start-instances
 	 * @param $ids - array - Example: ['cb676a46-66fd-4dfb-b839-443f2e6c0b60', 'cb676a46-22fd-4dfb-b839-443f2e6c0b60']
 	 * @throws InstanceException
@@ -143,6 +168,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Start a specific instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/start-instance
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -154,6 +181,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Reinstall an instance. This may take a few extra seconds to complete.
+	 *
 	 * @see https://www.vultr.com/api/#operation/reinstall-instance
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -175,6 +204,11 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get bandwidth information about an instance.
+	 *
+	 * The structure of the array will follow this format.
+	 * ['2022-11-05' => ['incoming_bytes' => 234523452352, 'outgoing_bytes' => 132432423]]
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-bandwidth
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -209,6 +243,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get neighboring instances that live on the same host machine as this instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-neighbors
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -230,6 +266,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get a list of attach vpc's attached to this instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-instance-vpcs
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -242,6 +280,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Attach a vpc network to an instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/attach-instance-vpc
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $vpc_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -261,6 +301,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Detach a vpc network from an instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/detach-instance-vpc
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $vpc_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
@@ -280,6 +322,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get the iso mount status on an instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-iso-status
 	 * @param $id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -301,6 +345,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Attach an iso to an instance. This will cause a reboot.
+	 *
 	 * @see https://www.vultr.com/api/#operation/attach-instance-iso
 	 * @param $id - string - Instance ID - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $iso_id - string
@@ -313,6 +359,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Detach an iso from an instance. This will cause a reboot.
+	 *
 	 * @see https://www.vultr.com/api/#operation/detach-instance-iso
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -334,6 +382,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Set the backup schedule for an instance in UTC.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-instance-backup-schedule
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $backup - BackupSchedule
@@ -353,6 +403,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get the backup schedule for an instance on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-backup-schedule
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -364,10 +416,13 @@ class InstanceService extends VultrService
 	}
 
 	/**
-	 * @see https://www.vultr.com/api/#operation/restore-instance
+	 * Restore an instance.
+	 *
 	 * $snapshot_id or $backup_id must be specified. But they both cannot be specified.
 	 * The actual response from the api returns an object. But its pointless as you have already fed in the parameters and it feeds it them back to you.
 	 * The status doesn't mean anything to act off from the response. While your instance is restoring use getInstance to view its status.
+	 *
+	 * @see https://www.vultr.com/api/#operation/restore-instance
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $snapshot_id - string|null
 	 * @param $backup_id - string|null
@@ -406,6 +461,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get IPV4 Address information on the instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-ipv4
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -436,6 +493,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Create an ipv4 address and attach to the instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-instance-ipv4
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $reboot - bool
@@ -448,6 +507,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Delete and detach an ipv4 address from the instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-instance-ipv4
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $ip - string - Example: 127.0.0.1
@@ -499,6 +560,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get IPV6 address information on the instance.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-ipv6
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -571,6 +634,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get the user data for an instance decoded from base64.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-userdata
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws InstanceException
@@ -591,6 +656,8 @@ class InstanceService extends VultrService
 	}
 
 	/**
+	 * Get available plan upgrades for an instance in the region.
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-instance-upgrades
 	 * @param $id - string - Instance Id - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $type - string - filter based on upgrade types.

@@ -7,9 +7,16 @@ namespace Vultr\VultrPhp\Services\Firewall;
 use Vultr\VultrPhp\Services\VultrService;
 use Vultr\VultrPhp\Util\ListOptions;
 
+/**
+ * Firewall service handler, for firewall endpoints.
+ *
+ * @see https://www.vultr.com/api/#tag/firewall
+ */
 class FirewallService extends VultrService
 {
 	/**
+	 * List firewall groups.
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-firewall-groups
 	 * @param $options - ListOptions|null - Interact via reference.
 	 * @throws FirewallException
@@ -21,6 +28,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Retrieve a specific firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-firewall-group
 	 * @param $group_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws FirewallException
@@ -32,6 +41,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Create a firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/create-firewall-group
 	 * @param $description - string
 	 * @throws FirewallException
@@ -43,6 +54,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Update information for a friewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/update-firewall-group
 	 * @param $group - FirewallGroup
 	 * @throws FirewallException
@@ -54,6 +67,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Delete a firewall group on the account.
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-firewall-group
 	 * @param $group_id - string - Example: cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @throws FirewallException
@@ -65,6 +80,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Get firewall rules for the firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/list-firewall-group-rules
 	 * @param $group_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $options - ListOptions|null - Interact via reference.
@@ -77,6 +94,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Get a specific firewall rule from the firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/get-firewall-group-rule
 	 * @param $group_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $rule_id - int
@@ -89,6 +108,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Create a firewall rule for the firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/post-firewalls-firewall-group-id-rules
 	 * @param $group_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $rule - FirewallRule
@@ -101,6 +122,8 @@ class FirewallService extends VultrService
 	}
 
 	/**
+	 * Delete a firewall rule from the firewall group
+	 *
 	 * @see https://www.vultr.com/api/#operation/delete-firewall-group-rule
 	 * @param $group_id - string - Example cb676a46-66fd-4dfb-b839-443f2e6c0b60
 	 * @param $rule_id - int

@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\DNS;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds SOA(start of authority) information.
+ */
 class DNSSOA extends Model
 {
 	protected string $nsprimary;

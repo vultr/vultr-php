@@ -6,6 +6,9 @@ namespace Vultr\VultrPhp\Services\Instances;
 
 use Vultr\VultrPhp\Util\Model;
 
+/**
+ * Holds information on the virtual private cloud network that is attached to a instance.
+ */
 class VPCAttachment extends Model
 {
 	protected string $id;
