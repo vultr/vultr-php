@@ -116,12 +116,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Blockstorage service handler, for blocks endpoints.</p>
+
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -129,7 +129,15 @@
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
-                                </dl>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#tag/block"><abbr title="https://www.vultr.com/api/#tag/block">https://www.vultr.com/api/#tag/block</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
 
 
 
@@ -168,49 +176,49 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Attach the block storage device to a virtual machine.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_createBlockDevice">createBlockDevice()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Create a new block storage device in a region. The size range differs based on the block_type</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_deleteBlockDevice">deleteBlockDevice()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete the block storage device.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_detachBlockDevice">detachBlockDevice()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Detach the block storage device from the virtual machine.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_getBlockDevice">getBlockDevice()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorage.html"><abbr title="\Vultr\VultrPhp\Services\BlockStorage\BlockStorage">BlockStorage</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get a specific block storage device on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_getBlockDevices">getBlockDevices()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Retrieve block storage devices on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_updateBlockDevice">updateBlockDevice()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Update information on the block storage device.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Vultr-VultrPhp-Services-VultrService.html#method_createObject">createObject()</a>
@@ -445,11 +453,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Attach the block storage device to a virtual machine.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">attachBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$instance_id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$live</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -532,11 +541,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a new block storage device in a region. The size range differs based on the block_type</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -600,11 +610,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete the block storage device.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -668,11 +679,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Detach the block storage device from the virtual machine.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">detachBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$live</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -747,11 +759,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a specific block storage device on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorage.html"><abbr title="\Vultr\VultrPhp\Services\BlockStorage\BlockStorage">BlockStorage</abbr></a></span></code>
@@ -815,11 +828,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Retrieve block storage devices on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBlockDevices</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -883,11 +897,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BlockStorage/BlockStorageService.php"><a href="files/src-services-blockstorage-blockstorageservice.html"><abbr title="src/Services/BlockStorage/BlockStorageService.php">BlockStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update information on the block storage device.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateBlockDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$block</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>

@@ -116,12 +116,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">DNS service handler, for dns endpoints.</p>
+
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -129,7 +129,15 @@
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
-                                </dl>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#tag/dns"><abbr title="https://www.vultr.com/api/#tag/dns">https://www.vultr.com/api/#tag/dns</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
 
 
 
@@ -168,91 +176,91 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Create a DNS domain. If no ip address is supplied a domain with no records will be created.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_createRecord">createRecord()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-DNS-Record.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Record">Record</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Create a DNS record for the domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_deleteDomain">deleteDomain()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete the domain and all of its records.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_deleteRecord">deleteRecord()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete a DNS record for a given domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDNSSecInfo">getDNSSecInfo()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get DNSSEC information for the domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDomain">getDomain()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-DNS-Domain.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Domain">Domain</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get a specific domain on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDomains">getDomains()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-DNS-Domain.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Domain">Domain</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>List DNS domains on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getRecord">getRecord()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get a specific DNS record for a given domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getRecords">getRecords()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get DNS records for a given domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getSOAInfo">getSOAInfo()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-DNS-DNSSOA.html"><abbr title="\Vultr\VultrPhp\Services\DNS\DNSSOA">DNSSOA</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get SOA(start of authority) information for the domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateDomain">updateDomain()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Update the domain to enabled/disable other options.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateRecord">updateRecord()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Update the DNS record for the domain name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateSOAInfo">updateSOAInfo()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Update the SOA information on the domain name. All attributes are optional.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Vultr-VultrPhp-Services-VultrService.html#method_createObject">createObject()</a>
@@ -487,11 +495,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a DNS domain. If no ip address is supplied a domain with no records will be created.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createDomain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dns_sec</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;disabled&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ip</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -577,11 +586,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a DNS record for the domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createRecord</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$record</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-DNS-Record.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Record">Record</abbr></a></span></code>
@@ -656,11 +666,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete the domain and all of its records.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteDomain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -724,11 +735,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete a DNS record for a given domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteRecord</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$record_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -803,11 +815,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get DNSSEC information for the domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDNSSecInfo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -879,11 +892,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a specific domain on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDomain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-DNS-Domain.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Domain">Domain</abbr></a></span></code>
@@ -947,11 +961,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">List DNS domains on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDomains</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-DNS-Domain.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Domain">Domain</abbr></a>&gt;</span></code>
@@ -1015,11 +1030,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a specific DNS record for a given domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getRecord</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$record_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -1094,11 +1110,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get DNS records for a given domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getRecords</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -1173,11 +1190,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get SOA(start of authority) information for the domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSOAInfo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-DNS-DNSSOA.html"><abbr title="\Vultr\VultrPhp\Services\DNS\DNSSOA">DNSSOA</abbr></a></span></code>
@@ -1241,11 +1259,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update the domain to enabled/disable other options.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateDomain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Vultr-VultrPhp-Services-DNS-Domain.html"><abbr title="\Vultr\VultrPhp\Services\DNS\Domain">Domain</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1306,11 +1325,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update the DNS record for the domain name.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateRecord</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$record</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1385,11 +1405,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/DNS/DNSService.php"><a href="files/src-services-dns-dnsservice.html"><abbr title="src/Services/DNS/DNSService.php">DNSService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update the SOA information on the domain name. All attributes are optional.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateSOAInfo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$soa</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>

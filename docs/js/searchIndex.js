@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Account\\Account",
             "name": "Account",
-            "summary": "Contains\u0020information\u0020about,\u0020the\u0020account,\u0020permission,\u0020and\u0020billing\u0020information",
+            "summary": "Contains\u0020information\u0020about,\u0020the\u0020account,\u0020permission,\u0020and\u0020billing\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Account-Account.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Account\\Account\u003A\u003AgetName\u0028\u0029",
@@ -123,7 +123,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Account\\AccountService",
             "name": "AccountService",
-            "summary": "",
+            "summary": "Account\u0020service\u0020handler,\u0020for\u0020account\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Account-AccountService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Account\\AccountService\u003A\u003AgetAccount\u0028\u0029",
@@ -133,7 +133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\Application",
             "name": "Application",
-            "summary": "Holds\u0020deployable\u0020application\u0020image\u0020info\u0020that\u0020can\u0020be\u0020used\u0020on\u0020virtualmachine\u0027s\u0020and\u0020baremetal\u0027s",
+            "summary": "Holds\u0020deployable\u0020application\u0020image\u0020info\u0020that\u0020can\u0020be\u0020used\u0020on\u0020virtualmachine\u0027s\u0020and\u0020baremetal\u0027s.",
             "url": "classes/Vultr-VultrPhp-Services-Applications-Application.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\Application\u003A\u003AgetId\u0028\u0029",
@@ -253,7 +253,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\ApplicationService",
             "name": "ApplicationService",
-            "summary": "",
+            "summary": "Application\u0020service\u0020handler,\u0020for\u0020applications\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Applications-ApplicationService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\ApplicationService\u003A\u003AgetApplications\u0028\u0029",
@@ -268,7 +268,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\ApplicationService\u003A\u003AcacheApplications\u0028\u0029",
             "name": "cacheApplications",
-            "summary": "",
+            "summary": "Cache\u0020all\u0020available\u0020applications\u0020from\u0020the\u0020vultr\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-Applications-ApplicationService.html#method_cacheApplications"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Applications\\ApplicationService\u003A\u003AFILTER_ALL",
@@ -383,7 +383,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Backups\\BackupService",
             "name": "BackupService",
-            "summary": "",
+            "summary": "Backup\u0020service\u0020handler,\u0020for\u0020backup\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Backups-BackupService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Backups\\BackupService\u003A\u003AgetBackups\u0028\u0029",
@@ -398,7 +398,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetal",
             "name": "BareMetal",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020baremetal\u0020information\u0020from\u0020the\u0020response\u0020of\u0020the\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetal\u003A\u003AgetId\u0028\u0029",
@@ -748,7 +748,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalCreate",
             "name": "BareMetalCreate",
-            "summary": "",
+            "summary": "Options\u0020to\u0020create\u0020a\u0020baremetal\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalCreate.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalCreate\u003A\u003A__construct\u0028\u0029",
@@ -848,7 +848,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv4Info",
             "name": "BareMetalIPv4Info",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020ipv4\u0020address\u0020information\u0020on\u0020the\u0020ip\u0020address\u0020attached\u0020to\u0020the\u0020baremetal\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalIPv4Info.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv4Info\u003A\u003AgetIp\u0028\u0029",
@@ -903,7 +903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv4Info\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalIPv4Info.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv4Info\u003A\u003A\u0024ip",
@@ -933,7 +933,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv6Info",
             "name": "BareMetalIPv6Info",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020ipv6\u0020address\u0020information\u0020on\u0020the\u0020ip\u0020address\u0020attached\u0020to\u0020the\u0020baremetal\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalIPv6Info.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv6Info\u003A\u003AgetIp\u0028\u0029",
@@ -978,7 +978,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv6Info\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalIPv6Info.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalIPv6Info\u003A\u003A\u0024ip",
@@ -1003,42 +1003,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService",
             "name": "BareMetalService",
-            "summary": "",
+            "summary": "Baremetal\u0020service\u0020handler,\u0020for\u0020bare\u002Dmetals\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetBareMetals\u0028\u0029",
             "name": "getBareMetals",
-            "summary": "",
+            "summary": "List\u0020all\u0020Bare\u0020Metal\u0020instances\u0020in\u0020your\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getBareMetals"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetBareMetal\u0028\u0029",
             "name": "getBareMetal",
-            "summary": "",
+            "summary": "Get\u0020information\u0020for\u0020a\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AdeleteBareMetal\u0028\u0029",
             "name": "deleteBareMetal",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_deleteBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AcreateBareMetal\u0028\u0029",
             "name": "createBareMetal",
-            "summary": "",
+            "summary": "Create\u0020a\u0020new\u0020Bare\u0020Metal\u0020instance\u0020based\u0020on\u0020BareMetalCreate",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_createBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AupdateBareMetal\u0028\u0029",
             "name": "updateBareMetal",
-            "summary": "",
+            "summary": "Update\u0020a\u0020Bare\u0020Metal\u0020instance.\u0020All\u0020attributes\u0020are\u0020optional\u0020in\u0020BareMetalUpdate.\u0020If\u0020not\u0020set\u0020the\u0020attributes\u0020will\u0020not\u0020be\u0020sent\u0020to\u0020the\u0020API.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_updateBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetIPv4Addresses\u0028\u0029",
             "name": "getIPv4Addresses",
-            "summary": "",
+            "summary": "Get\u0020all\u0020IPv4\u0020information\u0020for\u0020the\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getIPv4Addresses"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetIPv6Addresses\u0028\u0029",
             "name": "getIPv6Addresses",
-            "summary": "",
+            "summary": "Get\u0020all\u0020IPv6\u0020information\u0020for\u0020the\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getIPv6Addresses"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetAddressInfo\u0028\u0029",
@@ -1053,32 +1053,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AstartBareMetals\u0028\u0029",
             "name": "startBareMetals",
-            "summary": "",
+            "summary": "Start\u0020the\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_startBareMetals"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003ArebootBareMetal\u0028\u0029",
             "name": "rebootBareMetal",
-            "summary": "",
+            "summary": "Reboot\u0020the\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_rebootBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003ArebootBareMetals\u0028\u0029",
             "name": "rebootBareMetals",
-            "summary": "",
+            "summary": "Reboot\u0020multiple\u0020Bare\u0020Metal\u0020instances\u0020with\u00201\u0020api\u0020call.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_rebootBareMetals"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AreinstallBareMetal\u0028\u0029",
             "name": "reinstallBareMetal",
-            "summary": "",
+            "summary": "Reinstall\u0020the\u0020Bare\u0020Metal\u0020instance.\u0020This\u0020action\u0020usually\u0020takes\u0020a\u0020few\u0020seconds\u0020to\u0020complete.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_reinstallBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AhaltBareMetal\u0028\u0029",
             "name": "haltBareMetal",
-            "summary": "",
+            "summary": "Halt\u0020the\u0020Bare\u0020Metal\u0020instance.\u0020The\u0020machine\u0020will\u0020remain\u0020off\u0020till\u0020started\u0020again.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_haltBareMetal"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AhaltBareMetals\u0028\u0029",
             "name": "haltBareMetals",
-            "summary": "",
+            "summary": "Halt\u0020multiple\u0020Bare\u0020Metal\u0020instances.\u0020The\u0020machines\u0020will\u0020remain\u0020off\u0020till\u0020started\u0020again.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_haltBareMetals"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AsingleServerAction\u0028\u0029",
@@ -1093,27 +1093,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetBandwidth\u0028\u0029",
             "name": "getBandwidth",
-            "summary": "",
+            "summary": "Get\u0020bandwidth\u0020information\u0020for\u0020the\u0020Bare\u0020Metal\u0020instance",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getBandwidth"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetUserData\u0028\u0029",
             "name": "getUserData",
-            "summary": "",
+            "summary": "Get\u0020the\u0020user\u002Dsupplied,\u0020which\u0020is\u0020decoded\u0020for\u0020you\u0020from\u0020base64\u0020that\u0020the\u0020api\u0020returns.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getUserData"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetAvailableUpgrades\u0028\u0029",
             "name": "getAvailableUpgrades",
-            "summary": "",
+            "summary": "Get\u0020available\u0020upgrades\u0020for\u0020a\u0020Bare\u0020Metal\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getAvailableUpgrades"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalService\u003A\u003AgetVNCUrl\u0028\u0029",
             "name": "getVNCUrl",
-            "summary": "",
+            "summary": "Get\u0020the\u0020VNC\u0020URL\u0020for\u0020a\u0020Bare\u0020Metal\u0020instance.\u0020Which\u0020can\u0020be\u0020used\u0020to\u0020access\u0020the\u0020console\u0020of\u0020the\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalService.html#method_getVNCUrl"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalUpdate",
             "name": "BareMetalUpdate",
-            "summary": "",
+            "summary": "Options\u0020to\u0020update\u0020a\u0020baremetal\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BareMetal-BareMetalUpdate.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BareMetal\\BareMetalUpdate\u003A\u003A\u0024user_data",
@@ -1153,7 +1153,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Bill",
             "name": "Bill",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020billing\u0020history\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-Bill.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Bill\u003A\u003AgetId\u0028\u0029",
@@ -1218,12 +1218,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Bill\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Billing-Bill.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Bill\u003A\u003AgetResponseListName\u0028\u0029",
             "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Billing-Bill.html#method_getResponseListName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Bill\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -1273,32 +1273,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\BillingService",
             "name": "BillingService",
-            "summary": "",
+            "summary": "Billing\u0020service\u0020handler,\u0020for\u0020billing\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-BillingService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\BillingService\u003A\u003AgetBillingHistory\u0028\u0029",
             "name": "getBillingHistory",
-            "summary": "",
+            "summary": "Retrieve\u0020the\u0020billing\u0020history\u0020of\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getBillingHistory"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\BillingService\u003A\u003AgetInvoices\u0028\u0029",
             "name": "getInvoices",
-            "summary": "",
+            "summary": "Retrieve\u0020the\u0020invoices\u0020of\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoices"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\BillingService\u003A\u003AgetInvoice\u0028\u0029",
             "name": "getInvoice",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020invoice\u0020based\u0020on\u0020its\u0020id.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\BillingService\u003A\u003AgetInvoiceItems\u0028\u0029",
             "name": "getInvoiceItems",
-            "summary": "",
+            "summary": "Get\u0020invoice\u0020items\u0020to\u0020help\u0020drill\u0020into\u0020why\u0020the\u0020cost\u0020is\u0020what\u0020it\u0020is.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoiceItems"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Invoice",
             "name": "Invoice",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020invoice\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-Invoice.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Invoice\u003A\u003AgetId\u0028\u0029",
@@ -1353,7 +1353,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Invoice\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Billing-Invoice.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\Invoice\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -1388,7 +1388,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\InvoiceItem",
             "name": "InvoiceItem",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020item\u0020information\u0020on\u0020a\u0020specific\u0020invoice.",
             "url": "classes/Vultr-VultrPhp-Services-Billing-InvoiceItem.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\InvoiceItem\u003A\u003AgetDescription\u0028\u0029",
@@ -1473,7 +1473,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\InvoiceItem\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Billing-InvoiceItem.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Billing\\InvoiceItem\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -1523,7 +1523,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorage",
             "name": "BlockStorage",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020block\u0020storage\u0020device\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorage.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorage\u003A\u003AgetId\u0028\u0029",
@@ -1628,12 +1628,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorage\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorage.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorage\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorage.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorage\u003A\u003A\u0024id",
@@ -1698,42 +1698,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService",
             "name": "BlockStorageService",
-            "summary": "",
+            "summary": "Blockstorage\u0020service\u0020handler,\u0020for\u0020blocks\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AgetBlockDevices\u0028\u0029",
             "name": "getBlockDevices",
-            "summary": "",
+            "summary": "Retrieve\u0020block\u0020storage\u0020devices\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_getBlockDevices"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AgetBlockDevice\u0028\u0029",
             "name": "getBlockDevice",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020block\u0020storage\u0020device\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_getBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AcreateBlockDevice\u0028\u0029",
             "name": "createBlockDevice",
-            "summary": "",
+            "summary": "Create\u0020a\u0020new\u0020block\u0020storage\u0020device\u0020in\u0020a\u0020region.\u0020The\u0020size\u0020range\u0020differs\u0020based\u0020on\u0020the\u0020block_type",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_createBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AupdateBlockDevice\u0028\u0029",
             "name": "updateBlockDevice",
-            "summary": "",
+            "summary": "Update\u0020information\u0020on\u0020the\u0020block\u0020storage\u0020device.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_updateBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AdeleteBlockDevice\u0028\u0029",
             "name": "deleteBlockDevice",
-            "summary": "",
+            "summary": "Delete\u0020the\u0020block\u0020storage\u0020device.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_deleteBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AattachBlockDevice\u0028\u0029",
             "name": "attachBlockDevice",
-            "summary": "",
+            "summary": "Attach\u0020the\u0020block\u0020storage\u0020device\u0020to\u0020a\u0020virtual\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_attachBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\BlockStorage\\BlockStorageService\u003A\u003AdetachBlockDevice\u0028\u0029",
             "name": "detachBlockDevice",
-            "summary": "",
+            "summary": "Detach\u0020the\u0020block\u0020storage\u0020device\u0020from\u0020the\u0020virtual\u0020machine.",
             "url": "classes/Vultr-VultrPhp-Services-BlockStorage-BlockStorageService.html#method_detachBlockDevice"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSException",
@@ -1748,77 +1748,77 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService",
             "name": "DNSService",
-            "summary": "",
+            "summary": "DNS\u0020service\u0020handler,\u0020for\u0020dns\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetDomains\u0028\u0029",
             "name": "getDomains",
-            "summary": "",
+            "summary": "List\u0020DNS\u0020domains\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDomains"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetDomain\u0028\u0029",
             "name": "getDomain",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020domain\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDomain"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AcreateDomain\u0028\u0029",
             "name": "createDomain",
-            "summary": "",
+            "summary": "Create\u0020a\u0020DNS\u0020domain.\u0020If\u0020no\u0020ip\u0020address\u0020is\u0020supplied\u0020a\u0020domain\u0020with\u0020no\u0020records\u0020will\u0020be\u0020created.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_createDomain"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AdeleteDomain\u0028\u0029",
             "name": "deleteDomain",
-            "summary": "",
+            "summary": "Delete\u0020the\u0020domain\u0020and\u0020all\u0020of\u0020its\u0020records.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_deleteDomain"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AupdateDomain\u0028\u0029",
             "name": "updateDomain",
-            "summary": "",
+            "summary": "Update\u0020the\u0020domain\u0020to\u0020enabled\/disable\u0020other\u0020options.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateDomain"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetSOAInfo\u0028\u0029",
             "name": "getSOAInfo",
-            "summary": "",
+            "summary": "Get\u0020SOA\u0028start\u0020of\u0020authority\u0029\u0020information\u0020for\u0020the\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getSOAInfo"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AupdateSOAInfo\u0028\u0029",
             "name": "updateSOAInfo",
-            "summary": "",
+            "summary": "Update\u0020the\u0020SOA\u0020information\u0020on\u0020the\u0020domain\u0020name.\u0020All\u0020attributes\u0020are\u0020optional.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateSOAInfo"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetDNSSecInfo\u0028\u0029",
             "name": "getDNSSecInfo",
-            "summary": "",
+            "summary": "Get\u0020DNSSEC\u0020information\u0020for\u0020the\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getDNSSecInfo"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AcreateRecord\u0028\u0029",
             "name": "createRecord",
-            "summary": "",
+            "summary": "Create\u0020a\u0020DNS\u0020record\u0020for\u0020the\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_createRecord"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetRecords\u0028\u0029",
             "name": "getRecords",
-            "summary": "",
+            "summary": "Get\u0020DNS\u0020records\u0020for\u0020a\u0020given\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getRecords"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AgetRecord\u0028\u0029",
             "name": "getRecord",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020DNS\u0020record\u0020for\u0020a\u0020given\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_getRecord"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AupdateRecord\u0028\u0029",
             "name": "updateRecord",
-            "summary": "",
+            "summary": "Update\u0020the\u0020DNS\u0020record\u0020for\u0020the\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_updateRecord"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSService\u003A\u003AdeleteRecord\u0028\u0029",
             "name": "deleteRecord",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020DNS\u0020record\u0020for\u0020a\u0020given\u0020domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSService.html#method_deleteRecord"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSSOA",
             "name": "DNSSOA",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020SOA\u0028start\u0020of\u0020authority\u0029\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSSOA.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSSOA\u003A\u003AgetNsPrimary\u0028\u0029",
@@ -1848,12 +1848,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSSOA\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSSOA.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSSOA\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-DNS-DNSSOA.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\DNSSOA\u003A\u003A\u0024nsprimary",
@@ -1868,7 +1868,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Domain",
             "name": "Domain",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020Domain\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-Domain.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Domain\u003A\u003AgetDomain\u0028\u0029",
@@ -1908,7 +1908,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Domain\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-DNS-Domain.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Domain\u003A\u003A\u0024domain",
@@ -1928,7 +1928,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Record",
             "name": "Record",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020a\u0020Record\u0020for\u0020the\u0020Domain\u0020name.",
             "url": "classes/Vultr-VultrPhp-Services-DNS-Record.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Record\u003A\u003AgetId\u0028\u0029",
@@ -1998,7 +1998,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Record\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-DNS-Record.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\DNS\\Record\u003A\u003A\u0024id",
@@ -2043,7 +2043,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallGroup",
             "name": "FirewallGroup",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020firewall\u0020group\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallGroup.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallGroup\u003A\u003AgetId\u0028\u0029",
@@ -2118,7 +2118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallGroup\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallGroup.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallGroup\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -2163,7 +2163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallRule",
             "name": "FirewallRule",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020firewall\u0020rule\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallRule.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallRule\u003A\u003AgetId\u0028\u0029",
@@ -2308,57 +2308,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService",
             "name": "FirewallService",
-            "summary": "",
+            "summary": "Firewall\u0020service\u0020handler,\u0020for\u0020firewall\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AgetFirewallGroups\u0028\u0029",
             "name": "getFirewallGroups",
-            "summary": "",
+            "summary": "List\u0020firewall\u0020groups.",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_getFirewallGroups"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AgetFirewallGroup\u0028\u0029",
             "name": "getFirewallGroup",
-            "summary": "",
+            "summary": "Retrieve\u0020a\u0020specific\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_getFirewallGroup"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AcreateFirewallGroup\u0028\u0029",
             "name": "createFirewallGroup",
-            "summary": "",
+            "summary": "Create\u0020a\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_createFirewallGroup"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AupdateFirewallGroup\u0028\u0029",
             "name": "updateFirewallGroup",
-            "summary": "",
+            "summary": "Update\u0020information\u0020for\u0020a\u0020friewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_updateFirewallGroup"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AdeleteFirewallGroup\u0028\u0029",
             "name": "deleteFirewallGroup",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020firewall\u0020group\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_deleteFirewallGroup"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AgetFirewallRules\u0028\u0029",
             "name": "getFirewallRules",
-            "summary": "",
+            "summary": "Get\u0020firewall\u0020rules\u0020for\u0020the\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_getFirewallRules"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AgetFirewallRule\u0028\u0029",
             "name": "getFirewallRule",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020firewall\u0020rule\u0020from\u0020the\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_getFirewallRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AcreateFirewallRule\u0028\u0029",
             "name": "createFirewallRule",
-            "summary": "",
+            "summary": "Create\u0020a\u0020firewall\u0020rule\u0020for\u0020the\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_createFirewallRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Firewall\\FirewallService\u003A\u003AdeleteFirewallRule\u0028\u0029",
             "name": "deleteFirewallRule",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020firewall\u0020rule\u0020from\u0020the\u0020firewall\u0020group",
             "url": "classes/Vultr-VultrPhp-Services-Firewall-FirewallService.html#method_deleteFirewallRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\BackupSchedule",
             "name": "BackupSchedule",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020backup\u0020schedule\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-BackupSchedule.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\BackupSchedule\u003A\u003AgetEnabled\u0028\u0029",
@@ -2458,7 +2458,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\Instance",
             "name": "Instance",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020vps\u0020instance\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-Instance.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\Instance\u003A\u003AgetId\u0028\u0029",
@@ -3028,7 +3028,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv4Info",
             "name": "InstanceIPv4Info",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020instance\u0020ipv4\u0020address\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv4Info\u003A\u003AgetIp\u0028\u0029",
@@ -3093,7 +3093,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv4Info\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv4Info\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -3133,7 +3133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv6Info",
             "name": "InstanceIPv6Info",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020instance\u0020ipv6\u0020address\u0020information",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceIPv6Info.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv6Info\u003A\u003AgetIp\u0028\u0029",
@@ -3178,7 +3178,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv6Info\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceIPv6Info.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceIPv6Info\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -3208,7 +3208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceReverseIPv6",
             "name": "InstanceReverseIPv6",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020instance\u0020reverse\u0020dns\u0020ipv6\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceReverseIPv6.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceReverseIPv6\u003A\u003AgetIp\u0028\u0029",
@@ -3233,7 +3233,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceReverseIPv6\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceReverseIPv6.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceReverseIPv6\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -3253,137 +3253,137 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService",
             "name": "InstanceService",
-            "summary": "",
+            "summary": "Instance\u0020service\u0020handler,\u0020for\u0020all\u0020instances\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetInstances\u0028\u0029",
             "name": "getInstances",
-            "summary": "",
+            "summary": "Get\u0020vps\u0020instances\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getInstances"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetInstance\u0028\u0029",
             "name": "getInstance",
-            "summary": "",
+            "summary": "Retrieve\u0020a\u0020specific\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AcreateInstance\u0028\u0029",
             "name": "createInstance",
-            "summary": "",
+            "summary": "Create\u0020a\u0020new\u0020vps\u0020instance\u0020in\u0020a\u0020region\u0020with\u0020the\u0020desired\u0020plan\u0020and\u0020image.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_createInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AupdateInstance\u0028\u0029",
             "name": "updateInstance",
-            "summary": "",
+            "summary": "Update\u0020all\u0020information\u0020for\u0020an\u0020instance.\u0020All\u0020attributes\u0020are\u0020optional.\u0020If\u0020not\u0020set,\u0020the\u0020attributes\u0020will\u0020not\u0020be\u0020sent\u0020to\u0020the\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_updateInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AdeleteInstance\u0028\u0029",
             "name": "deleteInstance",
-            "summary": "",
+            "summary": "Delete\u0020an\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_deleteInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AhaltInstances\u0028\u0029",
             "name": "haltInstances",
-            "summary": "",
+            "summary": "Halt\u0020an\u0020array\u0020of\u0020instances\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_haltInstances"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AhaltInstance\u0028\u0029",
             "name": "haltInstance",
-            "summary": "",
+            "summary": "Halt\u0020a\u0020specific\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_haltInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003ArebootInstances\u0028\u0029",
             "name": "rebootInstances",
-            "summary": "",
+            "summary": "Reboot\u0020an\u0020array\u0020of\u0020instances\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_rebootInstances"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003ArebootInstance\u0028\u0029",
             "name": "rebootInstance",
-            "summary": "",
+            "summary": "Reboot\u0020a\u0020specific\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_rebootInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AstartInstances\u0028\u0029",
             "name": "startInstances",
-            "summary": "",
+            "summary": "Start\u0020a\u0020group\u0020of\u0020instances\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_startInstances"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AstartInstance\u0028\u0029",
             "name": "startInstance",
-            "summary": "",
+            "summary": "Start\u0020a\u0020specific\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_startInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AreinstallInstance\u0028\u0029",
             "name": "reinstallInstance",
-            "summary": "",
+            "summary": "Reinstall\u0020an\u0020instance.\u0020This\u0020may\u0020take\u0020a\u0020few\u0020extra\u0020seconds\u0020to\u0020complete.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_reinstallInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetBandwidth\u0028\u0029",
             "name": "getBandwidth",
-            "summary": "",
+            "summary": "Get\u0020bandwidth\u0020information\u0020about\u0020an\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getBandwidth"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetNeighbors\u0028\u0029",
             "name": "getNeighbors",
-            "summary": "",
+            "summary": "Get\u0020neighboring\u0020instances\u0020that\u0020live\u0020on\u0020the\u0020same\u0020host\u0020machine\u0020as\u0020this\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getNeighbors"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetVPCs\u0028\u0029",
             "name": "getVPCs",
-            "summary": "",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020attach\u0020vpc\u0027s\u0020attached\u0020to\u0020this\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getVPCs"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AattachVPC\u0028\u0029",
             "name": "attachVPC",
-            "summary": "",
+            "summary": "Attach\u0020a\u0020vpc\u0020network\u0020to\u0020an\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_attachVPC"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AdetachVPC\u0028\u0029",
             "name": "detachVPC",
-            "summary": "",
+            "summary": "Detach\u0020a\u0020vpc\u0020network\u0020from\u0020an\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_detachVPC"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetIsoStatus\u0028\u0029",
             "name": "getIsoStatus",
-            "summary": "",
+            "summary": "Get\u0020the\u0020iso\u0020mount\u0020status\u0020on\u0020an\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIsoStatus"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AattachIsoToInstance\u0028\u0029",
             "name": "attachIsoToInstance",
-            "summary": "",
+            "summary": "Attach\u0020an\u0020iso\u0020to\u0020an\u0020instance.\u0020This\u0020will\u0020cause\u0020a\u0020reboot.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_attachIsoToInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AdetachIsoFromInstance\u0028\u0029",
             "name": "detachIsoFromInstance",
-            "summary": "",
+            "summary": "Detach\u0020an\u0020iso\u0020from\u0020an\u0020instance.\u0020This\u0020will\u0020cause\u0020a\u0020reboot.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_detachIsoFromInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AsetBackupSchedule\u0028\u0029",
             "name": "setBackupSchedule",
-            "summary": "",
+            "summary": "Set\u0020the\u0020backup\u0020schedule\u0020for\u0020an\u0020instance\u0020in\u0020UTC.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_setBackupSchedule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetBackupSchedule\u0028\u0029",
             "name": "getBackupSchedule",
-            "summary": "",
+            "summary": "Get\u0020the\u0020backup\u0020schedule\u0020for\u0020an\u0020instance\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getBackupSchedule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003ArestoreInstance\u0028\u0029",
             "name": "restoreInstance",
-            "summary": "",
+            "summary": "Restore\u0020an\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_restoreInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetIPv4Addresses\u0028\u0029",
             "name": "getIPv4Addresses",
-            "summary": "",
+            "summary": "Get\u0020IPV4\u0020Address\u0020information\u0020on\u0020the\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIPv4Addresses"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AcreateIPv4Address\u0028\u0029",
             "name": "createIPv4Address",
-            "summary": "",
+            "summary": "Create\u0020an\u0020ipv4\u0020address\u0020and\u0020attach\u0020to\u0020the\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_createIPv4Address"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AdeleteIPv4Address\u0028\u0029",
             "name": "deleteIPv4Address",
-            "summary": "",
+            "summary": "Delete\u0020and\u0020detach\u0020an\u0020ipv4\u0020address\u0020from\u0020the\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_deleteIPv4Address"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AcreateReverseIPv4Address\u0028\u0029",
@@ -3398,7 +3398,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetIPv6Addresses\u0028\u0029",
             "name": "getIPv6Addresses",
-            "summary": "",
+            "summary": "Get\u0020IPV6\u0020address\u0020information\u0020on\u0020the\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIPv6Addresses"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AcreateReverseIPv6Address\u0028\u0029",
@@ -3418,12 +3418,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetUserData\u0028\u0029",
             "name": "getUserData",
-            "summary": "",
+            "summary": "Get\u0020the\u0020user\u0020data\u0020for\u0020an\u0020instance\u0020decoded\u0020from\u0020base64.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getUserData"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AgetAvailableUpgrades\u0028\u0029",
             "name": "getAvailableUpgrades",
-            "summary": "",
+            "summary": "Get\u0020available\u0020plan\u0020upgrades\u0020for\u0020an\u0020instance\u0020in\u0020the\u0020region.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getAvailableUpgrades"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\InstanceService\u003A\u003AsingleInstanceAction\u0028\u0029",
@@ -3528,7 +3528,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\IsoStatus",
             "name": "IsoStatus",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020iso\u0020mount\u0020status\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\IsoStatus\u003A\u003AgetState\u0028\u0029",
@@ -3568,7 +3568,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\VPCAttachment",
             "name": "VPCAttachment",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020information\u0020on\u0020the\u0020virtual\u0020private\u0020cloud\u0020network\u0020that\u0020is\u0020attached\u0020to\u0020a\u0020instance.",
             "url": "classes/Vultr-VultrPhp-Services-Instances-VPCAttachment.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\VPCAttachment\u003A\u003AgetId\u0028\u0029",
@@ -3603,7 +3603,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\VPCAttachment\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Instances-VPCAttachment.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Instances\\VPCAttachment\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -3628,7 +3628,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISO",
             "name": "ISO",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020ISO\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISO.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISO\u003A\u003AgetId\u0028\u0029",
@@ -3703,7 +3703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISO\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISO.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISO\u003A\u003A\u0024id",
@@ -3753,37 +3753,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService",
             "name": "ISOService",
-            "summary": "",
+            "summary": "ISO\u0020service\u0020handler,\u0020for\u0020all\u0020iso\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService\u003A\u003AgetISO\u0028\u0029",
             "name": "getISO",
-            "summary": "",
+            "summary": "Get\u0020the\u0020ISO\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html#method_getISO"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService\u003A\u003AgetISOs\u0028\u0029",
             "name": "getISOs",
-            "summary": "",
+            "summary": "Get\u0020ISOS\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html#method_getISOs"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService\u003A\u003AgetPublicISOs\u0028\u0029",
             "name": "getPublicISOs",
-            "summary": "",
+            "summary": "Get\u0020all\u0020publically\u0020available\u0020isos\u0020regardless\u0020of\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html#method_getPublicISOs"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService\u003A\u003AcreateISO\u0028\u0029",
             "name": "createISO",
-            "summary": "",
+            "summary": "Create\u0020an\u0020ISO\u0020from\u0020a\u0020url\u0020endpoint",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html#method_createISO"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\ISOService\u003A\u003AdeleteISO\u0028\u0029",
             "name": "deleteISO",
-            "summary": "",
+            "summary": "Delete\u0020an\u0020ISO\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ISO-ISOService.html#method_deleteISO"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\PublicISO",
             "name": "PublicISO",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020public\u0020iso\u0020information",
             "url": "classes/Vultr-VultrPhp-Services-ISO-PublicISO.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\PublicISO\u003A\u003AgetId\u0028\u0029",
@@ -3828,7 +3828,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\PublicISO\u003A\u003AgetResponseListName\u0028\u0029",
             "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-ISO-PublicISO.html#method_getResponseListName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ISO\\PublicISO\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -3868,102 +3868,102 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService",
             "name": "KubernetesService",
-            "summary": "",
+            "summary": "Kubernetes\u0020service\u0020handler,\u0020for\u0020all\u0020kubernetes\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetCluster\u0028\u0029",
             "name": "getCluster",
-            "summary": "",
+            "summary": "Retrieve\u0020a\u0020kubernetes\u0020cluster\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getCluster"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetClusters\u0028\u0029",
             "name": "getClusters",
-            "summary": "",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020kubernetes\u0020clusters\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getClusters"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AcreateCluster\u0028\u0029",
             "name": "createCluster",
-            "summary": "",
+            "summary": "Create\u0020a\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_createCluster"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AupdateCluster\u0028\u0029",
             "name": "updateCluster",
-            "summary": "",
+            "summary": "Update\u0020a\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_updateCluster"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AdeleteCluster\u0028\u0029",
             "name": "deleteCluster",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_deleteCluster"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AdeleteClusterAndRelatedResources\u0028\u0029",
             "name": "deleteClusterAndRelatedResources",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020kubernetes\u0020cluster\u0020and\u0020its\u0020resources.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_deleteClusterAndRelatedResources"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetResources\u0028\u0029",
             "name": "getResources",
-            "summary": "",
+            "summary": "Get\u0020resources\u0020belonging\u0020to\u0020a\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getResources"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetAvailableClusterUpgrades\u0028\u0029",
             "name": "getAvailableClusterUpgrades",
-            "summary": "",
+            "summary": "Get\u0020available\u0020cluster\u0020upgrades.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getAvailableClusterUpgrades"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AstartClusterUpgrade\u0028\u0029",
             "name": "startClusterUpgrade",
-            "summary": "",
+            "summary": "Start\u0020a\u0020kubernetes\u0020cluster\u0020version\u0020upgrade.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_startClusterUpgrade"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AcreateNodePool\u0028\u0029",
             "name": "createNodePool",
-            "summary": "",
+            "summary": "Create\u0020a\u0020node\u0020pool\u0020in\u0020the\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_createNodePool"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetNodePools\u0028\u0029",
             "name": "getNodePools",
-            "summary": "",
+            "summary": "Get\u0020available\u0020node\u0020pools\u0020in\u0020the\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getNodePools"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetNodePool\u0028\u0029",
             "name": "getNodePool",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020node\u0020pool\u0020in\u0020the\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getNodePool"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AupdateNodePool\u0028\u0029",
             "name": "updateNodePool",
-            "summary": "",
+            "summary": "Update\u0020a\u0020node\u0020pool\u0020in\u0020the\u0020kubernetes\u0020cluster\u0020with\u0020attributes\u0020from\u0020an\u0020initialized\u0020object.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_updateNodePool"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AdeleteNodePool\u0028\u0029",
             "name": "deleteNodePool",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020node\u0020pool\u0020from\u0020a\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_deleteNodePool"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AdeleteNodePoolInstance\u0028\u0029",
             "name": "deleteNodePoolInstance",
-            "summary": "",
+            "summary": "Delete\u0020an\u0020instance\u0020from\u0020a\u0020node\u0020pool.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_deleteNodePoolInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003ArecycleNodePoolInstance\u0028\u0029",
             "name": "recycleNodePoolInstance",
-            "summary": "",
+            "summary": "Reinstall\u0020a\u0020specific\u0020instance\u0020from\u0020a\u0020node\u0020pool.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_recycleNodePoolInstance"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetClusterKubeconfig\u0028\u0029",
             "name": "getClusterKubeconfig",
-            "summary": "",
+            "summary": "Get\u0020the\u0020kubeconfig\u0020for\u0020the\u0020kubernetes\u0020cluster.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getClusterKubeconfig"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\KubernetesService\u003A\u003AgetAvailableVersions\u0028\u0029",
             "name": "getAvailableVersions",
-            "summary": "",
+            "summary": "Get\u0020available\u0020kubernetes\u0020versions\u0020that\u0020vultr\u0020supports.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-KubernetesService.html#method_getAvailableVersions"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Node",
             "name": "Node",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020node\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-Node.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Node\u003A\u003AgetId\u0028\u0029",
@@ -4033,7 +4033,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodePool",
             "name": "NodePool",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020node\u0020pool\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodePool\u003A\u003AgetId\u0028\u0029",
@@ -4208,7 +4208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodeResource",
             "name": "NodeResource",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020node\u0020resource\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-NodeResource.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodeResource\u003A\u003AgetType\u0028\u0029",
@@ -4258,7 +4258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodeResource\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-NodeResource.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\NodeResource\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -4293,7 +4293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Resources\\BlockResource",
             "name": "BlockResource",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Block\u0020storage\u0020level\u0020resource\u0020that\u0020is\u0020being\u0020used\u0020by\u0020the\u0020node\u0020pool",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-Resources-BlockResource.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Resources\\BlockResource\u003A\u003A\u0024type",
@@ -4303,7 +4303,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Resources\\LoadBalancerResource",
             "name": "LoadBalancerResource",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Load\u0020balancer\u0020level\u0020resource\u0020that\u0020is\u0020being\u0020used\u0020by\u0020the\u0020node\u0020pool",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-Resources-LoadBalancerResource.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\Resources\\LoadBalancerResource\u003A\u003A\u0024type",
@@ -4313,7 +4313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\VKECluster",
             "name": "VKECluster",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020vke\u0020cluster\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-VKECluster.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\VKECluster\u003A\u003AgetId\u0028\u0029",
@@ -4428,7 +4428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\VKECluster\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Kubernetes-VKECluster.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Kubernetes\\VKECluster\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -4493,7 +4493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\FirewallRule",
             "name": "FirewallRule",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020firewall\u0020rule\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-FirewallRule.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\FirewallRule\u003A\u003AgetId\u0028\u0029",
@@ -4558,7 +4558,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\ForwardRule",
             "name": "ForwardRule",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020forward\u0020rule\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-ForwardRule.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\ForwardRule\u003A\u003AgetId\u0028\u0029",
@@ -4613,7 +4613,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\ForwardRule\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-ForwardRule.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\ForwardRule\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -4648,7 +4648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LBHealth",
             "name": "LBHealth",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020load\u0020balancer\u0020health\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LBHealth\u003A\u003AgetProtocol\u0028\u0029",
@@ -4758,7 +4758,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LBInfo",
             "name": "LBInfo",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020load\u0020balanacer\u0020information,\u0020that\u0020balances\u0020the\u0020traffic.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LBInfo.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LBInfo\u003A\u003AgetBalancingAlgorithm\u0028\u0029",
@@ -4838,7 +4838,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancer",
             "name": "LoadBalancer",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020load\u0020balancer\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancer.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancer\u003A\u003AgetId\u0028\u0029",
@@ -5118,62 +5118,62 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService",
             "name": "LoadBalancerService",
-            "summary": "",
+            "summary": "Load\u0020balancer\u0020service\u0020handler,\u0020for\u0020all\u0020load\u002Dbalancers\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetLoadBalancer\u0028\u0029",
             "name": "getLoadBalancer",
-            "summary": "",
+            "summary": "Get\u0020load\u0020balancers\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getLoadBalancer"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetLoadBalancers\u0028\u0029",
             "name": "getLoadBalancers",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020load\u0020balancer\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getLoadBalancers"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AcreateLoadBalancer\u0028\u0029",
             "name": "createLoadBalancer",
-            "summary": "",
+            "summary": "Create\u0020a\u0020load\u0020balancer\u0020in\u0020a\u0020particular\u0020region.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_createLoadBalancer"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AupdateLoadBalancer\u0028\u0029",
             "name": "updateLoadBalancer",
-            "summary": "",
+            "summary": "Update\u0020information\u0020for\u0020a\u0020load\u0020balancer.\u0020All\u0020attributes\u0020are\u0020optional.\u0020If\u0020not\u0020set\u0020the\u0020attributes\u0020will\u0020not\u0020be\u0020sent\u0020to\u0020the\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_updateLoadBalancer"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AdeleteLoadBalancer\u0028\u0029",
             "name": "deleteLoadBalancer",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020load\u0020balancer\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_deleteLoadBalancer"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetForwardingRules\u0028\u0029",
             "name": "getForwardingRules",
-            "summary": "",
+            "summary": "Get\u0020forwarding\u0020rules\u0020for\u0020a\u0020specific\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getForwardingRules"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetForwardingRule\u0028\u0029",
             "name": "getForwardingRule",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020forwarding\u0020rule\u0020for\u0020on\u0020a\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getForwardingRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AcreateForwardingRule\u0028\u0029",
             "name": "createForwardingRule",
-            "summary": "",
+            "summary": "Create\u0020a\u0020forwarding\u0020rule\u0020for\u0020a\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_createForwardingRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AdeleteForwardRule\u0028\u0029",
             "name": "deleteForwardRule",
-            "summary": "",
+            "summary": "Delete\u0020forwarding\u0020rule\u0020on\u0020a\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_deleteForwardRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetFirewallRules\u0028\u0029",
             "name": "getFirewallRules",
-            "summary": "",
+            "summary": "Get\u0020firewall\u0020rules\u0020for\u0020a\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getFirewallRules"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AgetFirewallRule\u0028\u0029",
             "name": "getFirewallRule",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020firewall\u0020rule\u0020on\u0020a\u0020load\u0020balancer.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-LoadBalancerService.html#method_getFirewallRule"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\LoadBalancerService\u003A\u003AsetRules\u0028\u0029",
@@ -5243,7 +5243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\SSL",
             "name": "SSL",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020SSL\u0020information\u0020that\u0020is\u0020used\u0020to\u0020generate\u0020a\u0020request\u0020to\u0020the\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-SSL.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\SSL\u003A\u003AgetPrivateKey\u0028\u0029",
@@ -5293,7 +5293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\StickySession",
             "name": "StickySession",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020sticky\u0020session\u0020information\u0020that\u0020is\u0020used\u0020to\u0020generate\u0020a\u0020request\u0020to\u0020the\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-LoadBalancers-StickySession.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\LoadBalancers\\StickySession\u003A\u003AgetCookieName\u0028\u0029",
@@ -5313,7 +5313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorage",
             "name": "ObjectStorage",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020Object\u0020storage\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorage\u003A\u003AgetId\u0028\u0029",
@@ -5418,7 +5418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorage\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorage\u003A\u003A\u0024id",
@@ -5483,47 +5483,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService",
             "name": "ObjectStorageService",
-            "summary": "",
+            "summary": "Object\u0020storage\u0020service\u0020handler,\u0020for\u0020all\u0020object\u002Dstorage\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AgetClusters\u0028\u0029",
             "name": "getClusters",
-            "summary": "",
+            "summary": "Get\u0020object\u0020storage\u0020cluster\u0020regions\u0020that\u0020are\u0020available\u0020to\u0020be\u0020deployed\u0020in.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getClusters"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AgetObjectStoreSubs\u0028\u0029",
             "name": "getObjectStoreSubs",
-            "summary": "",
+            "summary": "Get\u0020all\u0020object\u0020storage\u0020subscriptions\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getObjectStoreSubs"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AgetObjectStoreSub\u0028\u0029",
             "name": "getObjectStoreSub",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020object\u0020storage\u0020subscription\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getObjectStoreSub"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AcreateObjectStoreSub\u0028\u0029",
             "name": "createObjectStoreSub",
-            "summary": "",
+            "summary": "Create\u0020a\u0020object\u0020storage\u0020subscription\u0020in\u0020a\u0020region\u0020based\u0020on\u0020the\u0020cluster_id.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_createObjectStoreSub"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AdeleteObjectStoreSub\u0028\u0029",
             "name": "deleteObjectStoreSub",
-            "summary": "",
+            "summary": "Delete\u0020the\u0020object\u0020storage\u0020subscription\u0020and\u0020its\u0020data.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_deleteObjectStoreSub"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AupdateObjectStoreSub\u0028\u0029",
             "name": "updateObjectStoreSub",
-            "summary": "",
+            "summary": "Update\u0020an\u0020object\u0020storage\u0020subscription\u0020on\u0020the\u0020account.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_updateObjectStoreSub"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjectStorageService\u003A\u003AregenObjectStoreKeys\u0028\u0029",
             "name": "regenObjectStoreKeys",
-            "summary": "",
+            "summary": "Regenerate\u0020the\u0020object\u0020storage\u0020access\u0020and\u0020secret\u0020keys\u0020for\u0020the\u0020subscription.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_regenObjectStoreKeys"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjStoreCluster",
             "name": "ObjStoreCluster",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020object\u0020storage\u0020cluster\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjStoreCluster.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjStoreCluster\u003A\u003AgetId\u0028\u0029",
@@ -5578,7 +5578,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjStoreCluster\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-ObjectStorage-ObjStoreCluster.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ObjectStorage\\ObjStoreCluster\u003A\u003A\u0024id",
@@ -5603,7 +5603,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystem",
             "name": "OperatingSystem",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020operating\u0020system\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystem.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystem\u003A\u003AgetId\u0028\u0029",
@@ -5648,7 +5648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystem\u003A\u003AgetResponseListName\u0028\u0029",
             "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystem.html#method_getResponseListName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystem\u003A\u003A\u0024id",
@@ -5683,22 +5683,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystemService",
             "name": "OperatingSystemService",
-            "summary": "",
+            "summary": "Operating\u0020system\u0020service\u0020handler,\u0020for\u0020all\u0020os\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystemService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystemService\u003A\u003AgetOperatingSystems\u0028\u0029",
             "name": "getOperatingSystems",
-            "summary": "",
+            "summary": "Get\u0020all\u0020operating\u0020systems\u0020that\u0020are\u0020available\u0020to\u0020be\u0020deployed.",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystemService.html#method_getOperatingSystems"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystemService\u003A\u003AgetOperatingSystem\u0028\u0029",
             "name": "getOperatingSystem",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020operating\u0020system\u0020that\u0020is\u0020deployable.",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystemService.html#method_getOperatingSystem"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystemService\u003A\u003AcacheOperatingSystems\u0028\u0029",
             "name": "cacheOperatingSystems",
-            "summary": "",
+            "summary": "Query\u0020and\u0020cache\u0020all\u0020operating\u0020systems\u0020from\u0020the\u0020vultr\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-OperatingSystems-OperatingSystemService.html#method_cacheOperatingSystems"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\OperatingSystems\\OperatingSystemService\u003A\u003A\u0024cache_operatingsystems",
@@ -5708,7 +5708,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\BMPlan",
             "name": "BMPlan",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020bare\u0020metal\u0020plan\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-BMPlan.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\BMPlan\u003A\u003AgetId\u0028\u0029",
@@ -5823,7 +5823,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\BMPlan\u003A\u003AgetResponseListName\u0028\u0029",
             "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Plans-BMPlan.html#method_getResponseListName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\BMPlan\u003A\u003A\u0024id",
@@ -5893,27 +5893,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService",
             "name": "PlanService",
-            "summary": "",
+            "summary": "Plan\u0020service\u0020handler,\u0020for\u0020all\u0020plans\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-PlanService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService\u003A\u003AgetVPSPlans\u0028\u0029",
             "name": "getVPSPlans",
-            "summary": "",
+            "summary": "Get\u0020vps\u0020plans\u0020that\u0020are\u0020available\u0020at\u0020vultr.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-PlanService.html#method_getVPSPlans"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService\u003A\u003AgetBMPlans\u0028\u0029",
             "name": "getBMPlans",
-            "summary": "",
+            "summary": "Get\u0020baremetal\u0020plans\u0020that\u0020are\u0020available\u0020at\u0020vultr.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-PlanService.html#method_getBMPlans"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService\u003A\u003AgetPlan\u0028\u0029",
             "name": "getPlan",
-            "summary": "",
+            "summary": "Get\u0020a\u0020specific\u0020plan\u0020vps\u0020or\u0020baremetal\u0020plan\u0020from\u0020the\u0020static\u0020cache.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-PlanService.html#method_getPlan"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService\u003A\u003AcachePlans\u0028\u0029",
             "name": "cachePlans",
-            "summary": "",
+            "summary": "Query\u0020and\u0020cache\u0020all\u0020plans\u0020from\u0020the\u0020vultr\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-Plans-PlanService.html#method_cachePlans"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\PlanService\u003A\u003AsetPlanLocations\u0028\u0029",
@@ -5988,7 +5988,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\VPSPlan",
             "name": "VPSPlan",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020vps\u0020plan\u0020information",
             "url": "classes/Vultr-VultrPhp-Services-Plans-VPSPlan.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\VPSPlan\u003A\u003AgetId\u0028\u0029",
@@ -6083,7 +6083,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\VPSPlan\u003A\u003AgetResponseListName\u0028\u0029",
             "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Plans-VPSPlan.html#method_getResponseListName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Plans\\VPSPlan\u003A\u003A\u0024id",
@@ -6133,7 +6133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\Region",
             "name": "Region",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020region\u0020specific\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Regions-Region.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\Region\u003A\u003AgetId\u0028\u0029",
@@ -6223,7 +6223,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\RegionService",
             "name": "RegionService",
-            "summary": "",
+            "summary": "Region\u0020service\u0020handler,\u0020for\u0020all\u0020regions\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Regions-RegionService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\RegionService\u003A\u003AgetRegions\u0028\u0029",
@@ -6243,7 +6243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\RegionService\u003A\u003AcacheRegions\u0028\u0029",
             "name": "cacheRegions",
-            "summary": "",
+            "summary": "Cache\u0020all\u0020regions\u0020from\u0020the\u0020vultr\u0020api.",
             "url": "classes/Vultr-VultrPhp-Services-Regions-RegionService.html#method_cacheRegions"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Regions\\RegionService\u003A\u003A\u0024cache_region",
@@ -6253,7 +6253,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIP",
             "name": "ReservedIP",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020reserved\u0020ip\u0020address\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-ReservedIP-ReservedIP.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIP\u003A\u003AgetId\u0028\u0029",
@@ -6328,7 +6328,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIP\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-ReservedIP-ReservedIP.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIP\u003A\u003A\u0024id",
@@ -6378,7 +6378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIPService",
             "name": "ReservedIPService",
-            "summary": "",
+            "summary": "Reserved\u0020IP\u0020service\u0020handler,\u0020for\u0020all\u0020reserved\u002Dips\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-ReservedIP-ReservedIPService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\ReservedIP\\ReservedIPService\u003A\u003AgetReservedIP\u0028\u0029",
@@ -6418,7 +6418,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Snapshots\\Snapshot",
             "name": "Snapshot",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020snapshot\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Snapshots-Snapshot.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Snapshots\\Snapshot\u003A\u003AgetId\u0028\u0029",
@@ -6553,7 +6553,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Snapshots\\SnapshotService",
             "name": "SnapshotService",
-            "summary": "",
+            "summary": "Snapshot\u0020service\u0020handler,\u0020for\u0020all\u0020snapshots\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Snapshots-SnapshotService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Snapshots\\SnapshotService\u003A\u003AgetSnapshots\u0028\u0029",
@@ -6583,7 +6583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKey",
             "name": "SSHKey",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020ssh\u0020key\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-SSHKeys-SSHKey.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKey\u003A\u003AgetId\u0028\u0029",
@@ -6628,12 +6628,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKey\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-SSHKeys-SSHKey.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKey\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-SSHKeys-SSHKey.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKey\u003A\u003A\u0024id",
@@ -6668,7 +6668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKeyService",
             "name": "SSHKeyService",
-            "summary": "",
+            "summary": "SSH\u0020key\u0020service\u0020handler,\u0020for\u0020all\u0020ssh\u002Dkeys\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-SSHKeys-SSHKeyService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\SSHKeys\\SSHKeyService\u003A\u003AgetSSHKey\u0028\u0029",
@@ -6698,7 +6698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScript",
             "name": "StartupScript",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020startup\u0020script\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-StartupScripts-StartupScript.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScript\u003A\u003AgetId\u0028\u0029",
@@ -6763,7 +6763,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScript\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-StartupScripts-StartupScript.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScript\u003A\u003A\u0024id",
@@ -6808,7 +6808,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScriptService",
             "name": "StartupScriptService",
-            "summary": "",
+            "summary": "Startup\u0020script\u0020service\u0020handler,\u0020for\u0020all\u0020startup\u002Dscripts\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-StartupScripts-StartupScriptService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\StartupScripts\\StartupScriptService\u003A\u003AgetStartupScript\u0028\u0029",
@@ -6838,7 +6838,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\User",
             "name": "User",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020sub\u0020user\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-Users-User.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\User\u003A\u003AgetId\u0028\u0029",
@@ -6893,7 +6893,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\User\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-Users-User.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\User\u003A\u003AACL_ABUSE",
@@ -7003,7 +7003,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\UserService",
             "name": "UserService",
-            "summary": "",
+            "summary": "User\u0020service\u0020handler,\u0020for\u0020all\u0020users\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-Users-UserService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\Users\\UserService\u003A\u003AgetUser\u0028\u0029",
@@ -7033,7 +7033,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud",
             "name": "VirtualPrivateCloud",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
+            "summary": "Holds\u0020virtual\u0020private\u0020cloud\u0020information.",
             "url": "classes/Vultr-VultrPhp-Services-VPC-VirtualPrivateCloud.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud\u003A\u003AgetId\u0028\u0029",
@@ -7098,7 +7098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud\u003A\u003AgetResponseName\u0028\u0029",
             "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-VPC-VirtualPrivateCloud.html#method_getResponseName"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud\u003A\u003AgetModelExceptionClass\u0028\u0029",
@@ -7108,7 +7108,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud\u003A\u003AgetUpdateParams\u0028\u0029",
             "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
+            "summary": "",
             "url": "classes/Vultr-VultrPhp-Services-VPC-VirtualPrivateCloud.html#method_getUpdateParams"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VirtualPrivateCloud\u003A\u003A\u0024id",
@@ -7153,7 +7153,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VPCService",
             "name": "VPCService",
-            "summary": "",
+            "summary": "Virtual\u0020private\u0020cloud\u0020service\u0020handler,\u0020for\u0020all\u0020vpcs\u0020endpoints.",
             "url": "classes/Vultr-VultrPhp-Services-VPC-VPCService.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Services\\VPC\\VPCService\u003A\u003AgetVPC\u0028\u0029",
@@ -7368,7 +7368,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Util\\ListOptions",
             "name": "ListOptions",
-            "summary": "",
+            "summary": "Pagination\u0020and\u0020metadata\u0020mechanism\u0020that\u0020can\u0020be\u0020used\u0020throughout\u0020all\u0020list\u0020functions.",
             "url": "classes/Vultr-VultrPhp-Util-ListOptions.html"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Util\\ListOptions\u003A\u003A__construct\u0028\u0029",
@@ -7450,51 +7450,6 @@ Search.appendIndex(
             "name": "currentCursor",
             "summary": "",
             "url": "classes/Vultr-VultrPhp-Util-ListOptions.html#property_currentCursor"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model",
-            "name": "Model",
-            "summary": "Models\u0020need\u0020to\u0020implement\u0020camelcase\u0020properties.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetModelExceptionClass\u0028\u0029",
-            "name": "getModelExceptionClass",
-            "summary": "",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getModelExceptionClass"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetUpdateParams\u0028\u0029",
-            "name": "getUpdateParams",
-            "summary": "Flat\u0020array\u0020to\u0020specify\u0020array\u0020props\u0020that\u0020will\u0020be\u0020checked\u0020on\u0020whether\u0020they\u0020should\u0020be\u0020updated\u0020or\u0020not.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getUpdateParams"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetResponseListName\u0028\u0029",
-            "name": "getResponseListName",
-            "summary": "Get\u0020the\u0020list\u0020name\u0020of\u0020a\u0020model.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getResponseListName"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetResponseName\u0028\u0029",
-            "name": "getResponseName",
-            "summary": "Get\u0020the\u0020wrapped\u0020response\u0020of\u0020an\u0020individual\u0020object\nThis\u0020allows\u0020us\u0020to\u0020conform\u0020with\u0020the\u0020api\u0020and\u0020target\u0020the\u0020specific\u0020element\u0020without\u0020statically\u0020defining\u0020them.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getResponseName"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AtoArray\u0028\u0029",
-            "name": "toArray",
-            "summary": "Will\u0020output\u0020an\u0020array\u0020to\u0020match\u0020the\u0020json\u0020that\u0020we\u0020had\u0020received\u0020originally\u0020from\u0020the\u0020response\u0020which\u0020is\u0020in\u0020object\u0020form.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_toArray"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetUpdateArray\u0028\u0029",
-            "name": "getUpdateArray",
-            "summary": "",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getUpdateArray"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AgetInitializedProps\u0028\u0029",
-            "name": "getInitializedProps",
-            "summary": "",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_getInitializedProps"
-        },                {
-            "fqsen": "\\Vultr\\VultrPhp\\Util\\Model\u003A\u003AresetObject\u0028\u0029",
-            "name": "resetObject",
-            "summary": "Reset\u0020properties\u0020of\u0020the\u0020object\u0020to\u0020uninitialized\u0020state.",
-            "url": "classes/Vultr-VultrPhp-Util-Model.html#method_resetObject"
         },                {
             "fqsen": "\\Vultr\\VultrPhp\\Util\\ModelInterface",
             "name": "ModelInterface",

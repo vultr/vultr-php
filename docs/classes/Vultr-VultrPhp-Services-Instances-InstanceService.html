@@ -116,12 +116,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Instance service handler, for all instances endpoints.</p>
+
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -129,7 +129,15 @@
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
-                                </dl>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#tag/instances"><abbr title="https://www.vultr.com/api/#tag/instances">https://www.vultr.com/api/#tag/instances</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
 
 
 
@@ -189,28 +197,28 @@
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Attach an iso to an instance. This will cause a reboot.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_attachVPC">attachVPC()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Attach a vpc network to an instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_createInstance">createInstance()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Create a new vps instance in a region with the desired plan and image.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_createIPv4Address">createIPv4Address()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv4Info">InstanceIPv4Info</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Create an ipv4 address and attach to the instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_createReverseIPv4Address">createReverseIPv4Address()</a>
@@ -231,14 +239,14 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete an instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_deleteIPv4Address">deleteIPv4Address()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete and detach an ipv4 address from the instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_deleteReverseIPv6Address">deleteReverseIPv6Address()</a>
@@ -252,77 +260,77 @@
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Detach an iso from an instance. This will cause a reboot.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_detachVPC">detachVPC()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Detach a vpc network from an instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getAvailableUpgrades">getAvailableUpgrades()</a>
     <span>
                                 &nbsp;: array&lt;string|int, \Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem|\Vultr\VultrPhp\Services\Applications\Application|\Vultr\VultrPhp\Services\Instances\VPSPlan&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get available plan upgrades for an instance in the region.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getBackupSchedule">getBackupSchedule()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-BackupSchedule.html"><abbr title="\Vultr\VultrPhp\Services\Instances\BackupSchedule">BackupSchedule</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get the backup schedule for an instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getBandwidth">getBandwidth()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get bandwidth information about an instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getInstance">getInstance()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Retrieve a specific instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getInstances">getInstances()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get vps instances on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIPv4Addresses">getIPv4Addresses()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv4Info">InstanceIPv4Info</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get IPV4 Address information on the instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIPv6Addresses">getIPv6Addresses()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv6Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv6Info">InstanceIPv6Info</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get IPV6 address information on the instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getIsoStatus">getIsoStatus()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get the iso mount status on an instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getNeighbors">getNeighbors()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get neighboring instances that live on the same host machine as this instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getReverseIPv6Addresses">getReverseIPv6Addresses()</a>
@@ -336,63 +344,63 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
+<dd>Get the user data for an instance decoded from base64.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_getVPCs">getVPCs()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get a list of attach vpc&#039;s attached to this instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_haltInstance">haltInstance()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Halt a specific instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_haltInstances">haltInstances()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Halt an array of instances on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_rebootInstance">rebootInstance()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Reboot a specific instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_rebootInstances">rebootInstances()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Reboot an array of instances on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_reinstallInstance">reinstallInstance()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Reinstall an instance. This may take a few extra seconds to complete.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_restoreInstance">restoreInstance()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Restore an instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_setBackupSchedule">setBackupSchedule()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Set the backup schedule for an instance in UTC.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_setDefaultIPv4ReverseDNSEntry">setDefaultIPv4ReverseDNSEntry()</a>
@@ -406,21 +414,21 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Start a specific instance on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_startInstances">startInstances()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Start a group of instances on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceService.html#method_updateInstance">updateInstance()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Update all information for an instance. All attributes are optional. If not set, the attributes will not be sent to the api.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Vultr-VultrPhp-Services-VultrService.html#method_createObject">createObject()</a>
@@ -518,7 +526,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -553,7 +561,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -588,7 +596,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -780,11 +788,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">310</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Attach an iso to an instance. This will cause a reboot.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">attachIsoToInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iso_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a></span></code>
@@ -859,11 +868,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Attach a vpc network to an instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">attachVPC</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vpc_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -938,11 +948,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a new vps instance in a region with the desired plan and image.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$create</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a></span></code>
@@ -1006,11 +1017,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">445</span>
+    <span class="phpdocumentor-element-found-in__line">504</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create an ipv4 address and attach to the instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createIPv4Address</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reboot</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv4Info">InstanceIPv4Info</abbr></a></span></code>
@@ -1085,7 +1097,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">531</span>
 
     </aside>
 
@@ -1175,7 +1187,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">520</span>
+    <span class="phpdocumentor-element-found-in__line">583</span>
 
     </aside>
 
@@ -1265,11 +1277,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete an instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1333,11 +1346,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">457</span>
+    <span class="phpdocumentor-element-found-in__line">518</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete and detach an ipv4 address from the instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteIPv4Address</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ip</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1412,7 +1426,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">631</span>
 
     </aside>
 
@@ -1491,11 +1505,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">369</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Detach an iso from an instance. This will cause a reboot.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">detachIsoFromInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a></span></code>
@@ -1559,11 +1574,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">270</span>
+    <span class="phpdocumentor-element-found-in__line">312</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Detach a vpc network from an instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">detachVPC</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vpc_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1638,11 +1654,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">600</span>
+    <span class="phpdocumentor-element-found-in__line">667</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get available plan upgrades for an instance in the region.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAvailableUpgrades</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;all&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, \Vultr\VultrPhp\Services\OperatingSystems\OperatingSystem|\Vultr\VultrPhp\Services\Applications\Application|\Vultr\VultrPhp\Services\Instances\VPSPlan&gt;</span></code>
@@ -1717,11 +1734,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">361</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get the backup schedule for an instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBackupSchedule</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-BackupSchedule.html"><abbr title="\Vultr\VultrPhp\Services\Instances\BackupSchedule">BackupSchedule</abbr></a></span></code>
@@ -1785,16 +1803,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">184</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get bandwidth information about an instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBandwidth</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>The structure of the array will follow this format.
+['2022-11-05' =&gt; ['incoming_bytes' =&gt; 234523452352, 'outgoing_bytes' =&gt; 132432423]]</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1861,11 +1883,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Retrieve a specific instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a></span></code>
@@ -1929,11 +1952,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get vps instances on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInstances</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filters</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a>&gt;</span></code>
@@ -2008,11 +2032,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">415</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get IPV4 Address information on the instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getIPv4Addresses</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv4Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv4Info">InstanceIPv4Info</abbr></a>&gt;</span></code>
@@ -2087,11 +2112,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">507</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get IPV6 address information on the instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getIPv6Addresses</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Instances-InstanceIPv6Info.html"><abbr title="\Vultr\VultrPhp\Services\Instances\InstanceIPv6Info">InstanceIPv6Info</abbr></a>&gt;</span></code>
@@ -2155,11 +2181,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get the iso mount status on an instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getIsoStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-IsoStatus.html"><abbr title="\Vultr\VultrPhp\Services\Instances\IsoStatus">IsoStatus</abbr></a></span></code>
@@ -2223,11 +2250,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get neighboring instances that live on the same host machine as this instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNeighbors</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -2299,7 +2327,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">539</span>
+    <span class="phpdocumentor-element-found-in__line">602</span>
 
     </aside>
 
@@ -2375,11 +2403,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">579</span>
+    <span class="phpdocumentor-element-found-in__line">644</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get the user data for an instance decoded from base64.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getUserData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -2443,11 +2472,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a list of attach vpc&#039;s attached to this instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getVPCs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -2522,11 +2552,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Halt a specific instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">haltInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -2590,11 +2621,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Halt an array of instances on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">haltInstances</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -2658,11 +2690,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Reboot a specific instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">rebootInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -2726,11 +2759,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Reboot an array of instances on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">rebootInstances</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -2794,11 +2828,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Reinstall an instance. This may take a few extra seconds to complete.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">reinstallInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hostname</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a></span></code>
@@ -2870,16 +2905,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">377</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Restore an instance.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">restoreInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$snapshot_id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backup_id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>$snapshot_id or $backup_id must be specified. But they both cannot be specified.
+The actual response from the api returns an object. But its pointless as you have already fed in the parameters and it feeds it them back to you.
+The status doesn't mean anything to act off from the response. While your instance is restoring use getInstance to view its status.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2929,11 +2969,7 @@
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#operation/restore-instance"><abbr title="https://www.vultr.com/api/#operation/restore-instance">https://www.vultr.com/api/#operation/restore-instance</abbr></a></span>
                                         
-                                                 <section class="phpdocumentor-description"><p>$snapshot_id or $backup_id must be specified. But they both cannot be specified.
-The actual response from the api returns an object. But its pointless as you have already fed in the parameters and it feeds it them back to you.
-The status doesn't mean anything to act off from the response. While your instance is restoring use getInstance to view its status.</p>
-</section>
-
+                                             
                                     </dd>
                                                 <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
@@ -2964,11 +3000,12 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Set the backup schedule for an instance in UTC.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setBackupSchedule</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backup</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -3043,7 +3080,7 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">489</span>
+    <span class="phpdocumentor-element-found-in__line">550</span>
 
     </aside>
 
@@ -3122,11 +3159,12 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Start a specific instance on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">startInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -3190,11 +3228,12 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Start a group of instances on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">startInstances</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ids</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -3258,11 +3297,12 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update all information for an instance. All attributes are optional. If not set, the attributes will not be sent to the api.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$update</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Instances-Instance.html"><abbr title="\Vultr\VultrPhp\Services\Instances\Instance">Instance</abbr></a></span></code>
@@ -3945,7 +3985,7 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">648</span>
+    <span class="phpdocumentor-element-found-in__line">715</span>
 
     </aside>
 
@@ -4003,7 +4043,7 @@ The status doesn't mean anything to act off from the response. While your instan
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Instances/InstanceService.php"><a href="files/src-services-instances-instanceservice.html"><abbr title="src/Services/Instances/InstanceService.php">InstanceService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">636</span>
+    <span class="phpdocumentor-element-found-in__line">703</span>
 
     </aside>
 

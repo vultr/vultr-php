@@ -116,12 +116,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Object storage service handler, for all object-storage endpoints.</p>
+
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -129,7 +129,15 @@
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
-                                </dl>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#tag/s3"><abbr title="https://www.vultr.com/api/#tag/s3">https://www.vultr.com/api/#tag/s3</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
 
 
 
@@ -168,49 +176,49 @@
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Create a object storage subscription in a region based on the cluster_id.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_deleteObjectStoreSub">deleteObjectStoreSub()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Delete the object storage subscription and its data.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getClusters">getClusters()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get object storage cluster regions that are available to be deployed in.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getObjectStoreSub">getObjectStoreSub()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get a specific object storage subscription on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_getObjectStoreSubs">getObjectStoreSubs()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get all object storage subscriptions on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_regenObjectStoreKeys">regenObjectStoreKeys()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Regenerate the object storage access and secret keys for the subscription.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorageService.html#method_updateObjectStoreSub">updateObjectStoreSub()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Update an object storage subscription on the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Vultr-VultrPhp-Services-VultrService.html#method_createObject">createObject()</a>
@@ -445,11 +453,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a object storage subscription in a region based on the cluster_id.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createObjectStoreSub</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cluster_id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a></span></code>
@@ -524,11 +533,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete the object storage subscription and its data.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">deleteObjectStoreSub</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -592,11 +602,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get object storage cluster regions that are available to be deployed in.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getClusters</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -660,11 +671,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a specific object storage subscription on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getObjectStoreSub</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a></span></code>
@@ -728,11 +740,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get all object storage subscriptions on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getObjectStoreSubs</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -796,11 +809,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Regenerate the object storage access and secret keys for the subscription.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">regenObjectStoreKeys</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$obj</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-ObjectStorage-ObjectStorage.html"><abbr title="\Vultr\VultrPhp\Services\ObjectStorage\ObjectStorage">ObjectStorage</abbr></a></span></code>
@@ -880,11 +894,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/ObjectStorage/ObjectStorageService.php"><a href="files/src-services-objectstorage-objectstorageservice.html"><abbr title="src/Services/ObjectStorage/ObjectStorageService.php">ObjectStorageService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Update an object storage subscription on the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">updateObjectStoreSub</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$obj</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>

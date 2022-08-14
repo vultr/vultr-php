@@ -116,12 +116,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Billing/BillingService.php"><a href="files/src-services-billing-billingservice.html"><abbr title="src/Services/Billing/BillingService.php">BillingService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Billing service handler, for billing endpoints.</p>
+
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -129,7 +129,15 @@
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
-                                </dl>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.vultr.com/api/#tag/billing"><abbr title="https://www.vultr.com/api/#tag/billing">https://www.vultr.com/api/#tag/billing</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
 
 
 
@@ -168,28 +176,28 @@
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Billing-Bill.html"><abbr title="\Vultr\VultrPhp\Services\Billing\Bill">Bill</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Retrieve the billing history of the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoice">getInvoice()</a>
     <span>
                                 &nbsp;: <a href="classes/Vultr-VultrPhp-Services-Billing-Invoice.html"><abbr title="\Vultr\VultrPhp\Services\Billing\Invoice">Invoice</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Get a specific invoice based on its id.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoiceItems">getInvoiceItems()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Billing-InvoiceItem.html"><abbr title="\Vultr\VultrPhp\Services\Billing\InvoiceItem">InvoiceItem</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get invoice items to help drill into why the cost is what it is.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Billing-BillingService.html#method_getInvoices">getInvoices()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <abbr title="\Vultr\VultrPhp\Services\Billing\Invoices">Invoices</abbr>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Retrieve the invoices of the account.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Vultr-VultrPhp-Services-VultrService.html#method_createObject">createObject()</a>
@@ -424,11 +432,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Billing/BillingService.php"><a href="files/src-services-billing-billingservice.html"><abbr title="src/Services/Billing/BillingService.php">BillingService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Retrieve the billing history of the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBillingHistory</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Billing-Bill.html"><abbr title="\Vultr\VultrPhp\Services\Billing\Bill">Bill</abbr></a>&gt;</span></code>
@@ -492,11 +501,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Billing/BillingService.php"><a href="files/src-services-billing-billingservice.html"><abbr title="src/Services/Billing/BillingService.php">BillingService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a specific invoice based on its id.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInvoice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$invoice_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Vultr-VultrPhp-Services-Billing-Invoice.html"><abbr title="\Vultr\VultrPhp\Services\Billing\Invoice">Invoice</abbr></a></span></code>
@@ -560,11 +570,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Billing/BillingService.php"><a href="files/src-services-billing-billingservice.html"><abbr title="src/Services/Billing/BillingService.php">BillingService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get invoice items to help drill into why the cost is what it is.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInvoiceItems</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$invoice_id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Billing-InvoiceItem.html"><abbr title="\Vultr\VultrPhp\Services\Billing\InvoiceItem">InvoiceItem</abbr></a>&gt;</span></code>
@@ -639,11 +650,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Billing/BillingService.php"><a href="files/src-services-billing-billingservice.html"><abbr title="src/Services/Billing/BillingService.php">BillingService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Retrieve the invoices of the account.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInvoices</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Vultr\VultrPhp\Services\Billing\Invoices">Invoices</abbr>&gt;</span></code>
