@@ -30,7 +30,7 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "json-mapper/json-mapper": "^2.10",
+        "json-mapper/json-mapper": "^2.13",
         "psr/http-client": "^1.0",
         "psr/http-message": "^1.0",
         "psr/http-factory": "^1.0",
