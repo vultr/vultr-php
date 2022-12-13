@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -87,8 +88,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr.html">Vultr</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp.html">VultrPhp</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp-services.html">Services</a></li>
@@ -113,6 +115,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
     :
@@ -124,172 +131,165 @@
 
 
 
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
-
-
-
 
 
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_checkInterval">$checkInterval</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_healthyThreshold">$healthyThreshold</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_path">$path</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_port">$port</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_protocol">$protocol</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_responseTimeout">$responseTimeout</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_unhealthyThreshold">$unhealthyThreshold</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getCheckInterval">getCheckInterval()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getHealthyThreshold">getHealthyThreshold()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPath">getPath()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPort">getPort()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getProtocol">getProtocol()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getResponseTimeout">getResponseTimeout()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getUnhealthyThreshold">getUnhealthyThreshold()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setCheckInterval">setCheckInterval()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setHealthyThreshold">setHealthyThreshold()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPath">setPath()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPort">setPort()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setProtocol">setProtocol()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setResponseTimeout">setResponseTimeout()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setUnhealthyThreshold">setUnhealthyThreshold()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -300,6 +300,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -311,6 +312,7 @@
     <h4 class="phpdocumentor-element__name" id="property_checkInterval">
         $checkInterval
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_checkInterval" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -328,17 +330,9 @@
     <span class="phpdocumentor-signature__name">$checkInterval</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -351,6 +345,7 @@
     <h4 class="phpdocumentor-element__name" id="property_healthyThreshold">
         $healthyThreshold
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_healthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -368,17 +363,9 @@
     <span class="phpdocumentor-signature__name">$healthyThreshold</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -391,6 +378,7 @@
     <h4 class="phpdocumentor-element__name" id="property_path">
         $path
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_path" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -408,17 +396,9 @@
     <span class="phpdocumentor-signature__name">$path</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -431,6 +411,7 @@
     <h4 class="phpdocumentor-element__name" id="property_port">
         $port
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_port" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -448,17 +429,9 @@
     <span class="phpdocumentor-signature__name">$port</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -471,6 +444,7 @@
     <h4 class="phpdocumentor-element__name" id="property_protocol">
         $protocol
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_protocol" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -488,17 +462,9 @@
     <span class="phpdocumentor-signature__name">$protocol</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -511,6 +477,7 @@
     <h4 class="phpdocumentor-element__name" id="property_responseTimeout">
         $responseTimeout
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_responseTimeout" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -528,17 +495,9 @@
     <span class="phpdocumentor-signature__name">$responseTimeout</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -551,6 +510,7 @@
     <h4 class="phpdocumentor-element__name" id="property_unhealthyThreshold">
         $unhealthyThreshold
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_unhealthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -568,17 +528,9 @@
     <span class="phpdocumentor-signature__name">$unhealthyThreshold</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
             </section>
@@ -587,6 +539,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -597,6 +550,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCheckInterval">
         getCheckInterval()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getCheckInterval" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -610,22 +564,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCheckInterval</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -636,6 +585,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getHealthyThreshold">
         getHealthyThreshold()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getHealthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -649,22 +599,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getHealthyThreshold</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -675,6 +620,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getPath">
         getPath()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPath" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -688,22 +634,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPath</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -714,6 +655,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getPort">
         getPort()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPort" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -727,22 +669,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPort</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -753,6 +690,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getProtocol">
         getProtocol()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getProtocol" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -766,22 +704,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProtocol</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -792,6 +725,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getResponseTimeout">
         getResponseTimeout()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getResponseTimeout" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -805,22 +739,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getResponseTimeout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -831,6 +760,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getUnhealthyThreshold">
         getUnhealthyThreshold()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getUnhealthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -844,22 +774,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getUnhealthyThreshold</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -870,6 +795,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setCheckInterval">
         setCheckInterval()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setCheckInterval" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -883,8 +809,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setCheckInterval</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$check_interval</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -892,23 +819,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -920,6 +836,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setHealthyThreshold">
         setHealthyThreshold()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setHealthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -933,8 +850,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setHealthyThreshold</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$healthy_threshold</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -942,23 +860,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -970,6 +877,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setPath">
         setPath()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPath" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -983,8 +891,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -992,23 +901,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1020,6 +918,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setPort">
         setPort()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPort" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -1033,8 +932,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPort</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$port</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1042,23 +942,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1070,6 +959,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setProtocol">
         setProtocol()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setProtocol" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -1083,8 +973,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setProtocol</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$protocol</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1092,23 +983,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1120,6 +1000,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setResponseTimeout">
         setResponseTimeout()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setResponseTimeout" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -1133,8 +1014,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setResponseTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response_timeout</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1142,23 +1024,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1170,6 +1041,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setUnhealthyThreshold">
         setUnhealthyThreshold()
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setUnhealthyThreshold" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/LoadBalancers/LBHealth.php"><a href="files/src-services-loadbalancers-lbhealth.html"><abbr title="src/Services/LoadBalancers/LBHealth.php">LBHealth.php</abbr></a></abbr>
@@ -1183,8 +1055,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setUnhealthyThreshold</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unhealthy_threshold</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1192,23 +1065,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -1306,7 +1168,59 @@
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_checkInterval">$checkInterval<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_healthyThreshold">$healthyThreshold<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_path">$path<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_port">$port<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_protocol">$protocol<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_responseTimeout">$responseTimeout<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#property_unhealthyThreshold">$unhealthyThreshold<a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getCheckInterval">getCheckInterval()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getHealthyThreshold">getHealthyThreshold()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPath">getPath()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getPort">getPort()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getProtocol">getProtocol()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getResponseTimeout">getResponseTimeout()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_getUnhealthyThreshold">getUnhealthyThreshold()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setCheckInterval">setCheckInterval()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setHealthyThreshold">setHealthyThreshold()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPath">setPath()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setPort">setPort()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setProtocol">setProtocol()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setResponseTimeout">setResponseTimeout()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#method_setUnhealthyThreshold">setUnhealthyThreshold()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1317,7 +1231,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/Vultr-VultrPhp-Services-LoadBalancers-LBHealth.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

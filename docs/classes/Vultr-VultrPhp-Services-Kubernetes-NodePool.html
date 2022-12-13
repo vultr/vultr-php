@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -87,8 +88,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr.html">Vultr</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp.html">VultrPhp</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp-services.html">Services</a></li>
@@ -113,6 +115,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
     :
@@ -124,263 +131,243 @@
 
 
 
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
-
-
-
 
 
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_autoScaler">$autoScaler</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateCreated">$dateCreated</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateUpdated">$dateUpdated</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_id">$id</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_label">$label</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_maxNodes">$maxNodes</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_minNodes">$minNodes</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodeQuantity">$nodeQuantity</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodes">$nodes</a>
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/Vultr-VultrPhp-Services-Kubernetes-Node.html"><abbr title="\Vultr\VultrPhp\Services\Kubernetes\Node">Node</abbr></a>&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_plan">$plan</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_status">$status</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getAutoScaler">getAutoScaler()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateCreated">getDateCreated()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateUpdated">getDateUpdated()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getId">getId()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getLabel">getLabel()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMaxNodes">getMaxNodes()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMinNodes">getMinNodes()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getModelExceptionClass">getModelExceptionClass()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodeQuantity">getNodeQuantity()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodes">getNodes()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getPlan">getPlan()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getStatus">getStatus()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setAutoScaler">setAutoScaler()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateCreated">setDateCreated()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateUpdated">setDateUpdated()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setId">setId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setLabel">setLabel()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMaxNodes">setMaxNodes()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMinNodes">setMinNodes()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodeQuantity">setNodeQuantity()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodes">setNodes()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setPlan">setPlan()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setStatus">setStatus()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -391,6 +378,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -402,6 +390,7 @@
     <h4 class="phpdocumentor-element__name" id="property_autoScaler">
         $autoScaler
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_autoScaler" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -419,17 +408,9 @@
     <span class="phpdocumentor-signature__name">$autoScaler</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -442,6 +423,7 @@
     <h4 class="phpdocumentor-element__name" id="property_dateCreated">
         $dateCreated
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -459,17 +441,9 @@
     <span class="phpdocumentor-signature__name">$dateCreated</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -482,6 +456,7 @@
     <h4 class="phpdocumentor-element__name" id="property_dateUpdated">
         $dateUpdated
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateUpdated" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -499,17 +474,9 @@
     <span class="phpdocumentor-signature__name">$dateUpdated</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -522,6 +489,7 @@
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -539,17 +507,9 @@
     <span class="phpdocumentor-signature__name">$id</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -562,6 +522,7 @@
     <h4 class="phpdocumentor-element__name" id="property_label">
         $label
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_label" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -579,17 +540,9 @@
     <span class="phpdocumentor-signature__name">$label</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -602,6 +555,7 @@
     <h4 class="phpdocumentor-element__name" id="property_maxNodes">
         $maxNodes
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_maxNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -619,17 +573,9 @@
     <span class="phpdocumentor-signature__name">$maxNodes</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -642,6 +588,7 @@
     <h4 class="phpdocumentor-element__name" id="property_minNodes">
         $minNodes
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_minNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -659,17 +606,9 @@
     <span class="phpdocumentor-signature__name">$minNodes</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -682,6 +621,7 @@
     <h4 class="phpdocumentor-element__name" id="property_nodeQuantity">
         $nodeQuantity
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodeQuantity" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -699,17 +639,9 @@
     <span class="phpdocumentor-signature__name">$nodeQuantity</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -722,6 +654,7 @@
     <h4 class="phpdocumentor-element__name" id="property_nodes">
         $nodes
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodes" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -742,12 +675,6 @@
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -760,6 +687,7 @@
     <h4 class="phpdocumentor-element__name" id="property_plan">
         $plan
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_plan" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -777,17 +705,9 @@
     <span class="phpdocumentor-signature__name">$plan</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -800,6 +720,7 @@
     <h4 class="phpdocumentor-element__name" id="property_status">
         $status
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_status" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -817,17 +738,9 @@
     <span class="phpdocumentor-signature__name">$status</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
             </section>
@@ -836,6 +749,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -846,6 +760,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getAutoScaler">
         getAutoScaler()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getAutoScaler" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -859,22 +774,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAutoScaler</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -885,6 +795,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDateCreated">
         getDateCreated()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -898,22 +809,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDateCreated</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -924,6 +830,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDateUpdated">
         getDateUpdated()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateUpdated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -937,22 +844,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDateUpdated</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -963,6 +865,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getId">
         getId()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -976,22 +879,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1002,6 +900,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getLabel">
         getLabel()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getLabel" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1015,22 +914,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getLabel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1041,6 +935,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getMaxNodes">
         getMaxNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMaxNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1054,22 +949,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMaxNodes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1080,6 +970,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getMinNodes">
         getMinNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMinNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1093,22 +984,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMinNodes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1119,6 +1005,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getModelExceptionClass">
         getModelExceptionClass()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getModelExceptionClass" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1132,22 +1019,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getModelExceptionClass</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1158,6 +1040,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getNodeQuantity">
         getNodeQuantity()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodeQuantity" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1171,22 +1054,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNodeQuantity</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1197,6 +1075,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getNodes">
         getNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1210,22 +1089,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNodes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1236,6 +1110,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getPlan">
         getPlan()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getPlan" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1249,22 +1124,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPlan</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1275,6 +1145,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getStatus">
         getStatus()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1288,22 +1159,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getStatus</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1314,6 +1180,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setAutoScaler">
         setAutoScaler()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setAutoScaler" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1327,8 +1194,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setAutoScaler</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$autoScaler</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1336,23 +1204,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1364,6 +1221,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDateCreated">
         setDateCreated()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1377,8 +1235,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDateCreated</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dateCreated</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1386,23 +1245,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1414,6 +1262,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDateUpdated">
         setDateUpdated()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateUpdated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1427,8 +1276,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDateUpdated</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dateUpdated</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1436,23 +1286,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1464,6 +1303,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setId">
         setId()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1477,8 +1317,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1486,23 +1327,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1514,6 +1344,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setLabel">
         setLabel()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setLabel" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1527,8 +1358,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setLabel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1536,23 +1368,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1564,6 +1385,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setMaxNodes">
         setMaxNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMaxNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1577,8 +1399,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setMaxNodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$maxNodes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1586,23 +1409,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1614,6 +1426,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setMinNodes">
         setMinNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMinNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1627,8 +1440,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setMinNodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$minNodes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1636,23 +1450,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1664,6 +1467,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setNodeQuantity">
         setNodeQuantity()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodeQuantity" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1677,8 +1481,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setNodeQuantity</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nodeQuantity</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1686,23 +1491,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1714,6 +1508,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setNodes">
         setNodes()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1727,8 +1522,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setNodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nodes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1736,23 +1532,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1764,6 +1549,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setPlan">
         setPlan()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setPlan" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1777,8 +1563,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPlan</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plan</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1786,23 +1573,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1814,6 +1590,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setStatus">
         setStatus()
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/Kubernetes/NodePool.php"><a href="files/src-services-kubernetes-nodepool.html"><abbr title="src/Services/Kubernetes/NodePool.php">NodePool.php</abbr></a></abbr>
@@ -1827,8 +1604,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1836,23 +1614,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -1950,7 +1717,72 @@
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_autoScaler">$autoScaler<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateCreated">$dateCreated<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_dateUpdated">$dateUpdated<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_id">$id<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_label">$label<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_maxNodes">$maxNodes<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_minNodes">$minNodes<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodeQuantity">$nodeQuantity<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_nodes">$nodes<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_plan">$plan<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#property_status">$status<a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getAutoScaler">getAutoScaler()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateCreated">getDateCreated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getDateUpdated">getDateUpdated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getId">getId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getLabel">getLabel()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMaxNodes">getMaxNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getMinNodes">getMinNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getModelExceptionClass">getModelExceptionClass()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodeQuantity">getNodeQuantity()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getNodes">getNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getPlan">getPlan()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_getStatus">getStatus()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setAutoScaler">setAutoScaler()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateCreated">setDateCreated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setDateUpdated">setDateUpdated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setId">setId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setLabel">setLabel()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMaxNodes">setMaxNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setMinNodes">setMinNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodeQuantity">setNodeQuantity()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setNodes">setNodes()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setPlan">setPlan()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#method_setStatus">setStatus()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1961,7 +1793,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/Vultr-VultrPhp-Services-Kubernetes-NodePool.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -87,8 +88,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr.html">Vultr</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp.html">VultrPhp</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/vultr-vultrphp-services.html">Services</a></li>
@@ -113,6 +115,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
     :
@@ -124,508 +131,453 @@
 
 
 
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
-
-
-
 
 
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_appId">$appId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_cpuCount">$cpuCount</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_dateCreated">$dateCreated</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_defaultPassword">$defaultPassword</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_disk">$disk</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_features">$features</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_gatewayV4">$gatewayV4</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_id">$id</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_imageId">$imageId</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_label">$label</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_macAddress">$macAddress</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_mainIp">$mainIp</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_netmaskV4">$netmaskV4</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_os">$os</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_osId">$osId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_plan">$plan</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_ram">$ram</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_region">$region</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_status">$status</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_tags">$tags</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6MainIp">$v6MainIp</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6Network">$v6Network</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6NetworkSize">$v6NetworkSize</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getAppId">getAppId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getCpuCount">getCpuCount()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDateCreated">getDateCreated()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDefaultPassword">getDefaultPassword()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDisk">getDisk()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getFeatures">getFeatures()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getGatewayV4">getGatewayV4()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getId">getId()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getImageId">getImageId()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getLabel">getLabel()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMacAddress">getMacAddress()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMainIp">getMainIp()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getNetmaskV4">getNetmaskV4()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOs">getOs()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOsId">getOsId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getPlan">getPlan()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRam">getRam()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRegion">getRegion()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getStatus">getStatus()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getTags">getTags()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6MainIp">getV6MainIp()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6Network">getV6Network()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6NetworkSize">getV6NetworkSize()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setAppId">setAppId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setCpuCount">setCpuCount()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDateCreated">setDateCreated()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDefaultPassword">setDefaultPassword()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDisk">setDisk()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setFeatures">setFeatures()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setGatewayV4">setGatewayV4()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setId">setId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setImageId">setImageId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setLabel">setLabel()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMacAddress">setMacAddress()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMainIp">setMainIp()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setNetmaskV4">setNetmaskV4()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOs">setOs()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOsId">setOsId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setPlan">setPlan()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRam">setRam()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRegion">setRegion()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setStatus">setStatus()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setTags">setTags()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6MainIp">setV6MainIp()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6Network">setV6Network()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6NetworkSize">setV6NetworkSize()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -636,6 +588,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -647,6 +600,7 @@
     <h4 class="phpdocumentor-element__name" id="property_appId">
         $appId
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_appId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -664,17 +618,9 @@
     <span class="phpdocumentor-signature__name">$appId</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -687,6 +633,7 @@
     <h4 class="phpdocumentor-element__name" id="property_cpuCount">
         $cpuCount
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_cpuCount" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -704,17 +651,9 @@
     <span class="phpdocumentor-signature__name">$cpuCount</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -727,6 +666,7 @@
     <h4 class="phpdocumentor-element__name" id="property_dateCreated">
         $dateCreated
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_dateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -744,17 +684,9 @@
     <span class="phpdocumentor-signature__name">$dateCreated</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -767,6 +699,7 @@
     <h4 class="phpdocumentor-element__name" id="property_defaultPassword">
         $defaultPassword
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_defaultPassword" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -784,17 +717,9 @@
     <span class="phpdocumentor-signature__name">$defaultPassword</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -807,6 +732,7 @@
     <h4 class="phpdocumentor-element__name" id="property_disk">
         $disk
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_disk" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -824,17 +750,9 @@
     <span class="phpdocumentor-signature__name">$disk</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -847,6 +765,7 @@
     <h4 class="phpdocumentor-element__name" id="property_features">
         $features
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_features" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -864,17 +783,9 @@
     <span class="phpdocumentor-signature__name">$features</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -887,6 +798,7 @@
     <h4 class="phpdocumentor-element__name" id="property_gatewayV4">
         $gatewayV4
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_gatewayV4" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -904,17 +816,9 @@
     <span class="phpdocumentor-signature__name">$gatewayV4</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -927,6 +831,7 @@
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -944,17 +849,9 @@
     <span class="phpdocumentor-signature__name">$id</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -967,6 +864,7 @@
     <h4 class="phpdocumentor-element__name" id="property_imageId">
         $imageId
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_imageId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -984,17 +882,9 @@
     <span class="phpdocumentor-signature__name">$imageId</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1007,6 +897,7 @@
     <h4 class="phpdocumentor-element__name" id="property_label">
         $label
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_label" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1024,17 +915,9 @@
     <span class="phpdocumentor-signature__name">$label</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1047,6 +930,7 @@
     <h4 class="phpdocumentor-element__name" id="property_macAddress">
         $macAddress
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_macAddress" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1064,17 +948,9 @@
     <span class="phpdocumentor-signature__name">$macAddress</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1087,6 +963,7 @@
     <h4 class="phpdocumentor-element__name" id="property_mainIp">
         $mainIp
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_mainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1104,17 +981,9 @@
     <span class="phpdocumentor-signature__name">$mainIp</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1127,6 +996,7 @@
     <h4 class="phpdocumentor-element__name" id="property_netmaskV4">
         $netmaskV4
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_netmaskV4" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1144,17 +1014,9 @@
     <span class="phpdocumentor-signature__name">$netmaskV4</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1167,6 +1029,7 @@
     <h4 class="phpdocumentor-element__name" id="property_os">
         $os
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_os" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1184,17 +1047,9 @@
     <span class="phpdocumentor-signature__name">$os</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1207,6 +1062,7 @@
     <h4 class="phpdocumentor-element__name" id="property_osId">
         $osId
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_osId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1224,17 +1080,9 @@
     <span class="phpdocumentor-signature__name">$osId</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1247,6 +1095,7 @@
     <h4 class="phpdocumentor-element__name" id="property_plan">
         $plan
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_plan" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1264,17 +1113,9 @@
     <span class="phpdocumentor-signature__name">$plan</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1287,6 +1128,7 @@
     <h4 class="phpdocumentor-element__name" id="property_ram">
         $ram
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_ram" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1304,17 +1146,9 @@
     <span class="phpdocumentor-signature__name">$ram</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1327,6 +1161,7 @@
     <h4 class="phpdocumentor-element__name" id="property_region">
         $region
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_region" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1344,17 +1179,9 @@
     <span class="phpdocumentor-signature__name">$region</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1367,6 +1194,7 @@
     <h4 class="phpdocumentor-element__name" id="property_status">
         $status
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_status" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1384,17 +1212,9 @@
     <span class="phpdocumentor-signature__name">$status</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1407,6 +1227,7 @@
     <h4 class="phpdocumentor-element__name" id="property_tags">
         $tags
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1424,17 +1245,9 @@
     <span class="phpdocumentor-signature__name">$tags</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1447,6 +1260,7 @@
     <h4 class="phpdocumentor-element__name" id="property_v6MainIp">
         $v6MainIp
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6MainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1464,17 +1278,9 @@
     <span class="phpdocumentor-signature__name">$v6MainIp</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1487,6 +1293,7 @@
     <h4 class="phpdocumentor-element__name" id="property_v6Network">
         $v6Network
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6Network" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1504,17 +1311,9 @@
     <span class="phpdocumentor-signature__name">$v6Network</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -1527,6 +1326,7 @@
     <h4 class="phpdocumentor-element__name" id="property_v6NetworkSize">
         $v6NetworkSize
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6NetworkSize" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1544,17 +1344,9 @@
     <span class="phpdocumentor-signature__name">$v6NetworkSize</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
             </section>
@@ -1563,6 +1355,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -1573,6 +1366,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getAppId">
         getAppId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getAppId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1586,22 +1380,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAppId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1612,6 +1401,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCpuCount">
         getCpuCount()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getCpuCount" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1625,22 +1415,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCpuCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1651,6 +1436,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDateCreated">
         getDateCreated()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1664,22 +1450,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDateCreated</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1690,6 +1471,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDefaultPassword">
         getDefaultPassword()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDefaultPassword" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1703,22 +1485,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDefaultPassword</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|null</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1729,6 +1506,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDisk">
         getDisk()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDisk" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1742,22 +1520,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDisk</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1768,6 +1541,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getFeatures">
         getFeatures()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getFeatures" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1781,22 +1555,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getFeatures</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1807,6 +1576,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getGatewayV4">
         getGatewayV4()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getGatewayV4" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1820,22 +1590,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getGatewayV4</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1846,6 +1611,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getId">
         getId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1859,22 +1625,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1885,6 +1646,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getImageId">
         getImageId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getImageId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1898,22 +1660,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getImageId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1924,6 +1681,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getLabel">
         getLabel()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getLabel" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1937,22 +1695,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getLabel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1963,6 +1716,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getMacAddress">
         getMacAddress()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMacAddress" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -1976,22 +1730,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMacAddress</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2002,6 +1751,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getMainIp">
         getMainIp()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2015,22 +1765,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMainIp</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2041,6 +1786,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getNetmaskV4">
         getNetmaskV4()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getNetmaskV4" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2054,22 +1800,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNetmaskV4</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2080,6 +1821,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getOs">
         getOs()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOs" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2093,22 +1835,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getOs</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2119,6 +1856,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getOsId">
         getOsId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOsId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2132,22 +1870,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getOsId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2158,6 +1891,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getPlan">
         getPlan()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getPlan" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2171,22 +1905,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPlan</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2197,6 +1926,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getRam">
         getRam()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRam" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2210,22 +1940,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getRam</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2236,6 +1961,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getRegion">
         getRegion()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRegion" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2249,22 +1975,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getRegion</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2275,6 +1996,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getStatus">
         getStatus()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2288,22 +2010,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getStatus</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2314,6 +2031,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTags">
         getTags()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getTags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2327,22 +2045,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTags</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2353,6 +2066,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getV6MainIp">
         getV6MainIp()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6MainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2366,22 +2080,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getV6MainIp</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2392,6 +2101,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getV6Network">
         getV6Network()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6Network" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2405,22 +2115,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getV6Network</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2431,6 +2136,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getV6NetworkSize">
         getV6NetworkSize()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6NetworkSize" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2444,22 +2150,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getV6NetworkSize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2470,6 +2171,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setAppId">
         setAppId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setAppId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2483,8 +2185,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setAppId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$app_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2492,23 +2195,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2520,6 +2212,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setCpuCount">
         setCpuCount()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setCpuCount" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2533,8 +2226,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setCpuCount</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cpu_count</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2542,23 +2236,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2570,6 +2253,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDateCreated">
         setDateCreated()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDateCreated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2583,8 +2267,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDateCreated</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$date_created</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2592,23 +2277,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2620,6 +2294,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDefaultPassword">
         setDefaultPassword()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDefaultPassword" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2633,8 +2308,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDefaultPassword</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default_password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2642,23 +2318,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2670,6 +2335,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDisk">
         setDisk()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDisk" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2683,8 +2349,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDisk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$disk</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2692,23 +2359,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2720,6 +2376,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setFeatures">
         setFeatures()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setFeatures" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2733,8 +2390,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setFeatures</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$features</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2742,23 +2400,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2770,6 +2417,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setGatewayV4">
         setGatewayV4()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setGatewayV4" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2783,8 +2431,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setGatewayV4</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$gateway_v4</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2792,23 +2441,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2820,6 +2458,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setId">
         setId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2833,8 +2472,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2842,23 +2482,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2870,6 +2499,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setImageId">
         setImageId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setImageId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2883,8 +2513,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setImageId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$image_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2892,23 +2523,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2920,6 +2540,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setLabel">
         setLabel()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setLabel" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2933,8 +2554,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setLabel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2942,23 +2564,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2970,6 +2581,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setMacAddress">
         setMacAddress()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMacAddress" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -2983,8 +2595,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setMacAddress</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mac_address</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2992,23 +2605,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3020,6 +2622,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setMainIp">
         setMainIp()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3033,8 +2636,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setMainIp</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$main_ip</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3042,23 +2646,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3070,6 +2663,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setNetmaskV4">
         setNetmaskV4()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setNetmaskV4" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3083,8 +2677,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setNetmaskV4</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$netmask_v4</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3092,23 +2687,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3120,6 +2704,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setOs">
         setOs()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOs" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3133,8 +2718,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setOs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$os</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3142,23 +2728,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3170,6 +2745,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setOsId">
         setOsId()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOsId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3183,8 +2759,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setOsId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$os_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3192,23 +2769,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3220,6 +2786,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setPlan">
         setPlan()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setPlan" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3233,8 +2800,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPlan</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plan</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3242,23 +2810,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3270,6 +2827,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setRam">
         setRam()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRam" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3283,8 +2841,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setRam</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ram</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3292,23 +2851,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3320,6 +2868,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setRegion">
         setRegion()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRegion" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3333,8 +2882,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setRegion</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$region</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3342,23 +2892,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3370,6 +2909,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setStatus">
         setStatus()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3383,8 +2923,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3392,23 +2933,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3420,6 +2950,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setTags">
         setTags()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setTags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3433,8 +2964,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setTags</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tags</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3442,23 +2974,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3470,6 +2991,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setV6MainIp">
         setV6MainIp()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6MainIp" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3483,8 +3005,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setV6MainIp</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v6_main_ip</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3492,23 +3015,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3520,6 +3032,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setV6Network">
         setV6Network()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6Network" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3533,8 +3046,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setV6Network</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v6_network</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3542,23 +3056,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3570,6 +3073,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setV6NetworkSize">
         setV6NetworkSize()
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6NetworkSize" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Services/BareMetal/BareMetal.php"><a href="files/src-services-baremetal-baremetal.html"><abbr title="src/Services/BareMetal/BareMetal.php">BareMetal.php</abbr></a></abbr>
@@ -3583,8 +3087,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setV6NetworkSize</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$v6_network_size</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3592,23 +3097,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -3706,7 +3200,107 @@
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_appId">$appId<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_cpuCount">$cpuCount<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_dateCreated">$dateCreated<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_defaultPassword">$defaultPassword<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_disk">$disk<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_features">$features<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_gatewayV4">$gatewayV4<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_id">$id<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_imageId">$imageId<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_label">$label<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_macAddress">$macAddress<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_mainIp">$mainIp<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_netmaskV4">$netmaskV4<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_os">$os<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_osId">$osId<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_plan">$plan<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_ram">$ram<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_region">$region<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_status">$status<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_tags">$tags<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6MainIp">$v6MainIp<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6Network">$v6Network<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                                    <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#property_v6NetworkSize">$v6NetworkSize<a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getAppId">getAppId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getCpuCount">getCpuCount()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDateCreated">getDateCreated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDefaultPassword">getDefaultPassword()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getDisk">getDisk()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getFeatures">getFeatures()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getGatewayV4">getGatewayV4()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getId">getId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getImageId">getImageId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getLabel">getLabel()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMacAddress">getMacAddress()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getMainIp">getMainIp()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getNetmaskV4">getNetmaskV4()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOs">getOs()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getOsId">getOsId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getPlan">getPlan()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRam">getRam()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getRegion">getRegion()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getStatus">getStatus()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getTags">getTags()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6MainIp">getV6MainIp()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6Network">getV6Network()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_getV6NetworkSize">getV6NetworkSize()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setAppId">setAppId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setCpuCount">setCpuCount()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDateCreated">setDateCreated()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDefaultPassword">setDefaultPassword()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setDisk">setDisk()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setFeatures">setFeatures()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setGatewayV4">setGatewayV4()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setId">setId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setImageId">setImageId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setLabel">setLabel()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMacAddress">setMacAddress()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setMainIp">setMainIp()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setNetmaskV4">setNetmaskV4()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOs">setOs()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setOsId">setOsId()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setPlan">setPlan()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRam">setRam()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setRegion">setRegion()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setStatus">setStatus()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setTags">setTags()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6MainIp">setV6MainIp()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6Network">setV6Network()</a></li>
+                                            <li><a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#method_setV6NetworkSize">setV6NetworkSize()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -3717,7 +3311,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/Vultr-VultrPhp-Services-BareMetal-BareMetal.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
