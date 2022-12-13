@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-dist-
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build
     steps:
     - uses: actions/checkout@v2

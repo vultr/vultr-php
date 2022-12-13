@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Validate composer.json and composer.lock
@@ -27,7 +27,7 @@ jobs:
       run: ls /etc/php && ls /usr/bin | grep php
 
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build
     steps:
       - uses: actions/checkout@v2
