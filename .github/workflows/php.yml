@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v2
@@ -25,6 +21,15 @@ jobs:
           ${{ runner.os }}-php-
     - name: PHP Versions
       run: ls /etc/php && ls /usr/bin | grep php
+    - name: List composer packages
+      if: ${{ steps.composer-cache.outputs.cache-hit == 'true' }}
+      run: composer show
+    - name: Validate composer.json and composer.lock
+      if: ${{ steps.composer-cache.outputs.cache-hit != 'true' }}
+      run: composer validate --strict
+    - name: Install dependencies
+      if: ${{ steps.composer-cache.outputs.cache-hit != 'true' }}
+      run: composer install --prefer-dist --no-progress
 
   tests:
     runs-on: ubuntu-20.04
@@ -40,6 +45,8 @@ jobs:
             ${{ runner.os }}-php-
       - name: PHP Lint
         run: composer lint
+      - name: Run 8.2 Test Suite
+        run: php8.2 vendor/bin/phpunit --no-coverage
       - name: Run 8.1 Test Suite
         run: php8.1 vendor/bin/phpunit --no-coverage
       - name: Run 8.0 Test Suite
