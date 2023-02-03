@@ -39,7 +39,7 @@ class VultrClientTest extends VultrTest
 
 		$mock = $this->getMockBuilder(VultrClient::class)
 		->disableOriginalConstructor()
-		->setMethods(['setClientHandler'])
+		->onlyMethods(['setClientHandler'])
 		->getMock();
 
 		$mock->expects($this->once())
