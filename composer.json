@@ -65,8 +65,7 @@
     },
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": false
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
