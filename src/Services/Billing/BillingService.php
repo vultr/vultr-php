@@ -66,4 +66,16 @@ class BillingService extends VultrService
 	{
 		return $this->getListObjects("billing/invoices/{$invoice_id}/items", new InvoiceItem(), $options);
 	}
+
+    /**
+     * Retrieve the pending charges of all the service types of the account.
+     *
+     * @see https://www.vultr.com/api/#operation/pending-charges
+     * @throws BillingException
+     * @return PendingCharge[]
+     */
+    public function getPendingCharges() : array
+    {
+        return $this->getListObjects('billing/pending-charges', new PendingCharge());
+    }
 }
