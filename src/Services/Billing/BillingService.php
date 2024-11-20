@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Vultr\VultrPhp\Services\Billing;
 
 use Vultr\VultrPhp\Services\VultrService;
+use Vultr\VultrPhp\Services\VultrServiceException;
 use Vultr\VultrPhp\Util\ListOptions;
 
 /**
@@ -67,15 +68,16 @@ class BillingService extends VultrService
 		return $this->getListObjects("billing/invoices/{$invoice_id}/items", new InvoiceItem(), $options);
 	}
 
-    /**
-     * Retrieve the pending charges of all the service types of the account.
-     *
-     * @see https://www.vultr.com/api/#operation/pending-charges
-     * @throws BillingException
-     * @return PendingCharge[]
-     */
-    public function getPendingCharges() : array
-    {
-        return $this->getListObjects('billing/pending-charges', new PendingCharge());
-    }
+	/**
+	 * Retrieve the pending charges of all the service types of the account.
+	 *
+	 * @see https://www.vultr.com/api/#operation/pending-charges
+	 * @throws BillingException
+	 * @throws VultrServiceException
+	 * @return PendingCharge[]
+	 */
+	public function getPendingCharges() : array
+	{
+		return $this->getNonPaginatedListObjects('billing/pending-charges', new PendingCharge());
+	}
 }
