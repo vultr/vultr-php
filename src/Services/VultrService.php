@@ -84,12 +84,12 @@ abstract class VultrService
 		return $objects;
 	}
 
-    /**
-     * @param $uri - string - the url address to query after api.vultr.com/v2
-     * @param $model - ModelInterface - the object that will be mapped to the get response.
-     * @throws Child of VultrServiceObject
-     * @return ModelInterface[]
-     */
+	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object that will be mapped to the get response.
+	 * @throws Child of VultrServiceObject
+	 * @return ModelInterface[]
+	 */
 	protected function getNonPaginatedListObjects(string $uri, ModelInterface $model) : array
 	{
 		try
