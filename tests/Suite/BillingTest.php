@@ -9,6 +9,7 @@ use Vultr\VultrPhp\Services\Billing\Bill;
 use Vultr\VultrPhp\Services\Billing\BillingException;
 use Vultr\VultrPhp\Services\Billing\Invoice;
 use Vultr\VultrPhp\Services\Billing\InvoiceItem;
+use Vultr\VultrPhp\Services\Billing\PendingCharge;
 use Vultr\VultrPhp\Tests\VultrTest;
 
 class BillingTest extends VultrTest
@@ -87,5 +88,33 @@ class BillingTest extends VultrTest
 
 		$this->expectException(BillingException::class);
 		$client->billing->getInvoiceItems(123456);
+	}
+
+	public function testGetPendingCharges()
+	{
+		$data = $this->getDataProvider()->getData();
+
+		$client = $this->getDataProvider()->createClientHandler([
+			new Response(200, ['Content-Type' => 'application/json'], json_encode($data)),
+			new Response(400, [], json_encode(['error' => 'Bad Request'])),
+		]);
+
+		foreach ($client->billing->getPendingCharges() as $pendingCharge)
+		{
+			$this->assertInstanceOf(PendingCharge::class, $pendingCharge);
+			foreach ($data[$pendingCharge->getResponseListName()] as $expectedCharge)
+			{
+				if ($expectedCharge['unit_price'] !== $pendingCharge->getUnitPrice()) continue;
+
+				foreach ($pendingCharge->toArray() as $prop => $prop_val)
+				{
+					$this->assertEquals($prop_val, $expectedCharge[$prop], "Prop {$prop} failed");
+				}
+				break;
+			}
+		}
+
+		$this->expectException(BillingException::class);
+		$client->billing->getPendingCharges();
 	}
 }

@@ -86,6 +86,43 @@ abstract class VultrService
 
 	/**
 	 * @param $uri - string - the url address to query after api.vultr.com/v2
+	 * @param $model - ModelInterface - the object that will be mapped to the get response.
+	 * @throws Child of VultrServiceObject
+	 * @return ModelInterface[]
+	 */
+	protected function getNonPaginatedListObjects(string $uri, ModelInterface $model) : array
+	{
+		try
+		{
+			$response = $this->getClientHandler()->get($uri);
+			$stdclass = VultrUtil::decodeJSON((string)$response->getBody());
+
+			// Get the list name from the model
+			$list_name = $model->getResponseListName();
+
+			// Ensure the expected list exists
+			if (!isset($stdclass->$list_name)) {
+				throw new VultrServiceException("Response does not contain expected list: $list_name");
+			}
+
+			// Map each item in the list to a model instance
+			$objects = [];
+			foreach ($stdclass->$list_name as $object) {
+				$objects[] = VultrUtil::mapObject($object, clone $model);
+			}
+
+			return $objects;
+		}
+		catch (Throwable $e)
+		{
+			$exception_class = $model->getModelExceptionClass();
+			throw new $exception_class('Failed to list '.$model->getResponseListName().': '.$e->getMessage(), $e->getHTTPCode(), $e);
+		}
+	}
+
+
+	/**
+	 * @param $uri - string - the url address to query after api.vultr.com/v2
 	 * @param $model - ModelInterface - the object model that we are updating. This needs to be a fully initialized object.
 	 * @throws Child of VultrServiceObject
 	 * @return void
