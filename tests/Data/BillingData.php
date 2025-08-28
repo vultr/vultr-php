@@ -86,4 +86,33 @@ class BillingData extends DataProvider
 			}
 		', true);
 	}
+	protected function dataGetPendingCharges() : array
+	{
+		return json_decode('
+        {
+          "pending_charges": [
+            {
+              "description": "Load Balancer (my-loadbalancer)",
+              "start_date": "2020-10-10T01:56:20+00:00",
+              "end_date": "2020-10-10T01:56:20+00:00",
+              "units": 720,
+              "unit_type": "hours",
+              "unit_price": 0.0149,
+              "total": 10,
+              "product": "Load Balancer"
+            },
+            {
+              "description": "65.65.65.65 (1024 MB) [my-instance]",
+              "start_date": "2024-11-01T00:00:00+00:00",
+              "end_date": "2024-11-19T11:20:52+00:00",
+              "units": 444,
+              "unit_type": "hours",
+              "unit_price": 0.00744047619047619,
+              "total": 3.31,
+              "product": "Vultr Cloud Compute"
+            }
+          ]
+        }
+    ', true);
+	}
 }
